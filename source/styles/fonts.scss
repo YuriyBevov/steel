@@ -1,17 +1,53 @@
-/*@font-face {
-  font-family: "OpenSansBold";
-  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"),
-    url("../fonts/OpenSans-Bold.woff") format("woff");
+@font-face {
+  font-family: "PTSans_Reg";
+  src: url("../fonts/PTSansReg.woff2") format("woff2"),
+    url("../fonts/PTSansReg.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PTSans_Bold";
+  src: url("../fonts/PTSansBold.woff2") format("woff2"),
+    url("../fonts/PTSansBold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSansRegular";
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"),
-    url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-family: "Inter_Reg";
+  src: url("../fonts/InterReg.woff2") format("woff2"),
+    url("../fonts/InterReg.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}*/
+}
+
+@font-face {
+  font-family: "RussoOne_Reg";
+  src: url("../fonts/RussoOneReg.woff2") format("woff2"),
+    url("../fonts/RussoOneReg.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat_Reg";
+  src: url("../fonts/MontserratReg.woff2") format("woff2"),
+    url("../fonts/MontserratReg.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat_Med";
+  src: url("../fonts/MontserratMed.woff2") format("woff2"),
+    url("../fonts/MontserratMed.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
