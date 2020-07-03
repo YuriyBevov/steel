@@ -1,0 +1,8 @@
+.footer {
+  margin-top: auto; // чтобы прибить футер к низу
+
+  &__wrapper {
+    @include container;
+    outline: 1px solid red;
+  }
+}

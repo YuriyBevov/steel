@@ -1,0 +1,42 @@
+//fonts
+
+// $font_primary: ' ';
+// $font_primary--bold: '';
+// $font_secondary: '';
+// $font_secondary--bold: '';
+
+// work
+
+$outline: 1px solid red;
+
+// widths
+
+$desktop-width: 1440px;
+$tablet-width: 768px;
+$mobile-width: 320px;
+
+$min-width: $mobile-width;
+$max-width: $desktop-width;
+
+// colors
+
+$color_black: #000000;
+$color_secondary-black: #26211f;
+
+$color_white: #ffffff;
+
+$color_grey: #e7e7e7;
+$color_secondary-grey: #3c3531;
+
+// components
+
+$nav_link: #524848;
+$nav_border: #eee;
+$nav_link--active: #000000;
+$nav_link--focus: #6d5555;
+$nav_link--border: #524848;
+
+// retina
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

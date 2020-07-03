@@ -1,0 +1,21 @@
+@import "fonts";
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "global";
+
+//--- plugins
+
+@import "plugins/swiper.scss";
+
+//--- blocks
+
+@import "blocks/header";
+@import "blocks/about";
+@import "blocks/advantages";
+@import "blocks/contacts";
+@import "blocks/footer";
+//--- components
+
+@import "components/main_btn";
+@import "components/secondary_btn";
