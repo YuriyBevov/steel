@@ -1,18 +1,19 @@
+// desktop-first
+
 @mixin container() {
   margin: 0 auto;
   width: 100%;
-  max-width: 767px;
-  min-width: $mobile-width;
-  padding: 0 5px;
+  max-width: 1440px;
+  padding: 0 150px;
 
-  @media (min-width: $tablet-width) {
-    max-width: 1439px;
-    padding: 0 10px;
+  @media (max-width: $desktop-width) {
+    padding: 0 30px;
   }
 
-  @media (min-width: $desktop-width) {
-    max-width: $desktop-width;
-    padding: 0 150px;
+  @media (max-width: $tablet-width) {
+    max-width: $tablet-width;
+    min-width: $mobile-width;
+    padding: 0 5px;
   }
 }
 

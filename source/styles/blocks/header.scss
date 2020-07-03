@@ -1,3 +1,111 @@
 .header {
 
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items :center;
+    min-height: 60px;
+  }
+
+  &__bar {
+    background-color: $color_black;
+  }
+
+  &__address {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: $font_secondary;
+    font-style: normal;
+    color: $color_white;
+    padding-left: 14px;
+    margin-right: 6rem;
+
+    &::before {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 9px;
+      height: 12px;
+      content: '';
+      background-image: url("../img/icons/icon-map.svg");
+    }
+
+    &-city {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &-street {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      font-family: $font_secondary;
+      color: $color_white;
+    }
+
+    &-phone {
+      position: relative;
+      font-size: 14px;
+      line-height: 17px;
+      padding-left: 18px;
+
+      &::before {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        content: '';
+        background-image: url("../img/icons/icon-phone.svg");
+      }
+    }
+
+    &-callback {
+      font-size: 12px;
+      line-height: 15px;
+      text-decoration: underline;
+    }
+  }
+
+
+  &__content {
+    padding-top: 22rem;
+    min-height: 825px;
+    background-image: url("../img/static/header-background@1x.jpg");
+    background-size: cover;
+    background-position: top left;
+
+    &-title {
+      font-family: $font_secondary;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: 0.02em;
+      margin-bottom: 2rem;
+      color: $color_white;
+    }
+
+    &-description {
+      max-width: 800px;
+      font-weight: normal;
+      font-size: 48px;
+      line-height: 60px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 5rem;
+      color: $color_white;
+    }
+
+    &-link {
+      color: $color_white;
+    }
+  }
 }

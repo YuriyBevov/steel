@@ -1,3 +1,25 @@
 .nav {
-  
+  flex-grow: 1;
+  justify-content: center;
+  display: flex;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-right: 3.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: $font_secondary;
+    color: $color_white;
+  }
 }
