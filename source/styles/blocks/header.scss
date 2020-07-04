@@ -4,9 +4,9 @@
     @include container();
     display: flex;
     flex-wrap: wrap;
-    //align-items: center;
+    align-items: center;
     min-height: 60px;
-    padding-top: 1.9rem;
+    // padding-top: 1.9rem;
   }
 
   &__bar {
