@@ -1,0 +1,14 @@
+.social {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-right: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

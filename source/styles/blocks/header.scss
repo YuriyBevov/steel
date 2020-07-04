@@ -18,12 +18,12 @@
     font-family: $font_secondary;
     font-style: normal;
     color: $color_white;
-    padding-left: 14px;
+    padding-left: 1.4rem;
     margin-right: 6rem;
 
     &::before {
       position: absolute;
-      top: 2px;
+      top: 0.2rem;
       left: 0;
       width: 9px;
       height: 12px;
@@ -32,13 +32,13 @@
     }
 
     &-city {
-      font-size: 14px;
-      line-height: 17px;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
     }
 
     &-street {
-      font-size: 12px;
-      line-height: 15px;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
     }
   }
 
@@ -53,9 +53,9 @@
 
     &-phone {
       position: relative;
-      font-size: 14px;
-      line-height: 17px;
-      padding-left: 18px;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+      padding-left: 1.8rem;
 
       &::before {
         position: absolute;
@@ -69,26 +69,26 @@
     }
 
     &-callback {
-      font-size: 12px;
-      line-height: 15px;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
       text-decoration: underline;
     }
   }
 
 
   &__content {
-    padding-top: 22rem;
+    padding-top: 19rem;
     min-height: 825px;
     background-image: url("../img/static/header-background@1x.jpg");
     background-size: cover;
-    background-position: top left;
+    background-position: center;
 
     &-title {
       font-family: $font_secondary;
       font-weight: 500;
-      font-size: 20px;
-      line-height: 25px;
-      letter-spacing: 0.02em;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      letter-spacing: 0.05em;
       margin-bottom: 2rem;
       color: $color_white;
     }
@@ -96,16 +96,43 @@
     &-description {
       max-width: 800px;
       font-weight: normal;
-      font-size: 48px;
-      line-height: 60px;
+      font-size: 4.8rem;
+      line-height: 6rem;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       margin-bottom: 5rem;
       color: $color_white;
     }
 
-    &-link {
-      color: $color_white;
+    &-action {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 19rem;
+
+      &-link {
+        color: $color_white;
+
+        font-family: $font_secondary;
+        font-size: 1.6rem;
+        line-height: 2.9rem;
+        margin-right: 5.5rem;
+
+        &--projects {
+          width: 225px;
+          padding: 0.9rem 1rem;
+          text-align: center;
+          border: 2px solid $color_white;
+          background-color: transparent;
+        }
+
+        &--order {
+          width: 225px;
+          padding: 0.9rem 1rem;
+          text-align: center;
+          border: 2px solid transparent;
+          background-color: $color_beige;
+        }
+      }
     }
   }
 }

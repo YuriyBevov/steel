@@ -18,10 +18,11 @@ header.header
 
   .header__content
     .header__content-wrapper.wrapper
+
       h1.header__content-title Сварочная мастерская Steel Balls
       p.header__content-description ЛОФТ ПЕРЕГОРОДКИ И&nbspМЕБЕЛЬ РУЧНОЙ РАБОТЫ
 
-      a(href="#").header__content-link Посмотреть проекты
-      a(href="#").header__content-link Оставить заявку
-
-      // include social
+      .header__content-action
+        a(href="#").header__content-action-link.header__content-action-link--projects Посмотреть проекты
+        a(href="#").header__content-action-link.header__content-action-link--order Оставить заявку
+      include ./social
