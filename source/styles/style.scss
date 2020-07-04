@@ -8,6 +8,12 @@
 
 @import "plugins/swiper.scss";
 
+//--- components
+
+@import "components/main_link";
+@import "components/main_btn";
+@import "components/secondary_btn";
+
 //--- blocks
 
 @import "blocks/header";
@@ -20,7 +26,3 @@
 @import "blocks/gallery";
 @import "blocks/partnership";
 @import "blocks/footer";
-//--- components
-
-@import "components/main_btn";
-@import "components/secondary_btn";

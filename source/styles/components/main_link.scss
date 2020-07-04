@@ -1,0 +1,36 @@
+.main-link {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 50px;
+  font-family: $font_secondary;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  padding: 1rem 4rem;
+
+
+  text-transform: lowercase;
+  background-color: $color_beige;
+  color: $color_white;
+
+  svg {
+    transition: transform 0.3s 0.1 infinite;
+    margin-left: 3rem;
+  }
+
+  &:hover {
+    svg {
+      animation: arrow_move 0.5s 0.1s ease-in infinite;
+    }
+  }
+}
+
+@keyframes arrow_move {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-1rem);
+  }
+}

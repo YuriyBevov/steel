@@ -1,3 +1,34 @@
 section.partition
-  .partition__wrapper.wrapper
-    h2 partition
+  .partition__wrapper
+    .partition__header
+      h2.partition__title ЛОФТ ПЕРЕГОРОДКИ
+      ul.partition__advantages-list
+        li.partition__advantages-item <span>01</span> Решают проблему зонирования офиса
+        li.partition__advantages-item <span>02</span> Разделении рабочих, гостевых и других зон
+        li.partition__advantages-item <span>03</span> Эффект зрительного расширения пространства
+
+    ul.partition__list
+      li.partition__item
+        picture
+          source(type="image/webp" srcset="img/static/partition_home@1x.webp 1x, img/static/partition_home@2x.webp 2x")
+          img.partition__img(src="img/static/partition_home@1x.jpg" srcset="img/static/partition_home@2x.jpg 2x" alt="Перегородки для дома")
+
+        p.partition__item-description Для дома
+
+      li.partition__item
+        picture
+          source(type="image/webp" srcset="img/static/partition_office@1x.webp 1x, img/static/partition_office@2x.webp 2x")
+          img.partition__img(src="img/static/partition_office@1x.jpg" srcset="img/static/partition_office@2x.jpg 2x" alt="Перегородки для офиса")
+
+        p.partition__item-description В офис
+
+      li.partition__item
+        picture
+          source(type="image/webp" srcset="img/static/partition_rest@1x.webp 1x, img/static/partition_rest@2x.webp 2x")
+          img.partition__img(src="img/static/partition_rest@1x.jpg" srcset="img/static/partition_rest@2x.jpg 2x" alt="Перегородки для ресторанов и кафе")
+
+        p.partition__item-description В ресторан
+
+    a(href="#").partition__link.main-link ПОДРОБНЕЕ
+      svg(width="52" height="3")
+        use(xlink:href="#icon-arr")
