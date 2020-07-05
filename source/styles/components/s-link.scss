@@ -1,0 +1,12 @@
+.s-link {
+  min-height: 50px;
+  font-family: $font_secondary;
+  font-size: 1.6rem;
+  line-height: 2.9rem;
+  width: fit-content;
+  padding: 0.9rem 2rem;
+  text-align: center;
+  border: 2px solid transparent;
+  background-color: $main_link;
+  color: $color_white;
+}

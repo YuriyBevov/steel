@@ -10,9 +10,13 @@
 
 //--- components
 
-@import "components/main_link";
-@import "components/main_btn";
-@import "components/secondary_btn";
+// m === main , s === secondary, t === transparent
+
+@import "components/m-link";
+@import "components/s-link";
+@import "components/t-link";
+@import "components/m-btn";
+@import "components/s-btn";
 
 //--- blocks
 

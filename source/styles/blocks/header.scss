@@ -112,28 +112,7 @@
       margin-bottom: 19rem;
 
       &-link {
-        color: $color_white;
-
-        font-family: $font_secondary;
-        font-size: 1.6rem;
-        line-height: 2.9rem;
         margin-right: 5.5rem;
-
-        &--projects {
-          width: 225px;
-          padding: 0.9rem 1rem;
-          text-align: center;
-          border: 2px solid $color_white;
-          background-color: transparent;
-        }
-
-        &--order {
-          width: 225px;
-          padding: 0.9rem 1rem;
-          text-align: center;
-          border: 2px solid transparent;
-          background-color: $main_link;
-        }
       }
     }
   }

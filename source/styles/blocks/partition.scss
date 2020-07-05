@@ -1,8 +1,9 @@
 .partition {
+  padding-top: 10rem;
+  padding-bottom: 3rem;
+
   &__wrapper {
     @include container();
-    padding-top: 10rem;
-    padding-bottom: 3rem;
     display: flex;
     flex-direction: column;
   }
@@ -14,15 +15,7 @@
   }
 
   &__title {
-    max-width: 600px;
-    font-size: 4.8rem;
-    line-height: 6.6rem;
     margin-right: auto;
-    color: $color_black;
-  }
-
-  &__advantages-list {
-
   }
 
   &__advantages-item {
@@ -56,12 +49,13 @@
   &__item {
     width: 32%;
     margin-right: 2%;
+
     &:last-child {
       margin-right: 0;
     }
 
     picture {
-      max-width: 360px;
+      max-width: 100%;
       max-height: 445px;
     }
 
