@@ -1,3 +1,44 @@
 section.partnership
-  .partnership__wrapper.wrapper
-    h2 partnership
+  .partnership__wrapper
+    .partnership__content
+      h2.partnership__title СОТРУДНИЧЕСТВО
+      p.partnership__description
+        | работаем с дизайнерами, с выставочными и&nbsp;офисными пространствами,
+        | пекарнями, отелями, барами, ресторанами, магазинами.отелями,
+        | барами, ресторанами, магазинами.
+
+      strong.partnership__offer Хотите сотрудничать с нами?
+      p.partnership__mail Оставьте свое сообщение на почте: <a href="mailto:stballs@mail.ru">stballs@mail.ru</a>
+
+    .partnership__slider
+      .partnership__swiper-container
+        .swiper-wrapper
+          -
+            const partners = [
+              {description: 'Au pont rouge', url: 'img/static/rouge', size: {width: 147, height: 60}},
+              {description: 'Новая сцена Александринского театра', url: 'img/static/theatre', size: {width: 85, height: 54} },
+              {description: 'Kivennapa', url: 'img/static/kivennapa', size: {width: 100, height: 25} },
+              {description: 'Циферблат. Свободное пространство', url: 'img/static/clockface', size: {width: 121, height: 56} },
+              {description: 'Balcon Lounge bar', url: 'img/static/balcon', size: {width: 50, height: 50} },
+              {description: 'Greenpeace', url: 'img/static/greenpeace', size: {width: 105, height: 38} },
+              {description: 'Prosto Vino', url: 'img/static/vino', size: {width: 106, height: 53} },
+              {description: 'Культурная столица', url: 'img/static/capital', size: {width: 71, height: 44} },
+              {description: 'Pilki', url: 'img/static/pilki', size: {width: 65, height: 22} },
+              {description: 'Циферблат. Свободное пространство', url: 'img/static/clockface', size: {width: 121, height: 56} },
+              {description: 'Balcon Lounge bar', url: 'img/static/balcon', size: {width: 50, height: 50} },
+              {description: 'Greenpeace', url: 'img/static/greenpeace', size: {width: 105, height: 38} },
+              {description: 'Культурная столица', url: 'img/static/capital', size: {width: 71, height: 44} },
+              {description: 'Pilki', url: 'img/static/pilki', size: {width: 65, height: 22} },
+              {description: 'Au pont rouge', url: 'img/static/rouge', size: {width: 147, height: 60}},
+              {description: 'Новая сцена Александринского театра', url: 'img/static/theatre', size: {width: 85, height: 54} },
+            ];
+          each partner in partners
+            .swiper-slide
+              picture
+                source(type="image/webp" srcset=partner.url + '@1x.webp 1x', partner.url + '@2x.webp 2x')
+                img.gallery__img(src=partner.url + '@1x.jpg' srcset=partner.url + '@2x.jpg 2x' width=partner.size.width height=partner.size.height alt="partner.description")
+
+        // slider navigation
+
+        .p-swiper-button-next
+        .p-swiper-button-prev
