@@ -1,7 +1,7 @@
 import Swiper from "swiper";
 
 export const slidersInit = function () {
-  let swiper = new Swiper('.partnership__swiper-container', {
+  let partnershipSwiper = new Swiper('.partnership__swiper-container', {
     slidesPerView: 3,
     slidesPerColumn: 3,
     navigation: {
@@ -9,8 +9,16 @@ export const slidersInit = function () {
       prevEl: '.p-swiper-button-prev',
     },
   });
-  console.log('init')
-};
 
-
-  slidersInit()
+  let advantagesSwiper = new Swiper('.advantages__swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    initialSlide: 1,
+    centeredSlides: true,
+    slideToClickedSlide: true,
+    navigation: {
+      nextEl: '.a-swiper-button-next',
+      prevEl: '.a-swiper-button-prev',
+    },
+  });
+}();

@@ -9483,7 +9483,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const slidersInit = function () {
-  let swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.partnership__swiper-container', {
+  let partnershipSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.partnership__swiper-container', {
     slidesPerView: 3,
     slidesPerColumn: 3,
     navigation: {
@@ -9491,11 +9491,19 @@ const slidersInit = function () {
       prevEl: '.p-swiper-button-prev',
     },
   });
-  console.log('init')
-};
 
-
-  slidersInit()
+  let advantagesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.advantages__swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    initialSlide: 1,
+    centeredSlides: true,
+    slideToClickedSlide: true,
+    navigation: {
+      nextEl: '.a-swiper-button-next',
+      prevEl: '.a-swiper-button-prev',
+    },
+  });
+}();
 
 
 /***/ })
