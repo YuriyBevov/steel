@@ -1,16 +1,16 @@
 .header {
 
+  &__bar {
+    display: flex;
+    background-color: $color_black;
+  }
+
   &__wrapper {
     @include container();
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     min-height: 60px;
-    // padding-top: 1.9rem;
-  }
-
-  &__bar {
-    background-color: $color_black;
   }
 
   &__address {
