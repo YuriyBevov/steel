@@ -30,3 +30,18 @@
     opacity: 0.7;
   }
 }
+
+
+@mixin onHoverAnimationSvg($color, $bkg: inherit) {
+  transition: 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: $bkg;
+    fill: $color;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

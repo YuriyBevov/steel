@@ -19,8 +19,8 @@ section.gallery
       each photo in photos
         li.gallery__item
           picture
-            source(type="image/webp" srcset=photo.url + '@1x.webp 1x', photo.url + '@2x.webp 2x')
-            img.gallery__img(src=photo.url + '@1x.jpg' srcset=photo.url + '@2x.jpg 2x' alt="photo.description")
+            source(type="image/webp" srcset=photo.url + '@1x.webp 1x,' + photo.url + '@2x.webp 2x')
+            img.gallery__img(src=photo.url + '@1x.jpg' srcset=photo.url + '@2x.jpg 2x' alt=photo.description)
 
     a(href="#").gallery__link.m-link посмотреть
       svg(width="52" height="3")

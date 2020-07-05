@@ -10,5 +10,11 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    svg {
+      fill: $fill_svg;
+
+      @include onHoverAnimationSvg($color_beige);
+    }
   }
 }

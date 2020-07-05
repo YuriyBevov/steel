@@ -1,4 +1,86 @@
 .footer {
+  display: flex;
   margin-top: auto; // чтобы прибить футер к низу
+  background-color: $color_footer-bcg;
+  min-height: 220px;
+  padding-top: 5.5rem;
+  padding-bottom: 8.5rem;
 
+  &__wrapper {
+    @include container();
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__logo,
+  &__contacts,
+  &__address {
+    margin-right: auto;
+  }
+
+  &__copyrights {
+    font-family: $font_secondary;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+  }
+
+  &__block-title {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: $color_white;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    max-width: 180px;
+
+    &-link {
+      position: relative;
+      font-family: $font_text;
+
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+      color: $color_white;
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        fill: transparent;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__address {
+    font-style: normal;
+
+    &-city,
+    &-street {
+      font-family: $font_text;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+      color: $color_white;
+    }
+
+    &-city {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        fill: transparent;
+      }
+    }
+  }
 }

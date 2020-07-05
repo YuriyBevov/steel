@@ -1,3 +1,31 @@
 footer.footer
-  .footer__wrapper.wrapper
-    h2 footer
+  .footer__wrapper
+    .footer__logo
+       a(href="#")
+         svg(width="96" height="22")
+           use(xlink:href="#icon-footer_logo")
+       p.footer__copyrights &#169; Все права защищены.
+
+    .footer__contacts
+      p.footer__block-title Связаться с нами
+
+      a(href="tel:+79006221818").footer__contacts-link +7 (900)-622-18-18
+        svg(width="12" height="12")
+          use(xlink:href="#icon-phone")
+
+      a(href="mailto:stballs@mail.ru").footer__contacts-link stballs@mail.ru
+        svg(width="11" height="8")
+          use(xlink:href="#icon-mail")
+
+    address.footer__address
+      p.footer__block-title Мы находимся
+
+      a(href="#").footer__address-link
+        p.footer__address-city г. Санкт-Петербург
+          svg(width="9" height="12")
+            use(xlink:href="#icon-map")
+        p.footer__address-street Бехтерева 3, корп 3а
+
+    .footer__social
+      p.footer__block-title Мы в соц сетях
+      include ./social

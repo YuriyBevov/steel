@@ -1,5 +1,5 @@
 section.advantages
-  .advantages__wrapper.wrapper
+  .advantages__wrapper
     h2.advantages__title О СВАРОЧНОЙ МАСТЕРСКОЙ STEEL BALLS
     .advantages__content
       ul.advantages__list
@@ -35,8 +35,8 @@ section.advantages
         each advantage in advantages
           .swiper-slide
             picture
-              source(type="image/webp" srcset=advantage.url + '@1x.webp 1x', advantage.url + '@2x.webp 2x')
-              img.gallery__img(src=advantage.url + '@1x.jpg' srcset=advantage.url + '@2x.jpg 2x' alt="advantage.description")
+              source(type="image/webp" srcset=advantage.url + '@1x.webp 1x,' + advantage.url + '@2x.webp 2x')
+              img(src=advantage.url + '@1x.jpg' srcset=advantage.url + '@2x.jpg 2x' alt=advantage.description)
 
       // slider navigation
 
