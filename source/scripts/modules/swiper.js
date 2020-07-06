@@ -1,5 +1,7 @@
 import Swiper from "swiper";
 
+
+
 export const slidersInit = function () {
   let pSlider = document.querySelector('.partnership__swiper-container');
 
