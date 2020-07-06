@@ -3,13 +3,17 @@
 import slidersInit from "./modules/swiper.js";
 // import navToggle from './modules/navToggle.js';
 
-import Colcade from 'colcade';
+import Masonry from 'masonry-layout';
 
 document.addEventListener('DOMContentLoaded', function(){
   console.log('ready')
-  let grid = document.querySelector('.grid');
-  let colc = new Colcade( grid, {
-    columns: '.grid-col',
-    items: '.grid-item'
+  var elem = document.querySelector('.grid');
+  var msnry = new Masonry( elem, {
+    // options
+    percentPosition: true,
+    columnWidth: '.grid-sizer',
+    gutter: '.gutter-sizer',
+    itemSelector: '.grid-item',
+    horizontalOrder: false
   });
 });
