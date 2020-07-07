@@ -11843,7 +11843,7 @@ document.addEventListener('DOMContentLoaded', function(){
     columnWidth: '.grid-sizer',
     gutter: '.gutter-sizer',
     itemSelector: '.grid-item',
-    horizontalOrder: false
+    //horizontalOrder: false
   });
 });
 
