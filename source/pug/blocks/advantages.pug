@@ -35,8 +35,8 @@ section.advantages
         each advantage in advantages
           .swiper-slide
             picture
-              source(type="image/webp" srcset=advantage.url + '@1x.webp 1x,' + advantage.url + '@2x.webp 2x')
-              img(src=advantage.url + '@1x.jpg' srcset=advantage.url + '@2x.jpg 2x' alt=advantage.description)
+              source(type="image/webp" data-srcset=advantage.url + '@1x.webp 1x,' + advantage.url + '@2x.webp 2x')
+              img.lazyload.blur-up(data-src=advantage.url + '@1x.jpg' data-srcset=advantage.url + '@2x.jpg 2x' alt=advantage.description)
 
       // slider navigation
 

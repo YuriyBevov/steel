@@ -45,8 +45,10 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "axios": "^0.19.2",
     "colcade": "^0.2.0",
+    "lazysizes": "^5.2.2",
     "masonry-layout": "^4.2.2",
     "swiper": "^5.4.2",
     "vue": "^2.6.11",

@@ -35,8 +35,8 @@ section.partnership
           each partner in partners
             .swiper-slide
               picture
-                source(type="image/webp" srcset=partner.url + '@1x.webp 1x,' + partner.url + '@2x.webp 2x')
-                img(src=partner.url + '@1x.jpg' srcset=partner.url + '@2x.jpg 2x' width=partner.size.width height=partner.size.height alt=partner.description)
+                source(type="image/webp" data-srcset=partner.url + '@1x.webp 1x,' + partner.url + '@2x.webp 2x')
+                img.lazyload.blur-up(data-src=partner.url + '@1x.jpg' data-srcset=partner.url + '@2x.jpg 2x' width=partner.size.width height=partner.size.height alt=partner.description)
 
         // slider navigation
 

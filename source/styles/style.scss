@@ -7,6 +7,11 @@
 //--- plugins
 
 @import "plugins/swiper.scss";
+@import "plugins/aos.scss";
+
+// lazyload
+
+@import "plugins/lazyload.scss";
 
 //--- components
 
@@ -23,6 +28,7 @@
 @import "sliders/partnership-slider";
 @import "sliders/advantages-slider";
 @import "masonry/projects-masonry-layout.scss";
+
 //--- blocks
 
 @import "blocks/header";
