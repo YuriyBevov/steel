@@ -17,6 +17,10 @@
   }
 }
 
+@mixin transition($css_rule) {
+  transition: $css_rule $transition_rules;
+}
+
 @mixin onHoverAnimation($color, $bkg: inherit) {
   transition: 0.3s;
 
