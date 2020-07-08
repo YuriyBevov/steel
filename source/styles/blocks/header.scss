@@ -14,7 +14,16 @@
   }
 
   &__address {
+    position: relative;
     margin-right: 6rem;
+    //outline: 1px solid red;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
 
     &-link {
       display: flex;
@@ -25,28 +34,41 @@
     }
 
     &-city {
-      position: relative;
+      //position: relative;
       font-size: 1.4rem;
       line-height: 1.7rem;
-      padding-left: 1.4rem;
+      padding-left: 3.5rem;
+      margin-bottom: 0.5rem;
 
-      svg {
+      /*svg {
         position: absolute;
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-      }
+      }*/
     }
 
     &-street {
-      font-size: 1.2rem;
-      line-height: 1.5rem;
+      //font-size: 1.2rem;
+      //line-height: 1.5rem;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+      padding-left: 3.5rem;
     }
   }
 
   &__contacts {
+    position: relative;
     display: flex;
     flex-direction: column;
+    //outline: $outline;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
 
     a {
       font-family: $font_secondary;
@@ -54,17 +76,22 @@
     }
 
     &-phone {
-      position: relative;
+      //position: relative;
       font-size: 1.4rem;
       line-height: 1.7rem;
-      padding-left: 1.8rem;
+      padding-left: 3.5rem;
+      margin-bottom: 0.5rem;
 
-      svg {
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      /*svg {
         position: absolute;
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-      }
+      }*/
     }
 
     &-callback {
