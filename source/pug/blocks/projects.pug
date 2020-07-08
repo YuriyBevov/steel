@@ -6,56 +6,23 @@ section.projects
       .grid-sizer
       .gutter-sizer
 
-      .grid-item.grid-item--left
-        .grid-item__wrapper
-          img(src="img/pr_1@1x.jpg")
-          h3.projects__item-title Подставка для цветов
-          p.projects__item-description Сиденье из сосны под маслом. Порошковая покраска стального каркаса
-
-      .grid-item.grid-item--vertical
-        .grid-item__wrapper
-          img(src="img/pr_3@1x.jpg")
-          h3.projects__item-title Подставка для цветов
-          p.projects__item-description Сиденье из сосны под маслом. Порошковая покраска стального каркаса
-
-      .grid-item.grid-item--left
-        .grid-item__wrapper
-          img(src="img/pr_2@1x.jpg")
-          h3.projects__item-title Подставка для цветов
-          p.projects__item-description Сиденье из сосны под маслом. Порошковая покраска стального каркаса
-
-      .grid-item.grid-item--right
-        .grid-item__wrapper
-          img(src="img/pr_5@1x.jpg")
-          h3.projects__item-title Стеллаж в нише
-          p.projects__item-description Необычный цвет + масло для дополнительной защиты.
-
-      .grid-item.grid-item--vertical
-        .grid-item__wrapper
-          img(src="img/pr_4@1x.jpg")
-          h3.projects__item-title Стеллаж в нише
-          p.projects__item-description Необычный цвет + масло для дополнительной защиты.
-
-      .grid-item.grid-item--right
-        .grid-item__wrapper
-          img(src="img/pr_6@1x.jpg")
-          h3.projects__item-title Стеллаж в нише
-          p.projects__item-description Необычный цвет + масло для дополнительной защиты.
-
-      .grid-item.grid-item--vertical
-        .grid-item__wrapper
-          img(src="img/pr_8@1x.jpg")
-          h3.projects__item-title Стеллаж в нише
-          p.projects__item-description Необычный цвет + масло для дополнительной защиты.
-
-      .grid-item.grid-item--left
-        .grid-item__wrapper
-          img(src="img/pr_7@1x.jpg")
-          h3.projects__item-title Стеллаж в нише
-          p.projects__item-description Необычный цвет + масло для дополнительной защиты.
-
-      .grid-item.grid-item--left
-        .grid-item__wrapper
-          img(src="img/pr_9@1x.jpg")
-          h3.projects__item-title Стеллаж в нише
-          p.projects__item-description Необычный цвет + масло для дополнительной защиты.
+      -
+        const items = [
+          {class: 'grid-item--small', title: 'Подставка для цветов', description: 'Сиденье из сосны под маслом. Порошковая покраска стального каркаса', url: 'img/pr_1', imgAlt:'проект_1'},
+          {class: 'grid-item--vertical', title: 'Подставка для цветов', description: 'Сиденье из сосны под маслом. Порошковая покраска стального каркаса', url:'img/pr_3', imgAlt:'проект_2'},
+          {class: 'grid-item--small', title: 'Подставка для цветов', description: 'Сиденье из сосны под маслом. Порошковая покраска стального каркаса', url: 'img/pr_2', imgAlt:'проект_3'},
+          {class: 'grid-item--small', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_5', imgAlt:'проект_5'},
+          {class: 'grid-item--vertical', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_4', imgAlt:'проект_4'},
+          {class: 'grid-item--small', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_6', imgAlt:'проект_6'},
+          {class: 'grid-item--vertical', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_8', imgAlt:'проект_8'},
+          {class: 'grid-item--small', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_7', imgAlt:'проект_7'},
+          {class: 'grid-item--small', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_9', imgAlt:'проект_9'},
+        ];
+      each item in items
+        .grid-item(class=item.class)
+          .grid-item__wrapper
+            picture
+              source(type="image/webp" srcset=item.url + '@1x.webp 1x,' + item.url + '@2x.webp 2x')
+              img(src=item.url + '@1x.jpg' srcset=item.url + '@2x.jpg 2x' alt=item.imgAlt)
+            h3.projects__item-title=item.title
+            p.projects__item-description=item.description

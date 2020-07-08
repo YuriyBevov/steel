@@ -61,6 +61,10 @@
   &__address {
     font-style: normal;
 
+    &-link {
+      display: block;
+    }
+
     &-city,
     &-street {
       font-family: $font_text;

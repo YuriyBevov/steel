@@ -21,18 +21,9 @@
     height: 100%;
   }
 
-  &--left {
+  &--small {
     .grid-item__wrapper {
       width: 80%;
-      //margin-right: auto;
-      margin: 0 auto;
-    }
-  }
-
-  &--right {
-    .grid-item__wrapper {
-      width: 80%;
-      //margin-left: auto;
       margin: 0 auto;
     }
   }
@@ -49,3 +40,10 @@
 .gutter-sizer {
   width: 2.64%;
 }
+
+/*@media (max-width: $tablet-width) {
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+  }
+}*/
