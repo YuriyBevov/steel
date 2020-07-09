@@ -5,21 +5,19 @@ header.header
          a(href="#")
            svg(width="122" height="22")
              use(xlink:href="#icon-logo")
+         .header__city
+           a(href="#")
+             svg(width="12" height="15")
+               use(xlink:href="#icon-map")
+           span г. Санкт-Петербург
 
       include ./nav
 
-      address.header__address
-        a(href="#").header__address-link
-          svg(width="20" height="20")
-            use(xlink:href="#icon-map")
-          span.header__address-city г. Санкт-Петербург
-          span.header__address-street Бехтерева 3, корп 3а
-
       .header__contacts
-        svg(width="20" height="20")
-          use(xlink:href="#icon-phone")
         a(href="tel:+79006221818").header__contacts-phone +7 (900) 622-18-18
         a(href="tel:+78122194093").header__contacts-phone +7 (812) 219-40-93
+
+      a(href="#").header__callback заказать звонок
 
   .header__content
     .header__content-wrapper.wrapper

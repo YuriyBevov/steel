@@ -13,71 +13,48 @@
     min-height: 60px;
   }
 
-  &__address {
-    position: relative;
-    margin-right: 6rem;
-
+  &__city {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     svg {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
+      margin-right: 0.5rem;
     }
-
-    &-link {
-      display: flex;
-      flex-direction: column;
+    span {
       font-family: $font_secondary;
-      font-style: normal;
+      font-size: 1.6rem;
+      line-height: 2rem;
       color: $color_white;
-
-      transition: color 0.3s 0.1s ease-in;
     }
+  }
 
-    &-city {
-      font-size: 1.4rem;
-      line-height: 1.7rem;
-      padding-left: 3.5rem;
-      margin-bottom: 0.5rem;
-    }
+  &__callback {
+    font-family: $font_secondary;
+    font-style: normal;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    text-decoration-line: underline;
+    text-transform: uppercase;
 
-    &-street {
-      //font-size: 1.2rem;
-      //line-height: 1.5rem;
-      font-size: 1.4rem;
-      line-height: 1.7rem;
-      padding-left: 3.5rem;
-    }
+    color: $color_beige;
 
     @media(min-width: $tablet-width) {
-      &-link:hover,
-      &-link:focus {
-        span {
-          @include transition(color);
-          color: $color_beige;
-        }
+      &:hover,
+      &:focus {
+        @include transition(color);
+        color: $color_white;
       }
 
-      &-link:active {
-        span {
-          @include transition(opacity);
-          opacity: 0.7;
-        }
+      &:active {
+        @include transition(opacity);
+        opacity: 0.7;
       }
     }
   }
 
   &__contacts {
-    position: relative;
     display: flex;
     flex-direction: column;
-
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-    }
 
     a {
       font-family: $font_secondary;
@@ -87,7 +64,7 @@
     &-phone {
       font-size: 1.4rem;
       line-height: 1.7rem;
-      padding-left: 3.5rem;
+      margin-right: 3.5rem;
       margin-bottom: 0.5rem;
 
       &:last-child {
@@ -106,12 +83,6 @@
           opacity: 0.7;
         }
       }
-    }
-
-    &-callback {
-      font-size: 1.2rem;
-      line-height: 1.5rem;
-      text-decoration: underline;
     }
   }
 
