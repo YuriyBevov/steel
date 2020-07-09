@@ -12817,18 +12817,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-//import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 aos__WEBPACK_IMPORTED_MODULE_4___default.a.init({
-  //offset: 120,
   startEvent: 'DOMContentLoaded',
   delay: 500,
   duration: 1500,
   once: true,
   anchorPlacement: 'bottom-center',
-
-  //anchorPlacement: 'center-bottom',
-  //useClassNames: true
 });
 
 
