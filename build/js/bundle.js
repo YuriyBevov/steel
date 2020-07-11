@@ -12891,11 +12891,11 @@ const masonry = function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "numberAnimation", function() { return numberAnimation; });
 const numberAnimation = function () {
-  const time  = 1200; // ms
+  const time  = 1500; // ms
   const step = 1;
 
   const numAnimation = function (startNum, endNum, element) {
-    let el = document.querySelector('.' + element);
+    let el = document.querySelector(element);
     let currentNum = startNum;
     let delay = Math.round(time / (endNum / step));
     let interval = setInterval(() => {
@@ -12913,8 +12913,8 @@ const numberAnimation = function () {
     let coords = block.getBoundingClientRect();
     let pageHeight = document.documentElement.clientHeight;
     if(/*(coords.top + pageYOffset) - pageYOffset*/ coords.top < pageHeight) {
-      numAnimation( 124, 200, 'advantages__projects');
-      numAnimation( 1, 5, 'advantages__year');
+      numAnimation( 38, 200, '#projects');
+      numAnimation( 1, 5, '#year');
       window.removeEventListener('scroll', onScrollNumberAnimation)
     }
   }

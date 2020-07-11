@@ -42,18 +42,36 @@
       position: relative;
       font-family: $font_text;
 
-      font-size: 1.4rem;
-      line-height: 1.7rem;
+      font-size: 1.6rem;
+      line-height: 2rem;
       color: $color_white;
-      padding-left: 2rem;
-      margin-bottom: 1.5rem;
+      padding-left: 3rem;
+      margin-bottom: 1rem;
 
       svg {
         position: absolute;
         top: 50%;
         left: 0;
+
         fill: transparent;
         transform: translateY(-50%);
+
+        path {
+          stroke: $color_white;
+        }
+      }
+
+      @media(min-width: $tablet-width) {
+        &:hover,
+        &:focus {
+          @include transition(color);
+          color: $color_beige;
+        }
+
+        &:active{
+          @include transition(opacity);
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -63,27 +81,36 @@
 
     &-link {
       display: block;
-    }
 
-    &-city,
-    &-street {
-      font-family: $font_text;
-      font-size: 1.4rem;
-      line-height: 1.7rem;
-      color: $color_white;
-    }
+      &-city,
+      &-street {
+        display: block;
+        font-family: $font_text;
+        color: $color_white;
+      }
 
-    &-city {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1.5rem;
+      &-street {
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
 
-      svg {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        fill: transparent;
+      &-city {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        margin-bottom: 1rem;
+      }
+
+      @media(min-width: $tablet-width) {
+        &:hover span,
+        &:focus span {
+          @include transition(color);
+          color: $color_beige;
+        }
+
+        &:active span {
+          @include transition(opacity);
+          opacity: 0.7;
+        }
       }
     }
   }
