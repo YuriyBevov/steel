@@ -21,7 +21,32 @@
   }
 
   &__item {
+    span {
+      font-family: $font_secondary;
+      font-size: 6.4rem;
+      line-height: 8.9rem;
+      color: $color_beige;
+    }
 
+    width: 180px;
+
+    &-projects {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+
+  &__projects {
+    display: block;
+    width: 120px;
+  }
+
+  &__projects-plus {
+    display: block;
+    font-size: 10.4rem;
+    width: 40px;
+    text-align: center;
+    //margin-left: auto;
   }
 
   &__description {

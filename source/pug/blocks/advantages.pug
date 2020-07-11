@@ -4,12 +4,16 @@ section.advantages
     .advantages__content
       ul.advantages__list
         li.advantages__item
-          svg(width="37" height="89")
-            use(xlink:href="#icon-year")
+          span.advantages__year 1
+          //svg(width="37" height="89")
+            //use(xlink:href="#icon-year")
           p.advantages__description лет на рынке
         li.advantages__item
-          svg(width="159" height="89")
-            use(xlink:href="#icon-projects")
+          .advantages__item-projects
+            span.advantages__projects 124
+            span.advantages__projects-plus(data-aos="fade-in-out" data-aos-delay="300" data-aos-duration="1500") +
+          //svg.ansvg(width="159" height="89")
+            //use(xlink:href="#icon-projects")
           p.advantages__description проектов
       blockquote.advantages__blockquote
         p.advantages__blockquote-text(data-aos="flip-left" data-aos-delay="150" data-aos-duration="1500") &#8221; Мы делаем мебель, которая будет актуальна всегда. Простая форма и натуральные материалы вне времени и трендов. &#8221;

@@ -1,0 +1,31 @@
+export const numberAnimation = function () {
+  const time  = 1200; // ms
+  const step = 1;
+
+  const numAnimation = function (startNum, endNum, element) {
+    let el = document.querySelector('.' + element);
+    let currentNum = startNum;
+    let delay = Math.round(time / (endNum / step));
+    let interval = setInterval(() => {
+      currentNum = currentNum + step;
+      if ( currentNum == endNum) {
+        clearInterval(interval);
+      }
+      el.innerHTML = currentNum;
+    }, delay);
+  };
+
+  const block = document.querySelector('.advantages__list');
+
+  const onScrollNumberAnimation = function () {
+    let coords = block.getBoundingClientRect();
+    let pageHeight = document.documentElement.clientHeight;
+    if(/*(coords.top + pageYOffset) - pageYOffset*/ coords.top < pageHeight) {
+      numAnimation( 124, 200, 'advantages__projects');
+      numAnimation( 1, 5, 'advantages__year');
+      window.removeEventListener('scroll', onScrollNumberAnimation)
+    }
+  }
+
+  window.addEventListener('scroll', onScrollNumberAnimation)
+}();

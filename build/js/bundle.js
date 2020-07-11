@@ -12784,47 +12784,143 @@ Swiper.use(components);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
-/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! masonry-layout */ "./node_modules/masonry-layout/masonry.js");
-/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(masonry_layout__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lazysizes */ "./node_modules/lazysizes/lazysizes.js");
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lazysizes/plugins/parent-fit/ls.parent-fit */ "./node_modules/lazysizes/plugins/parent-fit/ls.parent-fit.js");
-/* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_lazy_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/lazy.js */ "./source/scripts/modules/lazy.js");
+/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
+/* harmony import */ var _modules_masonry_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/masonry.js */ "./source/scripts/modules/masonry.js");
+/* harmony import */ var _modules_aos_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/aos.js */ "./source/scripts/modules/aos.js");
+/* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
+
+
+
+
+
+
 
 
 
 // import navToggle from './modules/navToggle.js';
 
 
+/***/ }),
 
-document.addEventListener('DOMContentLoaded', function(){
-  console.log('ready')
-  var elem = document.querySelector('.grid');
-  var msnry = new masonry_layout__WEBPACK_IMPORTED_MODULE_1___default.a( elem, {
-    // options
-    percentPosition: true,
-    columnWidth: '.grid-sizer',
-    gutter: '.gutter-sizer',
-    itemSelector: '.grid-item',
+/***/ "./source/scripts/modules/aos.js":
+/*!***************************************!*\
+  !*** ./source/scripts/modules/aos.js ***!
+  \***************************************/
+/*! exports provided: aos */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aos", function() { return aos; });
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const aos = function () {
+  aos__WEBPACK_IMPORTED_MODULE_0___default.a.init({
+    startEvent: 'DOMContentLoaded',
+    delay: 500,
+    duration: 1500,
+    once: true,
+    anchorPlacement: 'bottom-center',
   });
-});
+}();
 
+
+/***/ }),
+
+/***/ "./source/scripts/modules/lazy.js":
+/*!****************************************!*\
+  !*** ./source/scripts/modules/lazy.js ***!
+  \****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lazysizes */ "./node_modules/lazysizes/lazysizes.js");
+/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lazysizes/plugins/parent-fit/ls.parent-fit */ "./node_modules/lazysizes/plugins/parent-fit/ls.parent-fit.js");
+/* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_1__);
 
 // import a plugin
 
 
 
+/***/ }),
 
-aos__WEBPACK_IMPORTED_MODULE_4___default.a.init({
-  startEvent: 'DOMContentLoaded',
-  delay: 500,
-  duration: 1500,
-  once: true,
-  anchorPlacement: 'bottom-center',
-});
+/***/ "./source/scripts/modules/masonry.js":
+/*!*******************************************!*\
+  !*** ./source/scripts/modules/masonry.js ***!
+  \*******************************************/
+/*! exports provided: masonry */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "masonry", function() { return masonry; });
+/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! masonry-layout */ "./node_modules/masonry-layout/masonry.js");
+/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(masonry_layout__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const masonry = function () {
+  document.addEventListener('DOMContentLoaded', function(){
+    var elem = document.querySelector('.grid');
+    var msnry = new masonry_layout__WEBPACK_IMPORTED_MODULE_0___default.a( elem, {
+      // options
+      percentPosition: true,
+      columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer',
+      itemSelector: '.grid-item',
+    });
+  });
+}();
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/numberAnimation.js":
+/*!***************************************************!*\
+  !*** ./source/scripts/modules/numberAnimation.js ***!
+  \***************************************************/
+/*! exports provided: numberAnimation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "numberAnimation", function() { return numberAnimation; });
+const numberAnimation = function () {
+  const time  = 1200; // ms
+  const step = 1;
+
+  const numAnimation = function (startNum, endNum, element) {
+    let el = document.querySelector('.' + element);
+    let currentNum = startNum;
+    let delay = Math.round(time / (endNum / step));
+    let interval = setInterval(() => {
+      currentNum = currentNum + step;
+      if ( currentNum == endNum) {
+        clearInterval(interval);
+      }
+      el.innerHTML = currentNum;
+    }, delay);
+  };
+
+  const block = document.querySelector('.advantages__list');
+
+  const onScrollNumberAnimation = function () {
+    let coords = block.getBoundingClientRect();
+    let pageHeight = document.documentElement.clientHeight;
+    if(/*(coords.top + pageYOffset) - pageYOffset*/ coords.top < pageHeight) {
+      numAnimation( 124, 200, 'advantages__projects');
+      numAnimation( 1, 5, 'advantages__year');
+      window.removeEventListener('scroll', onScrollNumberAnimation)
+    }
+  }
+
+  window.addEventListener('scroll', onScrollNumberAnimation)
+}();
 
 
 /***/ }),
