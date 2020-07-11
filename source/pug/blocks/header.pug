@@ -1,8 +1,8 @@
 header.header
-  .header__bar
-    .header__wrapper
+  .header__wrapper
+    .header__content
       .header__logo
-         a(href="#")
+         a(href="index.html")
            svg(width="122" height="22")
              use(xlink:href="#icon-logo")
          .header__city
@@ -18,14 +18,3 @@ header.header
         a(href="tel:+78122194093").header__contacts-phone +7 (812) 219-40-93
 
       a(href="#").header__callback заказать звонок
-
-  .header__content
-    .header__content-wrapper.wrapper
-
-      h1.header__content-title Сварочная мастерская Steel Balls
-      p.header__content-description ЛОФТ ПЕРЕГОРОДКИ И&nbsp;МЕБЕЛЬ РУЧНОЙ РАБОТЫ
-
-      .header__content-action
-        a(href="#").header__content-action-link.t-link Посмотреть проекты
-        a(href="#").header__content-action-link.s-link Оставить заявку
-      include ./social

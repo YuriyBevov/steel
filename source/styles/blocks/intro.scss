@@ -1,0 +1,58 @@
+.intro {
+  padding-top: 19rem;
+  min-height: 825px;
+  background-color: $header_background;
+  background-size: cover;
+  background-position: center;
+
+  &__wrapper {
+    @include container();
+  }
+
+  &__title {
+    font-family: $font_secondary;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    color: $color_white;
+  }
+
+  &__description {
+    max-width: 800px;
+    font-weight: normal;
+    font-size: 4.8rem;
+    line-height: 6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    color: $color_white;
+  }
+
+  &__action {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 19rem;
+
+    &-link {
+      margin-right: 5.5rem;
+    }
+  }
+}
+
+.webp .intro {
+  background-image: url("../img/static/header-background@1x.webp");
+
+  @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
+    background-image: url("../img/static/header-background@2x.webp");
+  }
+}
+
+.no-webp .intro {
+  background-image: url("../img/static/header-background@1x.jpg");
+
+  @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
+    background-image: url("../img/static/header-background@2x.jpg");
+  }
+}

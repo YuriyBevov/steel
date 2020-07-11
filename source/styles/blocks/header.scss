@@ -1,11 +1,10 @@
 .header {
 
-  &__bar {
-    display: flex;
+  &__wrapper {
     background-color: $color_black;
   }
 
-  &__wrapper {
+  &__content {
     @include container();
     display: flex;
     flex-wrap: wrap;
@@ -17,9 +16,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
     svg {
       margin-right: 0.5rem;
     }
+
     span {
       font-family: $font_secondary;
       font-size: 1.6rem;
@@ -39,6 +40,7 @@
     color: $color_beige;
 
     @media(min-width: $tablet-width) {
+
       &:hover,
       &:focus {
         @include transition(color);
@@ -72,6 +74,7 @@
       }
 
       @media(min-width: $tablet-width) {
+
         &:hover,
         &:focus {
           @include transition(color);
@@ -84,61 +87,5 @@
         }
       }
     }
-  }
-
-
-  &__content {
-    padding-top: 19rem;
-    min-height: 825px;
-    background-color: $header_background;
-    background-size: cover;
-    background-position: center;
-
-    &-title {
-      font-family: $font_secondary;
-      font-weight: 500;
-      font-size: 2rem;
-      line-height: 2.5rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-      color: $color_white;
-    }
-
-    &-description {
-      max-width: 800px;
-      font-weight: normal;
-      font-size: 4.8rem;
-      line-height: 6rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 5rem;
-      color: $color_white;
-    }
-
-    &-action {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 19rem;
-
-      &-link {
-        margin-right: 5.5rem;
-      }
-    }
-  }
-}
-
-.webp .header__content {
-  background-image: url("../img/static/header-background@1x.webp");
-
-  @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-    background-image: url("../img/static/header-background@2x.webp");
-  }
-}
-
-.no-webp .header__content {
-  background-image: url("../img/static/header-background@1x.jpg");
-
-  @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-    background-image: url("../img/static/header-background@2x.jpg");
   }
 }
