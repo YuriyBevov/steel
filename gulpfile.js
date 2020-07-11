@@ -137,17 +137,33 @@ exports.refresh = refresh;
 
 // --- image optimization and svg-sprite --- //
 
-const img = () => {
+const imgOpt = () => {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
-      imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive: true}),
-      imagemin.svgo()
+        imagemin.gifsicle({interlaced: true}),
+        imagemin.mozjpeg({quality: 75, progressive: true}),
+        imagemin.optipng({optimizationLevel: 3}),
+        imagemin.svgo({
+            plugins: [
+                {removeViewBox: true},
+                {cleanupIDs: false}
+            ]
+        })
     ]))
     .pipe(gulp.dest("source/img"));
 }
 
-exports.img = img;
+exports.imgOpt = imgOpt;
+
+const lqip = () => {
+  return gulp.src("source/img/**/*.jpg")
+  .pipe(imagemin([
+      imagemin.mozjpeg({quality: 6, progressive: true}),
+  ]))
+  .pipe(gulp.dest("source/img/lqip"));
+}
+
+exports.lqip = lqip;
 
 // Webp
 

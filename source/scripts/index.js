@@ -5,6 +5,7 @@ import slidersInit from "./modules/swiper.js";
 import masonry from "./modules/masonry.js"
 import aos from "./modules/aos.js";
 import numberAnimation from "./modules/numberAnimation.js";
+import modernizrWebp from "./modules/modernizrWebp.js";
 
 
 // import navToggle from './modules/navToggle.js';

@@ -25,21 +25,21 @@ section.advantages
       .swiper-wrapper
         -
           const advantages = [
-            {description: 'Фото мастерской', url: 'img/adv_1'},
-            {description: 'Фото мастерской', url: 'img/adv_2'},
-            {description: 'Фото мастерской', url: 'img/adv_3'},
-            {description: 'Фото мастерской', url: 'img/adv_1'},
-            {description: 'Фото мастерской', url: 'img/adv_2'},
-            {description: 'Фото мастерской', url: 'img/adv_3'},
-            {description: 'Фото мастерской', url: 'img/adv_1'},
-            {description: 'Фото мастерской', url: 'img/adv_2'},
-            {description: 'Фото мастерской', url: 'img/adv_3'},
+            {description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
+            {description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
+            {description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
+            {description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
+            {description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
+            {description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
+            {description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
+            {description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
+            {description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
           ];
         each advantage in advantages
           .swiper-slide
             picture
-              source(type="image/webp" data-srcset=advantage.url + '@1x.webp 1x,' + advantage.url + '@2x.webp 2x')
-              img.lazyload.blur-up(data-src=advantage.url + '@1x.jpg' data-srcset=advantage.url + '@2x.jpg 2x' alt=advantage.description)
+              source(type="image/webp" srcset=advantage.lqip + '@1x.jpg' data-srcset=advantage.url + '@1x.webp 1x,' + advantage.url + '@2x.webp 2x')
+              img.lazyload.blur-up(src=advantage.lqip + '@1x.jpg' data-src=advantage.url + '@1x.jpg' data-srcset=advantage.url + '@2x.jpg 2x' alt=advantage.description)
 
       // slider navigation
 

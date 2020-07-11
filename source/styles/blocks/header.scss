@@ -90,7 +90,7 @@
   &__content {
     padding-top: 19rem;
     min-height: 825px;
-    background-image: url("../img/static/header-background@1x.jpg");
+    background-color: $header_background;
     background-size: cover;
     background-position: center;
 
@@ -124,5 +124,21 @@
         margin-right: 5.5rem;
       }
     }
+  }
+}
+
+.webp .header__content {
+  background-image: url("../img/static/header-background@1x.webp");
+
+  @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
+    background-image: url("../img/static/header-background@2x.webp");
+  }
+}
+
+.no-webp .header__content {
+  background-image: url("../img/static/header-background@1x.jpg");
+
+  @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
+    background-image: url("../img/static/header-background@2x.jpg");
   }
 }
