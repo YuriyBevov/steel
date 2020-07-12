@@ -1,8 +1,11 @@
 export const mapInit = function () {
   const map = document.querySelector('#map');
   if(map) {
+
     ymaps.ready(init);
     function init(){
+
+      // &apikey=4aa8fccd-d097-4486-835a-704db2b05b2e // мой ключ
 
         // Создание карты.
         let myMap = new ymaps.Map("map", {
