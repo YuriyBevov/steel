@@ -12886,7 +12886,7 @@ const mapInit = function () {
           },
           {
           iconLayout: 'default#image',
-          iconImageHref: '../img/icons/icon-map.svg',
+          iconImageHref: './img/icons/icon-map.svg',
           iconImageSize: [30, 42],
         });
 
