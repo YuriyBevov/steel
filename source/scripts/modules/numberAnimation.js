@@ -20,12 +20,14 @@ export const numberAnimation = function () {
   const onScrollNumberAnimation = function () {
     let coords = block.getBoundingClientRect();
     let pageHeight = document.documentElement.clientHeight;
-    if(/*(coords.top + pageYOffset) - pageYOffset*/ coords.top < pageHeight) {
+    if(coords.top < pageHeight) {
       numAnimation( 38, 200, '#projects');
       numAnimation( 1, 5, '#year');
       window.removeEventListener('scroll', onScrollNumberAnimation)
     }
   }
 
-  window.addEventListener('scroll', onScrollNumberAnimation)
+  if (block) {
+    window.addEventListener('scroll', onScrollNumberAnimation)
+  }
 }();

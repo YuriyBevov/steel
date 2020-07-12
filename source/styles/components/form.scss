@@ -1,0 +1,95 @@
+.contacts-form {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-family: $font-text;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    margin-bottom: 1rem;
+    color: $color_black;
+  }
+
+  input,
+  textarea {
+    font-family: $font-text;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    width: 20rem;
+    padding: 0.3rem 0.5rem;
+    border: none;
+    border-bottom: 1px solid $color_black;
+
+    &::placeholder {
+      font-family: $font_secondary;
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+      color: $color_placeholder;
+    }
+  }
+
+  input {
+    min-height: 2.2rem;
+    margin-bottom: 4rem;
+  }
+
+  textarea {
+    height: 2.2rem;
+    max-height: 15rem;
+    resize: none;
+    margin-bottom: 4.5rem;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      min-height: 0.5rem;
+      background: $color_beige;
+    }
+  }
+
+  .contacts-form__submit {
+    &-btn {
+      width: 22.5rem;
+      font-family: $font_secondary;
+      font-size: 1.6rem;
+      line-height: 2.9rem;
+      border: 1px solid $color_black;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+      background-color: transparent;
+      color: $color_black;
+
+      @media(min-width: $tablet-width) {
+        &:hover,
+        &:focus {
+          @include transition($css_rule: color);
+          color: $color_beige;
+
+          &::before {
+            @include transition($css_rule: width);
+            width: 100%;
+          }
+        }
+
+        &:active {
+          @include transition(opacity);
+          opacity: 0.7;
+        }
+      }
+    }
+
+    &-text {
+      max-width: 32rem;
+      font-family: $font_text;
+      font-size: 1.2rem;
+      line-height: 2.2rem;
+      color: $color_black;
+    }
+  }
+}

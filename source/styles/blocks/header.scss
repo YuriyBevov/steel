@@ -1,4 +1,11 @@
+body {
+  min-height: 100vh;
+}
+
 .header {
+
+  position: sticky;
+  top: 0;
 
   &__wrapper {
     background-color: $color_black;

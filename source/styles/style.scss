@@ -22,6 +22,9 @@
 @import "components/t-link";
 @import "components/m-btn";
 @import "components/s-btn";
+@import "components/path";
+@import "components/form";
+@import "components/map";
 
 // sliders
 
@@ -30,7 +33,6 @@
 @import "masonry/projects-masonry-layout.scss";
 
 //--- blocks
-
 @import "blocks/header";
 @import "blocks/nav";
 @import "blocks/intro";
@@ -41,4 +43,5 @@
 @import "blocks/advantages";
 @import "blocks/gallery";
 @import "blocks/partnership";
+@import "blocks/contacts";
 @import "blocks/footer";
