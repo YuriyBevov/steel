@@ -22,7 +22,7 @@ export const numberAnimation = function () {
     let pageHeight = document.documentElement.clientHeight;
     if(coords.top < pageHeight) {
       numAnimation( 38, 200, '#projects');
-      numAnimation( 1, 5, '#year');
+      numAnimation( 0, 5, '#year');
       window.removeEventListener('scroll', onScrollNumberAnimation)
     }
   }

@@ -20,20 +20,11 @@ body {
   }
 
   &__city {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    svg {
-      margin-right: 0.5rem;
-    }
-
-    span {
-      font-family: $font_secondary;
-      font-size: 1.6rem;
-      line-height: 2rem;
-      color: $color_white;
-    }
+    display: block;
+    font-family: $font_secondary;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: $color_white;
   }
 
   &__callback {

@@ -12874,8 +12874,6 @@ const mapInit = function () {
     ymaps.ready(init);
     function init(){
 
-      // &apikey=4aa8fccd-d097-4486-835a-704db2b05b2e // мой ключ
-
         // Создание карты.
         let myMap = new ymaps.Map("map", {
             center: [59.90279995, 30.40527791], // координаты Бехтерева 3к3
@@ -12994,7 +12992,7 @@ const numberAnimation = function () {
     let pageHeight = document.documentElement.clientHeight;
     if(coords.top < pageHeight) {
       numAnimation( 38, 200, '#projects');
-      numAnimation( 1, 5, '#year');
+      numAnimation( 0, 5, '#year');
       window.removeEventListener('scroll', onScrollNumberAnimation)
     }
   }

@@ -12,6 +12,10 @@
     flex-wrap: wrap;
   }
 
+  &__logo {
+    margin-bottom: 1rem;
+  }
+
   &__logo,
   &__contacts,
   &__address {
@@ -78,6 +82,16 @@
 
   &__address {
     font-style: normal;
+    display: block;
+    font-family: $font_text;
+    color: $color_white;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /*&__address {
+    font-style: normal;
 
     &-link {
       display: block;
@@ -113,5 +127,5 @@
         }
       }
     }
-  }
+  }*/
 }
