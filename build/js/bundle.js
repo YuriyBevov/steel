@@ -12792,7 +12792,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
 /* harmony import */ var _modules_modernizrWebp_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/modernizrWebp.js */ "./source/scripts/modules/modernizrWebp.js");
 /* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
-/* harmony import */ var _modules_popups_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/popups.js */ "./source/scripts/modules/popups.js");
 
 
 
@@ -12803,7 +12802,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+//import closePopups from './modules/popups.js';
 
 // import navToggle from './modules/navToggle.js';
 
@@ -13005,108 +13004,6 @@ const numberAnimation = function () {
 
 /***/ }),
 
-/***/ "./source/scripts/modules/popups.js":
-/*!******************************************!*\
-  !*** ./source/scripts/modules/popups.js ***!
-  \******************************************/
-/*! exports provided: closePopups */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closePopups", function() { return closePopups; });
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.js */ "./source/scripts/modules/utils.js");
-
-
-const closePopups = () => {
-  const mapLink = document.querySelectorAll('#mapPopup');
-  const mapPopup = document.querySelector('.map-popup');
-  const closeBtn = document.querySelector('.map-popup__close-btn');
-
-  const closePopup = () => {
-    mapPopup.classList.add('closed');
-  }
-
-  const removeEventListeners = () => {
-    document.removeEventListener("keydown", onEscCloseHandler)
-    document.removeEventListener("mousedown", onClickCloseHandler)
-  }
-
-  const onEscCloseHandler = (evt) => {
-    if (evt.keyCode === 27) {
-      closePopup();
-      removeEventListeners();
-    }
-  }
-
-  const onClickCloseHandler = (evt) => {
-    const map = mapPopup.querySelector('.map');
-    const map__area = evt.target == map || map.contains(evt.target);
-
-    if (!map__area) {
-      closePopup();
-      removeEventListeners();
-    }
-  }
-
-  const onClickCloseBtnHandler = () => {
-    closePopup();
-    removeEventListeners();
-    ymaps.destroy()
-  }
-
-  closeBtn.addEventListener('click', onClickCloseBtnHandler)
-
-  const onClickHandler = (e) => {
-    e.preventDefault();
-
-    /*const oldMap = document.querySelector('#map');
-    const newMap = mapPopup.querySelector('#map');
-
-    console.log(newMap)
-    if(oldMap) {
-      newMap.setAttribute('id', 'newMap');
-      ymaps.ready(init);
-      function init(){
-
-          // Создание карты.
-          let myMap = new ymaps.Map("newMap", {
-              center: [59.90279995, 30.40527791], // координаты Бехтерева 3к3
-              zoom: 16
-          });
-
-          var myPlacemark = new ymaps.Placemark([59.90233115, 30.40756371],
-            {
-              hintContent: '<span class="map__placemark-hint">МЫ ЗДЕСЬ :)</span>',
-              balloonContentHeader: '<h2 class="map__placemark-title">STEEL BALLS</h2>',
-              balloonContentBody: '<p class="map__placemark-description">Сварочная мастерская</p>',
-              balloonContentFooter: '<a href="tel: 89006221818" class="map__placemark-link">8 (900) 6221818</a>',
-            },
-            {
-            iconLayout: 'default#image',
-            iconImageHref: './img/icons/icon-map.svg',
-            iconImageSize: [30, 42],
-          });
-
-          myMap.geoObjects.add(myPlacemark);
-      }
-    }
-    console.log(oldMap);*/
-    Object(_utils_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(mapPopup, 'closed');
-    document.addEventListener('keydown', onEscCloseHandler);
-    document.addEventListener('mousedown', onClickCloseHandler);
-  }
-
-  for( let i = 0; i < mapLink.length; i++) {
-    mapLink[i].addEventListener('click', onClickHandler);
-  }
-};
-
-closePopups();
-
-
-/***/ }),
-
 /***/ "./source/scripts/modules/swiper.js":
 /*!******************************************!*\
   !*** ./source/scripts/modules/swiper.js ***!
@@ -13173,30 +13070,6 @@ __webpack_require__.r(__webpack_exports__);
 const resize = function () {
   _plugins_autosize_js__WEBPACK_IMPORTED_MODULE_0___default()(document.querySelectorAll('textarea'));
 }();
-
-
-/***/ }),
-
-/***/ "./source/scripts/modules/utils.js":
-/*!*****************************************!*\
-  !*** ./source/scripts/modules/utils.js ***!
-  \*****************************************/
-/*! exports provided: toggleElem, removeClass */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleElem", function() { return toggleElem; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
-function toggleElem(el, cl) {
-  el.classList.toggle(cl);
-}
-
-function removeClass(el,cl) {
-  el.classList.remove(cl);
-}
-
-
 
 
 /***/ }),
