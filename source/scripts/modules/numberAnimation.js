@@ -11,7 +11,7 @@ export const numberAnimation = function () {
       if ( currentNum == endNum) {
         clearInterval(interval);
       }
-      el.innerHTML = currentNum;
+      el.textContent = currentNum;
     }, delay);
   };
 

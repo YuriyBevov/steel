@@ -6,4 +6,8 @@ function removeClass(el,cl) {
   el.classList.remove(cl);
 }
 
-export {toggleElem, removeClass};
+function addClass(el,cl) {
+  el.classList.add(cl);
+}
+
+export {toggleElem, removeClass, addClass};

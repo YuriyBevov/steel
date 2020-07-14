@@ -12802,9 +12802,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import closePopups from './modules/popups.js';
-
-// import navToggle from './modules/navToggle.js';
+// import modalInit from './modules/modals.js'; // инит модалок готовый скрипт !!!
 
 
 /***/ }),
@@ -12850,7 +12848,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lazysizes/plugins/parent-fit/ls.parent-fit */ "./node_modules/lazysizes/plugins/parent-fit/ls.parent-fit.js");
 /* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_1__);
 
-// import a plugin
 
 
 
@@ -12947,11 +12944,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const modernizrWebp = function() {
-
-  //modernizr-webp
-    Modernizr.on('webp', function() {
-    });
-
+//modernizr-webp
+  Modernizr.on('webp', function() {
+  });
 }();
 
 
@@ -12980,7 +12975,7 @@ const numberAnimation = function () {
       if ( currentNum == endNum) {
         clearInterval(interval);
       }
-      el.innerHTML = currentNum;
+      el.textContent = currentNum;
     }, delay);
   };
 
@@ -13015,8 +13010,6 @@ const numberAnimation = function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "slidersInit", function() { return slidersInit; });
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/js/swiper.esm.bundle.js");
-
-
 
 
 const slidersInit = function () {

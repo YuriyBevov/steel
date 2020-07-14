@@ -8,6 +8,4 @@ import aos from "./modules/aos.js";
 import numberAnimation from "./modules/numberAnimation.js";
 import modernizrWebp from "./modules/modernizrWebp.js";
 import mapInit from './modules/map.js';
-//import closePopups from './modules/popups.js';
-
-// import navToggle from './modules/navToggle.js';
+// import modalInit from './modules/modals.js'; // инит модалок готовый скрипт !!!
