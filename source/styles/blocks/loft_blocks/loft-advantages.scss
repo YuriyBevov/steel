@@ -1,0 +1,5 @@
+.loft-advantages {
+  &__wrapper {
+    @include container();
+  }
+}

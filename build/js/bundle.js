@@ -13445,48 +13445,49 @@ __webpack_require__.r(__webpack_exports__);
 
 function modal(openButtonClass, modalClass) {
 
-  const btn = document.querySelector(openButtonClass);
-  const modal = document.querySelector(modalClass);
-  const closeBtn = modal.querySelector('.modal__close')
+    const btn = document.querySelector(openButtonClass);
+    const modal = document.querySelector(modalClass);
+    const closeBtn = modal.querySelector('.modal__close');
 
-  const removeListeners = () => {
-    window.removeEventListener('keydown', onEscBtnHandler);
-    window.removeEventListener('mousedown', onMousedownHandler);
-  }
+    const removeListeners = () => {
+      window.removeEventListener('keydown', onEscBtnHandler);
+      window.removeEventListener('mousedown', onMousedownHandler);
+    }
 
-  const onCloseBtnClickHandler = () => {
-    Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-    removeListeners();
-    closeBtn.removeEventListener('click', onCloseBtnClickHandler);
-  }
-
-  const onEscBtnHandler = (evt) => {
-    if (evt.keyCode === 27) {
+    const onCloseBtnClickHandler = () => {
       Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
       removeListeners();
+      closeBtn.removeEventListener('click', onCloseBtnClickHandler);
     }
-  }
 
-  const onMousedownHandler = (evt) => {
-    const modalContent = document.querySelector(modalClass + '__wrapper');
-    const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
-    if(!clickArea) {
-      Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-      removeListeners();
+    const onEscBtnHandler = (evt) => {
+      if (evt.keyCode === 27) {
+        Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
+        removeListeners();
+      }
     }
-  }
 
-  const onClickHandler = (evt) => {
-    evt.preventDefault();
-    console.log('click')
-    Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(modal, 'closed');
-    closeBtn.addEventListener('click', onCloseBtnClickHandler);
-    closeBtn.focus();
-    window.addEventListener('keydown', onEscBtnHandler);
-    window.addEventListener('mousedown', onMousedownHandler);
-  }
+    const onMousedownHandler = (evt) => {
+      const modalContent = document.querySelector(modalClass + '__wrapper');
+      const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
+      if(!clickArea) {
+        Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
+        removeListeners();
+      }
+    }
 
-  btn.addEventListener('click', onClickHandler);
+    const onClickHandler = (evt) => {
+      evt.preventDefault();
+      Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(modal, 'closed');
+      closeBtn.addEventListener('click', onCloseBtnClickHandler);
+      closeBtn.focus();
+      window.addEventListener('keydown', onEscBtnHandler);
+      window.addEventListener('mousedown', onMousedownHandler);
+    }
+
+  if (btn && modal) {
+    btn.addEventListener('click', onClickHandler);
+  }
 };
 
 

@@ -1,5 +1,6 @@
 .path {
   @include container();
+  display: block;
   font-family: $font_text;
   font-size: 1.6rem;
   line-height: 2.2rem;

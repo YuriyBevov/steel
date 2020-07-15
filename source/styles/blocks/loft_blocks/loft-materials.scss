@@ -1,0 +1,33 @@
+.loft-materials {
+  padding: 5.5rem 0;
+  background-color: $color_grey;
+
+  &__wrapper {
+    @include container();
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+  }
+
+  &__description {
+    font-family: $font_text;
+    font-size: 2rem;
+    line-height: 3.8rem;
+    max-width: 530px;
+    color: $color_black;
+  }
+
+  picture {
+    width: 473px;
+    height: 378px;
+  }
+}

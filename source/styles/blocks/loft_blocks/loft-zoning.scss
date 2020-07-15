@@ -1,0 +1,5 @@
+.loft-zoning {
+  &__wrapper {
+    @include container();
+  }
+}
