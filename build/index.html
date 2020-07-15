@@ -35,7 +35,7 @@
         <div class="intro__wrapper">
           <h1 class="intro__title">Сварочная мастерская Steel Balls</h1>
           <p class="intro__description">ЛОФТ ПЕРЕГОРОДКИ И&nbsp;МЕБЕЛЬ РУЧНОЙ РАБОТЫ</p>
-          <div class="intro__action"><a class="intro__action-link t-link" href="#">Посмотреть проекты</a><a class="intro__action-link s-link" href="#">Оставить заявку</a></div>
+          <div class="intro__action"><a class="t-link intro__action-link" href="#">Посмотреть проекты</a><a class="s-link intro__action-link intro__action-link--order" href="#">Оставить заявку</a></div>
           <div class="social">
             <ul class="social__list">
               <li class="social__item"><a href="#">
@@ -504,16 +504,28 @@
         </div>
       </div>
     </footer>
-    <div class="map-popup closed">
-      <div class="map-popup__wrapper">
-        <button class="map-popup__close-btn">close</button>
-        <p>первая модалка</p>
+    <div class="modal modal-callback closed">
+      <div class="modal__wrapper modal-callback__wrapper">
+        <button class="modal__close close">закрыть</button>
+        <p>заказать звонок</p>
       </div>
     </div>
-    <div class="map-popup map-popup2 closed">
-      <div class="map-popup__wrapper">
-        <button class="map-popup__close-btn">close</button>
-        <p>вторая модалка</p>
+    <div class="modal modal-order closed">
+      <div class="modal__wrapper modal-order__wrapper">
+        <button class="modal__close close">закрыть</button>
+        <p>это модальное окно оставить заявку</p>
+      </div>
+    </div>
+    <div class="modal modal-dialog closed">
+      <div class="modal__wrapper modal-dialog__wrapper">
+        <button class="modal__close close">закрыть</button>
+        <p>это модальное окно обсудить проект</p>
+      </div>
+    </div>
+    <div class="modal modal-question closed">
+      <div class="modal__wrapper modal-question__wrapper">
+        <button class="modal__close close">закрыть</button>
+        <p>это модальное окно задать вопрос</p>
       </div>
     </div>
     <script src="./js/bundle.js"></script>

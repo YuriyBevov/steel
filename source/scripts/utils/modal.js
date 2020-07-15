@@ -1,10 +1,10 @@
 import {removeClass, addClass, toggleElem} from './func.js';
 
-export default function modal(openButtonClass, modalClass, closeBtnClass) {
+export default function modal(openButtonClass, modalClass) {
 
   const btn = document.querySelector(openButtonClass);
   const modal = document.querySelector(modalClass);
-  const closeBtn = modal.querySelector(closeBtnClass)
+  const closeBtn = modal.querySelector('.modal__close')
 
   const removeListeners = () => {
     window.removeEventListener('keydown', onEscBtnHandler);
@@ -35,6 +35,7 @@ export default function modal(openButtonClass, modalClass, closeBtnClass) {
 
   const onClickHandler = (evt) => {
     evt.preventDefault();
+    console.log('click')
     removeClass(modal, 'closed');
     closeBtn.addEventListener('click', onCloseBtnClickHandler);
     closeBtn.focus();
