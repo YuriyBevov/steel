@@ -39,7 +39,7 @@
     }
 
     path.start-animation {
-      animation: svg_animation 2s 0.5s ease-out forwards;
+      animation: svg_animation 2s 0.8s ease-out forwards;
     }
   }
 
@@ -49,10 +49,11 @@
     path {
       stroke-width: 2px;
       stroke: $color_white;
+      margin-right: 1rem;
     }
 
     path.start-animation2 {
-      animation: svg_animation2 2s 0.5s ease-out forwards;
+      animation: svg_animation2 2s 0.8s ease-out forwards;
     }
   }
 
