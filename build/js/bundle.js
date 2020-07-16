@@ -12828,6 +12828,17 @@ for(let i = 0; i < path2.length; i++) {
   path2[i].classList.add('start-animation2');
 }
 
+const path3 = document.querySelectorAll('.intro__description3 path');
+
+for(let i = 0; i < path3.length; i++) {
+
+  let pathLength = path3[i].getTotalLength();
+
+  path3[i].setAttribute('stroke-dasharray', pathLength);
+  path3[i].setAttribute('stroke-dashoffset', pathLength);
+  path3[i].classList.add('start-animation3');
+}
+
 
 /***/ }),
 

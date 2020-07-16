@@ -47,9 +47,8 @@
     margin-bottom: 5rem;
 
     path {
-      stroke-width: 2px;
+      stroke-width: 0.06rem;
       stroke: $color_white;
-      margin-right: 1rem;
     }
 
     path.start-animation2 {
@@ -57,18 +56,34 @@
     }
   }
 
+  &__description3 {
+    margin-bottom: 5rem;
+
+    path {
+      stroke-width: 0.06rem;
+      stroke: $color_white;
+      margin-right: 1rem;
+    }
+
+    path.start-animation3 {
+      animation: svg_animation3 2s 0.8s ease-out forwards;
+    }
+  }
+
 
 
   @keyframes svg_animation {
 
-    95% {
+    75% {
       stroke-dashoffset: 0;
       fill: transparent;
+      stroke-width: 1.5px;
     }
 
     100% {
       stroke-dashoffset: 0;
-      //fill: $color_white;
+      stroke-width: 0;
+      fill: $color_white;
     }
   }
 
@@ -82,6 +97,19 @@
     100% {
       stroke-dashoffset: 0;
       fill: $color_white;
+    }
+  }
+
+  @keyframes svg_animation3 {
+
+    95% {
+      stroke-dashoffset: 0;
+      fill: transparent;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+      fill: transparent;
     }
   }
 
