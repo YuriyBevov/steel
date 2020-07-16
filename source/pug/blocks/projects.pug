@@ -24,5 +24,8 @@ section.projects
             picture
               source(type="image/webp" srcset=item.lqip + '@1x.jpg' data-srcset=item.url + '@1x.webp 1x,' + item.url + '@2x.webp 2x')
               img.lazyload.blur-up(src=item.lqip + '@1x.jpg' data-src=item.url + '@1x.jpg' data-srcset=item.url + '@2x.jpg 2x' alt=item.imgAlt)
-            h3.projects__item-title(data-aos=item.effect data-aos-delay="500")=item.title
-            p.projects__item-description(data-aos=item.effect)=item.description
+            h3.projects__item-title=item.title
+            p.projects__item-description=item.description
+
+            // // (data-aos=item.effect data-aos-delay="500")
+// (data-aos=item.effect) 

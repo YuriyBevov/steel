@@ -12806,6 +12806,29 @@ __webpack_require__.r(__webpack_exports__);
  // инит модалок, готовый скрипт !!!
 
 
+const path = document.querySelectorAll('.intro__description path');
+
+for(let i = 0; i < path.length; i++) {
+
+  let pathLength = path[i].getTotalLength();
+
+  path[i].setAttribute('stroke-dasharray', pathLength);
+  path[i].setAttribute('stroke-dashoffset', pathLength);
+  path[i].classList.add('start-animation');
+}
+
+const path2 = document.querySelectorAll('.intro__description2 path');
+
+for(let i = 0; i < path2.length; i++) {
+
+  let pathLength = path2[i].getTotalLength();
+
+  path2[i].setAttribute('stroke-dasharray', pathLength);
+  path2[i].setAttribute('stroke-dashoffset', pathLength);
+  path2[i].classList.add('start-animation2');
+}
+
+
 /***/ }),
 
 /***/ "./source/scripts/modules/aos.js":
