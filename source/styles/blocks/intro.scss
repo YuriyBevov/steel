@@ -35,7 +35,6 @@
 
     path {
       stroke-width: 2px;
-      stroke: $color_white;
     }
 
     path.start-animation {
@@ -43,36 +42,10 @@
     }
   }
 
-  &__description2 {
-    margin-bottom: 5rem;
-
-    path {
-      stroke-width: 0.06rem;
-      stroke: $color_white;
-    }
-
-    path.start-animation2 {
-      animation: svg_animation2 2s 0.8s ease-out forwards;
-    }
-  }
-
-  &__description3 {
-    margin-bottom: 5rem;
-
-    path {
-      stroke-width: 0.06rem;
-      stroke: $color_white;
-      margin-right: 1rem;
-    }
-
-    path.start-animation3 {
-      animation: svg_animation3 2s 0.8s ease-out forwards;
-    }
-  }
-
-
-
   @keyframes svg_animation {
+    0% {
+      stroke: $color_white;
+    }
 
     75% {
       stroke-dashoffset: 0;
@@ -83,33 +56,8 @@
     100% {
       stroke-dashoffset: 0;
       stroke-width: 0;
+      stroke: $color_white;
       fill: $color_white;
-    }
-  }
-
-  @keyframes svg_animation2 {
-
-    95% {
-      stroke-dashoffset: 0;
-      fill: transparent;
-    }
-
-    100% {
-      stroke-dashoffset: 0;
-      fill: $color_white;
-    }
-  }
-
-  @keyframes svg_animation3 {
-
-    95% {
-      stroke-dashoffset: 0;
-      fill: transparent;
-    }
-
-    100% {
-      stroke-dashoffset: 0;
-      fill: transparent;
     }
   }
 
