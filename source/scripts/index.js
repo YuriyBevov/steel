@@ -10,14 +10,39 @@ import modernizrWebp from "./modules/modernizrWebp.js";
 import mapInit from './modules/map.js';
 import modalInit from './modules/modals.js'; // инит модалок, готовый скрипт !!!
 
+const work = function() {
 
-const path = document.querySelectorAll('.intro__description path');
+  const loader = document.querySelector('.loader');
+  const hideLoader = function () {
+    setTimeout(endLoading, 2000)
+    function endLoading () {
 
-for(let i = 0; i < path.length; i++) {
+      loader.style.display = "none";
+      clearTimeout(hideLoader);
+      document.removeEventListener("DOMContentLoaded", work);
 
-  let pathLength = path[i].getTotalLength();
+      const path = document.querySelectorAll('.intro__description path');
 
-  path[i].setAttribute('stroke-dasharray', pathLength);
-  path[i].setAttribute('stroke-dashoffset', pathLength);
-  path[i].classList.add('start-animation');
+      for(let i = 0; i < path.length; i++) {
+
+        let pathLength = path[i].getTotalLength();
+
+        path[i].setAttribute('stroke-dasharray', pathLength);
+        path[i].setAttribute('stroke-dashoffset', pathLength);
+        path[i].classList.add('start-animation');
+      }
+    }
+  };
+
+  hideLoader();
+  //loader.style.display = "none";
+}
+
+if (document.readyState == 'complete') {
+  // ещё загружается, ждём события
+  console.log('loading')
+  document.addEventListener('DOMContentLoaded', work);
+} else {
+  // DOM готов!
+  work();
 }
