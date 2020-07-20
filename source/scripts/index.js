@@ -8,16 +8,18 @@ import aos from "./modules/aos.js";
 import numberAnimation from "./modules/numberAnimation.js";
 import modernizrWebp from "./modules/modernizrWebp.js";
 import mapInit from './modules/map.js';
-import modalInit from './modules/modals.js'; // инит модалок, готовый скрипт !!!
+
 
 const work = function() {
 
   const loader = document.querySelector('.loader');
+
   const hideLoader = function () {
-    setTimeout(endLoading, 2000)
+    setTimeout(endLoading, 800)
     function endLoading () {
 
-      loader.style.display = "none";
+      loader.style.opacity = 0;
+
       clearTimeout(hideLoader);
       document.removeEventListener("DOMContentLoaded", work);
 
@@ -32,10 +34,15 @@ const work = function() {
         path[i].classList.add('start-animation');
       }
     }
+
+    setTimeout(function() {
+      loader.style.display ='none';
+    }, 1500)
+
   };
 
   hideLoader();
-  //loader.style.display = "none";
+
 }
 
 if (document.readyState == 'complete') {
@@ -46,3 +53,6 @@ if (document.readyState == 'complete') {
   // DOM готов!
   work();
 }
+
+
+//import modalInit from './modules/modals.js'; // инит модалок, готовый скрипт !!!
