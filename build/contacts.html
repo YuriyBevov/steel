@@ -87,11 +87,15 @@
         <div class="contacts__wrapper">
           <div class="contacts__content">
             <h2 class="visually-hidden">Контакты и расположение компании steel balls</h2>
-            <p class="contacts__description">
-              Мы работаем Пн-Пт  с 9:00 до 18:00.
-              Звоните и оставляйте заявки. Если у вас остались вопросы,
-              мы с удовольствием на них ответим.
-            </p>
+          </div>
+          <!-- переделать структуру-->
+          <div class="contacts__map">
+            <div class="map">
+              <div class="map__wrapper">
+                <div class="map__content" id="map"></div>
+              </div>
+            </div>
+            <p class="contacts__description">Если у вас остались вопросы, задайте их в форме ниже.</p>
             <div class="contacts__form">
               <form class="contacts-form" action="#" enctype="text/plain" method="POST">
                 <div class="contacts-form__wrapper">
@@ -105,20 +109,6 @@
                   </div>
                 </div>
               </form>
-            </div>
-          </div>
-          <div class="contacts__map">
-            <div class="map">
-              <div class="map__wrapper">
-                <div class="map__content" id="map"></div>
-                <div class="map__footer"><a class="map__footer-link" href="tel:+79006221818">
-                    <svg width="20" height="20">
-                      <use xlink:href="#icon-phone"></use>
-                    </svg>+7 (900) 622-18-18</a><a class="map__footer-link" href="mailto:stballs@mail.ru">
-                    <svg width="20" height="20">
-                      <use xlink:href="#icon-mail"></use>
-                    </svg>stballs@mail.ru</a></div>
-              </div>
             </div>
           </div>
         </div>
@@ -163,6 +153,12 @@
         </div>
       </div>
     </footer>
+    <div class="modal modal-callback closed">
+      <div class="modal__wrapper modal-callback__wrapper">
+        <button class="modal__close close">закрыть</button>
+        <p>заказать звонок</p>
+      </div>
+    </div>
     <script src="./js/bundle.js"></script>
   </body>
 </html>

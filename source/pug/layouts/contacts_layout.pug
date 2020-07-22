@@ -16,6 +16,7 @@ html(lang="ru")
 
   body
     include ../components/loader.pug
+
     div(style="display:none")
       include ../../img/sprite_auto.svg
 
@@ -25,6 +26,8 @@ html(lang="ru")
       block content
 
     include ../blocks/footer
+
+    block modals
 
     block scripts
       script(src="./js/bundle.js")

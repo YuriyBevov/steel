@@ -3,11 +3,13 @@ section.contacts
   .contacts__wrapper
     .contacts__content
       h2.visually-hidden Контакты и расположение компании steel balls
-      p.contacts__description
-        | Мы работаем Пн-Пт  с 9:00 до 18:00.
-        | Звоните и оставляйте заявки. Если у вас остались вопросы,
-        | мы с удовольствием на них ответим.
-      .contacts__form
-        include ./form
+
+
+    // переделать структуру
     .contacts__map
       include ./map
+
+      p.contacts__description Если у вас остались вопросы, задайте их в форме ниже.
+
+      .contacts__form
+        include ./questionForm

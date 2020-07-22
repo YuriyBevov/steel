@@ -4,6 +4,8 @@ export default function modal(openButtonClass, modalClass) {
 
     const btn = document.querySelector(openButtonClass);
     const modal = document.querySelector(modalClass);
+
+    if (btn && modal) {
     const closeBtn = modal.querySelector('.modal__close');
 
     const removeListeners = () => {
@@ -42,7 +44,6 @@ export default function modal(openButtonClass, modalClass) {
       window.addEventListener('mousedown', onMousedownHandler);
     }
 
-  if (btn && modal) {
     btn.addEventListener('click', onClickHandler);
   }
 };

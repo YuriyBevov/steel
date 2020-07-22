@@ -14,9 +14,9 @@ export const mapInit = function () {
         var myPlacemark = new ymaps.Placemark([59.90233115, 30.40756371],
           {
             hintContent: '<span class="map__placemark-hint">МЫ ЗДЕСЬ :)</span>',
-            balloonContentHeader: '<h2 class="map__placemark-title">STEEL BALLS</h2>',
-            balloonContentBody: '<p class="map__placemark-description">Сварочная мастерская</p>',
-            balloonContentFooter: '<a href="tel: 89006221818" class="map__placemark-link">8 (900) 6221818</a>',
+            //balloonContentHeader: '<h2 class="map__placemark-title">STEEL BALLS</h2>',
+            balloonContentBody: '<p class="map__placemark-description">Санкт-Петербург, ул. Бехтерева 3,корп 3а</p>',
+            //balloonContentFooter: '<a href="tel: 89006221818" class="map__placemark-link">8 (900) 6221818</a>',
           },
           {
           iconLayout: 'default#image',
