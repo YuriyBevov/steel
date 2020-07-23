@@ -13073,7 +13073,9 @@ const numberAnimation = function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/*const showIntroTitle = () => {
+/*
+  //----  для svg
+const showIntroTitle = () => {
   const intro = document.querySelector('.intro__description');
 
   if(intro) {

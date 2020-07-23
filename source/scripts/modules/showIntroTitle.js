@@ -1,4 +1,6 @@
-/*const showIntroTitle = () => {
+/*
+  //----  для svg
+const showIntroTitle = () => {
   const intro = document.querySelector('.intro__description');
 
   if(intro) {
