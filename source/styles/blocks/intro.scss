@@ -47,45 +47,13 @@
     opacity: 1;
   }
 
-  //------- для свг
-
-  /*&__description {
-    margin-bottom: 5rem;
-
-    path {
-      stroke-width: 2px;
-    }
-
-    path.start-animation {
-      animation: svg_animation 2s 0.2s ease-out forwards;
-    }
-  }
-
-  @keyframes svg_animation {
-    0% {
-      stroke: $color_white;
-    }
-
-    75% {
-      stroke-dashoffset: 0;
-      fill: transparent;
-      stroke-width: 1.5px;
-    }
-
-    100% {
-      stroke-dashoffset: 0;
-      stroke-width: 0;
-      stroke: $color_white;
-      fill: $color_white;
-    }
-  }*/
-
   &__action {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 19rem;
 
     &-link {
+      text-transform: uppercase;
       margin-right: 5.5rem;
     }
   }
@@ -104,5 +72,50 @@
 
   @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
     background-image: url("../img/static/header-background@2x.jpg");
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .intro {
+    padding-top: 16rem;
+    &__title {
+      font-size: 1.6rem;
+      line-height: 2rem
+    }
+
+    &__description {
+      max-width: 450px;
+      font-size: 3rem;
+      line-height: 4.2rem;
+      margin-bottom: 3.5rem;
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .intro {
+    padding-top: 14rem;
+    &__title {
+      font-size: 1.2rem;
+      line-height: 1.5rem
+    }
+
+    &__description {
+      max-width: 290px;
+      font-size: 1.9rem;
+      line-height: 2.7rem;
+      margin-bottom: 2.5rem;
+    }
+
+    &__action {
+      margin-bottom: 16rem;
+      &-link {
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 }

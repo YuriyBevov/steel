@@ -40,3 +40,37 @@
       <path d="M668.463 94.9999H659.823V68.1199H649.743V61.3999H678.543V68.1199H668.463V94.9999Z" />
       <path d="M691.509 72.9199H702.549C705.909 72.9199 708.341 73.6879 709.845 75.2239C711.381 76.7279 712.149 79.1599 712.149 82.5199V85.3999C712.149 88.7599 711.381 91.2079 709.845 92.7439C708.341 94.2479 705.909 94.9999 702.549 94.9999H682.869V61.3999H691.509V72.9199ZM724.629 94.9999H715.989V61.3999H724.629V94.9999ZM703.509 82.5199C703.509 80.5999 702.549 79.6399 700.629 79.6399H691.509V88.2799H700.629C702.549 88.2799 703.509 87.3199 703.509 85.3999V82.5199Z"/>
     </svg>
+
+
+      //------- для свг
+
+      /*&__description {
+        margin-bottom: 5rem;
+
+        path {
+          stroke-width: 2px;
+        }
+
+        path.start-animation {
+          animation: svg_animation 2s 0.2s ease-out forwards;
+        }
+      }
+
+      @keyframes svg_animation {
+        0% {
+          stroke: $color_white;
+        }
+
+        75% {
+          stroke-dashoffset: 0;
+          fill: transparent;
+          stroke-width: 1.5px;
+        }
+
+        100% {
+          stroke-dashoffset: 0;
+          stroke-width: 0;
+          stroke: $color_white;
+          fill: $color_white;
+        }
+      }*/

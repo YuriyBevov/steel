@@ -7,13 +7,13 @@
   padding: 0 150px;
 
   @media (max-width: $desktop-width) {
-    padding: 0 30px;
+    padding: 0 35px;
   }
 
   @media (max-width: $tablet-width) {
     max-width: $tablet-width;
     min-width: $mobile-width;
-    padding: 0 5px;
+    padding: 0 10px;
   }
 }
 
