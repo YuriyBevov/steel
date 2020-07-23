@@ -20,6 +20,27 @@
   }
 
   &__description {
+    max-width: 735px;
+    font-size: 4.8rem;
+    line-height: 6rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    color: $color_white;
+  }
+
+  span {
+    opacity: 0;
+    transition: all 1s ease;
+    color:$color_beige ;
+  }
+
+  span.fade {
+    color: $color_white;
+    opacity: 1;
+  }
+
+  /*&__description {
     margin-bottom: 5rem;
 
     path {
@@ -48,7 +69,7 @@
       stroke: $color_white;
       fill: $color_white;
     }
-  }
+  }*/
 
   &__action {
     display: flex;
