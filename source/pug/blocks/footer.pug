@@ -4,20 +4,32 @@ footer.footer
        a(href="#")
          svg(width="96" height="22")
            use(xlink:href="#icon-footer_logo")
-       address.footer__address г. Санкт-Петербург Бехтерева 3, корп 3а
        p.footer__copyrights &#169; Все права защищены.
 
+    include ./nav
+
+    .footer__address
+      p.footer__address-title Мы находимся
+
+      address г. Санкт-Петербург Бехтерева 3,корп 3а
+
     .footer__contacts
-      p.footer__block-title Связаться с нами
+      p.footer__contacts-title Связаться с нами
 
       a(href="tel:+79006221818").footer__contacts-link +7 (900)-622-18-18
         svg(width="20" height="20")
           use(xlink:href="#icon-phone")
 
-      a(href="mailto:stballs@mail.ru").footer__contacts-link stballs@mail.ru
+      a(href="tel: +78122194093").footer__contacts-link +7 (812)-219-40-93
         svg(width="20" height="20")
-          use(xlink:href="#icon-mail")
+          use(xlink:href="#icon-phone")
 
     .footer__social
-      p.footer__block-title Мы в соц сетях
+      p.footer__social-title Мы в соц сетях
       include ./social
+
+    .footer__info
+      p
+        | Вся представленная на сайте информация, касающаяся технических характеристик, наличия на складе,
+        | стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой,
+        | определяемой положениями Статьи 437(2) Гражданского кодекса РФ.

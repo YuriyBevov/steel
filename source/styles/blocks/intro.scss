@@ -27,6 +27,13 @@
     text-transform: uppercase;
     margin-bottom: 5rem;
     color: $color_white;
+    transform: translateY(50px);
+    transition: transform 2s ease;
+  }
+
+
+  .intro__description.animated {
+    transform: translateY(0);
   }
 
   span {
@@ -35,10 +42,12 @@
     color:$color_beige ;
   }
 
-  span.fade {
+  span.animated {
     color: $color_white;
     opacity: 1;
   }
+
+  //------- для свг
 
   /*&__description {
     margin-bottom: 5rem;

@@ -13105,12 +13105,13 @@ const showIntroTitle = () => {
   }
 
   let char = 0;
-
   let timer= setInterval(onTick, 50);
 
   function onTick(){
+    text.classList.add('animated');
     const span = text.querySelectorAll('span')[char];
-    span.classList.add('fade');
+    console.log(span)
+    span.classList.add('animated');
     char++
     if(char === splitText.length) {
       complete();

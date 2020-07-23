@@ -22,6 +22,18 @@
     margin-right: auto;
   }
 
+  &__address,
+  &__contacts,
+  &__social {
+    &-title {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      color: $color_white;
+    }
+  }
+
   &__copyrights {
     font-family: $font_secondary;
     font-size: 12px;
@@ -29,12 +41,16 @@
     color: #FFFFFF;
   }
 
-  &__block-title {
-    font-size: 1.5rem;
-    line-height: 1.8rem;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    color: $color_white;
+  &__address {
+    max-width: 150px;
+
+    address {
+      font-style: normal;
+      font-family: $font-text;
+      font-size: 1.4rem;
+      line-height: 2.7rem;
+      color: $color_white;
+    }
   }
 
   &__contacts {
@@ -57,6 +73,7 @@
         top: 50%;
         left: 0;
 
+        stroke: $color_white;
         fill: transparent;
         transform: translateY(-50%);
 
@@ -70,6 +87,11 @@
         &:focus {
           @include transition(color);
           color: $color_beige;
+
+          svg {
+            @include transition(stroke);
+            stroke: $color_beige;
+          }
         }
 
         &:active{
@@ -80,52 +102,33 @@
     }
   }
 
-  &__address {
-    font-style: normal;
-    display: block;
-    font-family: $font_text;
-    color: $color_white;
-    font-size: 1.4rem;
-    line-height: 1.6rem;
-    margin-bottom: 1.5rem;
+  &__info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+    p {
+      max-width: 620px;
+      font-family: $font_secondary;
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+      color: $color_white;
+    }
+
   }
 
-  /*&__address {
-    font-style: normal;
+  & .nav {
+    flex-grow: initial;
+    margin-right: auto;
 
-    &-link {
-      display: block;
-
-      &-city,
-      &-street {
-        display: block;
-        font-family: $font_text;
-        color: $color_white;
-      }
-
-      &-street {
-        font-size: 1.6rem;
-        line-height: 2rem;
-      }
-
-      &-city {
-        font-size: 1.8rem;
-        line-height: 2.2rem;
-        margin-bottom: 1rem;
-      }
-
-      @media(min-width: $tablet-width) {
-        &:hover span,
-        &:focus span {
-          @include transition(color);
-          color: $color_beige;
-        }
-
-        &:active span {
-          @include transition(opacity);
-          opacity: 0.7;
-        }
-      }
+    &__list {
+      display: flex;
+      flex-direction: column;
     }
-  }*/
+
+    &__item {
+      margin-bottom: 1.15rem;
+    }
+  }
 }
