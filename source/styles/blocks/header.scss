@@ -3,12 +3,15 @@ body {
 }
 
 .header {
-
   position: sticky;
   top: 0;
 
   &__wrapper {
     background-color: $color_black;
+  }
+
+  &__logo {
+    margin-right: auto;
   }
 
   &__content {
@@ -84,6 +87,30 @@ body {
           opacity: 0.7;
         }
       }
+    }
+  }
+}
+@media(max-width: $desktop-width) {
+  .header {
+    &__callback {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+  }
+}
+@media(max-width: $tablet-width) {
+  .header {
+    &__contacts {
+      display: none;
+    }
+
+    &__city {
+      font-size: 1rem;
+      line-height: 1.2rem;
+    }
+
+    &__callback {
+      display: none;
     }
   }
 }

@@ -6,9 +6,9 @@
   font-size: 1.6rem;
   line-height: 2.9rem;
   width: 235px;
-  height: 50px;
+  min-height: 50px;
 //  width: fit-content;
-//  padding: 0.9rem 2rem;
+  padding: 0 0.4rem;
   text-align: center;
   border: 2px solid transparent;
   background-color: $color_beige;
@@ -18,7 +18,7 @@
 @media(max-width: $desktop-width) {
   .s-link {
     width: 215px;
-    height: 44px;
+    min-height: 44px;
     font-size: 1.3rem;
     line-height: 2.3rem
   }
@@ -27,7 +27,7 @@
 @media(max-width: $tablet-width) {
   .s-link {
     width: 145px;
-    height: 32px;
+    min-height: 32px;
     font-size: 0.9rem;
     line-height: 1.6rem
   }

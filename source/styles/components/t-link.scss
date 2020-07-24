@@ -6,8 +6,9 @@
   font-size: 1.6rem;
   line-height: 2.9rem;
   width: 225px;
-  height: 50px;
+  min-height: 50px;
   text-align: center;
+  padding: 0 0.4rem;
   border: 3px solid $color_white;
   background-color: transparent;
   color: $color_white;
@@ -16,7 +17,7 @@
 @media(max-width: $desktop-width) {
   .t-link {
     width: 200px;
-    height: 44px;
+    min-height: 44px;
     font-size: 1.3rem;
     line-height: 2.3rem
   }
@@ -25,7 +26,7 @@
 @media(max-width: $tablet-width) {
   .t-link {
     width: 145px;
-    height: 32px;
+    min-height: 32px;
     font-size: 0.9rem;
     line-height: 1.6rem
   }

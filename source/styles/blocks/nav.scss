@@ -52,3 +52,9 @@
     }
   }
 }
+
+@media(max-width: $desktop-width) {
+  .nav {
+    display: none;
+  }
+}
