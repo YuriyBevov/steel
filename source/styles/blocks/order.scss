@@ -26,14 +26,24 @@
   &__item {
     position: relative;
     width: 50%;
-    font-family: $font_secondary;
-    font-size: 1.8rem;
-    line-height: 3.2rem;
     margin-bottom: 2.5rem;
     padding-right: 1rem;
     padding-left: 5rem;
 
-    color: $color_secondary-black;
+    &-title {
+      font-family: $font_secondary;
+      font-weight: bold;
+      font-size: 2rem;
+      line-height: 3.6rem;
+      color: $color_secondary-black;
+    }
+
+    &-text {
+      font-family: $font_secondary;
+      font-size: 1.8rem;
+      line-height: 3.2rem;
+      color: $color_secondary-black;
+    }
 
     &-icon {
       position: absolute;
@@ -48,6 +58,19 @@
     &__description {
       font-size: 1.2rem;
       line-height: 1.6rem;
+      margin-bottom: 2.5rem;
+    }
+
+    &__item {
+      &-title {
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+      }
+
+      &-text {
+        font-size: 1.3rem;
+        line-height: 2.3rem;
+      }
     }
   }
 }
@@ -57,6 +80,30 @@
     &__description {
       font-size: 0.9rem;
       line-height: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    &__list {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__item {
+      width: 100%;
+
+      &-title {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+      }
+
+      &-text {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+      }
+
+      &-icon {
+        top: 0.5rem;
+      }
     }
   }
 }

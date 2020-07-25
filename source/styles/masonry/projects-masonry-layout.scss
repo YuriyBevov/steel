@@ -41,7 +41,7 @@
 @media (max-width: $desktop-width) {
   .grid-sizer,
   .grid-item {
-    min-height: auto;
+    min-height: 280px;
 
     img {
       height: auto;
@@ -61,7 +61,7 @@
 @media (max-width: $desktop-width) {
   .grid-sizer,
   .grid-item {
-    min-height: auto;
+    min-height: 150px;
 
     img {
       height: auto;
