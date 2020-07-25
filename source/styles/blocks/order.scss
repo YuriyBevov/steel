@@ -42,3 +42,21 @@
     }
   }
 }
+
+@media(max-width: $desktop-width) {
+  .order {
+    &__description {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .order {
+    &__description {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+    }
+  }
+}

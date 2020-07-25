@@ -92,6 +92,9 @@ body {
 }
 @media(max-width: $desktop-width) {
   .header {
+    &__content {
+      position: relative;
+    }
     &__callback {
       font-size: 1.4rem;
       line-height: 1.7rem;
@@ -100,6 +103,8 @@ body {
 }
 @media(max-width: $tablet-width) {
   .header {
+
+
     &__contacts {
       display: none;
     }

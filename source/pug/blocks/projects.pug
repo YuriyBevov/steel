@@ -8,15 +8,15 @@ section.projects
 
       -
         const items = [
-          {effect: 'fade-down', class: 'grid-item--small', title: 'Подставка для цветов', description: 'Сиденье из сосны под маслом. Порошковая покраска стального каркаса', url: 'img/pr_1', lqip: 'img/lqip/pr_1', imgAlt:'проект_1'},
-          {effect: 'fade-down', class: 'grid-item--vertical', title: 'Подставка для цветов', description: 'Сиденье из сосны под маслом. Порошковая покраска стального каркаса', url:'img/pr_3', lqip: 'img/lqip/pr_3', imgAlt:'проект_2'},
-          {effect: 'fade-down', class: 'grid-item--small', title: 'Подставка для цветов', description: 'Сиденье из сосны под маслом. Порошковая покраска стального каркаса', url: 'img/pr_2', lqip: 'img/lqip/pr_2', imgAlt:'проект_3'},
-          {effect: 'fade-down', class: 'grid-item--small', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_5', lqip: 'img/lqip/pr_5', imgAlt:'проект_5'},
-          {effect: 'fade-down', class: 'grid-item--vertical', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_4', lqip: 'img/lqip/pr_4', imgAlt:'проект_4'},
-          {effect: 'fade-down', class: 'grid-item--small', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_6', lqip: 'img/lqip/pr_6', imgAlt:'проект_6'},
-          {effect: 'fade-down', class: 'grid-item--vertical', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_8', lqip: 'img/lqip/pr_8', imgAlt:'проект_8'},
-          {effect: 'fade-down', class: 'grid-item--small', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_7', lqip: 'img/lqip/pr_7', imgAlt:'проект_7'},
-          {effect: 'fade-down', class: 'grid-item--small', title: 'Стеллаж в нише', description: 'Необычный цвет + масло для дополнительной защиты.', url: 'img/pr_9', lqip: 'img/lqip/pr_9', imgAlt:'проект_9'},
+          {effect: 'fade-down', class: 'grid-item--small', title: 'Барная стойка и стулья в кофейню', description: 'Под стойкой рабочий стол для бариста, полки для хранения и открытые части под холодильники.', url: 'img/pr_1', lqip: 'img/lqip/pr_1', imgAlt:'проект_1'},
+          {effect: 'fade-down', class: 'grid-item--vertical', title: 'Стеллаж с нишей под холодильники', description: 'Полки из дуба. Для товаров в вином бутике.', url:'img/pr_3', lqip: 'img/lqip/pr_3', imgAlt:'проект_2'},
+          {effect: 'fade-down', class: 'grid-item--small', title: 'Стол и стулья из дуба и я, Иван Копосов.', description: 'Случайное фото во время фотосессии кофейни.', url: 'img/pr_2', lqip: 'img/lqip/pr_2', imgAlt:'проект_3'},
+          {effect: 'fade-down', class: 'grid-item--small', title: 'Стол в ресторан', description: 'Стальное подстолье и каменная столешница.', url: 'img/pr_5', lqip: 'img/lqip/pr_5', imgAlt:'проект_5'},
+          {effect: 'fade-down', class: 'grid-item--vertical', title: 'Декоративная лофт перегородка', description: 'Две распашные двери. Каленое стекло 5мм.', url: 'img/pr_4', lqip: 'img/lqip/pr_4', imgAlt:'проект_4'},
+          {effect: 'fade-down', class: 'grid-item--small', title: 'Барная стойка и стулья из дуба', description: 'Столешница 40мм  на стальном основании. Барные стулья с дубовой спинкой и сиденьем на стальном основании.', url: 'img/pr_6', lqip: 'img/lqip/pr_6', imgAlt:'проект_6'},
+          {effect: 'fade-down', class: 'grid-item--small', title: 'Декоративная перегородка', description: 'Стальной профиль и полосы свернутые в круги. Рама в белом цвете.', url: 'img/pr_7', lqip: 'img/lqip/pr_7', imgAlt:'проект_7'},
+          {effect: 'fade-down', class: 'grid-item--vertical', title: 'Шкаф-стеллаж', description: 'Для магазина Питер Смок.', url: 'img/pr_8', lqip: 'img/lqip/pr_8', imgAlt:'проект_8'},
+          {effect: 'fade-down', class: 'grid-item--small', title: 'Стеллажи с полками из сосны 40мм.', description: 'Для товаров в вином бутике.', url: 'img/pr_9', lqip: 'img/lqip/pr_9', imgAlt:'проект_9'},
         ];
       each item in items
         .grid-item(class=item.class)
@@ -27,5 +27,6 @@ section.projects
             h3.projects__item-title=item.title
             p.projects__item-description=item.description
 
-            // // (data-aos=item.effect data-aos-delay="500")
-// (data-aos=item.effect) 
+    a(href="#").projects__link.m-link Перейти в каталог
+      svg(width="52" height="3")
+        use(xlink:href="#icon-arr")

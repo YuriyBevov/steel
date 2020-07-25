@@ -35,7 +35,6 @@ const showIntroTitle = () => {
   function onTick(){
     text.classList.add('animated');
     const span = text.querySelectorAll('span')[char];
-    console.log(span)
     span.classList.add('animated');
     char++
     if(char === splitText.length) {

@@ -1,8 +1,11 @@
 .projects {
   padding-top: 6rem;
-  padding-bottom: 10rem;
+  padding-bottom: 6rem;
+
   &__wrapper {
     @include container();
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -25,6 +28,59 @@
       margin-bottom: 4rem;
 
       color: $color_secondary-black;
+    }
+  }
+
+  .projects__link {
+    align-self: flex-end;
+    margin-bottom: 4rem;
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .projects {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    &__item {
+      &-title {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        margin-bottom: 0.7rem;
+      }
+
+      &-description {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    .projects__link {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .projects {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+    &__item {
+      &-title {
+        font-size: 1rem;
+        line-height: 1.2rem;
+      }
+
+      &-description {
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+        margin-bottom: 1.5em;
+      }
+    }
+
+    .projects__link {
+      margin-bottom: 1.5rem;
     }
   }
 }

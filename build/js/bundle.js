@@ -12809,6 +12809,20 @@ __webpack_require__.r(__webpack_exports__);
  // инит модалок, готовый скрипт !!!
 
 
+/*const burger = document.querySelector('.toggle');
+const menu = document.querySelector('.nav');
+console.log(burger)
+
+const onBurgerClickEvent = () => {
+  if(!burger.classList.contains('opened')) {
+    burger.classList.add('opened');
+    menu.classList.add('opened');
+  }
+}
+
+burger.addEventListener('click', onBurgerClickEvent);*/
+
+
 /***/ }),
 
 /***/ "./source/scripts/modules/aos.js":
@@ -12826,12 +12840,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const aos = function () {
+
+  const minAnimationWidth = 767;
+
   aos__WEBPACK_IMPORTED_MODULE_0___default.a.init({
     startEvent: 'DOMContentLoaded',
     delay: 300,
     duration: 1300,
     once: true,
     anchorPlacement: 'bottom-center',
+    disable: function() {
+      return window.innerWidth < minAnimationWidth;
+    }
   });
 }();
 
@@ -13110,7 +13130,6 @@ const showIntroTitle = () => {
   function onTick(){
     text.classList.add('animated');
     const span = text.querySelectorAll('span')[char];
-    console.log(span)
     span.classList.add('animated');
     char++
     if(char === splitText.length) {
