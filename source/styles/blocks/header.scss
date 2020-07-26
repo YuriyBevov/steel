@@ -94,7 +94,6 @@
   .header {
     &__content {
       position: relative;
-      outline: $outline;
       transition: min-height 0.5s 0.1s ease-in;
     }
 
