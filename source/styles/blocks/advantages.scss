@@ -6,7 +6,7 @@
   }
 
   &__title {
-    max-width: 750px;
+    max-width: 75rem;
     margin-bottom: 4.5rem;
   }
 
@@ -28,7 +28,7 @@
       color: $color_beige;
     }
 
-    width: 180px;
+    width: 18rem;
 
     &-projects {
       display: flex;
@@ -38,11 +38,11 @@
         display: block;
 
         &--count {
-          width: 120px;
+          width: 12rem;
         }
 
         &--plus {
-          width: 40px;
+          width: 4rem;
           text-align: center;
         }
       }
@@ -59,8 +59,9 @@
   }
 
   &__blockquote {
-    width: calc(50% - 80px);
-    max-width: 500px;
+    width: calc(50% - 3rem);
+    margin: 0;
+    padding-left: 3rem;
 
     &-text {
       font-family: $font_text;
@@ -73,7 +74,7 @@
 
     &-author {
       font-family: $font_secondary;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 1.8rem;
       line-height: 2.2rem;
       color: $color_black;
@@ -84,6 +85,126 @@
         font-size: 1.8rem;
         line-height: 2.2rem;
         color: $color_black;
+      }
+    }
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .advantages {
+    padding: 7rem 0;
+
+    &__title {
+      max-width: 45rem;
+    }
+    &__item {
+      span {
+        font-size: 4.8rem;
+        line-height: 6.7rem;
+      }
+      &-projects {
+        &-icon {
+          &--count {
+            width: 9rem;
+          }
+        }
+      }
+    }
+
+    &__description {
+      font-size: 1.4rem;
+      line-height: 2.5rem;
+    }
+
+    &__blockquote {
+      max-width: 45rem;
+
+      &-text {
+        font-size: 1.5rem;
+        line-height: 2.7rem;
+        margin-bottom: 3.5rem;
+      }
+
+      &-author {
+        font-size: 1.6rem;
+        line-height: 2rem;
+
+        &-description {
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .advantages {
+    padding: 5rem 0;
+
+    &__title {
+      max-width: 28rem;
+      margin-bottom: 2rem;
+    }
+
+    &__content {
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+
+    &__list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    &__item {
+      width: 50%;
+      span {
+        font-size: 3.6rem;
+        line-height: 5rem;
+      }
+
+      &-projects {
+        &-icon {
+          &--count {
+            width: 7rem;
+          }
+
+          &--plus {
+            width: 2.2rem;
+          }
+        }
+      }
+    }
+
+    &__description {
+      font-size: 0.9rem;
+      line-height: 1.6rem;
+    }
+
+    &__blockquote {
+      max-width: 29rem;
+      padding-left: 0;
+      width: 100%;
+
+      &-text {
+        font-size: 1.1rem;
+        line-height: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      &-author {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+
+        &-description {
+          font-size: 1rem;
+          line-height: 1.2rem;
+          margin-bottom: 1rem;
+        }
       }
     }
   }

@@ -13576,7 +13576,7 @@ const slidersInit = function () {
 
   if(aSlider) {
     let advantagesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.advantages__swiper-container', {
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 30,
       initialSlide: 1,
       centeredSlides: true,
@@ -13585,6 +13585,26 @@ const slidersInit = function () {
         nextEl: '.a-swiper-button-next',
         prevEl: '.a-swiper-button-prev',
       },
+      breakpoints: {
+        // when window width is >= 836px
+        420: {
+          slidesPerView: 2,
+          centeredSlides: false,
+        },
+
+        768: {
+          slidesPerView: 2,
+          centeredSlides: false,
+        },
+
+        1160: {
+          centeredSlides: true,
+        },
+        // when window width is >= 1160px
+        1440: {
+          slidesPerView: 3,
+        }
+      }
     });
   }
 }();
