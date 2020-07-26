@@ -28,6 +28,6 @@ export const numberAnimation = function () {
   }
 
   if (block) {
-    window.addEventListener('scroll', onScrollNumberAnimation)
+    window.addEventListener('scroll', onScrollNumberAnimation);
   }
 }();

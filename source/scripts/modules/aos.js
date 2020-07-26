@@ -1,7 +1,6 @@
 import AOS from 'aos';
 
-export const aos = function () {
-
+ function aos() {
   const minAnimationWidth = 767;
 
   AOS.init({
@@ -9,9 +8,11 @@ export const aos = function () {
     delay: 300,
     duration: 1300,
     once: true,
-    anchorPlacement: 'bottom-center',
+    offset: 20,
     disable: function() {
       return window.innerWidth < minAnimationWidth;
     }
   });
-}();
+};
+
+export {aos}
