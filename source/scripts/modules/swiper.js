@@ -45,6 +45,7 @@ export const slidersInit = function () {
         // when window width is >= 1160px
         1440: {
           slidesPerView: 3,
+          initialSlide: 2,
         }
       }
     });

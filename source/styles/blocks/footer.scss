@@ -36,9 +36,9 @@
 
   &__copyrights {
     font-family: $font_secondary;
-    font-size: 12px;
-    line-height: 14px;
-    color: #FFFFFF;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: $color_white;
   }
 
   &__address {
@@ -108,14 +108,14 @@
     justify-content: center;
     padding-top: 4rem;
     padding-bottom: 2.5rem;
+
     p {
-      max-width: 620px;
+      max-width: 62rem;
       font-family: $font_secondary;
       font-size: 1.1rem;
       line-height: 1.5rem;
       color: $color_white;
     }
-
   }
 
   & .nav {
@@ -130,6 +130,117 @@
 
     &__item {
       margin-bottom: 1.15rem;
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .footer {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    &__copyrights {
+      font-size: 0.9rem;
+      line-height: 1.1rem;
+    }
+
+    &__address,
+    &__contacts,
+    &__social {
+      &-title {
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+      }
+    }
+
+    &__contacts {
+      &-link {
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+        padding-left: 1.5rem;
+
+        svg {
+          width: 1.1rem;
+          height: 1.3rem;
+        }
+      }
+    }
+
+    &__address {
+      address {
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+      }
+    }
+
+    &__social {
+      width: 100%;
+      padding-top: 1rem;
+    }
+
+    &__info {
+      padding-top: 2rem;
+      padding-bottom: 0.5rem;
+
+      p {
+        max-width: 42.5rem;
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+      }
+    }
+
+    & .nav {
+      &__item {
+        margin-bottom: 0.9rem;
+      }
+
+      &__link {
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .footer {
+    padding-bottom: 2rem;
+
+    &__wrapper {
+      padding: 0 3rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__logo,
+    &__contacts,
+    &__address {
+      width: 50%;
+      max-width: 50%;
+    }
+
+    &__address {
+      margin-bottom: 1rem;
+    }
+
+    &__contacts {
+      order: 3;
+    }
+
+    &__social {
+      order: 4;
+    }
+
+    & .nav {
+      order: 2;
+      width: 50%;
+      justify-content: flex-start;
+    }
+
+    &__info {
+      order: 5;
+      padding-top: 3rem;
+      padding-bottom: 1rem;
     }
   }
 }
