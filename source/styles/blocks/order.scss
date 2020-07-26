@@ -71,6 +71,30 @@
         font-size: 1.3rem;
         line-height: 2.3rem;
       }
+
+      &-icon {
+        top: 0.6rem;
+        &--door {
+          width: 27px;
+          height: 21px;
+        }
+        &--chair {
+          width: 22px;
+          height: 44px;
+        }
+        &--office {
+          width: 28px;
+          height: 25px;
+        }
+        &--home {
+          width: 36px;
+          height: 36px;
+        }
+        &--table {
+          width: 28px;
+          height: 16px;
+        }
+      }
     }
   }
 }
@@ -90,6 +114,7 @@
 
     &__item {
       width: 100%;
+      padding-left: 3.5rem;
 
       &-title {
         font-size: 1.1rem;
@@ -102,7 +127,25 @@
       }
 
       &-icon {
-        top: 0.5rem;
+        top: 0.6rem;
+
+        &--chair {
+          top: 0.3rem;
+          width: 10px;
+          height: 28px;
+        }
+        &--office {
+          width: 22.5px;
+          height: 20px;
+        }
+        &--home {
+          width: 25px;
+          height: 25px;
+        }
+        &--table {
+          width: 25px;
+          height: 14px;
+        }
       }
     }
   }

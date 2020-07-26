@@ -13535,7 +13535,6 @@ const showIntroTitle = () => {
         timer = null;
       }
     }
-
   } else {
     text.style.transform = 'translateY(0)';
   }
