@@ -13578,7 +13578,7 @@ const slidersInit = function () {
     let advantagesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.advantages__swiper-container', {
       slidesPerView: 1,
       spaceBetween: 30,
-      initialSlide: 1,
+      //initialSlide: 2,
       centeredSlides: true,
       slideToClickedSlide: true,
       navigation: {
@@ -13603,7 +13603,8 @@ const slidersInit = function () {
         // when window width is >= 1160px
         1440: {
           slidesPerView: 3,
-          initialSlide: 2,
+          centeredSlides: true,
+          initialSlide: 1,
         }
       }
     });
