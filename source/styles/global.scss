@@ -10,6 +10,33 @@
   font-size: 62.5%;
 }
 
+::-webkit-scrollbar { /* 1 - скроллбар */
+    width: 12px;
+    min-height: 8px;
+    background-color: $color_scroll-bg;
+  }
+
+  ::-webkit-scrollbar-button { /* 2 - кнопка */
+
+  }
+
+  ::-webkit-scrollbar-track { /* 3 - трек */
+  }
+
+  ::-webkit-scrollbar-track-piece { /* 4 - видимая часть трека */
+  }
+
+  ::-webkit-scrollbar-thumb { /* 5 - ползунок */
+    background-color: $color_black;
+  }
+
+  ::-webkit-scrollbar-corner { /* 6 - уголок */
+    border-radius: 1rem;
+  }
+
+  ::-webkit-resizer { /* 7 - изменение размеров */
+  }
+
 html,
 body {
   -webkit-box-sizing: border-box;

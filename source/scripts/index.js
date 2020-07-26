@@ -13,15 +13,22 @@ import mapInit from './modules/map.js';
 import modalInit from './modules/modals.js'; // инит модалок, готовый скрипт !!!
 
 
-/*const burger = document.querySelector('.toggle');
-const menu = document.querySelector('.nav');
+const burger = document.querySelector('.toggle');
+const menu = document.querySelector('.header__content');
 console.log(burger)
 
+const page = document.querySelector('html');
+console.log(page)
+
 const onBurgerClickEvent = () => {
-  if(!burger.classList.contains('opened')) {
-    burger.classList.add('opened');
-    menu.classList.add('opened');
+  burger.classList.toggle('opened');
+  menu.classList.toggle('menu-opened');
+
+  if(menu.classList.contains('menu-opened')) {
+    page.style.overflowY = 'hidden';
+  } else {
+    page.style.overflowY = 'initial'
   }
 }
 
-burger.addEventListener('click', onBurgerClickEvent);*/
+burger.addEventListener('click', onBurgerClickEvent);

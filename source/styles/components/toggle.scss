@@ -2,7 +2,6 @@
   display: none;
 }
 
-
 @media(max-width: $desktop-width) {
   .toggle {
     width: 3.8rem;
@@ -10,17 +9,51 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 3.5rem;
+    margin: 0;
+    margin-left: auto;
+    flex-grow: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
     cursor: pointer;
+    outline: none; // убрал фокус по табу
+
+    &:focus,
+    &:hover {
+      .toggle__line {
+        background-color: $color_beige;
+      }
+    }
+  
+
 
     &__line {
       width: 100%;
       height: 0.3rem;
       background-color: $color_white;
+      transition: transform 0.3s 0.1s ease-in;
 
       &:first-child {
         width: 80%;
         align-self: flex-end;
+      }
+    }
+
+    &.opened {
+      position: relative;
+      width: 2.5rem;
+      height: auto;
+
+      .toggle__line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(135deg);
+
+        &:first-child {
+          width: 100%;
+          transform: rotate(-135deg);
+        }
       }
     }
   }

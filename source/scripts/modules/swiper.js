@@ -20,7 +20,7 @@ export const slidersInit = function () {
     let advantagesSwiper = new Swiper('.advantages__swiper-container', {
       slidesPerView: 1,
       spaceBetween: 30,
-      //initialSlide: 2,
+      initialSlide: 1,
       centeredSlides: true,
       slideToClickedSlide: true,
       navigation: {
@@ -40,13 +40,15 @@ export const slidersInit = function () {
         },
 
         1160: {
+          slidesPerView: 2,
+          initialSlide: 2,
           centeredSlides: true,
         },
         // when window width is >= 1160px
         1440: {
           slidesPerView: 3,
           centeredSlides: true,
-          initialSlide: 1,
+          initialSlide: 2,
         }
       }
     });
