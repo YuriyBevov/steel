@@ -145,6 +145,11 @@
     }
 
     &__address,
+    &__contacts {
+      margin-bottom: 1rem;
+    }
+
+    &__address,
     &__contacts,
     &__social {
       &-title {
@@ -162,6 +167,8 @@
         svg {
           width: 1.1rem;
           height: 1.3rem;
+          top: 0;
+          transform: translateY(0);
         }
       }
     }
@@ -175,7 +182,6 @@
 
     &__social {
       width: 100%;
-      padding-top: 1rem;
     }
 
     &__info {
@@ -220,15 +226,17 @@
     }
 
     &__address {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     &__contacts {
       order: 3;
+      margin-bottom: 1.5rem;
     }
 
     &__social {
       order: 4;
+      padding-top: 0;
     }
 
     & .nav {

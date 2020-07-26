@@ -14,7 +14,9 @@
     svg {
       fill: $fill_svg;
 
-      @include onHoverAnimationSvg($color_beige);
+      @media(min-width: $tablet-width) {
+        @include onHoverAnimationSvg($color_beige);
+      }
     }
   }
 }
