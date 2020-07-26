@@ -1,6 +1,12 @@
+import {minAnimationWidth} from '../utils/vars.js';
+
 export const numberAnimation = function () {
   const time  = 1500; // ms
   const step = 1;
+  const startProjectsNum = 38;
+  const finProjectsNum = 200;
+  const startYearsNum = 0;
+  const finYearsNum = 5;
 
   const numAnimation = function (startNum, endNum, element) {
     let el = document.querySelector(element);
@@ -15,19 +21,30 @@ export const numberAnimation = function () {
     }, delay);
   };
 
+  const staticNum = function (num, element) {
+    let el = document.querySelector(element);
+    el.textContent = num;
+  }
+
   const block = document.querySelector('.advantages__list');
 
   const onScrollNumberAnimation = function () {
     let coords = block.getBoundingClientRect();
     let pageHeight = document.documentElement.clientHeight;
     if(coords.top < pageHeight) {
-      numAnimation( 38, 200, '#projects');
-      numAnimation( 0, 5, '#year');
+      numAnimation( startProjectsNum, finProjectsNum, '#projects');
+      numAnimation( startYearsNum, finYearsNum, '#year');
       window.removeEventListener('scroll', onScrollNumberAnimation)
     }
   }
 
-  if (block) {
-    window.addEventListener('scroll', onScrollNumberAnimation);
+  if(window.innerWidth > minAnimationWidth) {
+    if (block) {
+      window.addEventListener('scroll', onScrollNumberAnimation);
+    }
+  } else {
+    staticNum(finProjectsNum, '#projects');
+    staticNum(finYearsNum, '#year');
   }
+
 }();

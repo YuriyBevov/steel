@@ -1,7 +1,7 @@
 import AOS from 'aos';
+import {minAnimationWidth} from '../utils/vars.js'
 
  function aos() {
-  const minAnimationWidth = 767;
 
   AOS.init({
     startEvent: 'DOMContentLoaded',

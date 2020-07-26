@@ -90,6 +90,14 @@
     }
   }
 
+  @media(max-width: $tablet-width) {
+    .intro {
+      &__description {
+        transform: translateY(0);
+      }
+    }
+  }
+
   /*.webp .intro {
     background-image: url("../img/static/header-background_tablet@1x.webp");
 

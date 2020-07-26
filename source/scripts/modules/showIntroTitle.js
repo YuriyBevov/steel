@@ -1,51 +1,40 @@
-/*
-  //----  для svg
-const showIntroTitle = () => {
-  const intro = document.querySelector('.intro__description');
-
-  if(intro) {
-    const path = document.querySelectorAll('.intro__description path');
-
-    for(let i = 0; i < path.length; i++) {
-
-      let pathLength = path[i].getTotalLength();
-
-      path[i].setAttribute('stroke-dasharray', pathLength);
-      path[i].setAttribute('stroke-dashoffset', pathLength);
-      path[i].classList.add('start-animation');
-    }
-  }
-};*/
+import {minAnimationWidth} from '../utils/vars.js';
 
 const showIntroTitle = () => {
-
   const text = document.querySelector('.intro__description');
-  const strText = text.textContent;
-  const splitText = strText.split('');
+  if(window.innerWidth > minAnimationWidth) {
+    if(text) {
+      const strText = text.textContent;
+      const splitText = strText.split('');
 
-  text.textContent = '';
+      text.textContent = '';
 
-  for (let i = 0; i < splitText.length; i++) {
-    text.innerHTML += "<span>" + splitText[i] + "</span>"
-  }
+      for (let i = 0; i < splitText.length; i++) {
+        text.innerHTML += "<span>" + splitText[i] + "</span>"
+      }
 
-  let char = 0;
-  let timer= setInterval(onTick, 50);
+      let char = 0;
+      let timer= setInterval(onTick, 50);
 
-  function onTick(){
-    text.classList.add('animated');
-    const span = text.querySelectorAll('span')[char];
-    span.classList.add('animated');
-    char++
-    if(char === splitText.length) {
-      complete();
-      return;
+      function onTick(){
+        text.classList.add('animated');
+        const span = text.querySelectorAll('span')[char];
+        span.classList.add('animated');
+        char++
+        if(char === splitText.length) {
+          complete();
+          return;
+        }
+      }
+
+      function complete(){
+        clearInterval(timer);
+        timer = null;
+      }
     }
-  }
 
-  function complete(){
-    clearInterval(timer);
-    timer = null;
+  } else {
+    text.style.transform = 'translateY(0)';
   }
 };
 

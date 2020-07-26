@@ -13213,10 +13213,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aos", function() { return aos; });
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_vars_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/vars.js */ "./source/scripts/utils/vars.js");
+
 
 
  function aos() {
-  const minAnimationWidth = 767;
 
   aos__WEBPACK_IMPORTED_MODULE_0___default.a.init({
     startEvent: 'DOMContentLoaded',
@@ -13225,7 +13226,7 @@ __webpack_require__.r(__webpack_exports__);
     once: true,
     offset: 20,
     disable: function() {
-      return window.innerWidth < minAnimationWidth;
+      return window.innerWidth < _utils_vars_js__WEBPACK_IMPORTED_MODULE_1__["minAnimationWidth"];
     }
   });
 };
@@ -13435,9 +13436,16 @@ const modernizrWebp = function() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "numberAnimation", function() { return numberAnimation; });
+/* harmony import */ var _utils_vars_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/vars.js */ "./source/scripts/utils/vars.js");
+
+
 const numberAnimation = function () {
   const time  = 1500; // ms
   const step = 1;
+  const startProjectsNum = 38;
+  const finProjectsNum = 200;
+  const startYearsNum = 0;
+  const finYearsNum = 5;
 
   const numAnimation = function (startNum, endNum, element) {
     let el = document.querySelector(element);
@@ -13452,21 +13460,32 @@ const numberAnimation = function () {
     }, delay);
   };
 
+  const staticNum = function (num, element) {
+    let el = document.querySelector(element);
+    el.textContent = num;
+  }
+
   const block = document.querySelector('.advantages__list');
 
   const onScrollNumberAnimation = function () {
     let coords = block.getBoundingClientRect();
     let pageHeight = document.documentElement.clientHeight;
     if(coords.top < pageHeight) {
-      numAnimation( 38, 200, '#projects');
-      numAnimation( 0, 5, '#year');
+      numAnimation( startProjectsNum, finProjectsNum, '#projects');
+      numAnimation( startYearsNum, finYearsNum, '#year');
       window.removeEventListener('scroll', onScrollNumberAnimation)
     }
   }
 
-  if (block) {
-    window.addEventListener('scroll', onScrollNumberAnimation);
+  if(window.innerWidth > _utils_vars_js__WEBPACK_IMPORTED_MODULE_0__["minAnimationWidth"]) {
+    if (block) {
+      window.addEventListener('scroll', onScrollNumberAnimation);
+    }
+  } else {
+    staticNum(finProjectsNum, '#projects');
+    staticNum(finYearsNum, '#year');
   }
+
 }();
 
 
@@ -13481,54 +13500,44 @@ const numberAnimation = function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/*
-  //----  для svg
-const showIntroTitle = () => {
-  const intro = document.querySelector('.intro__description');
+/* harmony import */ var _utils_vars_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/vars.js */ "./source/scripts/utils/vars.js");
 
-  if(intro) {
-    const path = document.querySelectorAll('.intro__description path');
-
-    for(let i = 0; i < path.length; i++) {
-
-      let pathLength = path[i].getTotalLength();
-
-      path[i].setAttribute('stroke-dasharray', pathLength);
-      path[i].setAttribute('stroke-dashoffset', pathLength);
-      path[i].classList.add('start-animation');
-    }
-  }
-};*/
 
 const showIntroTitle = () => {
-
   const text = document.querySelector('.intro__description');
-  const strText = text.textContent;
-  const splitText = strText.split('');
+  if(window.innerWidth > _utils_vars_js__WEBPACK_IMPORTED_MODULE_0__["minAnimationWidth"]) {
+    if(text) {
+      const strText = text.textContent;
+      const splitText = strText.split('');
 
-  text.textContent = '';
+      text.textContent = '';
 
-  for (let i = 0; i < splitText.length; i++) {
-    text.innerHTML += "<span>" + splitText[i] + "</span>"
-  }
+      for (let i = 0; i < splitText.length; i++) {
+        text.innerHTML += "<span>" + splitText[i] + "</span>"
+      }
 
-  let char = 0;
-  let timer= setInterval(onTick, 50);
+      let char = 0;
+      let timer= setInterval(onTick, 50);
 
-  function onTick(){
-    text.classList.add('animated');
-    const span = text.querySelectorAll('span')[char];
-    span.classList.add('animated');
-    char++
-    if(char === splitText.length) {
-      complete();
-      return;
+      function onTick(){
+        text.classList.add('animated');
+        const span = text.querySelectorAll('span')[char];
+        span.classList.add('animated');
+        char++
+        if(char === splitText.length) {
+          complete();
+          return;
+        }
+      }
+
+      function complete(){
+        clearInterval(timer);
+        timer = null;
+      }
     }
-  }
 
-  function complete(){
-    clearInterval(timer);
-    timer = null;
+  } else {
+    text.style.transform = 'translateY(0)';
   }
 };
 
@@ -14003,6 +14012,23 @@ function modal(openButtonClass, modalClass) {
     btn.addEventListener('click', onClickHandler);
   }
 };
+
+
+/***/ }),
+
+/***/ "./source/scripts/utils/vars.js":
+/*!**************************************!*\
+  !*** ./source/scripts/utils/vars.js ***!
+  \**************************************/
+/*! exports provided: minAnimationWidth */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "minAnimationWidth", function() { return minAnimationWidth; });
+const minAnimationWidth = 767;
+
+
 
 
 /***/ })
