@@ -162,20 +162,22 @@
       &-link {
         font-size: 1.4rem;
         line-height: 1.9rem;
-        padding-left: 2.2rem;
+        //padding-left: 2.2rem;
+        padding-left: 0;
 
         svg {
-          width: 1.4rem;
+          /*width: 1.4rem;
           height: 1.9rem;
           top: 0;
-          transform: translateY(0);
+          transform: translateY(0);*/
+          display: none;
         }
       }
     }
 
     &__address {
       address {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         line-height: 1.9rem;
       }
     }
