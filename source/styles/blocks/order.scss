@@ -57,7 +57,7 @@
   .order {
     padding: 3rem 0;
     &__description {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       line-height: 1.6rem;
       margin-bottom: 2.5rem;
     }
@@ -104,8 +104,8 @@
   .order {
 
     &__description {
-      font-size: 0.9rem;
-      line-height: 1.2rem;
+      //font-size: 0.9rem;
+      //line-height: 1.2rem;
       margin-bottom: 1.8rem;
     }
 
@@ -118,7 +118,7 @@
       width: 100%;
       padding-left: 3.5rem;
 
-      &-title {
+      /*&-title {
         font-size: 1.1rem;
         line-height: 1.8rem;
       }
@@ -126,7 +126,7 @@
       &-text {
         font-size: 0.9rem;
         line-height: 1.4rem;
-      }
+      }*/
 
       &-icon {
         top: 0.6rem;

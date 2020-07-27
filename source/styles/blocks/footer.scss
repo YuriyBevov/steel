@@ -160,13 +160,13 @@
 
     &__contacts {
       &-link {
-        font-size: 1.1rem;
-        line-height: 1.3rem;
-        padding-left: 1.5rem;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        padding-left: 2.2rem;
 
         svg {
-          width: 1.1rem;
-          height: 1.3rem;
+          width: 1.4rem;
+          height: 1.9rem;
           top: 0;
           transform: translateY(0);
         }
@@ -175,8 +175,8 @@
 
     &__address {
       address {
-        font-size: 1.1rem;
-        line-height: 1.3rem;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
       }
     }
 
@@ -190,8 +190,8 @@
 
       p {
         max-width: 42.5rem;
-        font-size: 0.8rem;
-        line-height: 1.1rem;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
       }
     }
 
@@ -201,8 +201,8 @@
       }
 
       &__link {
-        font-size: 1.3rem;
-        line-height: 1.5rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
       }
     }
   }

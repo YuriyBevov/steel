@@ -118,14 +118,14 @@
 @media(max-width: $tablet-width) {
   .intro {
     padding-top: 14rem;
-    &__title {
+    /*&__title {
       font-size: 1.2rem;
       line-height: 1.5rem
-    }
+    }*/
 
     &__description {
       max-width: 290px;
-      font-size: 1.9rem;
+      font-size: 2rem;
       line-height: 2.7rem;
       margin-bottom: 2.5rem;
     }

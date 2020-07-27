@@ -19,15 +19,16 @@
     width: 200px;
     min-height: 44px;
     font-size: 1.3rem;
-    line-height: 2.3rem
+    line-height: 2.3rem;
+    margin-bottom: 1.5rem;
   }
 }
 
 @media(max-width: $tablet-width) {
-  .t-link {
+  /*.t-link {
     width: 145px;
     min-height: 32px;
     font-size: 0.9rem;
     line-height: 1.6rem
-  }
+  }*/
 }
