@@ -136,7 +136,6 @@
 
 @media(max-width: $tablet-width) {
   .header {
-
     &__content.menu-opened {
       padding-right: 2.2rem;
 
@@ -148,12 +147,24 @@
       }
 
       .header__contacts {
+        position: relative;
         display: flex;
         font-size: 1.2rem;
         line-height: 1.5rem;
         margin-bottom: 4rem;
         order: 4;
         animation: translateY 0.5s ease-in;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 14px;
+          height: 14px;
+          content: '';
+          background-image: url('../img/icons/icon-phone.svg');
+          background-size: 14px 14px;
+        }
       }
 
       .header__callback {

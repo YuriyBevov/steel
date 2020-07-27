@@ -13220,9 +13220,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aos", function() { return aos; });
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_vars_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/vars.js */ "./source/scripts/utils/vars.js");
 
-
+//import {minAnimationWidth} from '../utils/vars.js'
 
  function aos() {
 
@@ -13231,11 +13230,34 @@ __webpack_require__.r(__webpack_exports__);
     delay: 300,
     duration: 1300,
     once: true,
-    offset: 20,
-    disable: function() {
-      return window.innerWidth < _utils_vars_js__WEBPACK_IMPORTED_MODULE_1__["minAnimationWidth"];
-    }
+    offset: 200,
+    disable: 'phone'/*function() {
+      return window.innerWidth < minAnimationWidth;
+    }*/
   });
+
+
+    // код ниже не работает  тк при смене ширины, формируется масонри и высота адекватно не определяется !!! исправить поведение аос при смене ширины
+  /*onElementHeightChange(document.body, function(){
+    AOS.refresh();
+  });
+
+function onElementHeightChange(elm, callback) {
+    var lastHeight = elm.clientHeight
+    var newHeight;
+
+    (function run() {
+        newHeight = elm.clientHeight;
+        if (lastHeight !== newHeight) callback();
+        lastHeight = newHeight;
+
+        if (elm.onElementHeightChangeTimer) {
+          clearTimeout(elm.onElementHeightChangeTimer);
+        }
+
+        elm.onElementHeightChangeTimer = setTimeout(run, 200);
+    })();
+  }*/
 };
 
 
