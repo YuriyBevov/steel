@@ -1,3 +1,3 @@
-const minAnimationWidth = 767;
+const minAnimationWidth = 434;
 
 export {minAnimationWidth}

@@ -1,5 +1,5 @@
 import AOS from 'aos';
-//import {minAnimationWidth} from '../utils/vars.js'
+import {minAnimationWidth} from '../utils/vars.js'
 
  function aos() {
 
@@ -9,10 +9,14 @@ import AOS from 'aos';
     duration: 1300,
     once: true,
     offset: 200,
-    disable: 'phone'/*function() {
-      return window.innerWidth < minAnimationWidth;
-    }*/
+    disable: /*'phone'/**/function() {
+        return window.innerWidth < minAnimationWidth;
+      }
+    /**/
   });
+
+
+
 
 
     // код ниже не работает  тк при смене ширины, формируется масонри и высота адекватно не определяется !!! исправить поведение аос при смене ширины
