@@ -84,16 +84,16 @@
           height: 44px;
         }
         &--office {
-          width: 28px;
-          height: 25px;
+          width: 35px;
+          height: 30px;
         }
         &--home {
           width: 36px;
           height: 36px;
         }
         &--table {
-          width: 28px;
-          height: 16px;
+          width: 30px;
+          height: 25px;
         }
       }
     }
@@ -104,8 +104,6 @@
   .order {
 
     &__description {
-      //font-size: 0.9rem;
-      //line-height: 1.2rem;
       margin-bottom: 1.8rem;
     }
 
@@ -118,35 +116,21 @@
       width: 100%;
       padding-left: 3.5rem;
 
-      /*&-title {
-        font-size: 1.1rem;
-        line-height: 1.8rem;
-      }
-
-      &-text {
-        font-size: 0.9rem;
-        line-height: 1.4rem;
-      }*/
-
       &-icon {
         top: 0.6rem;
 
         &--chair {
           top: 0.3rem;
-          width: 10px;
-          height: 28px;
+          width: 20px;
+          height: 40px;
         }
         &--office {
-          width: 22.5px;
-          height: 20px;
-        }
-        &--home {
-          width: 25px;
+          width: 35px;
           height: 25px;
         }
-        &--table {
-          width: 25px;
-          height: 14px;
+        &--home {
+          width: 30px;
+          height: 30px;
         }
       }
     }

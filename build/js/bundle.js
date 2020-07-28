@@ -14083,7 +14083,7 @@ function modal(openButtonClass, modalClass) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "minAnimationWidth", function() { return minAnimationWidth; });
-const minAnimationWidth = 434;
+const minAnimationWidth = 435;
 
 
 
