@@ -1,6 +1,6 @@
 'use strict'
 
-//import loader from './modules/loader.js';
+import loader from './modules/loader.js';
 import resize from './modules/textareaResize.js';
 import lazy from "./modules/lazy.js";
 import slidersInit from "./modules/swiper.js";

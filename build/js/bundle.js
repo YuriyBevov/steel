@@ -13161,17 +13161,18 @@ Swiper.use(components);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
-/* harmony import */ var _modules_lazy_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/lazy.js */ "./source/scripts/modules/lazy.js");
-/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
-/* harmony import */ var _modules_masonry_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/masonry.js */ "./source/scripts/modules/masonry.js");
-/* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
-/* harmony import */ var _modules_modernizrWebp_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/modernizrWebp.js */ "./source/scripts/modules/modernizrWebp.js");
-/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
-/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
+/* harmony import */ var _modules_loader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/loader.js */ "./source/scripts/modules/loader.js");
+/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
+/* harmony import */ var _modules_lazy_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/lazy.js */ "./source/scripts/modules/lazy.js");
+/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
+/* harmony import */ var _modules_masonry_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/masonry.js */ "./source/scripts/modules/masonry.js");
+/* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
+/* harmony import */ var _modules_modernizrWebp_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/modernizrWebp.js */ "./source/scripts/modules/modernizrWebp.js");
+/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
+/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
 
 
-//import loader from './modules/loader.js';
+
 
 
 
@@ -13284,6 +13285,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_1__);
 
 
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/loader.js":
+/*!******************************************!*\
+  !*** ./source/scripts/modules/loader.js ***!
+  \******************************************/
+/*! exports provided: loader */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loader", function() { return loader; });
+/* harmony import */ var _showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./showIntroTitle.js */ "./source/scripts/modules/showIntroTitle.js");
+
+
+const loader = function() {
+  const showPage = () => {
+    document.removeEventListener("DOMContentLoaded", showPage);
+
+    const loader = document.querySelector('.loader');
+
+    const hideLoader = function () {
+      setTimeout(() => {
+          loader.style.opacity = 0;
+          Object(_showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+        }, 800)
+
+      setTimeout(() => {
+        loader.style.display ='none';
+      }, 1500)
+
+    }();
+  }
+    document.addEventListener('DOMContentLoaded', showPage);
+}();
 
 
 /***/ }),
@@ -13483,6 +13521,60 @@ const numberAnimation = function () {
   }
 
 }();
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/showIntroTitle.js":
+/*!**************************************************!*\
+  !*** ./source/scripts/modules/showIntroTitle.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_vars_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/vars.js */ "./source/scripts/utils/vars.js");
+
+
+const showIntroTitle = () => {
+  const text = document.querySelector('.intro__description');
+  if(window.innerWidth > _utils_vars_js__WEBPACK_IMPORTED_MODULE_0__["minAnimationWidth"]) {
+    if(text) {
+      const strText = text.textContent;
+      const splitText = strText.split('');
+
+      text.textContent = '';
+
+      for (let i = 0; i < splitText.length; i++) {
+        text.innerHTML += "<span>" + splitText[i] + "</span>"
+      }
+
+      let char = 0;
+      let timer= setInterval(onTick, 50);
+
+      function onTick(){
+        text.classList.add('animated');
+        const span = text.querySelectorAll('span')[char];
+        span.classList.add('animated');
+        char++
+        if(char === splitText.length) {
+          complete();
+          return;
+        }
+      }
+
+      function complete(){
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+  } else {
+    text.style.transform = 'translateY(0)';
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (showIntroTitle);
 
 
 /***/ }),
