@@ -1,9 +1,9 @@
 .loft {
   padding-bottom: 10rem;
 
-  &__path {
+  /*&__path {
     margin-bottom: 4rem;
-  }
+  }*/
 
   &__container {
     @include container();
@@ -12,7 +12,7 @@
   &__title {
     font-size: 3.6rem;
     line-height: 5rem;
-    max-width: 540px;
+    max-width: 54rem;
     margin-bottom: 2rem;
   }
 
@@ -20,7 +20,7 @@
     font-family: $font_secondary;
     font-size: 2rem;
     line-height: 3.1rem;
-    max-width: 740px;
+    max-width: 74rem;
     margin-bottom: 5rem;
     color: $color_black;
   }
@@ -30,5 +30,42 @@
     line-height: 2.9rem;
     text-transform: uppercase;
     color: $color_black;
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .loft {
+    &__title {
+      font-size: 2.4rem;
+      line-height: 3.4rem;
+      max-width: 35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__description {
+      font-size: 1.6rem;
+      line-height: 2rem;
+      max-width: 60rem;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .loft {
+    &__title {
+      font-size: 2.2rem;
+      line-height: 2.4rem;
+      max-width: 30rem;
+      padding-right: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    &__description {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      max-width: 50rem;
+      margin-bottom: 2.5rem;
+    }
   }
 }
