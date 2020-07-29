@@ -10,7 +10,6 @@
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
-    margin-left: auto;
     flex-grow: 0;
     padding: 0;
     border: 0;
@@ -24,7 +23,7 @@
         background-color: $color_beige;
       }
     }
-  
+
 
 
     &__line {

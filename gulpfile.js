@@ -156,7 +156,7 @@ const imgOpt = () => {
 exports.imgOpt = imgOpt;
 
 const lqip = () => {
-  return gulp.src("source/img/**/*.jpg")
+  return gulp.src("source/img/**/*.{png,jpg}")
   .pipe(imagemin([
       imagemin.mozjpeg({quality: 6, progressive: true}),
   ]))
