@@ -1,0 +1,13 @@
+extends layouts/main.pug
+
+block content
+  include ./blocks/partitions_page/components/path
+  include ./blocks/partitions_page/part_intro
+  include ./blocks/partitions_page/part_advantages
+  include ./blocks/partitions_page/part_options
+  include ./blocks/partitions_page/part_types
+  include ./blocks/partitions_page/part_materials
+  include ./blocks/partitions_page/part_order
+
+block modals
+  include ./modals/callback

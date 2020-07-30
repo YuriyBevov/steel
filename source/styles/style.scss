@@ -45,20 +45,21 @@
 @import "blocks/gallery";
 @import "blocks/partnership";
 
-//-- LOFT
+//-- partitions_page
 
-@import "blocks/loft";
-@import "blocks/loft_blocks/loft-advantages";
-@import "blocks/loft_blocks/loft-zoning";
-@import "blocks/loft_blocks/loft-construction";
-@import "blocks/loft_blocks/loft-materials";
-@import "blocks/loft_blocks/loft-order";
-@import "blocks/loft_blocks/loft-conditions";
-//-- CONTACTS
+@import "blocks/partitions_page/part_intro";
+@import "blocks/partitions_page/part_advantages";
+@import "blocks/partitions_page/part_options";
+@import "blocks/partitions_page/part_types";
+@import "blocks/partitions_page/part_materials";
+@import "blocks/partitions_page/part_order";
+
+//-- contacts_page
+
 @import "blocks/contacts";
 
 @import "blocks/footer";
 
-// popups
+// modals
 
 @import "modals/modal";

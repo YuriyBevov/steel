@@ -91,13 +91,19 @@
       }
     }
 
-    &__advantages-item {
-      font-size: 1.1rem;
-      line-height: 1.8rem;
+    &__advantages {
+      &-list {
+        margin-right: 8%;
+      }
 
-      span {
-        font-size: 1.3rem;
-        line-height: 1.6rem;
+      &-item {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+
+        span {
+          font-size: 1.3rem;
+          line-height: 1.6rem;
+        }
       }
     }
   }
@@ -135,7 +141,7 @@
     }
 
     &__advantages-item {
-      font-size: 1rem;
+      font-size: 0.9rem;
       line-height: 1.6rem;
     }
 

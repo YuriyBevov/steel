@@ -13621,7 +13621,7 @@ const slidersInit = function () {
       },
       breakpoints: {
         // when window width is >= 836px
-        420: {
+        514: {
           slidesPerView: 2,
           centeredSlides: false,
         },
