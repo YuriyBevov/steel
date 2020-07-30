@@ -13593,12 +13593,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const slidersInit = function () {
+  const sliderDelay = 3000;
+
   let pSlider = document.querySelector('.partnership__swiper-container');
 
   if(pSlider) {
     let partnershipSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.partnership__swiper-container', {
       slidesPerView: 3,
       slidesPerColumn: 3,
+      autoplay: {
+        delay: sliderDelay,
+      },
       navigation: {
         nextEl: '.p-swiper-button-next',
         prevEl: '.p-swiper-button-prev',
@@ -13619,6 +13624,10 @@ const slidersInit = function () {
         nextEl: '.a-swiper-button-next',
         prevEl: '.a-swiper-button-prev',
       },
+      pagination: {
+        el: '.a-swiper-pagination',
+        dynamicBullets: true,
+      },
       breakpoints: {
         // when window width is >= 836px
         514: {
@@ -13630,14 +13639,8 @@ const slidersInit = function () {
           slidesPerView: 2,
           centeredSlides: false,
         },
-
-        1160: {
-          slidesPerView: 2,
-          initialSlide: 2,
-          centeredSlides: true,
-        },
         // when window width is >= 1160px
-        1440: {
+        1160: {
           slidesPerView: 3,
           centeredSlides: true,
           initialSlide: 2,
