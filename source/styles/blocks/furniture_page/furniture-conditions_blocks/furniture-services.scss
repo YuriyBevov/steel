@@ -1,0 +1,39 @@
+.furniture-services {
+  width: 43%;
+  &__title {
+    @include inner_h2();
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+    font-family: $font_text;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+
+    color: $color_black;
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .furniture-services {
+    &__item {
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .furniture-services {
+    width: 50%;
+    min-width: 280px;
+    &__item {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+    }
+  }
+}

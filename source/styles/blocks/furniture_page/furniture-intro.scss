@@ -1,0 +1,43 @@
+.furniture-intro {
+  padding-bottom: 3rem;
+
+  &__wrapper {
+    @include container();
+  }
+
+  &__title {
+    @include inner_h1();
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-family: $font_secondary;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    max-width: 67rem;
+    color: $color_black;
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .furniture-intro {
+    &__description {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .furniture-intro {
+
+    &__title {
+      margin-bottom: 1.5rem;
+    }
+
+    &__description {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+    }
+  }
+}

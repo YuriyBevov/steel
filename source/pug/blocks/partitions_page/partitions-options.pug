@@ -1,0 +1,31 @@
+section.partitions-options
+  .partitions-options__wrapper
+    h2.partitions-options__title Варианты зонирования:
+
+    .partitions-swiper-container
+      .swiper-wrapper
+        -
+          const partitions_items = [
+            {type: 'Для офиса', description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
+            {type: 'В гостиную', description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
+            {type: 'Для спальни', description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
+            {type: 'На кухню', description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
+            {type: 'В салон красоты', description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
+            {type: 'В опенсейс', description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
+
+          ];
+        each partitions_item in partitions_items
+          .swiper-slide
+            picture
+              source(type="image/webp" srcset=partitions_item.lqip + '@1x.jpg' data-srcset=partitions_item.url + '@1x.webp 1x,' + partitions_item.url + '@2x.webp 2x')
+              img.lazyload.blur-up(src=partitions_item.lqip + '@1x.jpg' data-src=partitions_item.url + '@1x.jpg' data-srcset=partitions_item.url + '@2x.jpg 2x' alt=partitions_item.description)
+            .partitions-options__overlay
+              p.partitions-options__overlay-text=partitions_item.type
+
+
+      <!-- Add Pagination -->
+      .part-swiper-pagination
+
+      <!-- Add Arrows -->
+      .part-swiper-button-next
+      .part-swiper-button-prev

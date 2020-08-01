@@ -24,21 +24,26 @@
 @import "components/m-btn";
 @import "components/s-btn";
 @import "components/path";
-@import "components/form";
+//@import "components/form";
 @import "components/map";
 
 // sliders
 
-@import "sliders/partnership-slider";
-@import "sliders/advantages-slider";
+@import "sliders/index_page/partnership-slider";
+@import "sliders/index_page/advantages-slider";
+@import "sliders/partitions_page/partitions-slider";
+@import "sliders/furniture_page/furniture-slider";
+
+// masonry_layout
+
 @import "masonry/projects-masonry-layout.scss";
 
 //--- common blocks
 
-@import "blocks/header";
-@import "blocks/nav";
-@import "blocks/social";
-@import "blocks/footer";
+@import "blocks/common_blocks/header";
+@import "blocks/common_blocks/nav";
+@import "blocks/common_blocks/social";
+@import "blocks/common_blocks/footer";
 
 //-- index_page
 
@@ -52,16 +57,34 @@
 
 //-- partitions_page
 
-@import "blocks/partitions_page/part_intro";
-@import "blocks/partitions_page/part_advantages";
-@import "blocks/partitions_page/part_options";
-@import "blocks/partitions_page/part_types";
-@import "blocks/partitions_page/part_materials";
-@import "blocks/partitions_page/part_order";
+@import "blocks/partitions_page/partitions-intro";
+@import "blocks/partitions_page/partitions-advantages";
+@import "blocks/partitions_page/partitions-options";
+@import "blocks/partitions_page/partitions-types";
+@import "blocks/partitions_page/partitions-materials";
+@import "blocks/partitions_page/partitions-order";
+@import "blocks/partitions_page/partitions-form";
+
+//-- furniture_page
+
+@import "blocks/furniture_page/furniture-intro";
+@import "blocks/furniture_page/furniture-office";
+@import "blocks/furniture_page/furniture-bakehouse";
+@import "blocks/furniture_page/furniture-restaurant";
+@import "blocks/furniture_page/furniture-home";
+@import "blocks/furniture_page/furniture-frame";
+@import "blocks/furniture_page/furniture-conditions";
+@import "blocks/furniture_page/furniture-conditions_blocks/furniture-price";
+@import "blocks/furniture_page/furniture-conditions_blocks/furniture-services";
+@import "blocks/furniture_page/furniture-form";
 
 //-- contacts_page
 
 @import "blocks/contacts";
+
+// forms
+
+@import "blocks/forms/callback-form";
 
 // modals
 

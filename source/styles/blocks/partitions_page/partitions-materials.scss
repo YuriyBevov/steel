@@ -1,4 +1,4 @@
-.part_materials {
+.partitions-materials {
   padding: 5rem 0;
   background-color: $color_grey;
 
@@ -46,7 +46,7 @@
 }
 
 @media(max-width: $desktop-width) {
-  .part_materials {
+  .partitions-materials {
     padding: 4rem 0;
 
     &__description {
@@ -57,7 +57,7 @@
 }
 
 @media(max-width: $tablet-width) {
-  .part_materials {
+  .partitions-materials {
     &__wrapper {
       flex-direction: column;
       align-items: flex-start;

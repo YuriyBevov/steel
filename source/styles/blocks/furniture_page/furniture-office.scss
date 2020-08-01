@@ -1,0 +1,43 @@
+.furniture-office {
+  padding-bottom: 10rem;
+  &__wrapper {
+    @include container()
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__content {
+    width: 50%;
+    max-width: 58.5rem;
+    margin-right: auto;
+    padding-right: 1.5rem;
+  }
+
+  &__title {
+    @include inner_h2();
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    @include furniture_description();
+  }
+
+  &__gallery {
+    position: relative;
+    width: 50%;
+    max-width: 55.5rem;
+    overflow: hidden;
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .furniture_office {
+
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .furniture_office {
+
+  }
+}

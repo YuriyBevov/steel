@@ -56,4 +56,40 @@ export const slidersInit = function () {
       }
     });
   }
+
+  let fSlider = document.querySelectorAll('.furniture-swiper-container');
+
+  if(fSlider) {
+
+    fSlider.forEach(eachSlider => new Swiper(fSlider, {
+      spaceBetween: 30,
+
+      pagination: {
+        el: '.f-swiper-pagination',
+        type: 'progressbar',
+      },
+      navigation: {
+        nextEl: '.f-swiper-button-next',
+        prevEl: '.f-swiper-button-prev',
+      },
+    }))
+  }
+
+  let partSlider = document.querySelector('.partitions-swiper-container');
+
+  if(partSlider) {
+    let partitionsSlider = new Swiper(partSlider, {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        el: '.part-swiper-pagination',
+        type: 'progressbar',
+      },
+      navigation: {
+        nextEl: '.part-swiper-button-next',
+        prevEl: '.part-swiper-button-prev',
+      },
+    });
+  }
 }();

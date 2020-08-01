@@ -1,0 +1,49 @@
+.furniture-swiper-container {
+     width: 100%;
+     height: 100%;
+     max-height: 40rem;
+     padding-bottom: 4.5rem;
+
+   .swiper-slide {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   .swiper-pagination-progressbar {
+     width: 65%;
+     height: 2px;
+     top: auto;
+     bottom: 0.8rem;
+
+     &-fill {
+       background-color: $color_black;
+     }
+   }
+
+   .f-swiper-button-next,
+   .f-swiper-button-prev {
+     position: absolute;
+     bottom: 0;
+     right: 15%;
+     width: 10%;
+     max-width: 5.2rem;
+     height: 0.8rem;
+     margin-bottom: 0.5rem;
+     content: '';
+     cursor: pointer;
+     background-image: url("../img/static/furniture-slider-arrow.svg");
+     background-repeat: no-repeat;
+     z-index: 100;
+   }
+
+   .f-swiper-button-next {
+     right: 0;
+     transform: rotate(180deg);
+   }
+
+   .swiper-button-disabled {
+     cursor: default;
+     opacity: 0.5;
+   }
+}

@@ -1,0 +1,28 @@
+.furniture-form {
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+  background-color: $color_grey;
+
+  &__wrapper {
+    @include container();
+  }
+
+  &__title {
+    @include inner_h2();
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .furniture-form {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .furniture-form {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+}

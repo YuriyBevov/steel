@@ -1,0 +1,29 @@
+section.furniture-office
+  .furniture-office__wrapper
+    .furniture-office__content
+      h2.furniture-office__title Для офиса
+      p.furniture-office__description Изготовление рабочих столов для сотрудников и для руководителей, обустройство обеденной зоны.
+      p.furniture-office__description Сделаем для вашего офиса стеллажи, шкафы для одежды, полки, прихожую, стойку ресепшен.
+    .furniture-office__gallery
+      .furniture-swiper-container
+        .swiper-wrapper
+          -
+            const office_items = [
+              {description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
+              {description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
+              {description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
+
+            ];
+          each office_item in office_items
+            .swiper-slide
+              picture
+                source(type="image/webp" srcset=office_item.lqip + '@1x.jpg' data-srcset=office_item.url + '@1x.webp 1x,' + office_item.url + '@2x.webp 2x')
+                img.lazyload.blur-up(src=office_item.lqip + '@1x.jpg' data-src=office_item.url + '@1x.jpg' data-srcset=office_item.url + '@2x.jpg 2x' alt=office_item.description)
+
+
+        <!-- Add Pagination -->
+        .f-swiper-pagination
+
+        <!-- Add Arrows -->
+        .f-swiper-button-next
+        .f-swiper-button-prev

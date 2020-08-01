@@ -1,4 +1,4 @@
-.part_intro {
+.partitions-intro {
   padding-bottom: 5rem;
 
   &__wrapper {
@@ -21,7 +21,7 @@
 }
 
 @media(max-width: $desktop-width) {
-  .part_intro {
+  .partitions-intro {
     padding-bottom: 3rem;
     &__title {
       max-width: 35rem;
@@ -37,7 +37,7 @@
 }
 
 @media(max-width: $tablet-width) {
-  .part_intro {
+  .partitions-intro {
     padding-bottom: 2.5rem;
     &__title {
       max-width: 30rem;

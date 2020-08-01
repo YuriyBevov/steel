@@ -1,0 +1,28 @@
+section.furniture-home
+  .furniture-home__wrapper
+    .furniture-home__content
+      h2.furniture-home__title Мебель для дома
+      p.furniture-home__description Изготовим для вас барную стойку, станцию официанта, каркасы для осветительных приборов, декоративные конструкции и многое другое.
+    .furniture-home__gallery
+      .furniture-swiper-container
+        .swiper-wrapper
+          -
+            const home_items = [
+              {description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
+              {description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
+              {description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
+
+            ];
+          each home_item in home_items
+            .swiper-slide
+              picture
+                source(type="image/webp" srcset=home_item.lqip + '@1x.jpg' data-srcset=home_item.url + '@1x.webp 1x,' + home_item.url + '@2x.webp 2x')
+                img.lazyload.blur-up(src=home_item.lqip + '@1x.jpg' data-src=home_item.url + '@1x.jpg' data-srcset=home_item.url + '@2x.jpg 2x' alt=home_item.description)
+
+
+        <!-- Add Pagination -->
+        .f-swiper-pagination
+
+        <!-- Add Arrows -->
+        .f-swiper-button-next
+        .f-swiper-button-prev

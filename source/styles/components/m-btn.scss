@@ -1,0 +1,22 @@
+.m-btn {
+  width: 21rem;
+  min-height: 4.8rem;
+  font-family: $font_secondary;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: $color_white;
+  background-color: $color_beige;
+
+  @media(max-width: $desktop-width) {
+    width: 15rem;
+    min-height: 3.2rem;
+    font-size: 1.4rem;
+  }
+
+  @media(max-width: $desktop-width) {
+    line-height: 1.8rem;
+  }
+}

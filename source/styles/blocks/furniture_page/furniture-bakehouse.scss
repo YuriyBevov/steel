@@ -1,0 +1,42 @@
+.furniture-bakehouse {
+  padding-bottom: 10rem;
+  &__wrapper {
+    @include container();
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__content {
+    width: 50%;
+    max-width: 58.5rem;
+    margin-right: auto;
+    padding-right: 1.5rem;
+  }
+
+  &__gallery {
+    position: relative;
+    width: 50%;
+    max-width: 55.5rem;
+    overflow: hidden;
+  }
+
+  &__title {
+    @include inner_h2();
+  }
+
+  &__description {
+    @include furniture_description();
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .furniture_bakehouse {
+
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .furniture_bakehouse {
+
+  }
+}

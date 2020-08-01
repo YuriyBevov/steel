@@ -1,0 +1,20 @@
+.furniture-conditions {
+  padding-bottom: 7rem;
+  &__wrapper {
+    @include container();
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .furniture-conditions {
+    padding-bottom: 5rem;
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .furniture-conditions {
+    padding-bottom: 3rem;
+  }
+}

@@ -1,4 +1,4 @@
-.part_types {
+.partitions-types {
   padding-top: 5rem;
   padding-bottom: 10rem;
   &__wrapper {
@@ -48,7 +48,7 @@
   }
 }
 @media(max-width: $desktop-width) {
-  .part_types {
+  .partitions-types {
     padding-top: 3rem;
     padding-bottom: 6rem;
 
@@ -86,7 +86,7 @@
   }
 }
 @media(max-width: $tablet-width) {
-  .part_types {
+  .partitions-types {
     padding-bottom: 2rem;
 
     &__description {
