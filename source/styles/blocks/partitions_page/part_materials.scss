@@ -10,7 +10,7 @@
   }
 
   &__title {
-    @include partitions_h2();
+    @include inner_h2();
     margin-bottom: 3rem;
   }
 

@@ -7,7 +7,7 @@
 
   &__title {
     margin-bottom: 1.5rem;
-    @include partitions_h2();
+    @include inner_h2();
   }
 
   &__list {

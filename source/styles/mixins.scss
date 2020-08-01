@@ -49,7 +49,25 @@
   }
 }
 
-@mixin partitions_h2 {
+@mixin inner_h1 {
+  font-size: 3.6rem;
+  font-weight: normal;
+  line-height: 5rem;
+  max-width: 54rem;
+  text-transform: uppercase;
+
+  @media(max-width: $desktop-width) {
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+  }
+
+  @media(max-width: $desktop-width) {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+  }
+}
+
+@mixin inner_h2 {
   font-size: 2.2rem;
   line-height: 3.6rem;
   text-transform: uppercase;

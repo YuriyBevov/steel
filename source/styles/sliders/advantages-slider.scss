@@ -64,8 +64,8 @@
 
 @media(max-width: $desktop-width) {
   .advantages__swiper-container {
-    height: 445px;
-    padding-bottom: 2rem;
+    height: 455px;
+    padding-bottom: 3rem;
     .a-swiper-button-next,
     .a-swiper-button-prev {
       display: none;
@@ -73,6 +73,11 @@
 
     .swiper-slide {
       height: inherit;
+    }
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
     }
 
     .a-swiper-pagination {
@@ -129,7 +134,14 @@
 }
 
 @media(max-width: $tablet-width) {
-  .advantages__swiper-container {
-    height: 270px;
+.advantages__swiper-container {
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+    }
+
+    .advantages__swiper-container {
+      height: 270px;
+    }
   }
 }

@@ -33,17 +33,22 @@
 @import "sliders/advantages-slider";
 @import "masonry/projects-masonry-layout.scss";
 
-//--- blocks
+//--- common blocks
+
 @import "blocks/header";
 @import "blocks/nav";
-@import "blocks/intro";
 @import "blocks/social";
-@import "blocks/partition";
-@import "blocks/projects";
-@import "blocks/order";
-@import "blocks/advantages";
-@import "blocks/gallery";
-@import "blocks/partnership";
+@import "blocks/footer";
+
+//-- index_page
+
+@import "blocks/index_page/intro";
+@import "blocks/index_page/partition";
+@import "blocks/index_page/projects";
+@import "blocks/index_page/order";
+@import "blocks/index_page/advantages";
+@import "blocks/index_page/gallery";
+@import "blocks/index_page/partnership";
 
 //-- partitions_page
 
@@ -57,8 +62,6 @@
 //-- contacts_page
 
 @import "blocks/contacts";
-
-@import "blocks/footer";
 
 // modals
 
