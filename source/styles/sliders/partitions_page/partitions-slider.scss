@@ -54,11 +54,11 @@
 @media(max-width: $desktop-width) {
   .partitions-swiper-container {
     height: 36rem;
-  }
 
-  .swiper-slide {
-    img {
-      width: auto;
+    .swiper-slide {
+      img {
+        width: auto;
+      }
     }
   }
 }

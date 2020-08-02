@@ -32,7 +32,7 @@ const showIntroTitle = () => {
         timer = null;
       }
     }
-  } else {
+  } else if(text) {
     text.style.transform = 'translateY(0)';
   }
 };

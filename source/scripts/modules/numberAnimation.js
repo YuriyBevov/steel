@@ -42,7 +42,7 @@ export const numberAnimation = function () {
     if (block) {
       window.addEventListener('scroll', onScrollNumberAnimation);
     }
-  } else {
+  } else if(block){
     staticNum(finProjectsNum, '#projects');
     staticNum(finYearsNum, '#year');
   }

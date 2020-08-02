@@ -13488,7 +13488,7 @@ const numberAnimation = function () {
     if (block) {
       window.addEventListener('scroll', onScrollNumberAnimation);
     }
-  } else {
+  } else if(block){
     staticNum(finProjectsNum, '#projects');
     staticNum(finYearsNum, '#year');
   }
@@ -13542,7 +13542,7 @@ const showIntroTitle = () => {
         timer = null;
       }
     }
-  } else {
+  } else if(text) {
     text.style.transform = 'translateY(0)';
   }
 };
@@ -13627,10 +13627,10 @@ const slidersInit = function () {
 
     if(fSlider) {
 
-      for(let i = 0; i < fSlider.length; i++) {
+      /*for(let i = 0; i < fSlider.length; i++) {
         console.log(fSlider.length)
 
-        let furnitureSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](fSlider[i], {
+        var furnitureSlider = new Swiper(fSlider[i], {
           spaceBetween: 30,
           slidesPerView: 'auto',
           //updateOnImagesReady: true,
@@ -13650,13 +13650,13 @@ const slidersInit = function () {
               console.log('initialized.'); // this works
             },
             imagesReady: function() {
-              console.log('images ready.'); // this works now, too!
+
             }
           }
         })
-      }
+      }*/
 
-      /*fSlider.forEach(eachSlider => new Swiper(eachSlider, {
+      fSlider.forEach(eachSlider => new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](eachSlider, {
         spaceBetween: 30,
         slidesPerView: 'auto',
         //updateOnImagesReady: true,
@@ -13670,16 +13670,7 @@ const slidersInit = function () {
           nextEl: '.f-swiper-button-next',
           prevEl: '.f-swiper-button-prev',
         },
-
-        on: {
-          init: function() {
-            console.log('initialized.'); // this works
-          },
-          imagesReady: function() {
-            console.log('images ready.'); // this works
-          }
-        }
-      }));*/
+      }));
     }
 
     let partSlider = document.querySelector('.partitions-swiper-container');
