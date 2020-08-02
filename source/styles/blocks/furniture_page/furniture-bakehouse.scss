@@ -30,13 +30,31 @@
 }
 
 @media(max-width: $desktop-width) {
-  .furniture_bakehouse {
+  .furniture-bakehouse {
+    &__content {
+      width: 40%;
+    }
 
+    &__gallery {
+      width: 60%;
+    }
   }
 }
 
 @media(max-width: $tablet-width) {
-  .furniture_bakehouse {
+  .furniture-bakehouse {
+    &__wrapper {
+      flex-direction: column;
+    }
 
+    &__content {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    &__gallery {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }

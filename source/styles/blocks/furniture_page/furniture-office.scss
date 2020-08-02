@@ -31,13 +31,19 @@
 }
 
 @media(max-width: $desktop-width) {
-  .furniture_office {
+  .furniture-office {
+    &__content {
+      width: 40%;
+    }
 
+    &__gallery {
+      width: 60%;
+    }
   }
 }
 
 @media(max-width: $tablet-width) {
-  .furniture_office {
+  .furniture-office {
 
   }
 }

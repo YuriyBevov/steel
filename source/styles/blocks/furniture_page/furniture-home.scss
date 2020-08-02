@@ -30,13 +30,19 @@
 }
 
 @media(max-width: $desktop-width) {
-  .furniture_home {
+  .furniture-home {
+    &__content {
+      width: 40%;
+    }
 
+    &__gallery {
+      width: 60%;
+    }
   }
 }
 
 @media(max-width: $tablet-width) {
-  .furniture_home {
+  .furniture-home {
 
   }
 }

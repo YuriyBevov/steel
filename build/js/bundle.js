@@ -13657,7 +13657,7 @@ const slidersInit = function () {
       fSlider.forEach(eachSlider => new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](fSlider, {
         spaceBetween: 30,
         slidesPerView: 'auto',
-        freeMode: true,
+        //freeMode: true,
 
         pagination: {
           el: '.f-swiper-pagination',
@@ -13674,9 +13674,8 @@ const slidersInit = function () {
 
     if(partSlider) {
       let partitionsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](partSlider, {
-        slidesPerView: 'auto', // записать в пометки , как способ ограничивать контэйнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
+        slidesPerView: 'auto', // записать в пометки , как способ ограничивать контейнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
         spaceBetween: 30,
-        freeMode: true,
         pagination: {
           el: '.part-swiper-pagination',
           type: 'progressbar',
