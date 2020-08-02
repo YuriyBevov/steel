@@ -1,5 +1,8 @@
 .furniture-price {
   width: 57%;
+  display: flex;
+  flex-direction: column;
+
   &__title {
     @include inner_h2();
     margin-bottom: 4rem;
@@ -15,7 +18,7 @@
     font-family: $font_text;
     font-size: 1.8rem;
     line-height: 2.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     color: $color_black;
 
     &:last-child {
@@ -36,6 +39,7 @@
 
 @media(max-width: $desktop-width) {
   .furniture-price {
+    justify-content: space-between;
     &__item {
       font-size: 1.6rem;
       line-height: 2rem;
@@ -49,8 +53,9 @@
     min-width: 280px;
 
     &__list {
-      margin-bottom: 4rem;
+      margin-bottom: 2.5rem;
     }
+
     &__item {
       font-size: 1.4rem;
       line-height: 1.8rem;

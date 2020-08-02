@@ -160,7 +160,7 @@ const lqip = () => {
   .pipe(imagemin([
       imagemin.mozjpeg({quality: 6, progressive: true}),
   ]))
-  .pipe(gulp.dest("source/img/lqip"));
+  .pipe(gulp.dest("build/img/lqip"));
 }
 
 exports.lqip = lqip;
@@ -195,6 +195,7 @@ exports.start = gulp.series(
       styles,
       js,
       copy,
+      lqip
   ),
   gulp.parallel(
       watch,

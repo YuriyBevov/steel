@@ -79,7 +79,7 @@ export const slidersInit = function () {
 
   if(partSlider) {
     let partitionsSlider = new Swiper(partSlider, {
-      slidesPerView: 2,
+      slidesPerView: 'auto', // записать в пометки , как способ ограничивать контэйнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
       spaceBetween: 30,
       freeMode: true,
       pagination: {

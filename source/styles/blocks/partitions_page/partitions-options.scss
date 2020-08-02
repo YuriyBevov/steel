@@ -29,3 +29,27 @@
     }
   }
 }
+
+@media(max-width: $desktop-width) {
+  .partitions-options {
+    &__overlay {
+      min-height: 4rem;
+      &-text {
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .partitions-options {
+    &__overlay {
+      min-height: 3rem;
+      &-text {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+      }
+    }
+  }
+}

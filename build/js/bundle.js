@@ -13205,6 +13205,21 @@ const onBurgerClickEvent = () => {
 
 burger.addEventListener('click', onBurgerClickEvent);
 
+/*const img = document.querySelectorAll('.partitions_img');
+console.log(img)
+let width = 0;
+const container = document.querySelector('.partitions-swiper-container');
+
+img.forEach(el => {
+  width += el.clientWidth
+  console.log(el.clientWidth)
+
+});
+
+container.style.maxWidth = width + 'px';
+console.log(container.style)
+  console.log(width)*/
+
 
 /***/ }),
 
@@ -13671,7 +13686,7 @@ const slidersInit = function () {
 
   if(partSlider) {
     let partitionsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](partSlider, {
-      slidesPerView: 2,
+      slidesPerView: 'auto', // записать в пометки , как способ ограничивать контэйнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
       spaceBetween: 30,
       freeMode: true,
       pagination: {
