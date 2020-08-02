@@ -62,7 +62,7 @@ export const slidersInit = function () {
 
     if(fSlider) {
 
-      /*for(let i = 0; i < fSlider.length; i++) {
+      for(let i = 0; i < fSlider.length; i++) {
         console.log(fSlider.length)
 
         let furnitureSlider = new Swiper(fSlider[i], {
@@ -89,9 +89,9 @@ export const slidersInit = function () {
             }
           }
         })
-      }*/
+      }
 
-      fSlider.forEach(eachSlider => new Swiper(eachSlider, {
+      /*fSlider.forEach(eachSlider => new Swiper(eachSlider, {
         spaceBetween: 30,
         slidesPerView: 'auto',
         //updateOnImagesReady: true,
@@ -111,10 +111,10 @@ export const slidersInit = function () {
             console.log('initialized.'); // this works
           },
           imagesReady: function() {
-            console.log('images ready.'); // this works now, too!
+            console.log('images ready.'); // this works
           }
         }
-      }));
+      }));*/
     }
 
     let partSlider = document.querySelector('.partitions-swiper-container');
