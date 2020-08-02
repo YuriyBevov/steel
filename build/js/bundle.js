@@ -13567,7 +13567,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const slidersInit = function () {
   //document.addEventListener("load", function() {
-  window.addEventListener("load", () => {
+  window.onload = () => {
     console.log('loaded')
     const sliderDelay = 3000;
 
@@ -13689,7 +13689,7 @@ const slidersInit = function () {
         },
       });
     }
-  });
+  };
 }();
 
 
