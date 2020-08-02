@@ -13,15 +13,15 @@ export const mapInit = function () {
 
         var myPlacemark = new ymaps.Placemark([59.90233115, 30.40756371],
           {
-            hintContent: '<span class="map__placemark-hint">МЫ ЗДЕСЬ :)</span>',
+            hintContent: '<span class="map__placemark-hint">Сварочная мастерская Steel Balls</span>',
             //balloonContentHeader: '<h2 class="map__placemark-title">STEEL BALLS</h2>',
             balloonContentBody: '<p class="map__placemark-description">Санкт-Петербург, ул. Бехтерева 3,корп 3а</p>',
             //balloonContentFooter: '<a href="tel: 89006221818" class="map__placemark-link">8 (900) 6221818</a>',
           },
           {
           iconLayout: 'default#image',
-          iconImageHref: './img/icons/icon-map.svg',
-          iconImageSize: [30, 42],
+          iconImageHref: './img/static/pin.png',
+          iconImageSize: [25, 36],
         });
 
         myMap.geoObjects.add(myPlacemark);

@@ -5,25 +5,24 @@ export const loader = function() {
   const showPage = () => {
     document.removeEventListener("DOMContentLoaded", showPage);
 
-      window.onload = () => {
-        console.log('ok')
-        slidersInit();
-        const loader = document.querySelector('.loader');
+    window.onload = () => {
+      slidersInit();
+      const loader = document.querySelector('.loader');
 
-        const hideLoader = function () {
-          setTimeout(() => {
-              loader.style.opacity = 0;
-              showIntroTitle();
-            }, 800)
+      const hideLoader = function () {
+        setTimeout(() => {
+            loader.style.opacity = 0;
+            showIntroTitle();
+          }, 800)
 
-          setTimeout(() => {
-            loader.style.display ='none';
-          }, 1500)
+        setTimeout(() => {
+          loader.style.display ='none';
+        }, 1500)
 
-        }();
-      }
-      };
+      }();
+    }
 
+  };
 
   document.addEventListener('DOMContentLoaded', showPage);
 }();

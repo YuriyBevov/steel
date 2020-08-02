@@ -13175,7 +13175,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import aos from "./modules/aos.js";
 
 
 
@@ -13279,25 +13278,24 @@ const loader = function() {
   const showPage = () => {
     document.removeEventListener("DOMContentLoaded", showPage);
 
-      window.onload = () => {
-        console.log('ok')
-        Object(_swiper_js__WEBPACK_IMPORTED_MODULE_1__["slidersInit"])();
-        const loader = document.querySelector('.loader');
+    window.onload = () => {
+      Object(_swiper_js__WEBPACK_IMPORTED_MODULE_1__["slidersInit"])();
+      const loader = document.querySelector('.loader');
 
-        const hideLoader = function () {
-          setTimeout(() => {
-              loader.style.opacity = 0;
-              Object(_showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-            }, 800)
+      const hideLoader = function () {
+        setTimeout(() => {
+            loader.style.opacity = 0;
+            Object(_showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+          }, 800)
 
-          setTimeout(() => {
-            loader.style.display ='none';
-          }, 1500)
+        setTimeout(() => {
+          loader.style.display ='none';
+        }, 1500)
 
-        }();
-      }
-      };
+      }();
+    }
 
+  };
 
   document.addEventListener('DOMContentLoaded', showPage);
 }();
@@ -13330,15 +13328,15 @@ const mapInit = function () {
 
         var myPlacemark = new ymaps.Placemark([59.90233115, 30.40756371],
           {
-            hintContent: '<span class="map__placemark-hint">МЫ ЗДЕСЬ :)</span>',
+            hintContent: '<span class="map__placemark-hint">Сварочная мастерская Steel Balls</span>',
             //balloonContentHeader: '<h2 class="map__placemark-title">STEEL BALLS</h2>',
             balloonContentBody: '<p class="map__placemark-description">Санкт-Петербург, ул. Бехтерева 3,корп 3а</p>',
             //balloonContentFooter: '<a href="tel: 89006221818" class="map__placemark-link">8 (900) 6221818</a>',
           },
           {
           iconLayout: 'default#image',
-          iconImageHref: './img/icons/icon-map.svg',
-          iconImageSize: [30, 42],
+          iconImageHref: './img/static/pin.png',
+          iconImageSize: [25, 36],
         });
 
         myMap.geoObjects.add(myPlacemark);
@@ -13572,130 +13570,96 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const slidersInit = function () {
-  //document.addEventListener("load", function() {
-  //window.onload = () => {
-    console.log('loaded')
-    const sliderDelay = 3000;
+  const sliderDelay = 3000;
 
-    let pSlider = document.querySelector('.partnership__swiper-container');
+  let pSlider = document.querySelector('.partnership__swiper-container');
 
-    if(pSlider) {
-      let partnershipSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.partnership__swiper-container', {
-        slidesPerView: 3,
-        slidesPerColumn: 3,
-        autoplay: {
-          delay: sliderDelay,
+  if(pSlider) {
+    let partnershipSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.partnership__swiper-container', {
+      slidesPerView: 3,
+      slidesPerColumn: 3,
+      autoplay: {
+        delay: sliderDelay,
+      },
+      navigation: {
+        nextEl: '.p-swiper-button-next',
+        prevEl: '.p-swiper-button-prev',
+      },
+    });
+  }
+
+  let aSlider = document.querySelector('.advantages__swiper-container');
+
+  if(aSlider) {
+    let advantagesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.advantages__swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      initialSlide: 1,
+      centeredSlides: true,
+      slideToClickedSlide: true,
+      navigation: {
+        nextEl: '.a-swiper-button-next',
+        prevEl: '.a-swiper-button-prev',
+      },
+      pagination: {
+        el: '.a-swiper-pagination',
+        dynamicBullets: true,
+      },
+      breakpoints: {
+        // when window width is >= 836px
+        514: {
+          slidesPerView: 2,
+          centeredSlides: false,
         },
-        navigation: {
-          nextEl: '.p-swiper-button-next',
-          prevEl: '.p-swiper-button-prev',
-        },
-      });
-    }
 
-    let aSlider = document.querySelector('.advantages__swiper-container');
-
-    if(aSlider) {
-      let advantagesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.advantages__swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        initialSlide: 1,
-        centeredSlides: true,
-        slideToClickedSlide: true,
-        navigation: {
-          nextEl: '.a-swiper-button-next',
-          prevEl: '.a-swiper-button-prev',
+        768: {
+          slidesPerView: 2,
+          centeredSlides: false,
         },
-        pagination: {
-          el: '.a-swiper-pagination',
-          dynamicBullets: true,
-        },
-        breakpoints: {
-          // when window width is >= 836px
-          514: {
-            slidesPerView: 2,
-            centeredSlides: false,
-          },
-
-          768: {
-            slidesPerView: 2,
-            centeredSlides: false,
-          },
-          // when window width is >= 1160px
-          1160: {
-            slidesPerView: 3,
-            centeredSlides: true,
-            initialSlide: 2,
-          }
+        // when window width is >= 1160px
+        1160: {
+          slidesPerView: 3,
+          centeredSlides: true,
+          initialSlide: 2,
         }
-      });
-    }
+      }
+    });
+  }
 
-    let fSlider = document.querySelectorAll('.furniture-swiper-container');
+  let fSlider = document.querySelectorAll('.furniture-swiper-container');
 
-    if(fSlider) {
+  if(fSlider) {
+    fSlider.forEach(eachSlider => new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](eachSlider, {
+      spaceBetween: 30,
+      slidesPerView: 'auto',
 
-      /*for(let i = 0; i < fSlider.length; i++) {
-        console.log(fSlider.length)
+      pagination: {
+        el: '.f-swiper-pagination',
+        type: 'progressbar',
+      },
+      navigation: {
+        nextEl: '.f-swiper-button-next',
+        prevEl: '.f-swiper-button-prev',
+      },
+    }));
+  }
 
-        var furnitureSlider = new Swiper(fSlider[i], {
-          spaceBetween: 30,
-          slidesPerView: 'auto',
-          //updateOnImagesReady: true,
-          //freeMode: true,
+  let partSlider = document.querySelector('.partitions-swiper-container');
 
-          pagination: {
-            el: '.f-swiper-pagination',
-            type: 'progressbar',
-          },
-          navigation: {
-            nextEl: '.f-swiper-button-next',
-            prevEl: '.f-swiper-button-prev',
-          },
-
-          on: {
-            init: function() {
-              console.log('initialized.'); // this works
-            },
-            imagesReady: function() {
-
-            }
-          }
-        })
-      }*/
-
-      fSlider.forEach(eachSlider => new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](eachSlider, {
-        spaceBetween: 30,
-        slidesPerView: 'auto',
-
-        pagination: {
-          el: '.f-swiper-pagination',
-          type: 'progressbar',
-        },
-        navigation: {
-          nextEl: '.f-swiper-button-next',
-          prevEl: '.f-swiper-button-prev',
-        },
-      }));
-    }
-
-    let partSlider = document.querySelector('.partitions-swiper-container');
-
-    if(partSlider) {
-      let partitionsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](partSlider, {
-        slidesPerView: 'auto', // записать в пометки , как способ ограничивать контейнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
-        spaceBetween: 30,
-        pagination: {
-          el: '.part-swiper-pagination',
-          type: 'progressbar',
-        },
-        navigation: {
-          nextEl: '.part-swiper-button-next',
-          prevEl: '.part-swiper-button-prev',
-        },
-      });
-    }
-  //};
+  if(partSlider) {
+    let partitionsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](partSlider, {
+      slidesPerView: 'auto', // записать в пометки , как способ ограничивать контейнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
+      spaceBetween: 30,
+      pagination: {
+        el: '.part-swiper-pagination',
+        type: 'progressbar',
+      },
+      navigation: {
+        nextEl: '.part-swiper-button-next',
+        prevEl: '.part-swiper-button-prev',
+      },
+    });
+  }
 };
 
 

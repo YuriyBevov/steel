@@ -24,7 +24,6 @@
 @import "components/m-btn";
 @import "components/s-btn";
 @import "components/path";
-//@import "components/form";
 @import "components/map";
 
 // sliders
@@ -80,11 +79,13 @@
 
 //-- contacts_page
 
-@import "blocks/contacts";
+@import "blocks/contacts_page/contacts-data";
+@import "blocks/contacts_page/contacts-form";
 
 // forms
 
 @import "blocks/forms/callback-form";
+@import "blocks/forms/question-form";
 
 // modals
 

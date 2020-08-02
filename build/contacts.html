@@ -122,29 +122,46 @@
       </div>
     </header>
     <main>
-      <section class="contacts"><span class="contacts__path path">ГЛАВНАЯ/КОНТАКТЫ</span>
-        <div class="contacts__wrapper">
-          <div class="contacts__content">
-            <h2 class="visually-hidden">Контакты и расположение компании steel balls</h2>
+      <section class="contacts-data"><span class="path">Главная/Мебель лофт</span>
+        <div class="contacts-data__wrapper">
+          <h1 class="visually-hidden">Контакты и расположение компании steel balls</h1>
+          <div class="contacts-data__content">
+            <div class="contacts-data__content-part">
+              <h3>Адрес мастерской</h3>
+              <address>г. Санкт- Петербург, ул.Бехтерова 3, корп 3а</address><span>Cогласовывайте заранее время приезда.</span>
+            </div>
+            <div class="contacts-data__content-part">
+              <h3>Время работы</h3>
+              <p>Пн-Пт  с 9:00 до 18:00.</p>
+            </div>
+            <div class="contacts-data__content-part">
+              <h3>Телефон</h3>
+              <p>Многоканальный офисный телефон</p>
+              <p class="contacts-data__content-phone">+7 (812)-219-40-93</p>
+              <p>Мобильный телефон</p>
+              <p class="contacts-data__content-phone">+7 (900)-622-18-18</p>
+            </div>
+            <div class="contacts-data__content-part">
+              <h3>E-mail</h3>
+              <p class="contacts-data__content-mail">master@stballs.ru</p>
+            </div>
           </div>
-          <!-- переделать структуру-->
-          <div class="contacts__map">
-            <div class="map">
+          <div class="contacts-data__additional">
+            <section class="contacts-map map">
               <div class="map__wrapper">
                 <div class="map__content" id="map"></div>
               </div>
-            </div>
-            <p class="contacts__description">Если у вас остались вопросы, задайте их в форме ниже.</p>
-            <div class="contacts__form">
-              <form class="contacts-form" action="#" enctype="text/plain" method="POST">
-                <div class="contacts-form__wrapper">
-                  <label for="phone">Ваш номер телефона</label>
-                  <input type="tel" name="phone" placeholder="Телефон" id="phone">
-                  <label for="question">Ваш вопрос</label>
-                  <textarea placeholder="Введите ваш вопрос" id="question"></textarea>
-                  <div class="contacts-form__submit">
-                    <input class="contacts-form__submit-btn" type="submit" value="Отправить мой вопрос">
-                    <p class="contacts-form__submit-text">Нажимая кнопку, вы даете согласие на обработку своих персональных данных</p>
+            </section>
+            <div class="contacts-form">
+              <h2 class="contacts-form__title">Если у вас остались вопросы, задайте их в форме ниже.</h2>
+              <form class="question-form" action="#" enctype="text/plain" method="POST">
+                <div class="question-form__wrapper">
+                  <label class="visually-hidden" for="question-phone">Ваш номер телефона</label>
+                  <input type="tel" id="question-phone" name="phone" placeholder="Телефон">
+                  <label class="visually-hidden" for="question-text">Ваш вопрос</label>
+                  <textarea id="question-text" placeholder="Введите ваш вопрос"></textarea>
+                  <div class="question-form__submit">
+                    <button class="question-form__btn m-btn" type="submit">Отправить вопрос</button><span class="question-form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных</span>
                   </div>
                 </div>
               </form>

@@ -1,0 +1,31 @@
+section.contacts-data
+  include ./components/contacts-path
+  .contacts-data__wrapper
+
+    h1.visually-hidden Контакты и расположение компании steel balls
+    .contacts-data__content
+      .contacts-data__content-part
+        h3 Адрес мастерской
+        address г. Санкт- Петербург, ул.Бехтерова 3, корп 3а
+        span Cогласовывайте заранее время приезда.
+
+      .contacts-data__content-part
+        h3 Время работы
+        p Пн-Пт  с 9:00 до 18:00.
+
+      .contacts-data__content-part
+        h3 Телефон
+
+        p Многоканальный офисный телефон
+        p.contacts-data__content-phone +7 (812)-219-40-93
+
+        p Мобильный телефон
+        p.contacts-data__content-phone +7 (900)-622-18-18
+
+      .contacts-data__content-part
+        h3 E-mail
+        p.contacts-data__content-mail master@stballs.ru
+
+    .contacts-data__additional
+      include ./components/contacts-map
+      include ./components/contacts-form
