@@ -13566,7 +13566,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const slidersInit = function () {
-  document.addEventListener("DOMContentLoaded", function() {
+  //document.addEventListener("load", function() {
+  window.addEventListener("load", () => {
+    console.log('loaded')
     const sliderDelay = 3000;
 
     let pSlider = document.querySelector('.partnership__swiper-container');
