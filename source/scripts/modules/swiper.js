@@ -94,8 +94,6 @@ export const slidersInit = function () {
       fSlider.forEach(eachSlider => new Swiper(eachSlider, {
         spaceBetween: 30,
         slidesPerView: 'auto',
-        //updateOnImagesReady: true,
-        //freeMode: true,
 
         pagination: {
           el: '.f-swiper-pagination',

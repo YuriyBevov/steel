@@ -13659,8 +13659,6 @@ const slidersInit = function () {
       fSlider.forEach(eachSlider => new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](eachSlider, {
         spaceBetween: 30,
         slidesPerView: 'auto',
-        //updateOnImagesReady: true,
-        //freeMode: true,
 
         pagination: {
           el: '.f-swiper-pagination',
