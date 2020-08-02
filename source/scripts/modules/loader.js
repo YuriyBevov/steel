@@ -1,22 +1,29 @@
 import showIntroTitle from './showIntroTitle.js'
+import {slidersInit} from "./swiper.js";
 
 export const loader = function() {
   const showPage = () => {
     document.removeEventListener("DOMContentLoaded", showPage);
 
-    const loader = document.querySelector('.loader');
+      window.onload = () => {
+        console.log('ok')
+        slidersInit();
+        const loader = document.querySelector('.loader');
 
-    const hideLoader = function () {
-      setTimeout(() => {
-          loader.style.opacity = 0;
-          showIntroTitle();
-        }, 800)
+        const hideLoader = function () {
+          setTimeout(() => {
+              loader.style.opacity = 0;
+              showIntroTitle();
+            }, 800)
 
-      setTimeout(() => {
-        loader.style.display ='none';
-      }, 1500)
+          setTimeout(() => {
+            loader.style.display ='none';
+          }, 1500)
 
-    }();
-  }
-    document.addEventListener('DOMContentLoaded', showPage);
+        }();
+      }
+      };
+
+
+  document.addEventListener('DOMContentLoaded', showPage);
 }();

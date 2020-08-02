@@ -13164,13 +13164,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_loader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/loader.js */ "./source/scripts/modules/loader.js");
 /* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
 /* harmony import */ var _modules_lazy_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/lazy.js */ "./source/scripts/modules/lazy.js");
-/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
-/* harmony import */ var _modules_masonry_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/masonry.js */ "./source/scripts/modules/masonry.js");
-/* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
-/* harmony import */ var _modules_modernizrWebp_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/modernizrWebp.js */ "./source/scripts/modules/modernizrWebp.js");
-/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
-/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
-
+/* harmony import */ var _modules_masonry_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/masonry.js */ "./source/scripts/modules/masonry.js");
+/* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
+/* harmony import */ var _modules_modernizrWebp_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/modernizrWebp.js */ "./source/scripts/modules/modernizrWebp.js");
+/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
+/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
 
 
 
@@ -13273,27 +13271,35 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loader", function() { return loader; });
 /* harmony import */ var _showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./showIntroTitle.js */ "./source/scripts/modules/showIntroTitle.js");
+/* harmony import */ var _swiper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./swiper.js */ "./source/scripts/modules/swiper.js");
+
 
 
 const loader = function() {
   const showPage = () => {
     document.removeEventListener("DOMContentLoaded", showPage);
 
-    const loader = document.querySelector('.loader');
+      window.onload = () => {
+        console.log('ok')
+        Object(_swiper_js__WEBPACK_IMPORTED_MODULE_1__["slidersInit"])();
+        const loader = document.querySelector('.loader');
 
-    const hideLoader = function () {
-      setTimeout(() => {
-          loader.style.opacity = 0;
-          Object(_showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-        }, 800)
+        const hideLoader = function () {
+          setTimeout(() => {
+              loader.style.opacity = 0;
+              Object(_showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+            }, 800)
 
-      setTimeout(() => {
-        loader.style.display ='none';
-      }, 1500)
+          setTimeout(() => {
+            loader.style.display ='none';
+          }, 1500)
 
-    }();
-  }
-    document.addEventListener('DOMContentLoaded', showPage);
+        }();
+      }
+      };
+
+
+  document.addEventListener('DOMContentLoaded', showPage);
 }();
 
 
@@ -13567,7 +13573,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const slidersInit = function () {
   //document.addEventListener("load", function() {
-  window.onload = () => {
+  //window.onload = () => {
     console.log('loaded')
     const sliderDelay = 3000;
 
@@ -13689,8 +13695,10 @@ const slidersInit = function () {
         },
       });
     }
-  };
-}();
+  //};
+};
+
+
 
 
 /***/ }),

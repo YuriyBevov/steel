@@ -1,8 +1,8 @@
 import Swiper from "swiper";
 
-export const slidersInit = function () {
+const slidersInit = function () {
   //document.addEventListener("load", function() {
-  window.onload = () => {
+  //window.onload = () => {
     console.log('loaded')
     const sliderDelay = 3000;
 
@@ -124,5 +124,7 @@ export const slidersInit = function () {
         },
       });
     }
-  };
-}();
+  //};
+};
+
+export {slidersInit}
