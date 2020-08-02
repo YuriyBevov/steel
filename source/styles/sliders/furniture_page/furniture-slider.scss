@@ -5,6 +5,7 @@
      padding-bottom: 4.5rem;
 
    .swiper-slide {
+     width: auto !important;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -46,4 +47,31 @@
      cursor: default;
      opacity: 0.5;
    }
+}
+
+@media(max-width: $desktop-width) {
+  .furniture-swiper-container {
+    height: 36rem;
+  }
+
+  .swiper-slide {
+    img {
+      width: auto;
+    }
+  }
+}
+
+@media(max-width: $tablet-width) {
+  .furniture-swiper-container {
+    height: 23rem;
+
+    .swiper-pagination-progressbar {
+      width: 100%;
+    }
+
+    .f-swiper-button-next,
+    .f-swiper-button-prev {
+      display: none;
+    }
+  }
 }

@@ -13205,21 +13205,6 @@ const onBurgerClickEvent = () => {
 
 burger.addEventListener('click', onBurgerClickEvent);
 
-/*const img = document.querySelectorAll('.partitions_img');
-console.log(img)
-let width = 0;
-const container = document.querySelector('.partitions-swiper-container');
-
-img.forEach(el => {
-  width += el.clientWidth
-  console.log(el.clientWidth)
-
-});
-
-container.style.maxWidth = width + 'px';
-console.log(container.style)
-  console.log(width)*/
-
 
 /***/ }),
 
@@ -13670,6 +13655,8 @@ const slidersInit = function () {
 
     fSlider.forEach(eachSlider => new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](fSlider, {
       spaceBetween: 30,
+      slidesPerView: 'auto',
+      freeMode: true,
 
       pagination: {
         el: '.f-swiper-pagination',
