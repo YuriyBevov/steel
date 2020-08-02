@@ -13232,37 +13232,10 @@ __webpack_require__.r(__webpack_exports__);
     duration: 1300,
     once: true,
     offset: 200,
-    disable: /*'phone'/**/function() {
-        return window.innerWidth < _utils_vars_js__WEBPACK_IMPORTED_MODULE_1__["minAnimationWidth"];
-      }
-    /**/
+    disable: 'phone'/*function() {
+        return window.innerWidth < minAnimationWidth;
+      }*/
   });
-
-
-
-
-
-    // код ниже не работает  тк при смене ширины, формируется масонри и высота адекватно не определяется !!! исправить поведение аос при смене ширины
-  /*onElementHeightChange(document.body, function(){
-    AOS.refresh();
-  });
-
-function onElementHeightChange(elm, callback) {
-    var lastHeight = elm.clientHeight
-    var newHeight;
-
-    (function run() {
-        newHeight = elm.clientHeight;
-        if (lastHeight !== newHeight) callback();
-        lastHeight = newHeight;
-
-        if (elm.onElementHeightChangeTimer) {
-          clearTimeout(elm.onElementHeightChangeTimer);
-        }
-
-        elm.onElementHeightChangeTimer = setTimeout(run, 200);
-    })();
-  }*/
 };
 
 
@@ -13654,9 +13627,39 @@ const slidersInit = function () {
 
     if(fSlider) {
 
-      fSlider.forEach(eachSlider => new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](fSlider, {
+      /*for(let i = 0; i < fSlider.length; i++) {
+        console.log(fSlider.length)
+
+        let furnitureSlider = new Swiper(fSlider[i], {
+          spaceBetween: 30,
+          slidesPerView: 'auto',
+          //updateOnImagesReady: true,
+          //freeMode: true,
+
+          pagination: {
+            el: '.f-swiper-pagination',
+            type: 'progressbar',
+          },
+          navigation: {
+            nextEl: '.f-swiper-button-next',
+            prevEl: '.f-swiper-button-prev',
+          },
+
+          on: {
+            init: function() {
+              console.log('initialized.'); // this works
+            },
+            imagesReady: function() {
+              console.log('images ready.'); // this works now, too!
+            }
+          }
+        })
+      }*/
+
+      fSlider.forEach(eachSlider => new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](eachSlider, {
         spaceBetween: 30,
         slidesPerView: 'auto',
+        //updateOnImagesReady: true,
         //freeMode: true,
 
         pagination: {
@@ -13667,7 +13670,16 @@ const slidersInit = function () {
           nextEl: '.f-swiper-button-next',
           prevEl: '.f-swiper-button-prev',
         },
-      }))
+
+        on: {
+          init: function() {
+            console.log('initialized.'); // this works
+          },
+          imagesReady: function() {
+            console.log('images ready.'); // this works now, too!
+          }
+        }
+      }));
     }
 
     let partSlider = document.querySelector('.partitions-swiper-container');

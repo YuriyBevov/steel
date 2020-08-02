@@ -62,9 +62,39 @@ export const slidersInit = function () {
 
     if(fSlider) {
 
-      fSlider.forEach(eachSlider => new Swiper(fSlider, {
+      /*for(let i = 0; i < fSlider.length; i++) {
+        console.log(fSlider.length)
+
+        let furnitureSlider = new Swiper(fSlider[i], {
+          spaceBetween: 30,
+          slidesPerView: 'auto',
+          //updateOnImagesReady: true,
+          //freeMode: true,
+
+          pagination: {
+            el: '.f-swiper-pagination',
+            type: 'progressbar',
+          },
+          navigation: {
+            nextEl: '.f-swiper-button-next',
+            prevEl: '.f-swiper-button-prev',
+          },
+
+          on: {
+            init: function() {
+              console.log('initialized.'); // this works
+            },
+            imagesReady: function() {
+              console.log('images ready.'); // this works now, too!
+            }
+          }
+        })
+      }*/
+
+      fSlider.forEach(eachSlider => new Swiper(eachSlider, {
         spaceBetween: 30,
         slidesPerView: 'auto',
+        //updateOnImagesReady: true,
         //freeMode: true,
 
         pagination: {
@@ -75,7 +105,16 @@ export const slidersInit = function () {
           nextEl: '.f-swiper-button-next',
           prevEl: '.f-swiper-button-prev',
         },
-      }))
+
+        on: {
+          init: function() {
+            console.log('initialized.'); // this works
+          },
+          imagesReady: function() {
+            console.log('images ready.'); // this works now, too!
+          }
+        }
+      }));
     }
 
     let partSlider = document.querySelector('.partitions-swiper-container');
