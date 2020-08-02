@@ -43,6 +43,7 @@
 
 @media(max-width: $tablet-width) {
   .furniture-bakehouse {
+    padding-bottom: 4.5rem;
     &__wrapper {
       flex-direction: column;
     }
