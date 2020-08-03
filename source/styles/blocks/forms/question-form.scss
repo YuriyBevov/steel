@@ -19,7 +19,6 @@
     margin-bottom: 4rem;
     background-color: transparent;
 
-
     &::placeholder {
       color: $color_placeholder;
     }
@@ -87,10 +86,6 @@
   .question-form {
     &__wrapper {
       flex-direction: column;
-    }
-    input,
-    textarea {
-
     }
   }
 }
