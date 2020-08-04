@@ -20,7 +20,7 @@
 
   &__advantages-item {
     font-family: $font_secondary;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 2.3rem;
     color: $color_black;
 
@@ -58,6 +58,7 @@
     picture {
       max-width: 100%;
       max-height: 445px;
+      margin-bottom: 1rem;
     }
 
     &-description {
@@ -78,6 +79,10 @@
   .partition {
     padding-top: 7rem;
 
+    &__title {
+      margin-bottom: 1rem;
+    }
+
     &__item {
       min-height: 274px;
 
@@ -86,23 +91,19 @@
       }
 
       &-description {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         line-height: 2.4rem;
       }
     }
 
     &__advantages {
-      &-list {
-        margin-right: 6.5%;
-      }
 
       &-item {
-        font-size: 1.1rem;
         line-height: 1.8rem;
 
         span {
-          font-size: 1.3rem;
-          line-height: 1.6rem;
+          font-size: 1.8rem;
+          line-height: 1.8rem;
         }
       }
     }
@@ -135,20 +136,37 @@
       }
 
       &-description {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         line-height: 1.5rem;
       }
     }
 
     &__advantages-item {
-      font-size: 0.9rem;
-      line-height: 1.6rem;
+      font-size: 1.4rem;
+
+      span {
+        font-size: 1.6rem;
+      }
     }
 
     &__link {
       order: 2;
       align-self: flex-start;
       margin-bottom: 2rem;
+    }
+  }
+}
+
+@media(max-width: $mobile-width) {
+  .partition {
+    &__advantages-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+
+      span {
+        margin-bottom: 1rem;
+      }
     }
   }
 }
