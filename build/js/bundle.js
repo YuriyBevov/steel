@@ -13203,8 +13203,6 @@ const onBurgerClickEvent = () => {
 
 burger.addEventListener('click', onBurgerClickEvent);*/
 
-//setFixedHeader();
-
 
 /***/ }),
 
