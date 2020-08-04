@@ -1,17 +1,17 @@
 'use strict'
 
 import loader from './modules/loader.js';
-import resize from './modules/textareaResize.js';
+import modernizrWebp from "./modules/modernizrWebp.js";
+import setFixedHeader from './modules/setFixedHeader.js';
 import lazy from "./modules/lazy.js";
 import masonry from "./modules/masonry.js"
 import numberAnimation from "./modules/numberAnimation.js";
-import modernizrWebp from "./modules/modernizrWebp.js";
 import mapInit from './modules/map.js';
-
 import modalInit from './modules/modals.js'; // инит модалок, готовый скрипт !!!
+import resize from './modules/textareaResize.js';
 
 
-const burger = document.querySelector('.toggle');
+/*const burger = document.querySelector('.toggle');
 const menu = document.querySelector('.header__content');
 console.log(burger)
 
@@ -29,4 +29,6 @@ const onBurgerClickEvent = () => {
   }
 }
 
-burger.addEventListener('click', onBurgerClickEvent);
+burger.addEventListener('click', onBurgerClickEvent);*/
+
+//setFixedHeader();
