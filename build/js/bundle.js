@@ -13165,18 +13165,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modernizrWebp_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modernizrWebp.js */ "./source/scripts/modules/modernizrWebp.js");
 /* harmony import */ var _modules_setFixedHeader_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/setFixedHeader.js */ "./source/scripts/modules/setFixedHeader.js");
 /* harmony import */ var _modules_lazy_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/lazy.js */ "./source/scripts/modules/lazy.js");
-/* harmony import */ var _modules_masonry_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/masonry.js */ "./source/scripts/modules/masonry.js");
-/* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
-/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
-/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
-/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
+/* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
+/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
+/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
+/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
 
 
 
 
 
 
-
+//import masonry from "./modules/masonry.js"
 
 
  // инит модалок, готовый скрипт !!!
@@ -13218,21 +13217,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aos", function() { return aos; });
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_vars_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/vars.js */ "./source/scripts/utils/vars.js");
 
 
-
- function aos() {
-
+function aos() {
   aos__WEBPACK_IMPORTED_MODULE_0___default.a.init({
     startEvent: 'DOMContentLoaded',
     delay: 300,
     duration: 1300,
     once: true,
     offset: 200,
-    disable: 'phone'/*function() {
-        return window.innerWidth < minAnimationWidth;
-      }*/
+    disable: 'phone'
   });
 };
 
@@ -13272,6 +13266,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loader", function() { return loader; });
 /* harmony import */ var _showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./showIntroTitle.js */ "./source/scripts/modules/showIntroTitle.js");
 /* harmony import */ var _swiper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./swiper.js */ "./source/scripts/modules/swiper.js");
+/* harmony import */ var _masonry_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./masonry.js */ "./source/scripts/modules/masonry.js");
+
 
 
 
@@ -13280,6 +13276,7 @@ const loader = function() {
     document.removeEventListener("DOMContentLoaded", showPage);
 
     window.onload = () => {
+      Object(_masonry_js__WEBPACK_IMPORTED_MODULE_2__["masonry"])();
       Object(_swiper_js__WEBPACK_IMPORTED_MODULE_1__["slidersInit"])();
       const loader = document.querySelector('.loader');
 
@@ -13367,26 +13364,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const masonry = function () {
-  document.addEventListener('DOMContentLoaded', function(){
+function masonry() {
   var elem = document.querySelector('.grid');
 
-    if(elem) {
-      imagesLoaded__WEBPACK_IMPORTED_MODULE_1___default()( elem, function() {
-          var msnry = new masonry_layout__WEBPACK_IMPORTED_MODULE_0___default.a( elem, {
-            // options
-            percentPosition: true,
-            columnWidth: '.grid-sizer',
-            gutter: '.gutter-sizer',
-            itemSelector: '.grid-item',
-          });
-          Object(_aos_js__WEBPACK_IMPORTED_MODULE_2__["aos"])();
-        });
-      } else {
-        Object(_aos_js__WEBPACK_IMPORTED_MODULE_2__["aos"])();
-      }
-  });
-}();
+  if(elem) {
+    imagesLoaded__WEBPACK_IMPORTED_MODULE_1___default()( elem, function() {
+      var msnry = new masonry_layout__WEBPACK_IMPORTED_MODULE_0___default.a( elem, {
+        // options
+        percentPosition: true,
+        columnWidth: '.grid-sizer',
+        gutter: '.gutter-sizer',
+        itemSelector: '.grid-item',
+      });
+      Object(_aos_js__WEBPACK_IMPORTED_MODULE_2__["aos"])();
+    });
+  } else {
+    Object(_aos_js__WEBPACK_IMPORTED_MODULE_2__["aos"])();
+  }
+};
+
+
 
 
 /***/ }),

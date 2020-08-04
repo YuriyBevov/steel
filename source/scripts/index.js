@@ -4,7 +4,7 @@ import loader from './modules/loader.js';
 import modernizrWebp from "./modules/modernizrWebp.js";
 import setFixedHeader from './modules/setFixedHeader.js';
 import lazy from "./modules/lazy.js";
-import masonry from "./modules/masonry.js"
+//import masonry from "./modules/masonry.js"
 import numberAnimation from "./modules/numberAnimation.js";
 import mapInit from './modules/map.js';
 import modalInit from './modules/modals.js'; // инит модалок, готовый скрипт !!!

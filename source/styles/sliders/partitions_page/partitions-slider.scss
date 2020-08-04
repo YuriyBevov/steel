@@ -30,12 +30,14 @@
     bottom: 0;
     right: 15%;
     width: 10%;
+    height: 2rem;
     max-width: 5.2rem;
-    height: 0.8rem;
+    //height: 0.8rem;
     margin-bottom: 0.5rem;
     content: '';
     cursor: pointer;
     background-image: url("../img/static/furniture-slider-arrow.svg");
+    background-position: bottom;
     background-repeat: no-repeat;
     z-index: 100;
   }
@@ -43,6 +45,7 @@
   .part-swiper-button-next {
     right: 5%;
     transform: rotate(180deg);
+    background-position: top;
   }
 
   .swiper-button-disabled {
