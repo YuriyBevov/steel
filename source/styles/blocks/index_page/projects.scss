@@ -4,6 +4,7 @@
 
   &__gallery {
     display: flex;
+    flex-wrap: wrap;
 
     &-container--column-left,
     &-container--column-right {
@@ -31,7 +32,7 @@
     }
 
     &-sm {
-      padding: 0 2.5rem;
+      padding: 0 2rem;
     }
   }
 
@@ -121,6 +122,27 @@
 
     .projects__link {
       margin-bottom: 1.5rem;
+    }
+  }
+}
+
+@media(max-width: 534px) {
+  .projects {
+    &__gallery {
+      display: flex;
+
+      &-container--column-left,
+      &-container--column-right {
+          width: 100%;
+      }
+
+      &-container--column-left {
+        margin-right: 0;
+      }
+    }
+
+    &__item-sm {
+      padding: 0;
     }
   }
 }
