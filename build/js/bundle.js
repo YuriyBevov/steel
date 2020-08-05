@@ -10462,6 +10462,16 @@ const onBurgerClickEvent = () => {
 
 burger.addEventListener('click', onBurgerClickEvent);*/
 
+const burger = document.querySelector('.toggle');
+
+const navbar = document.querySelector('.header__navbar');
+
+const onClickEventHandler = () => {
+    navbar.classList.toggle('menu-opened');
+}
+
+burger.addEventListener('click', onClickEventHandler)
+
 
 /***/ }),
 

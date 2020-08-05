@@ -26,16 +26,16 @@
 @import "components/path";
 @import "components/map";
 
+//--- mobile-menu
+
+@import "mobile-menu/mobile_menu";
+
 // sliders
 
 @import "sliders/index_page/partnership-slider";
 @import "sliders/index_page/advantages-slider";
 @import "sliders/partitions_page/partitions-slider";
 @import "sliders/furniture_page/furniture-slider";
-
-// masonry_layout
-
-@import "masonry/projects-masonry-layout.scss";
 
 //--- common blocks
 

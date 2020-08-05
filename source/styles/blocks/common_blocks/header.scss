@@ -9,6 +9,7 @@
   &__logo {
     margin-right: auto;
     width: 130px;
+    z-index: 1000;
   }
 
   &__wrapper {
@@ -101,41 +102,6 @@
 }
 @media(max-width: $desktop-width) {
   .header {
-    /*&__content {
-      position: relative;
-      transition: min-height 0.5s 0.1s ease-in;
-    }
-
-    &__content.menu-opened {
-      flex-direction: column;
-      height: 100%;
-      min-height: 100vh;
-      padding-top: 2.4rem;
-      padding-right: 4.7rem;
-
-      .header__logo,
-      .header__contacts,
-      .header__callback {
-        display: none;
-      }
-
-      .nav {
-        display: flex;
-        order: 2;
-        animation: menu 0.7s ease-in forwards;
-        padding-top: 25%;
-
-        &__list {
-          flex-direction: column;
-        }
-
-        &__link {
-          font-size: 3.6rem;
-          line-height: 5.6rem;
-        }
-      }
-    }*/
-
     &__navbar {
       flex-grow: 0;
     }

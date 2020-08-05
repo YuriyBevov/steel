@@ -16,6 +16,7 @@
     background-color: transparent;
     cursor: pointer;
     outline: none; // убрал фокус по табу
+    z-index: 1000;
 
     &:focus,
     &:hover {

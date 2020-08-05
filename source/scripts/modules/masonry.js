@@ -1,5 +1,4 @@
-import Masonry from 'masonry-layout';
-import imagesLoaded from 'imagesLoaded';
+/*import imagesLoaded from 'imagesLoaded';
 import {aos} from './aos.js'
 
 function masonry() {
@@ -21,4 +20,4 @@ function masonry() {
   }
 };
 
-export {masonry}
+export {masonry} */
