@@ -1,6 +1,6 @@
 import AOS from 'aos';
 
-function aos() {
+export const aos = function () {
   AOS.init({
     startEvent: 'DOMContentLoaded',
     delay: 300,
@@ -9,6 +9,4 @@ function aos() {
     offset: 200,
     disable: 'phone'
   });
-};
-
-export {aos}
+}();

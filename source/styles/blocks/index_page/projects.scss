@@ -2,6 +2,39 @@
   padding-top: 6rem;
   padding-bottom: 6rem;
 
+  &__gallery {
+    display: flex;
+
+    &-container--column-left,
+    &-container--column-right {
+      display: flex;
+      flex-direction: column;
+
+      width: 48%;
+    }
+
+    &-container--column-left {
+      margin-right: 4%;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    height: auto;
+
+    picture {
+      height: auto;
+    }
+
+    img {
+      object-fit: contain;
+    }
+
+    &-sm {
+      padding: 0 2.5rem;
+    }
+  }
+
   &__wrapper {
     @include container();
     display: flex;
@@ -26,7 +59,6 @@
       font-size: 1.6rem;
       line-height: 2rem;
       margin-bottom: 4rem;
-
       color: $color_secondary-black;
     }
   }
