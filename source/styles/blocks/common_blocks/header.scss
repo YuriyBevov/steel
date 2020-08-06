@@ -5,11 +5,12 @@
   left: 0;
   width: 100%;
   z-index: 1000000;
+  margin-right: calc(-1 * (100vw - 100%));
 
   &__logo {
     margin-right: auto;
     width: 130px;
-    z-index: 1000;
+    //z-index: 1000;
   }
 
   &__wrapper {

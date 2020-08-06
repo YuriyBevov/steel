@@ -37,6 +37,10 @@
   ::-webkit-resizer { /* 7 - изменение размеров */
   }
 
+html {
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
 html,
 body {
   -webkit-box-sizing: border-box;
@@ -49,6 +53,10 @@ body {
   display: flex;
   flex-direction: column;
   font-family: $font_primary, sans-serif;
+}
+
+html.scroll-off {
+  overflow-y: hidden;
 }
 
 p,h1,h2,h3,h4,h5,h6 {

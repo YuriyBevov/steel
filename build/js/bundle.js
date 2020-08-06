@@ -10429,6 +10429,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
 /* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
 /* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
+/* harmony import */ var _utils_vars_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/vars.js */ "./source/scripts/utils/vars.js");
 
 
 
@@ -10462,12 +10463,24 @@ const onBurgerClickEvent = () => {
 
 burger.addEventListener('click', onBurgerClickEvent);*/
 
+
+
 const burger = document.querySelector('.toggle');
 
 const navbar = document.querySelector('.header__navbar');
+const page = document.querySelector('html');
+
 
 const onClickEventHandler = () => {
     navbar.classList.toggle('menu-opened');
+    burger.classList.toggle('opened');
+    if(!navbar.classList.contains('menu-opened')) {
+      page.classList.remove('scroll-off');
+      burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
+    } else {
+      page.classList.add('scroll-off');
+      burger.style.marginRight = _utils_vars_js__WEBPACK_IMPORTED_MODULE_9__["scrollWidth"] + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
+    }
 }
 
 burger.addEventListener('click', onClickEventHandler)
@@ -11351,13 +11364,15 @@ function modal(openButtonClass, modalClass) {
 /*!**************************************!*\
   !*** ./source/scripts/utils/vars.js ***!
   \**************************************/
-/*! exports provided: minAnimationWidth */
+/*! exports provided: minAnimationWidth, scrollWidth */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "minAnimationWidth", function() { return minAnimationWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollWidth", function() { return scrollWidth; });
 const minAnimationWidth = 435;
+const scrollWidth = 12;
 
 
 
