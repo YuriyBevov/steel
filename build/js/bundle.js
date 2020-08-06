@@ -11300,6 +11300,7 @@ const scrollWidth = () => {
   document.body.append(div);
   let size = div.offsetWidth - div.clientWidth;
   div.remove();
+  alert (size)
 
   return size
 };
