@@ -16,16 +16,6 @@
     background-color: $color_scroll-bg;
   }
 
-  ::-webkit-scrollbar-button { /* 2 - кнопка */
-
-  }
-
-  ::-webkit-scrollbar-track { /* 3 - трек */
-  }
-
-  ::-webkit-scrollbar-track-piece { /* 4 - видимая часть трека */
-  }
-
   ::-webkit-scrollbar-thumb { /* 5 - ползунок */
     background-color: $color_black;
   }
@@ -34,11 +24,8 @@
     border-radius: 1rem;
   }
 
-  ::-webkit-resizer { /* 7 - изменение размеров */
-  }
-
 html {
-  margin-right: calc(-1 * (100vw - 100%));
+  margin-right: calc(-1 * (100vw - 100%)); // чтобы страница не прыгала при/без скролла
 }
 
 html,

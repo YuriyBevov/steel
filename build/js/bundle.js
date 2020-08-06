@@ -10429,7 +10429,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
 /* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
 /* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
-/* harmony import */ var _utils_vars_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/vars.js */ "./source/scripts/utils/vars.js");
+/* harmony import */ var _utils_func_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/func.js */ "./source/scripts/utils/func.js");
 
 
 
@@ -10479,7 +10479,7 @@ const onClickEventHandler = () => {
       burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
     } else {
       page.classList.add('scroll-off');
-      burger.style.marginRight = _utils_vars_js__WEBPACK_IMPORTED_MODULE_9__["scrollWidth"] + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
+      burger.style.marginRight = Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_9__["scrollWidth"])() + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
     }
 }
 
@@ -11271,7 +11271,7 @@ function setFixedHeader(pageHeader, pageMain) {
 /*!**************************************!*\
   !*** ./source/scripts/utils/func.js ***!
   \**************************************/
-/*! exports provided: toggleElem, removeClass, addClass */
+/*! exports provided: toggleElem, removeClass, addClass, scrollWidth */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11279,6 +11279,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleElem", function() { return toggleElem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollWidth", function() { return scrollWidth; });
 function toggleElem(el, cl) {
   el.classList.toggle(cl);
 }
@@ -11290,6 +11291,18 @@ function removeClass(el,cl) {
 function addClass(el,cl) {
   el.classList.add(cl);
 }
+
+const scrollWidth = () => {
+  let div = document.createElement('div');
+  div.style.overflowY = 'scroll';
+  div.style.width = '50px';
+  div.style.height ='50px';
+  document.body.append(div);
+  let size = div.offsetWidth - div.clientWidth;
+  div.remove();
+
+  return size
+};
 
 
 
@@ -11364,15 +11377,13 @@ function modal(openButtonClass, modalClass) {
 /*!**************************************!*\
   !*** ./source/scripts/utils/vars.js ***!
   \**************************************/
-/*! exports provided: minAnimationWidth, scrollWidth */
+/*! exports provided: minAnimationWidth */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "minAnimationWidth", function() { return minAnimationWidth; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollWidth", function() { return scrollWidth; });
 const minAnimationWidth = 435;
-const scrollWidth = 12;
 
 
 
