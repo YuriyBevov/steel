@@ -42,15 +42,9 @@ const onClickEventHandler = () => {
   burger.classList.toggle('opened');
   if(!navbar.classList.contains('menu-opened')) {
     page.classList.remove('scroll-off');
-    if (document.body.offsetHeight > document.documentElement.clientHeight) {
-      burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
-    }
     //burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
   } else {
     page.classList.add('scroll-off');
-    if (document.body.offsetHeight > document.documentElement.clientHeight) {
-      burger.style.marginRight = scrollWidth() + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
-    }
     //burger.style.marginRight = scrollWidth() + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
   }
 }
@@ -58,8 +52,8 @@ const onClickEventHandler = () => {
 burger.addEventListener('click', onClickEventHandler)
 
 
-if (document.body.offsetHeight > document.documentElement.clientHeight) {
+/*if (document.body.offsetHeight > document.documentElement.clientHeight) {
     console.log("Скролл есть");
 }else {
     console.log("Скролла нет");
-}
+}*/
