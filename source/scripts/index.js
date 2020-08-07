@@ -34,21 +34,32 @@ burger.addEventListener('click', onBurgerClickEvent);*/
 import {scrollWidth} from "./utils/func.js"
 
 const burger = document.querySelector('.toggle');
-
 const navbar = document.querySelector('.header__navbar');
 const page = document.querySelector('html');
 
-
 const onClickEventHandler = () => {
-    navbar.classList.toggle('menu-opened');
-    burger.classList.toggle('opened');
-    if(!navbar.classList.contains('menu-opened')) {
-      page.classList.remove('scroll-off');
+  navbar.classList.toggle('menu-opened');
+  burger.classList.toggle('opened');
+  if(!navbar.classList.contains('menu-opened')) {
+    page.classList.remove('scroll-off');
+    if (document.body.offsetHeight > document.documentElement.clientHeight) {
       burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
-    } else {
-      page.classList.add('scroll-off');
+    }
+    //burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
+  } else {
+    page.classList.add('scroll-off');
+    if (document.body.offsetHeight > document.documentElement.clientHeight) {
       burger.style.marginRight = scrollWidth() + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
     }
+    //burger.style.marginRight = scrollWidth() + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
+  }
 }
 
 burger.addEventListener('click', onClickEventHandler)
+
+
+if (document.body.offsetHeight > document.documentElement.clientHeight) {
+    console.log("Скролл есть");
+}else {
+    console.log("Скролла нет");
+}

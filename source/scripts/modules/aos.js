@@ -6,7 +6,7 @@ export const aos = function () {
     delay: 300,
     duration: 1300,
     once: true,
-    offset: 200,
+    offset: 50,
     disable: 'phone'
   });
 }();
