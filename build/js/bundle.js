@@ -10474,10 +10474,10 @@ const onClickEventHandler = () => {
   burger.classList.toggle('opened');
   if(!navbar.classList.contains('menu-opened')) {
     page.classList.remove('scroll-off');
-    burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
+    //burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
   } else {
     page.classList.add('scroll-off');
-    burger.style.marginRight = Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_9__["scrollWidth"])() + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
+    //burger.style.marginRight = scrollWidth() + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
   }
 }
 
