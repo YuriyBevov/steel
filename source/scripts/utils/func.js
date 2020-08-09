@@ -24,9 +24,9 @@ const scrollWidth = () => {
 
 function fileUpload(el, uploadFileNamePlace) {
   el.addEventListener("change", function(event) {
-  const input = event.target;
-
-  uploadFileNamePlace.textContent = input.files[0].name;
+    const input = event.target;
+    console.log(uploadFileNamePlace)
+    uploadFileNamePlace.textContent = input.files[0].name;
   });
 }
 

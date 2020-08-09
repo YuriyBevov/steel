@@ -12,3 +12,4 @@ import modalInit from './modules/modals.js'; // инит модалок, гот�
 import menuState from './modules/menuState.js';
 import fillUploadFile from './modules/fillUploadFile.js';
 import validatePhone from './modules/phoneValidation.js';
+// import formValidation from './modules/formValidation.js';

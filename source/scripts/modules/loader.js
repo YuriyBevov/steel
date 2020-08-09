@@ -3,9 +3,6 @@ import {slidersInit} from "./swiper.js";
 
 export const loader = function() {
   const showPage = () => {
-    document.removeEventListener("DOMContentLoaded", showPage);
-
-    //window.onload = () => {
       slidersInit();
       const loader = document.querySelector('.loader');
 
@@ -19,8 +16,12 @@ export const loader = function() {
           loader.style.display ='none';
         }, 1500)
       }();
-    //}
+
   };
 
-  document.addEventListener('DOMContentLoaded', showPage);
+  window.onload = () => {
+    showPage();
+  }
+
+      //document.addEventListener("DOMContentLoaded", showPage);
 }();

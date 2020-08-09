@@ -75,8 +75,8 @@ const slidersInit = function () {
       },
 
       on: {
-        init: function() {
-          this.updateSize();
+        imagesReady: function() {
+          this.update();
         },
       }
 
@@ -109,8 +109,8 @@ const slidersInit = function () {
       },
 
       on: {
-        init: function() {
-          this.updateSize();
+        imagesReady: function() {
+          this.update();
         },
       }
     });

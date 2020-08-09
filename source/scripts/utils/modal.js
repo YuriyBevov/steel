@@ -1,4 +1,5 @@
 import {removeClass, addClass, toggleElem} from './func.js';
+import {formValidation} from '../modules/formValidation.js';
 
 export default function modal(openButtonClass, modalClass) {
 
@@ -42,6 +43,7 @@ export default function modal(openButtonClass, modalClass) {
       closeBtn.focus();
       window.addEventListener('keydown', onEscBtnHandler);
       window.addEventListener('mousedown', onMousedownHandler);
+      formValidation(modal);
     }
 
     btn.addEventListener('click', onClickHandler);
