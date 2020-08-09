@@ -42,10 +42,12 @@ const onClickEventHandler = () => {
   burger.classList.toggle('opened');
   if(!navbar.classList.contains('menu-opened')) {
     page.classList.remove('scroll-off');
+    navbar.style.paddingLeft = 0;
     //burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
   } else {
-    page.classList.add('scroll-off');
+    burger.classList.add('scroll-off');
     //burger.style.marginRight = scrollWidth() + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
+    navbar.style.paddingLeft = scrollWidth() + 'px';
   }
 }
 
