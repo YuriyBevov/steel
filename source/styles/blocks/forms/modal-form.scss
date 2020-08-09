@@ -1,0 +1,85 @@
+.modal-form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    font-family: $font_text;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    width: 100%;
+    max-width: 40rem;
+    height: 3rem;
+    padding: 0.6rem 1rem;
+    border: 0;
+    border-bottom: 1px solid $color_black;
+    margin-right: 4rem;
+    margin-bottom: 4rem;
+    background-color: transparent;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &::placeholder {
+      color: $color_placeholder;
+    }
+  }
+
+  &__file {
+    position: relative;
+    font-family: $font_text;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    width: 100%;
+    max-width: 40rem;
+    height: 3rem;
+    padding: 0.6rem 1rem;
+    border: 0;
+    border-bottom: 1px solid $color_black;
+    margin-right: 4rem;
+    margin-bottom: 4rem;
+    cursor: pointer;
+    background-color: transparent;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      content: '';
+      width: 1.5rem;
+      height: 1.5rem;
+      background-image: url("../img/icons/icon-file.svg");
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__btn {
+    margin-bottom: 1.5rem;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__alert {
+    font-family: $font_text;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    max-width: 26rem;
+    margin-bottom: 1.5rem;
+    color: $color_black;
+  }
+}
+
+@media(max-width: $desktop-width) {
+  .modal-form {
+    &__btn {
+      margin-bottom: 1rem;
+    }
+  }
+}

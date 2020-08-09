@@ -1,0 +1,35 @@
+.modal-success {
+  &__text {
+    font-family: $font_secondary;
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+    margin-bottom: 3.5rem;
+    max-width: 40rem;
+    margin-bottom: 2rem;
+    color: $color_beige;
+  }
+
+  &__additional {
+    font-family: $font_text;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    margin-bottom: 2rem;
+    color: $color_beige;
+  }
+
+  .social {
+    &__item {
+      svg {
+        fill: #646464;
+      }
+
+      &:hover,
+      &:focus {
+        svg {
+          transition: fill $transition_rules;
+          fill: $color_beige;
+        }
+      }
+    }
+  }
+}

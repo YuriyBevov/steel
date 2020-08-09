@@ -1,4 +1,4 @@
-.question-form {
+.question-page-form {
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -71,7 +71,7 @@
 }
 
 @media(max-width: $desktop-width) {
-  .question-form {
+  .question-page-form {
     input {
       max-width: 36%;
     }
@@ -83,7 +83,7 @@
 }
 
 @media(max-width: $tablet-width) {
-  .question-form {
+  .question-page-form {
     &__wrapper {
       flex-direction: column;
     }
@@ -91,7 +91,7 @@
 }
 
 @media(max-width: 437px) {
-  .question-form {
+  .question-page-form {
     input {
       width: 50%;
       max-width: 20rem;

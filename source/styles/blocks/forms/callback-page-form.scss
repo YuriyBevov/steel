@@ -1,4 +1,4 @@
-.callback-form {
+.callback-page-form {
   display: flex;
   flex-direction: column;
 
@@ -45,13 +45,9 @@
 }
 
 @media(max-width: $desktop-width) {
-  .callback-form {
+  .callback-page-form {
     &__btn {
       margin-bottom: 1rem;
     }
   }
-}
-
-@media(max-width: $desktop-width) {
-  line-height: 1.8rem;
 }

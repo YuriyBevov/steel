@@ -1,0 +1,10 @@
+form.question-page-form(action="#" enctype="text/plain" method="POST")
+  .question-page-form__wrapper
+    label(for="question-phone").visually-hidden Ваш номер телефона
+    input(type="tel" id="question-phone" name="phone" placeholder="Телефон")
+    label(for="question-text").visually-hidden Ваш вопрос
+    textarea(id="question-text" placeholder="Введите ваш вопрос")
+
+    .question-page-form__submit
+      button(type="submit").question-page-form__btn.m-btn Отправить вопрос
+      span.question-page-form__alert Нажимая кнопку, вы даете согласие на обработку своих персональных данных

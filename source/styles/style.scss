@@ -84,9 +84,11 @@
 
 // forms
 
-@import "blocks/forms/callback-form";
-@import "blocks/forms/question-form";
+@import "blocks/forms/callback-page-form";
+@import "blocks/forms/modal-form";
+@import "blocks/forms/question-page-form";
 
 // modals
 
 @import "modals/modal";
+@import "modals/success";

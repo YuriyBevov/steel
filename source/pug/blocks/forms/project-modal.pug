@@ -1,0 +1,13 @@
+form(action="#" method="#").project-modal-form.modal-form
+  fieldset.modal-form__fields
+    label(for="project-modal-form-name").visually-hidden Ваше имя
+    input(type="text" id="project-modal-form-name" placeholder="Ваше имя")
+
+    label(for="project-modal-form-phone").visually-hidden Телефон
+    input(type="tel" id="project-modal-form-phone" placeholder="Телефон")
+
+    label(for="project-modal-form-file").modal-form__file Прикрепите файл
+    input(type="file" id="project-modal-form-file" placeholder="Прикрепите файл").visually-hidden
+
+  button(type="submit").modal-form__btn.m-btn Обсудить проект
+  span.modal-form__alert Нажимая кнопку, вы даете согласие на обработку своих персональных данных.

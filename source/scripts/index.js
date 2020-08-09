@@ -37,25 +37,37 @@ const burger = document.querySelector('.toggle');
 const navbar = document.querySelector('.header__navbar');
 const page = document.querySelector('html');
 
+
 const onClickEventHandler = () => {
   navbar.classList.toggle('menu-opened');
   burger.classList.toggle('opened');
   if(!navbar.classList.contains('menu-opened')) {
     page.classList.remove('scroll-off');
     navbar.style.paddingLeft = 0;
-    //burger.style.marginRight = 0; // убераю прыганье кнопки, которая в фиксированном контейнере
   } else {
     burger.classList.add('scroll-off');
-    //burger.style.marginRight = scrollWidth() + 'px'; // убераю прыганье кнопки, которая в фиксированном контейнере
     navbar.style.paddingLeft = scrollWidth() + 'px';
+    let lastFocusedElem = document.activeElement;
+    console.log(lastFocusedElem)
+    console.log(navbar)
   }
 }
 
 burger.addEventListener('click', onClickEventHandler)
 
+import IMask from 'imask'
 
-/*if (document.body.offsetHeight > document.documentElement.clientHeight) {
-    console.log("Скролл есть");
-}else {
-    console.log("Скролла нет");
-}*/
+function validatePhone() {
+
+  var phoneInput = document.querySelectorAll("input[type=tel]")
+
+  if (phoneInput) {
+    phoneInput.forEach((input) => {
+      var phoneMask = IMask(input, {
+        mask: '+{7}(000)000-00-00'
+      });
+    })
+  }
+};
+
+validatePhone();

@@ -1,0 +1,10 @@
+form(action="#" method="#").callback-modal-form.modal-form
+  fieldset.modal-form__fields
+    label(for="callback-modal--formname").visually-hidden Ваше имя
+    input(type="text" id="callback-modal-form-name" placeholder="Ваше имя")
+
+    label(for="callback-modal-phone").visually-hidden Телефон
+    input(type="tel" id="callback-modal-form-phone" placeholder="Телефон")
+
+  button(type="submit").modal-form__btn.m-btn Отправить
+  span.modal-form__alert Нажимая кнопку, вы даете согласие на обработку своих персональных данных.
