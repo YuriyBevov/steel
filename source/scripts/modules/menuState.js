@@ -22,11 +22,11 @@ function menuState() {
     burger.classList.toggle('opened');
     if(!navbar.classList.contains('menu-opened')) {
       page.classList.remove('scroll-off');
-      navbar.style.paddingLeft = 0;
+      //navbar.style.paddingLeft = 0;
       document.removeEventListener('keydown', onEscBtnHandler);
     } else {
       burger.classList.add('scroll-off');
-      navbar.style.paddingLeft = scrollWidth() + 'px';
+      //navbar.style.paddingLeft = scrollWidth() + 'px';
       document.addEventListener('keydown', onEscBtnHandler);
     }
   }

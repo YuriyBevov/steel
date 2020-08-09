@@ -15330,7 +15330,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
 /* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
 /* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
-/* harmony import */ var _modules_menuOpening_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/menuOpening.js */ "./source/scripts/modules/menuOpening.js");
+/* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
 /* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
 /* harmony import */ var _modules_phoneValidation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/phoneValidation.js */ "./source/scripts/modules/phoneValidation.js");
 
@@ -15509,10 +15509,10 @@ const mapInit = function () {
 
 /***/ }),
 
-/***/ "./source/scripts/modules/menuOpening.js":
-/*!***********************************************!*\
-  !*** ./source/scripts/modules/menuOpening.js ***!
-  \***********************************************/
+/***/ "./source/scripts/modules/menuState.js":
+/*!*********************************************!*\
+  !*** ./source/scripts/modules/menuState.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -15543,11 +15543,11 @@ function menuState() {
     burger.classList.toggle('opened');
     if(!navbar.classList.contains('menu-opened')) {
       page.classList.remove('scroll-off');
-      navbar.style.paddingLeft = 0;
+      //navbar.style.paddingLeft = 0;
       document.removeEventListener('keydown', onEscBtnHandler);
     } else {
       burger.classList.add('scroll-off');
-      navbar.style.paddingLeft = Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["scrollWidth"])() + 'px';
+      //navbar.style.paddingLeft = scrollWidth() + 'px';
       document.addEventListener('keydown', onEscBtnHandler);
     }
   }
