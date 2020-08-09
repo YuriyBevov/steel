@@ -5,7 +5,7 @@ export const loader = function() {
   const showPage = () => {
     document.removeEventListener("DOMContentLoaded", showPage);
 
-    window.onload = () => {
+    //window.onload = () => {
       slidersInit();
       const loader = document.querySelector('.loader');
 
@@ -19,7 +19,7 @@ export const loader = function() {
           loader.style.display ='none';
         }, 1500)
       }();
-    }
+    //}
   };
 
   document.addEventListener('DOMContentLoaded', showPage);

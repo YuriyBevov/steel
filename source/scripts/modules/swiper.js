@@ -63,6 +63,7 @@ const slidersInit = function () {
     fSlider.forEach(eachSlider => new Swiper(eachSlider, {
       spaceBetween: 30,
       slidesPerView: 'auto',
+      updateOnImagesReady: true,
 
       pagination: {
         el: '.f-swiper-pagination',
@@ -72,6 +73,21 @@ const slidersInit = function () {
         nextEl: '.f-swiper-button-next',
         prevEl: '.f-swiper-button-prev',
       },
+
+      on: {
+        init: function() {
+          this.updateSize();
+        },
+      }
+
+      /*on: {
+        init: function() {
+          console.log('initialized.');//this works
+        },
+        imagesReady: function() {
+          console.log('images ready.');//this doesn't work
+        }
+      }*/
     }));
   }
 
@@ -81,6 +97,8 @@ const slidersInit = function () {
     let partitionsSlider = new Swiper(partSlider, {
       slidesPerView: 'auto', // записать в пометки , как способ ограничивать контейнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
       spaceBetween: 30,
+      updateOnImagesReady: true,
+
       pagination: {
         el: '.part-swiper-pagination',
         type: 'progressbar',
@@ -89,6 +107,12 @@ const slidersInit = function () {
         nextEl: '.part-swiper-button-next',
         prevEl: '.part-swiper-button-prev',
       },
+
+      on: {
+        init: function() {
+          this.updateSize();
+        },
+      }
     });
   }
 };

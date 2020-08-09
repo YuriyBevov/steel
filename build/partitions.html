@@ -368,11 +368,43 @@
             <input type="text" id="project-modal-form-name" placeholder="Ваше имя">
             <label class="visually-hidden" for="project-modal-form-phone">Телефон</label>
             <input type="tel" id="project-modal-form-phone" placeholder="Телефон">
-            <label class="modal-form__file" for="project-modal-form-file">Прикрепите файл</label>
-            <input class="visually-hidden" type="file" id="project-modal-form-file" placeholder="Прикрепите файл">
+            <label class="modal-form__file" for="project-modal-form-file"><span class="modal-form__file-text">Прикрепите файл</span></label>
+            <input class="visually-hidden modal-form__file-upload" type="file" id="project-modal-form-file" placeholder="Прикрепите файл">
           </fieldset>
           <button class="modal-form__btn m-btn" type="submit">Обсудить проект</button><span class="modal-form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
         </form>
+      </div>
+    </div>
+    <div class="modal modal-success closed">
+      <div class="modal__wrapper modal-order__wrapper">
+        <button class="modal__close close">
+          <svg width="36" height="36">
+            <use xlink:href="#icon-close"></use>
+          </svg>
+        </button>
+        <p class="modal-success__text">Спасибо за вашу заявку!</p>
+        <p class="modal-success__text">Мы вам перезвоним в ближайшее время!</p>
+        <p class="modal-success__additional">Подписывайтесь на наши соц. сети:</p>
+        <div class="social">
+          <ul class="social__list">
+            <li class="social__item"><a href="#" aria-label="Вконтакте">
+                <svg width="30" height="30">
+                  <use xlink:href="#icon-vk"></use>
+                </svg></a></li>
+            <li class="social__item"><a href="#" aria-label="Telegramm">
+                <svg width="30" height="30">
+                  <use xlink:href="#icon-tg"></use>
+                </svg></a></li>
+            <li class="social__item"><a href="#" aria-label="Instagram">
+                <svg width="30" height="30">
+                  <use xlink:href="#icon-insta"></use>
+                </svg></a></li>
+            <li class="social__item"><a href="#" aria-label="Whatsapp">
+                <svg width="30" height="30">
+                  <use xlink:href="#icon-whatsapp"></use>
+                </svg></a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <script src="./js/bundle.js"></script>

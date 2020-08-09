@@ -15330,8 +15330,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
 /* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
 /* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
-/* harmony import */ var _utils_func_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/func.js */ "./source/scripts/utils/func.js");
-/* harmony import */ var imask__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! imask */ "./node_modules/imask/esm/index.js");
+/* harmony import */ var _modules_menuOpening_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/menuOpening.js */ "./source/scripts/modules/menuOpening.js");
+/* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
+/* harmony import */ var _modules_phoneValidation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/phoneValidation.js */ "./source/scripts/modules/phoneValidation.js");
 
 
 
@@ -15345,66 +15346,7 @@ __webpack_require__.r(__webpack_exports__);
  // инит модалок, готовый скрипт !!!
 
 
-/*const burger = document.querySelector('.toggle');
-const menu = document.querySelector('.header__content');
-console.log(burger)
 
-const page = document.querySelector('html');
-console.log(page)
-
-const onBurgerClickEvent = () => {
-  burger.classList.toggle('opened');
-  menu.classList.toggle('menu-opened');
-
-  if(menu.classList.contains('menu-opened')) {
-    page.style.overflowY = 'hidden';
-  } else {
-    page.style.overflowY = 'initial'
-  }
-}
-
-burger.addEventListener('click', onBurgerClickEvent);*/
-
-
-
-const burger = document.querySelector('.toggle');
-const navbar = document.querySelector('.header__navbar');
-const page = document.querySelector('html');
-
-
-const onClickEventHandler = () => {
-  navbar.classList.toggle('menu-opened');
-  burger.classList.toggle('opened');
-  if(!navbar.classList.contains('menu-opened')) {
-    page.classList.remove('scroll-off');
-    navbar.style.paddingLeft = 0;
-  } else {
-    burger.classList.add('scroll-off');
-    navbar.style.paddingLeft = Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_9__["scrollWidth"])() + 'px';
-    let lastFocusedElem = document.activeElement;
-    console.log(lastFocusedElem)
-    console.log(navbar)
-  }
-}
-
-burger.addEventListener('click', onClickEventHandler)
-
-
-
-function validatePhone() {
-
-  var phoneInput = document.querySelectorAll("input[type=tel]")
-
-  if (phoneInput) {
-    phoneInput.forEach((input) => {
-      var phoneMask = Object(imask__WEBPACK_IMPORTED_MODULE_10__["default"])(input, {
-        mask: '+{7}(000)000-00-00'
-      });
-    })
-  }
-};
-
-validatePhone();
 
 
 /***/ }),
@@ -15433,6 +15375,33 @@ const aos = function () {
     disable: 'phone'
   });
 }();
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/fillUploadFile.js":
+/*!**************************************************!*\
+  !*** ./source/scripts/modules/fillUploadFile.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/func.js */ "./source/scripts/utils/func.js");
+
+
+const fillUploadFile = () => {
+  const inputs = document.querySelectorAll('.modal-form__file-upload');
+
+  inputs.forEach(input => {
+    let label = input.previousElementSibling;
+    let textPlace = label.querySelector('.modal-form__file-text');
+    Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["fileUpload"])(input, textPlace);
+  })
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (fillUploadFile());
 
 
 /***/ }),
@@ -15475,7 +15444,7 @@ const loader = function() {
   const showPage = () => {
     document.removeEventListener("DOMContentLoaded", showPage);
 
-    window.onload = () => {
+    //window.onload = () => {
       Object(_swiper_js__WEBPACK_IMPORTED_MODULE_1__["slidersInit"])();
       const loader = document.querySelector('.loader');
 
@@ -15489,7 +15458,7 @@ const loader = function() {
           loader.style.display ='none';
         }, 1500)
       }();
-    }
+    //}
   };
 
   document.addEventListener('DOMContentLoaded', showPage);
@@ -15515,29 +15484,78 @@ const mapInit = function () {
     ymaps.ready(init);
     function init(){
 
-        // Создание карты.
-        let myMap = new ymaps.Map("map", {
-            center: [59.90279995, 30.40527791], // координаты Бехтерева 3к3
-            zoom: 16
-        });
+      // Создание карты.
+      let myMap = new ymaps.Map("map", {
+          center: [59.90279995, 30.40527791], // координаты Бехтерева 3к3
+          zoom: 16
+      });
 
-        var myPlacemark = new ymaps.Placemark([59.90233115, 30.40756371],
-          {
-            hintContent: '<span class="map__placemark-hint">Сварочная мастерская Steel Balls</span>',
-            //balloonContentHeader: '<h2 class="map__placemark-title">STEEL BALLS</h2>',
-            balloonContentBody: '<p class="map__placemark-description">Санкт-Петербург, ул. Бехтерева 3,корп 3а</p>',
-            //balloonContentFooter: '<a href="tel: 89006221818" class="map__placemark-link">8 (900) 6221818</a>',
-          },
-          {
-          iconLayout: 'default#image',
-          iconImageHref: './img/static/pin.png',
-          iconImageSize: [25, 36],
-        });
+      var myPlacemark = new ymaps.Placemark([59.90233115, 30.40756371],
+        {
+          hintContent: '<span class="map__placemark-hint">Сварочная мастерская Steel Balls</span>',
+          balloonContentBody: '<p class="map__placemark-description">Санкт-Петербург, ул. Бехтерева 3,корп 3а</p>',
+        },
+        {
+        iconLayout: 'default#image',
+        iconImageHref: './img/static/pin.png',
+        iconImageSize: [25, 36],
+      });
 
-        myMap.geoObjects.add(myPlacemark);
+      myMap.geoObjects.add(myPlacemark);
     }
   }
 }();
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/menuOpening.js":
+/*!***********************************************!*\
+  !*** ./source/scripts/modules/menuOpening.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/func.js */ "./source/scripts/utils/func.js");
+
+
+function menuState() {
+
+  const burger = document.querySelector('.toggle');
+  const navbar = document.querySelector('.header__navbar');
+  const page = document.querySelector('html');
+
+  const onEscBtnHandler = (evt) => {
+    console.log('in')
+    if (evt.keyCode === 27 && navbar.classList.contains('menu-opened')) {
+      page.classList.remove('scroll-off');
+      navbar.classList.remove('menu-opened');
+      burger.classList.remove('opened');
+      navbar.style.paddingLeft = 0;
+      document.removeEventListener('keydown', onEscBtnHandler);
+    }
+  }
+
+  const onClickEventHandler = () => {
+    navbar.classList.toggle('menu-opened');
+    burger.classList.toggle('opened');
+    if(!navbar.classList.contains('menu-opened')) {
+      page.classList.remove('scroll-off');
+      navbar.style.paddingLeft = 0;
+      document.removeEventListener('keydown', onEscBtnHandler);
+    } else {
+      burger.classList.add('scroll-off');
+      navbar.style.paddingLeft = Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["scrollWidth"])() + 'px';
+      document.addEventListener('keydown', onEscBtnHandler);
+    }
+  }
+
+  burger.addEventListener('click', onClickEventHandler);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (menuState());
 
 
 /***/ }),
@@ -15651,6 +15669,36 @@ const numberAnimation = function () {
   }
 
 }();
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/phoneValidation.js":
+/*!***************************************************!*\
+  !*** ./source/scripts/modules/phoneValidation.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var imask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! imask */ "./node_modules/imask/esm/index.js");
+
+
+function validatePhone() {
+
+  var phoneInput = document.querySelectorAll("input[type=tel]")
+
+  if (phoneInput) {
+    phoneInput.forEach((input) => {
+      var phoneMask = Object(imask__WEBPACK_IMPORTED_MODULE_0__["default"])(input, {
+        mask: '+{7}(000)000-00-00'
+      });
+    })
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (validatePhone());
 
 
 /***/ }),
@@ -15806,6 +15854,7 @@ const slidersInit = function () {
     fSlider.forEach(eachSlider => new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](eachSlider, {
       spaceBetween: 30,
       slidesPerView: 'auto',
+      updateOnImagesReady: true,
 
       pagination: {
         el: '.f-swiper-pagination',
@@ -15815,6 +15864,21 @@ const slidersInit = function () {
         nextEl: '.f-swiper-button-next',
         prevEl: '.f-swiper-button-prev',
       },
+
+      on: {
+        init: function() {
+          this.updateSize();
+        },
+      }
+
+      /*on: {
+        init: function() {
+          console.log('initialized.');//this works
+        },
+        imagesReady: function() {
+          console.log('images ready.');//this doesn't work
+        }
+      }*/
     }));
   }
 
@@ -15824,6 +15888,8 @@ const slidersInit = function () {
     let partitionsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](partSlider, {
       slidesPerView: 'auto', // записать в пометки , как способ ограничивать контейнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
       spaceBetween: 30,
+      updateOnImagesReady: true,
+
       pagination: {
         el: '.part-swiper-pagination',
         type: 'progressbar',
@@ -15832,6 +15898,12 @@ const slidersInit = function () {
         nextEl: '.part-swiper-button-next',
         prevEl: '.part-swiper-button-prev',
       },
+
+      on: {
+        init: function() {
+          this.updateSize();
+        },
+      }
     });
   }
 };
@@ -16194,7 +16266,7 @@ function setFixedHeader(pageHeader, pageMain) {
 /*!**************************************!*\
   !*** ./source/scripts/utils/func.js ***!
   \**************************************/
-/*! exports provided: toggleElem, removeClass, addClass, scrollWidth */
+/*! exports provided: toggleElem, removeClass, addClass, scrollWidth, fileUpload */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16203,6 +16275,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollWidth", function() { return scrollWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileUpload", function() { return fileUpload; });
 function toggleElem(el, cl) {
   el.classList.toggle(cl);
 }
@@ -16226,6 +16299,14 @@ const scrollWidth = () => {
 
   return size
 };
+
+function fileUpload(el, uploadFileNamePlace) {
+  el.addEventListener("change", function(event) {
+  const input = event.target;
+
+  uploadFileNamePlace.textContent = input.files[0].name;
+  });
+}
 
 
 
