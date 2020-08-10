@@ -15332,7 +15332,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
 /* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
 /* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
-/* harmony import */ var _modules_phoneValidation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/phoneValidation.js */ "./source/scripts/modules/phoneValidation.js");
+/* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
+/* harmony import */ var _modules_submitForms_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/submitForms.js */ "./source/scripts/modules/submitForms.js");
 
 
 
@@ -15347,7 +15348,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import formValidation from './modules/formValidation.js';
+
 
 
 /***/ }),
@@ -15395,101 +15396,13 @@ __webpack_require__.r(__webpack_exports__);
 const fillUploadFile = () => {
   const inputs = document.querySelectorAll('.modal-form__file-upload');
   inputs.forEach(input => {
-    console.log(input);
     let label = input.previousElementSibling;
-    console.log(label);
     let textPlace = label.querySelector('.modal-form__file-text');
-    console.log(textPlace);
     Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["fileUpload"])(input, textPlace);
   })
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (fillUploadFile());
-
-
-/***/ }),
-
-/***/ "./source/scripts/modules/formValidation.js":
-/*!**************************************************!*\
-  !*** ./source/scripts/modules/formValidation.js ***!
-  \**************************************************/
-/*! exports provided: formValidation */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formValidation", function() { return formValidation; });
-const formValidation = (modal) => {
-
-  // если искать все кнопки submit
-  /*const submitBtn = document.querySelectorAll('.modal-form__btn');
-
-  submitBtn.forEach(btn => {
-    console.log(btn.parentElement )
-    const telInput = btn.parentElement.querySelector('input[type="tel"]');
-    console.log(telInput)
-
-    const fileInput = btn.parentElement.querySelector('input[type="file"]');
-    console.log(fileInput)
-  })*/
-
-  const submitBtn = modal.querySelector('.modal-form__btn');
-    console.log(submitBtn)
-    const tel = modal.querySelector('input[type="tel"]');
-    console.log(tel)
-
-    const file = modal.querySelector('input[type="file"]');
-    console.log(file)
-
-    let validPhone = false;
-    let validFile = false;
-
-    const onSubmitBtnClickHandler = (evt) => {
-      evt.preventDefault();
-      if(tel) {
-        if(tel.value.length === 16) {
-          console.log('ok')
-          validPhone = true;
-          // если поле телефона существует и оно равно 16 числам(длина номера телефона), тк у меня стоит маска и проверять на пробеллы нет смысла, то будет проходить валидация
-        } else {
-          // if tel is empty or wrong
-          console.log('tel is wrong')
-          validPhone = false;
-        }
-      } else {
-        // if tel isnt exist
-        console.log('tel isnt exist')
-        validPhone = true;
-      }
-
-      if(file) {
-        if(file.value) {
-          console.log(file.value)
-          validFile = true;
-
-        } else {
-          // if file not choozen
-          console.log('file isnt choozen')
-          validFile = false;
-        }
-      } else {
-        // if file isnt exist
-        console.log('file isnt exist');
-        validFile = true;
-      }
-
-      if(validFile && validPhone) {
-        console.log('valid')
-        // если поля существуют и оно заполненны, то будет происходить отправка
-      } else {
-        console.log('invalid')
-      }
-    }
-
-  submitBtn.addEventListener('click', onSubmitBtnClickHandler)
-}
-
-
 
 
 /***/ }),
@@ -15617,7 +15530,6 @@ function menuState() {
   const page = document.querySelector('html');
 
   const onEscBtnHandler = (evt) => {
-    console.log('in')
     if (evt.keyCode === 27 && navbar.classList.contains('menu-opened')) {
       page.classList.remove('scroll-off');
       navbar.classList.remove('menu-opened');
@@ -15762,36 +15674,6 @@ const numberAnimation = function () {
 
 /***/ }),
 
-/***/ "./source/scripts/modules/phoneValidation.js":
-/*!***************************************************!*\
-  !*** ./source/scripts/modules/phoneValidation.js ***!
-  \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var imask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! imask */ "./node_modules/imask/esm/index.js");
-
-
-function validatePhone() {
-
-  var phoneInput = document.querySelectorAll("input[type=tel]")
-
-  if (phoneInput) {
-    phoneInput.forEach((input) => {
-      var phoneMask = Object(imask__WEBPACK_IMPORTED_MODULE_0__["default"])(input, {
-        mask: '+{7}(000)000-00-00'
-      });
-    })
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (validatePhone());
-
-
-/***/ }),
-
 /***/ "./source/scripts/modules/setFixedHeader.js":
 /*!**************************************************!*\
   !*** ./source/scripts/modules/setFixedHeader.js ***!
@@ -15863,6 +15745,34 @@ const showIntroTitle = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (showIntroTitle);
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/submitForms.js":
+/*!***********************************************!*\
+  !*** ./source/scripts/modules/submitForms.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_formValidation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/formValidation.js */ "./source/scripts/utils/formValidation.js");
+
+
+function validateForms() {
+    const submitBtns = document.querySelectorAll('.submit-btn');
+
+  submitBtns.forEach(submitBtn => {
+    submitBtn.addEventListener('click', function (evt) {
+      evt.preventDefault()
+      Object(_utils_formValidation_js__WEBPACK_IMPORTED_MODULE_0__["formValidation"])(this.closest('form'));
+    })
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (validateForms());
 
 
 /***/ }),
@@ -16332,6 +16242,36 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
+/***/ "./source/scripts/plugins/phoneValidation.js":
+/*!***************************************************!*\
+  !*** ./source/scripts/plugins/phoneValidation.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var imask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! imask */ "./node_modules/imask/esm/index.js");
+
+
+function validatePhone() {
+
+  var phoneInput = document.querySelectorAll("input[type=tel]")
+
+  if (phoneInput) {
+    phoneInput.forEach((input) => {
+      var phoneMask = Object(imask__WEBPACK_IMPORTED_MODULE_0__["default"])(input, {
+        mask: '+{7}(000)000-00-00'
+      });
+    })
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (validatePhone());
+
+
+/***/ }),
+
 /***/ "./source/scripts/utils/fixedHeader.js":
 /*!*********************************************!*\
   !*** ./source/scripts/utils/fixedHeader.js ***!
@@ -16347,6 +16287,94 @@ function setFixedHeader(pageHeader, pageMain) {
   const page = document.querySelector(pageMain);
   page.style.paddingTop = header.clientHeight + 'px';
 };
+
+
+/***/ }),
+
+/***/ "./source/scripts/utils/formValidation.js":
+/*!************************************************!*\
+  !*** ./source/scripts/utils/formValidation.js ***!
+  \************************************************/
+/*! exports provided: formValidation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formValidation", function() { return formValidation; });
+const formValidation = (form) => {
+  const tel = form.querySelector('input[type="tel"]');
+  const file = form.querySelector('input[type="file"]');
+  const errorMsg = form.querySelector('.invalid-message');
+
+  let validPhone = false;
+  let validFile = false;
+
+  if(tel) {
+    if(tel.value.length === 16) {
+      validPhone = true;
+      // если поле телефона существует и оно равно 16 числам(длина номера телефона), тк у меня стоит маска и проверять на пробеллы нет смысла, то будет проходить валидация
+    } else {
+      // if tel is empty or wrong
+      console.log('tel is wrong')
+      validPhone = false;
+
+      // невалидный эффект
+
+      if(errorMsg) {
+        errorMsg.style.display = "block";
+
+        const onChangeEventHandler = () => {
+          errorMsg.style.display = "none";
+          tel.classList.remove('invalid');
+          tel.removeEventListener('focus', onChangeEventHandler)
+        }
+        tel.classList.add('invalid');
+        tel.addEventListener('focus', onChangeEventHandler)
+      }
+    }
+  } else {
+    // if tel isnt exist
+    console.log('tel isnt exist')
+    validPhone = true;
+  }
+
+  if(file) {
+    if(file.value) {
+      //console.log(file.value)
+      validFile = true;
+
+    } else {
+      // if file not choozen
+      console.log('file isnt choozen')
+      validFile = false;
+
+      // невалидный эффект
+      /*console.log(file.previousElementSibling)
+
+      file.previousElementSibling.classList.add('invalid');
+
+      const onChangeEventHandler = () => {
+        file.previousElementSibling.classList.remove('invalid');
+        file.previousElementSibling.removeEventListener('focus', onChangeEventHandler)
+      }
+
+      file.previousElementSibling.addEventListener('focus', onChangeEventHandler)*/
+    }
+  } else {
+    // if file isnt exist
+    console.log('file isnt exist');
+    validFile = true;
+  }
+
+  if(validFile && validPhone) {
+    console.log('valid')
+    // если поля существуют и оно заполненны, то будет происходить отправка
+  } else {
+    console.log('invalid')
+  }
+}
+
+
 
 
 /***/ }),
@@ -16413,19 +16441,19 @@ function fileUpload(el, uploadFileNamePlace) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return modal; });
 /* harmony import */ var _func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./func.js */ "./source/scripts/utils/func.js");
-/* harmony import */ var _modules_formValidation_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/formValidation.js */ "./source/scripts/modules/formValidation.js");
-
 
 
 function modal(openButtonClass, modalClass) {
 
     const btn = document.querySelector(openButtonClass);
     const modal = document.querySelector(modalClass);
+    const page = document.querySelector('html');
 
     if (btn && modal) {
     const closeBtn = modal.querySelector('.modal__close');
 
     const removeListeners = () => {
+      page.classList.remove('scroll-off');
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
     }
@@ -16457,9 +16485,9 @@ function modal(openButtonClass, modalClass) {
       Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(modal, 'closed');
       closeBtn.addEventListener('click', onCloseBtnClickHandler);
       closeBtn.focus();
+      page.classList.add('scroll-off');
       window.addEventListener('keydown', onEscBtnHandler);
       window.addEventListener('mousedown', onMousedownHandler);
-      Object(_modules_formValidation_js__WEBPACK_IMPORTED_MODULE_1__["formValidation"])(modal);
     }
 
     btn.addEventListener('click', onClickHandler);

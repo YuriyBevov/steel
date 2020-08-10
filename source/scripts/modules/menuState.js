@@ -7,7 +7,6 @@ function menuState() {
   const page = document.querySelector('html');
 
   const onEscBtnHandler = (evt) => {
-    console.log('in')
     if (evt.keyCode === 27 && navbar.classList.contains('menu-opened')) {
       page.classList.remove('scroll-off');
       navbar.classList.remove('menu-opened');

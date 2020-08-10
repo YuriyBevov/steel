@@ -11,5 +11,5 @@ import resize from './modules/textareaResize.js';
 import modalInit from './modules/modals.js'; // инит модалок, готовый скрипт !!!
 import menuState from './modules/menuState.js';
 import fillUploadFile from './modules/fillUploadFile.js';
-import validatePhone from './modules/phoneValidation.js';
-// import formValidation from './modules/formValidation.js';
+import validatePhone from './plugins/phoneValidation.js';
+import validateForms from './modules/submitForms.js';

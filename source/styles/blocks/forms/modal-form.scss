@@ -1,6 +1,37 @@
 .modal-form {
+  position: relative;
   display: flex;
   flex-direction: column;
+  padding-bottom: 3rem; // расстояние для текста ошибки
+
+  &__invalid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+
+    span {
+      font-family: $font_text;
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+
+      color: #ff4747;
+    }
+
+    animation: showMsg $transition_rules forwards;
+  }
+
+  @keyframes showMsg {
+    0% {
+      transform: translateY(-1rem);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
   input {
     font-family: $font_text;
@@ -22,6 +53,15 @@
 
     &::placeholder {
       color: $color_placeholder;
+    }
+
+    &.invalid {
+      transition: color $transition_rules;
+      color: red;
+      &::placeholder {
+        transition: color $transition_rules;
+        color: red;
+      }
     }
   }
 

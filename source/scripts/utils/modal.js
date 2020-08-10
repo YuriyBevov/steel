@@ -1,15 +1,16 @@
 import {removeClass, addClass, toggleElem} from './func.js';
-import {formValidation} from '../modules/formValidation.js';
 
 export default function modal(openButtonClass, modalClass) {
 
     const btn = document.querySelector(openButtonClass);
     const modal = document.querySelector(modalClass);
+    const page = document.querySelector('html');
 
     if (btn && modal) {
     const closeBtn = modal.querySelector('.modal__close');
 
     const removeListeners = () => {
+      page.classList.remove('scroll-off');
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
     }
@@ -41,9 +42,9 @@ export default function modal(openButtonClass, modalClass) {
       removeClass(modal, 'closed');
       closeBtn.addEventListener('click', onCloseBtnClickHandler);
       closeBtn.focus();
+      page.classList.add('scroll-off');
       window.addEventListener('keydown', onEscBtnHandler);
       window.addEventListener('mousedown', onMousedownHandler);
-      formValidation(modal);
     }
 
     btn.addEventListener('click', onClickHandler);
