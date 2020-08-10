@@ -13,3 +13,4 @@ import menuState from './modules/menuState.js';
 import fillUploadFile from './modules/fillUploadFile.js';
 import validatePhone from './plugins/phoneValidation.js';
 import validateForms from './modules/submitForms.js';
+import slidersInit from "./modules/swiper.js";

@@ -9,14 +9,14 @@ section.furniture-office
         .swiper-wrapper
           -
             const office_items = [
-              {description: 'Фото мастерской', url: 'img/furn_office1', lqip: 'img/lqip/furn_office1'},
-              {description: 'Фото мастерской', url: 'img/furn_office2', lqip: 'img/lqip/furn_office2'},
+              {description: 'Фото мастерской', url: 'img/furn_office1', lqip: 'img/lqip/furn_office1', width: 555, height: 315},
+              {description: 'Фото мастерской', url: 'img/furn_office2', lqip: 'img/lqip/furn_office2', width: 427, height: 315},
             ];
           each office_item in office_items
             .swiper-slide
               picture
                 source(type="image/webp" srcset=office_item.lqip + '@1x.jpg' data-srcset=office_item.url + '@1x.webp 1x,' + office_item.url + '@2x.webp 2x')
-                img.lazyload.blur-up(src=office_item.lqip + '@1x.jpg' data-src=office_item.url + '@1x.jpg' data-srcset=office_item.url + '@2x.jpg 2x' alt=office_item.description)
+                img.lazyload.blur-up(src=office_item.lqip + '@1x.jpg' data-src=office_item.url + '@1x.jpg' data-srcset=office_item.url + '@2x.jpg 2x' width=office_item.width height=office_item.height alt=office_item.description)
 
 
         <!-- Add Pagination -->

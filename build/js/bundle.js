@@ -15334,6 +15334,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
 /* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
 /* harmony import */ var _modules_submitForms_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/submitForms.js */ "./source/scripts/modules/submitForms.js");
+/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
 
 
 
@@ -15345,6 +15346,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // инит модалок, готовый скрипт !!!
+
 
 
 
@@ -15437,33 +15439,26 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loader", function() { return loader; });
 /* harmony import */ var _showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./showIntroTitle.js */ "./source/scripts/modules/showIntroTitle.js");
-/* harmony import */ var _swiper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./swiper.js */ "./source/scripts/modules/swiper.js");
-
 
 
 const loader = function() {
   const showPage = () => {
-      Object(_swiper_js__WEBPACK_IMPORTED_MODULE_1__["slidersInit"])();
-      const loader = document.querySelector('.loader');
+    document.removeEventListener("DOMContentLoaded", showPage);
 
-      const hideLoader = function () {
-        setTimeout(() => {
-            loader.style.opacity = 0;
-            Object(_showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-          }, 800)
+    const loader = document.querySelector('.loader');
 
-        setTimeout(() => {
-          loader.style.display ='none';
-        }, 1500)
-      }();
+    const hideLoader = function () {
+      setTimeout(() => {
+          loader.style.opacity = 0;
+          Object(_showIntroTitle_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+        }, 800)
 
+      setTimeout(() => {
+        loader.style.display ='none';
+      }, 1500)
+    }();
   };
-
-  window.onload = () => {
-    showPage();
-  }
-
-      //document.addEventListener("DOMContentLoaded", showPage);
+  document.addEventListener("DOMContentLoaded", showPage);
 }();
 
 
@@ -15781,16 +15776,15 @@ function validateForms() {
 /*!******************************************!*\
   !*** ./source/scripts/modules/swiper.js ***!
   \******************************************/
-/*! exports provided: slidersInit */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "slidersInit", function() { return slidersInit; });
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/js/swiper.esm.bundle.js");
 
 
-const slidersInit = function () {
+function slidersInit() {
   const sliderDelay = 3000;
 
   let pSlider = document.querySelector('.partnership__swiper-container');
@@ -15863,21 +15857,6 @@ const slidersInit = function () {
         nextEl: '.f-swiper-button-next',
         prevEl: '.f-swiper-button-prev',
       },
-
-      on: {
-        imagesReady: function() {
-          this.update();
-        },
-      }
-
-      /*on: {
-        init: function() {
-          console.log('initialized.');//this works
-        },
-        imagesReady: function() {
-          console.log('images ready.');//this doesn't work
-        }
-      }*/
     }));
   }
 
@@ -15897,17 +15876,11 @@ const slidersInit = function () {
         nextEl: '.part-swiper-button-next',
         prevEl: '.part-swiper-button-prev',
       },
-
-      on: {
-        imagesReady: function() {
-          this.update();
-        },
-      }
     });
   }
 };
 
-
+/* harmony default export */ __webpack_exports__["default"] = (slidersInit());
 
 
 /***/ }),

@@ -8,16 +8,16 @@ section.furniture-restaurant
         .swiper-wrapper
           -
             const restaurant_items = [
-              {description: 'Описание', url: 'img/furn_rest1', lqip: 'img/lqip/furn_rest1'},
-              {description: 'Описание', url: 'img/furn_rest2', lqip: 'img/lqip/furn_rest2'},
-              {description: 'Описание', url: 'img/furn_rest3', lqip: 'img/lqip/furn_rest3'},
+              {description: 'Описание', url: 'img/furn_rest1', lqip: 'img/lqip/furn_rest1', width: 555, height: 315},
+              {description: 'Описание', url: 'img/furn_rest2', lqip: 'img/lqip/furn_rest2', width: 477, height: 315},
+              {description: 'Описание', url: 'img/furn_rest3', lqip: 'img/lqip/furn_rest3', width: 514, height: 315},
 
             ];
           each restaurant_item in restaurant_items
             .swiper-slide
               picture
                 source(type="image/webp" srcset=restaurant_item.lqip + '@1x.jpg' data-srcset=restaurant_item.url + '@1x.webp 1x,' + restaurant_item.url + '@2x.webp 2x')
-                img.lazyload.blur-up(src=restaurant_item.lqip + '@1x.jpg' data-src=restaurant_item.url + '@1x.jpg' data-srcset=restaurant_item.url + '@2x.jpg 2x' alt=restaurant_item.description)
+                img.lazyload.blur-up(src=restaurant_item.lqip + '@1x.jpg' data-src=restaurant_item.url + '@1x.jpg' data-srcset=restaurant_item.url + '@2x.jpg 2x' width=restaurant_item.width height=restaurant_item.height alt=restaurant_item.description)
 
 
         <!-- Add Pagination -->

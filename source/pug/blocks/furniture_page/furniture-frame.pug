@@ -8,16 +8,16 @@ section.furniture-frame
         .swiper-wrapper
           -
             const frame_items = [
-              {description: 'Описание', url: 'img/furn_frame1', lqip: 'img/lqip/furn_frame1'},
-              {description: 'Описание', url: 'img/furn_frame2', lqip: 'img/lqip/furn_frame2'},
-              {description: 'Описание', url: 'img/furn_frame3', lqip: 'img/lqip/furn_frame3'},
+              {description: 'Описание', url: 'img/furn_frame1', lqip: 'img/lqip/furn_frame1', width: 555, height: 315},
+              {description: 'Описание', url: 'img/furn_frame2', lqip: 'img/lqip/furn_frame2', width: 263, height: 315},
+              {description: 'Описание', url: 'img/furn_frame3', lqip: 'img/lqip/furn_frame3', width: 550, height: 315},
 
             ];
           each frame_item in frame_items
             .swiper-slide
               picture
                 source(type="image/webp" srcset=frame_item.lqip + '@1x.jpg' data-srcset=frame_item.url + '@1x.webp 1x,' + frame_item.url + '@2x.webp 2x')
-                img.lazyload.blur-up(src=frame_item.lqip + '@1x.jpg' data-src=frame_item.url + '@1x.jpg' data-srcset=frame_item.url + '@2x.jpg 2x' alt=frame_item.description)
+                img.lazyload.blur-up(src=frame_item.lqip + '@1x.jpg' data-src=frame_item.url + '@1x.jpg' data-srcset=frame_item.url + '@2x.jpg 2x' width=frame_item.width height=frame_item.height alt=frame_item.description)
 
         <!-- Add Pagination -->
         .f-swiper-pagination

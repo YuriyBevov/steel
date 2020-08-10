@@ -8,16 +8,16 @@ section.furniture-bakehouse
         .swiper-wrapper
           -
             const bakehouse_items = [
-              {description: 'Описание', url: 'img/furn_bakeshop1', lqip: 'img/lqip/furn_bakeshop1'},
-              {description: 'Описание', url: 'img/furn_bakeshop2', lqip: 'img/lqip/furn_bakeshop2'},
-              {description: 'Описание', url: 'img/furn_bakeshop3', lqip: 'img/lqip/furn_bakeshop3'},
-              {description: 'Описание', url: 'img/furn_bakeshop4', lqip: 'img/lqip/furn_bakeshop4'},
+              {description: 'Описание', url: 'img/furn_bakeshop1', lqip: 'img/lqip/furn_bakeshop1', width: 555, height: 315},
+              {description: 'Описание', url: 'img/furn_bakeshop2', lqip: 'img/lqip/furn_bakeshop2', width: 455, height: 315},
+              {description: 'Описание', url: 'img/furn_bakeshop3', lqip: 'img/lqip/furn_bakeshop3', width: 489, height: 315},
+              {description: 'Описание', url: 'img/furn_bakeshop4', lqip: 'img/lqip/furn_bakeshop4', width: 251, height: 315},
             ];
           each bakehouse_item in bakehouse_items
             .swiper-slide
               picture
                 source(type="image/webp" srcset=bakehouse_item.lqip + '@1x.jpg' data-srcset=bakehouse_item.url + '@1x.webp 1x,' + bakehouse_item.url + '@2x.webp 2x')
-                img.lazyload.blur-up(src=bakehouse_item.lqip + '@1x.jpg' data-src=bakehouse_item.url + '@1x.jpg' data-srcset=bakehouse_item.url + '@2x.jpg 2x' alt=bakehouse_item.description)
+                img.lazyload.blur-up(src=bakehouse_item.lqip + '@1x.jpg' data-src=bakehouse_item.url + '@1x.jpg' data-srcset=bakehouse_item.url + '@2x.jpg 2x' width=bakehouse_item.width height=bakehouse_item.height alt=bakehouse_item.description)
 
 
         <!-- Add Pagination -->

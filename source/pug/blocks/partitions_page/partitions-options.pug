@@ -6,19 +6,19 @@ section.partitions-options
       .swiper-wrapper
         -
           const partitions_items = [
-            {type: 'Для офиса', description: 'Для офиса', url: 'img/part_opt1', lqip: 'img/lqip/part_opt1'},
-            {type: 'В гостиную', description: 'В гостиную', url: 'img/part_opt2', lqip: 'img/lqip/part_opt2'},
-            {type: 'Для спальни', description: 'Для спальни', url: 'img/part_opt3', lqip: 'img/lqip/part_opt3'},
-            {type: 'На кухню', description: 'На кухню', url: 'img/part_opt4', lqip: 'img/lqip/part_opt4'},
-            {type: 'В салон красоты', description: 'В салон красоты', url: 'img/part_opt5', lqip: 'img/lqip/part_opt5'},
-            {type: 'В опенсейс', description: 'В опенсейс', url: 'img/part_opt6', lqip: 'img/lqip/part_opt6'},
+            {type: 'Для офиса', description: 'Для офиса', url: 'img/part_opt1', lqip: 'img/lqip/part_opt1', width: 149, height: 315},
+            {type: 'В гостиную', description: 'В гостиную', url: 'img/part_opt2', lqip: 'img/lqip/part_opt2', width: 149, height: 315},
+            {type: 'Для спальни', description: 'Для спальни', url: 'img/part_opt3', lqip: 'img/lqip/part_opt3', width: 208, height: 315},
+            {type: 'На кухню', description: 'На кухню', url: 'img/part_opt4', lqip: 'img/lqip/part_opt4', width: 251, height: 315},
+            {type: 'В салон красоты', description: 'В салон красоты', url: 'img/part_opt5', lqip: 'img/lqip/part_opt5', width: 139, height: 315},
+            {type: 'В опенсейс', description: 'В опенсейс', url: 'img/part_opt6', lqip: 'img/lqip/part_opt6', width: 257, height: 315},
 
           ];
         each partitions_item in partitions_items
           .swiper-slide
             picture
               source(type="image/webp" srcset=partitions_item.lqip + '@1x.jpg' data-srcset=partitions_item.url + '@1x.webp 1x,' + partitions_item.url + '@2x.webp 2x')
-              img.partitions_img.lazyload.blur-up(src=partitions_item.lqip + '@1x.jpg' data-src=partitions_item.url + '@1x.jpg' data-srcset=partitions_item.url + '@2x.jpg 2x' alt=partitions_item.description)
+              img.partitions_img.lazyload.blur-up(src=partitions_item.lqip + '@1x.jpg' data-src=partitions_item.url + '@1x.jpg' data-srcset=partitions_item.url + '@2x.jpg 2x' width=partitions_item.width height=partitions_item.height alt=partitions_item.description)
             .partitions-options__overlay
               p.partitions-options__overlay-text=partitions_item.type
 

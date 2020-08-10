@@ -1,6 +1,6 @@
 import Swiper from "swiper";
 
-const slidersInit = function () {
+function slidersInit() {
   const sliderDelay = 3000;
 
   let pSlider = document.querySelector('.partnership__swiper-container');
@@ -73,21 +73,6 @@ const slidersInit = function () {
         nextEl: '.f-swiper-button-next',
         prevEl: '.f-swiper-button-prev',
       },
-
-      on: {
-        imagesReady: function() {
-          this.update();
-        },
-      }
-
-      /*on: {
-        init: function() {
-          console.log('initialized.');//this works
-        },
-        imagesReady: function() {
-          console.log('images ready.');//this doesn't work
-        }
-      }*/
     }));
   }
 
@@ -107,14 +92,8 @@ const slidersInit = function () {
         nextEl: '.part-swiper-button-next',
         prevEl: '.part-swiper-button-prev',
       },
-
-      on: {
-        imagesReady: function() {
-          this.update();
-        },
-      }
     });
   }
 };
 
-export {slidersInit}
+export default slidersInit();
