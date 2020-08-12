@@ -15327,14 +15327,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modernizrWebp_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modernizrWebp.js */ "./source/scripts/modules/modernizrWebp.js");
 /* harmony import */ var _modules_setFixedHeader_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/setFixedHeader.js */ "./source/scripts/modules/setFixedHeader.js");
 /* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
-/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
-/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
-/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
-/* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
-/* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
-/* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
-/* harmony import */ var _modules_submitForms_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/submitForms.js */ "./source/scripts/modules/submitForms.js");
-/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
+/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
+/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
+/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
+/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
+/* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
+/* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
+/* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
+/* harmony import */ var _modules_submitForms_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/submitForms.js */ "./source/scripts/modules/submitForms.js");
+
 
 
 
@@ -15346,7 +15347,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // инит модалок, готовый скрипт !!!
-
 
 
 
@@ -16276,11 +16276,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formValidation", function() { return formValidation; });
 const formValidation = (form) => {
   const tel = form.querySelector('input[type="tel"]');
-  const file = form.querySelector('input[type="file"]');
-  const errorMsg = form.querySelector('.invalid-message');
+
+  const errorMsg = form.querySelector('.invalid-field-msg');
 
   let validPhone = false;
-  let validFile = false;
 
   if(tel) {
     if(tel.value.length === 16) {
@@ -16298,10 +16297,10 @@ const formValidation = (form) => {
 
         const onChangeEventHandler = () => {
           errorMsg.style.display = "none";
-          tel.classList.remove('invalid');
+          tel.classList.remove('invalid-field');
           tel.removeEventListener('focus', onChangeEventHandler)
         }
-        tel.classList.add('invalid');
+        tel.classList.add('invalid-field');
         tel.addEventListener('focus', onChangeEventHandler)
       }
     }
@@ -16311,35 +16310,7 @@ const formValidation = (form) => {
     validPhone = true;
   }
 
-  if(file) {
-    if(file.value) {
-      //console.log(file.value)
-      validFile = true;
-
-    } else {
-      // if file not choozen
-      console.log('file isnt choozen')
-      validFile = false;
-
-      // невалидный эффект
-      /*console.log(file.previousElementSibling)
-
-      file.previousElementSibling.classList.add('invalid');
-
-      const onChangeEventHandler = () => {
-        file.previousElementSibling.classList.remove('invalid');
-        file.previousElementSibling.removeEventListener('focus', onChangeEventHandler)
-      }
-
-      file.previousElementSibling.addEventListener('focus', onChangeEventHandler)*/
-    }
-  } else {
-    // if file isnt exist
-    console.log('file isnt exist');
-    validFile = true;
-  }
-
-  if(validFile && validPhone) {
+  if(validPhone) {
     console.log('valid')
     // если поля существуют и оно заполненны, то будет происходить отправка
   } else {

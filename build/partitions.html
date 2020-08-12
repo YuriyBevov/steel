@@ -264,14 +264,18 @@
       <section class="partitions-form">
         <div class="partitions-form__wrapper">
           <h2 class="partitions-form__title">Закажите перегородку для своего&nbsp;интерьера</h2>
-          <form class="callback-page-form" action="#" method="#">
-            <fieldset class="callback-page-form__fields">
-              <label class="visually-hidden" for="callback-page-form-name">Ваше имя</label>
-              <input type="text" id="callback-page-form-name" placeholder="Ваше имя">
-              <label class="visually-hidden" for="callback-page-form-phone">Телефон</label>
-              <input type="tel" id="callback-page-form-phone" placeholder="Телефон">
-            </fieldset>
-            <button class="callback-page-form__btn submit-btn m-btn" type="submit">Обсудить проект</button><span class="callback-page-form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
+          <form class="callback-page-form form" action="#" method="#">
+            <div class="callback-page-form__wrapper">
+              <fieldset class="form__group">
+                <label class="visually-hidden" for="callback-page-form-name">Ваше имя</label>
+                <input type="text" id="callback-page-form-name" placeholder="Ваше имя">
+              </fieldset>
+              <fieldset class="form__group form__group--phone">
+                <label class="visually-hidden" for="callback-page-form-phone">Телефон</label>
+                <input type="tel" id="callback-page-form-phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
+              </fieldset>
+            </div>
+            <button class="form__btn submit-btn m-btn" type="submit">Обсудить проект</button><span class="form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
           </form>
         </div>
       </section>
@@ -345,15 +349,16 @@
         </button>
         <h2 class="modal__title">Заказать звонок</h2>
         <p class="modal__description">Заполните форму и мы свяжемся с Вами в ближайшее время.</p>
-        <form class="callback-modal-form modal-form" action="#" method="#">
-          <fieldset class="modal-form__fields">
+        <form class="callback-modal-form form" action="#" method="#">
+          <fieldset class="form__group">
             <label class="visually-hidden" for="callback-modal--formname">Ваше имя</label>
             <input type="text" id="callback-modal-form-name" placeholder="Ваше имя">
-            <label class="visually-hidden" for="callback-modal-phone">Телефон</label>
-            <input type="tel" id="callback-modal-form-phone" placeholder="Телефон">
           </fieldset>
-          <button class="modal-form__btn submit-btn m-btn" type="submit">Отправить</button><span class="modal-form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
-          <div class="modal-form__invalid invalid-message"><span>Введите корректный номер телефона</span></div>
+          <fieldset class="form__group form__group--phone">
+            <label class="visually-hidden" for="callback-modal-phone">Телефон</label>
+            <input type="tel" id="callback-modal-form-phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
+          </fieldset>
+          <button class="form__btn submit-btn m-btn" type="submit">Отправить</button><span class="form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
         </form>
       </div>
     </div>
@@ -366,16 +371,20 @@
         </button>
         <h2 class="modal__title">У Вас уже есть проект?</h2>
         <p class="modal__description">Заполните форму и мы свяжемся с вами в ближайшее время.</p>
-        <form class="project-modal-form modal-form" action="#" method="#">
-          <fieldset class="modal-form__fields">
+        <form class="project-modal-form form" action="#" method="#">
+          <fieldset class="form__group">
             <label class="visually-hidden" for="project-modal-form-name">Ваше имя</label>
             <input type="text" id="project-modal-form-name" placeholder="Ваше имя">
+          </fieldset>
+          <fieldset class="form__group form__group--phone">
             <label class="visually-hidden" for="project-modal-form-phone">Телефон</label>
-            <input type="tel" id="project-modal-form-phone" placeholder="Телефон">
-            <label class="modal-form__file" for="project-modal-form-file"><span class="modal-form__file-text">Прикрепите файл</span></label>
+            <input type="tel" id="project-modal-form-phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
+          </fieldset>
+          <fieldset class="form__group">
+            <label class="form__file" for="project-modal-form-file"><span class="modal-form__file-text">Прикрепите файл</span></label>
             <input class="visually-hidden modal-form__file-upload" type="file" id="project-modal-form-file" placeholder="Прикрепите файл">
           </fieldset>
-          <button class="modal-form__btn submit-btn m-btn" type="submit">Обсудить проект</button><span class="modal-form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
+          <button class="form__btn submit-btn m-btn" type="submit">Обсудить проект</button><span class="form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
         </form>
       </div>
     </div>

@@ -1,13 +1,12 @@
-form(action="#" method="#").callback-modal-form.modal-form
-  fieldset.modal-form__fields
+form(action="#" method="#").callback-modal-form.form
+  fieldset.form__group
     label(for="callback-modal--formname").visually-hidden Ваше имя
     input(type="text" id="callback-modal-form-name" placeholder="Ваше имя")
 
+  fieldset.form__group.form__group--phone
     label(for="callback-modal-phone").visually-hidden Телефон
     input(type="tel" id="callback-modal-form-phone" placeholder="Телефон")
+    span.invalid-field-msg Введите корректный номер телефона
 
-  button(type="submit").modal-form__btn.submit-btn.m-btn Отправить
-  span.modal-form__alert Нажимая кнопку, вы даете согласие на обработку своих персональных данных.
-
-  .modal-form__invalid.invalid-message
-    span Введите корректный номер телефона
+  button(type="submit").form__btn.submit-btn.m-btn Отправить
+  span.form__alert Нажимая кнопку, вы даете согласие на обработку своих персональных данных.

@@ -1,53 +1,12 @@
 .callback-page-form {
-  display: flex;
-  flex-direction: column;
-
-  input {
-    font-family: $font_text;
-    font-size: 1.4rem;
-    line-height: 1.9rem;
-    width: 20rem;
-    height: 3rem;
-    padding: 0.6rem 1rem;
-    border: 0;
-    border-bottom: 1px solid $color_black;
-    margin-right: 4rem;
-    margin-bottom: 4rem;
-    background-color: transparent;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &::placeholder {
-      color: $color_placeholder;
-    }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  &__btn {
-    margin-bottom: 1.5rem;
-  }
-
-  &__fields {
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__alert {
-    font-family: $font_text;
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-    max-width: 26rem;
-    margin-bottom: 1.5rem;
-    color: $color_black;
-  }
-}
-
-@media(max-width: $desktop-width) {
-  .callback-page-form {
-    &__btn {
-      margin-bottom: 1rem;
-    }
+  fieldset {
+    margin-right: 5rem;
+    width: 100%;
+    max-width: 24rem;
   }
 }

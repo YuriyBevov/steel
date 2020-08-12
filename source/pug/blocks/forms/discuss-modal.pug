@@ -1,13 +1,16 @@
-form(action="#" method="#").discuss-modal-form.modal-form
-  fieldset.modal-form__fields
+form(action="#" method="#").discuss-modal-form.form
+  fieldset.form__group
     label(for="discuss-modal-form-name").visually-hidden Ваше имя
     input(type="text" id="discuss-modal-form-name" placeholder="Ваше имя")
 
+  fieldset.form__group.form__group--phone
     label(for="discuss-modal-phone").visually-hidden Телефон
     input(type="tel" id="discuss-modal-form-phone" placeholder="Телефон")
+    span.invalid-field-msg Введите корректный номер телефона
 
+  fieldset.form__group
     label(for="discuss-modal-mail").visually-hidden E-mail
     input(type="mail" id="discuss-modal-form-mail" placeholder="E-mail")
 
-  button(type="submit").modal-form__btn.submit-btn.m-btn Обсудить проект
-  span.modal-form__alert Нажимая кнопку, вы даете согласие на обработку своих персональных данных
+  button(type="submit").form__btn.submit-btn.m-btn Обсудить проект
+  span.form__alert Нажимая кнопку, вы даете согласие на обработку своих персональных данных
