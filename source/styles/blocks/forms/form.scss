@@ -101,11 +101,13 @@ form {
   }
 
   .invalid-field {
+    position: relative;
     padding-right: 2rem;
     background-image: url("../img/icons/icon-invalid.svg");
     background-repeat: no-repeat;
     background-position: calc(100% - 1rem) center;
-    animation: showIcon 0.4s 0.05s forwards;
+    background-size: 20px 0;
+    animation: showIcon 0.3s forwards;
 
     &-msg {
       display: none;
@@ -122,31 +124,12 @@ form {
     }
   }
   @keyframes showIcon {
-    0% {
-      background-position: calc(100% - 1rem) center;
-    }
-
-    25% {
-      background-position: calc(100% - 2rem) center;
-    }
-
-    50% {
-      background-position: calc(100% - 1rem) center;
-    }
-
-    75% {
-      background-position: calc(100% - 2rem) center;
-    }
-
     100% {
-      background-position: calc(100% - 1rem) center;
+      background-size: 20px 20px;
     }
   }
 
   @keyframes showMsg {
-    /*0% {
-      transform: translateY(-3rem);
-    }*/
 
     100% {
       transform: translateY(0);
