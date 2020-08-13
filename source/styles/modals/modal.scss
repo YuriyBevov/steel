@@ -19,6 +19,7 @@
     top: 50%;
     left: 50%;
     width: 100%;
+    min-height: 250px;
     max-height: 100%;
     overflow-y: auto;
     max-width: 60rem;
@@ -62,7 +63,7 @@
 
 @keyframes showModal {
   0% {
-    transform: translate(-50%, -50%) ;
+    transform: translate(0%, -50%) ;
   }
 
   100% {
