@@ -146,3 +146,11 @@ form {
     }
   }
 }
+
+@media(max-width: $tablet-width) {
+  form {
+    input {
+      margin-bottom: 3rem;
+    }
+  }
+}
