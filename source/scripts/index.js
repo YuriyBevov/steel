@@ -4,7 +4,7 @@ import loader from './modules/loader.js';
 import lazy from "./modules/lazy.js";
 import aos from './modules/aos.js'
 import modernizrWebp from "./modules/modernizrWebp.js";
-import setFixedHeader from './modules/setFixedHeader.js';
+//import setFixedHeader from './modules/setFixedHeader.js';
 import numberAnimation from "./modules/numberAnimation.js";
 import slidersInit from "./modules/swiper.js";
 import mapInit from './modules/map.js';

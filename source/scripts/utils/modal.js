@@ -1,4 +1,5 @@
 import {removeClass, addClass, toggleElem} from './func.js';
+import {formRefresh} from './formRefresh.js'
 
 export default function modal(openButtonClass, modalClass) {
 
@@ -9,7 +10,8 @@ export default function modal(openButtonClass, modalClass) {
     if (btn && modal) {
     const closeBtn = modal.querySelector('.modal__close');
 
-    const removeListeners = () => {
+    const refresh = () => {
+      formRefresh(modal);
       page.classList.remove('scroll-off');
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
@@ -17,14 +19,14 @@ export default function modal(openButtonClass, modalClass) {
 
     const onCloseBtnClickHandler = () => {
       addClass(modal,'closed');
-      removeListeners();
+      refresh();
       closeBtn.removeEventListener('click', onCloseBtnClickHandler);
     }
 
     const onEscBtnHandler = (evt) => {
       if (evt.keyCode === 27) {
         addClass(modal,'closed');
-        removeListeners();
+        refresh();
       }
     }
 
@@ -33,7 +35,7 @@ export default function modal(openButtonClass, modalClass) {
       const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
       if(!clickArea) {
         addClass(modal,'closed');
-        removeListeners();
+        refresh();
       }
     }
 

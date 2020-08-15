@@ -28,6 +28,10 @@ html {
   margin-right: calc(-1 * (100vw - 100%)); // чтобы страница не прыгала при/без скролла
 }
 
+.header {
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
 html,
 body {
   -webkit-box-sizing: border-box;
@@ -36,7 +40,7 @@ body {
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: $font_primary, sans-serif;

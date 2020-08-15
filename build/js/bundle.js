@@ -15325,23 +15325,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_lazy_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/lazy.js */ "./source/scripts/modules/lazy.js");
 /* harmony import */ var _modules_aos_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/aos.js */ "./source/scripts/modules/aos.js");
 /* harmony import */ var _modules_modernizrWebp_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modernizrWebp.js */ "./source/scripts/modules/modernizrWebp.js");
-/* harmony import */ var _modules_setFixedHeader_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/setFixedHeader.js */ "./source/scripts/modules/setFixedHeader.js");
-/* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
-/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
-/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
-/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
-/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
-/* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
-/* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
-/* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
-/* harmony import */ var _modules_submitForms_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/submitForms.js */ "./source/scripts/modules/submitForms.js");
+/* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
+/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
+/* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
+/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
+/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
+/* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
+/* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
+/* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
+/* harmony import */ var _modules_submitForms_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/submitForms.js */ "./source/scripts/modules/submitForms.js");
 
 
 
 
 
 
-
+//import setFixedHeader from './modules/setFixedHeader.js';
 
 
 
@@ -15669,27 +15668,6 @@ const numberAnimation = function () {
 
 /***/ }),
 
-/***/ "./source/scripts/modules/setFixedHeader.js":
-/*!**************************************************!*\
-  !*** ./source/scripts/modules/setFixedHeader.js ***!
-  \**************************************************/
-/*! exports provided: setFixedHeader */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_fixedHeader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/fixedHeader.js */ "./source/scripts/utils/fixedHeader.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setFixedHeader", function() { return _utils_fixedHeader_js__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-Object(_utils_fixedHeader_js__WEBPACK_IMPORTED_MODULE_0__["default"])('.header', '#content');
-
-
-
-
-/***/ }),
-
 /***/ "./source/scripts/modules/showIntroTitle.js":
 /*!**************************************************!*\
   !*** ./source/scripts/modules/showIntroTitle.js ***!
@@ -15761,7 +15739,7 @@ function validateForms() {
 
   submitBtns.forEach(submitBtn => {
     submitBtn.addEventListener('click', function (evt) {
-      evt.preventDefault()
+      evt.preventDefault();
       Object(_utils_formValidation_js__WEBPACK_IMPORTED_MODULE_0__["formValidation"])(this.closest('form'));
     })
   });
@@ -15860,7 +15838,6 @@ function slidersInit() {
       on: {
         imagesReady: function () {
           this.init();
-          console.log(this)
         },
       },
     }));
@@ -15884,8 +15861,8 @@ function slidersInit() {
       },
       on: {
         imagesReady: function () {
-          this.update();
-          console.log(this)
+          //this.update();
+          this.init();
         },
       },
     });
@@ -16257,21 +16234,31 @@ function validatePhone() {
 
 /***/ }),
 
-/***/ "./source/scripts/utils/fixedHeader.js":
+/***/ "./source/scripts/utils/formRefresh.js":
 /*!*********************************************!*\
-  !*** ./source/scripts/utils/fixedHeader.js ***!
+  !*** ./source/scripts/utils/formRefresh.js ***!
   \*********************************************/
-/*! exports provided: default */
+/*! exports provided: formRefresh */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return setFixedHeader; });
-function setFixedHeader(pageHeader, pageMain) {
-  const header = document.querySelector(pageHeader);
-  const page = document.querySelector(pageMain);
-  page.style.paddingTop = header.clientHeight + 'px';
-};
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formRefresh", function() { return formRefresh; });
+const formRefresh = (modal) => {
+  const invalidFields = modal.querySelectorAll('.invalid-field');
+
+  if(invalidFields.length > 0) {
+    invalidFields.forEach(field => {
+      field.classList.remove('invalid-field');
+      const errorMsg = field.nextSibling;
+      if(errorMsg.classList.contains('invalid-field-msg')) {
+        errorMsg.style.display = 'none';
+      }
+    })
+  }
+}
+
+
 
 
 /***/ }),
@@ -16397,6 +16384,8 @@ function fileUpload(el, uploadFileNamePlace) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return modal; });
 /* harmony import */ var _func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./func.js */ "./source/scripts/utils/func.js");
+/* harmony import */ var _formRefresh_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./formRefresh.js */ "./source/scripts/utils/formRefresh.js");
+
 
 
 function modal(openButtonClass, modalClass) {
@@ -16408,7 +16397,8 @@ function modal(openButtonClass, modalClass) {
     if (btn && modal) {
     const closeBtn = modal.querySelector('.modal__close');
 
-    const removeListeners = () => {
+    const refresh = () => {
+      Object(_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__["formRefresh"])(modal);
       page.classList.remove('scroll-off');
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
@@ -16416,14 +16406,14 @@ function modal(openButtonClass, modalClass) {
 
     const onCloseBtnClickHandler = () => {
       Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-      removeListeners();
+      refresh();
       closeBtn.removeEventListener('click', onCloseBtnClickHandler);
     }
 
     const onEscBtnHandler = (evt) => {
       if (evt.keyCode === 27) {
         Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-        removeListeners();
+        refresh();
       }
     }
 
@@ -16432,7 +16422,7 @@ function modal(openButtonClass, modalClass) {
       const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
       if(!clickArea) {
         Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-        removeListeners();
+        refresh();
       }
     }
 

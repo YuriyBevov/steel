@@ -5,7 +5,7 @@ function validateForms() {
 
   submitBtns.forEach(submitBtn => {
     submitBtn.addEventListener('click', function (evt) {
-      evt.preventDefault()
+      evt.preventDefault();
       formValidation(this.closest('form'));
     })
   });

@@ -76,7 +76,6 @@ function slidersInit() {
       on: {
         imagesReady: function () {
           this.init();
-          console.log(this)
         },
       },
     }));
@@ -100,8 +99,8 @@ function slidersInit() {
       },
       on: {
         imagesReady: function () {
-          this.update();
-          console.log(this)
+          //this.update();
+          this.init();
         },
       },
     });
