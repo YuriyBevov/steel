@@ -15352,6 +15352,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//const height = window.innerHeight;
+
+/*var scrollHeight = Math.max(
+  document.body.scrollHeight, document.documentElement.scrollHeight,
+  document.body.offsetHeight, document.documentElement.offsetHeight,
+  document.body.clientHeight, document.documentElement.clientHeight
+);
+
+console.log( 'Высота с учётом прокрутки: ' + scrollHeight );
+
+const body = document.querySelector('body');
+
+body.style.height = scrollHeight + 'px';*/
+
+
 /***/ }),
 
 /***/ "./source/scripts/modules/aos.js":
@@ -16373,34 +16388,6 @@ function fileUpload(el, uploadFileNamePlace) {
 
 /***/ }),
 
-/***/ "./source/scripts/utils/headerWidth.js":
-/*!*********************************************!*\
-  !*** ./source/scripts/utils/headerWidth.js ***!
-  \*********************************************/
-/*! exports provided: headerWidth */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerWidth", function() { return headerWidth; });
-const toggle = document.querySelector('.toggle');
-
-const headerWidth = {
-  modalOpen: function () {
-    toggle.style.marginRight = 12 + 'px';
-    
-  },
-  modalClose: function () {
-    console.log('off')
-    toggle.style.marginRight = 0 + 'px';
-  }
-}
-
-
-
-
-/***/ }),
-
 /***/ "./source/scripts/utils/modal.js":
 /*!***************************************!*\
   !*** ./source/scripts/utils/modal.js ***!
@@ -16413,8 +16400,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return modal; });
 /* harmony import */ var _func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./func.js */ "./source/scripts/utils/func.js");
 /* harmony import */ var _formRefresh_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./formRefresh.js */ "./source/scripts/utils/formRefresh.js");
-/* harmony import */ var _headerWidth_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./headerWidth.js */ "./source/scripts/utils/headerWidth.js");
-
 
 
 
@@ -16424,17 +16409,11 @@ function modal(openButtonClass, modalClass) {
     const modal = document.querySelector(modalClass);
     const page = document.querySelector('html');
 
-    /*const header = document.querySelector('.header__wrapper');
-    console.log(header)
-    console.log(header.clientWidth)*/
-
     if (btn && modal) {
     const closeBtn = modal.querySelector('.modal__close');
 
     const refresh = () => {
       Object(_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__["formRefresh"])(modal);
-      //header.style.width = header.clientWidth;
-      _headerWidth_js__WEBPACK_IMPORTED_MODULE_2__["headerWidth"].modalClose();
       page.classList.remove('scroll-off');
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
@@ -16471,9 +16450,6 @@ function modal(openButtonClass, modalClass) {
       page.classList.add('scroll-off');
       window.addEventListener('keydown', onEscBtnHandler);
       window.addEventListener('mousedown', onMousedownHandler);
-      /*header.style.width = (header.clientWidth - 12) + 'px'
-      console.log(header.clientWidth)*/
-      _headerWidth_js__WEBPACK_IMPORTED_MODULE_2__["headerWidth"].modalOpen();
     }
 
     btn.addEventListener('click', onClickHandler);

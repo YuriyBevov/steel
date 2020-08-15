@@ -14,3 +14,18 @@ import menuState from './modules/menuState.js';
 import fillUploadFile from './modules/fillUploadFile.js';
 import validatePhone from './plugins/phoneValidation.js';
 import validateForms from './modules/submitForms.js';
+
+
+//const height = window.innerHeight;
+
+/*var scrollHeight = Math.max(
+  document.body.scrollHeight, document.documentElement.scrollHeight,
+  document.body.offsetHeight, document.documentElement.offsetHeight,
+  document.body.clientHeight, document.documentElement.clientHeight
+);
+
+console.log( 'Высота с учётом прокрутки: ' + scrollHeight );
+
+const body = document.querySelector('body');
+
+body.style.height = scrollHeight + 'px';*/

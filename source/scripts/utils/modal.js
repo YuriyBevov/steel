@@ -1,6 +1,5 @@
 import {removeClass, addClass, toggleElem} from './func.js';
 import {formRefresh} from './formRefresh.js'
-import {headerWidth} from './headerWidth.js'
 
 export default function modal(openButtonClass, modalClass) {
 
@@ -8,17 +7,11 @@ export default function modal(openButtonClass, modalClass) {
     const modal = document.querySelector(modalClass);
     const page = document.querySelector('html');
 
-    /*const header = document.querySelector('.header__wrapper');
-    console.log(header)
-    console.log(header.clientWidth)*/
-
     if (btn && modal) {
     const closeBtn = modal.querySelector('.modal__close');
 
     const refresh = () => {
       formRefresh(modal);
-      //header.style.width = header.clientWidth;
-      headerWidth.modalClose();
       page.classList.remove('scroll-off');
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
@@ -55,9 +48,6 @@ export default function modal(openButtonClass, modalClass) {
       page.classList.add('scroll-off');
       window.addEventListener('keydown', onEscBtnHandler);
       window.addEventListener('mousedown', onMousedownHandler);
-      /*header.style.width = (header.clientWidth - 12) + 'px'
-      console.log(header.clientWidth)*/
-      headerWidth.modalOpen();
     }
 
     btn.addEventListener('click', onClickHandler);
