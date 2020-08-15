@@ -15849,16 +15849,13 @@ function slidersInit() {
           nextEl: '.f-swiper-button-next',
           prevEl: '.f-swiper-button-prev',
         },
-        /*on: {
-
+        on: {
           imagesReady: function () {
-            this.init();
-            this.update();
+            setTimeout(function () {
+              eachSlider.classList.remove('blur');
+            }, 300);
           },
-          init: function () {
-            console.log('init')
-          },
-        },*/
+        },
       }));
     }
   }
@@ -15866,6 +15863,7 @@ function slidersInit() {
   let partSlider = document.querySelector('.partitions-swiper-container');
 
   if(partSlider) {
+
     window.onload = function () {
       let partitionsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](partSlider, {
         slidesPerView: 'auto', // записать в пометки , как способ ограничивать контейнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
@@ -15880,13 +15878,13 @@ function slidersInit() {
           nextEl: '.part-swiper-button-next',
           prevEl: '.part-swiper-button-prev',
         },
-        /*on: {
+        on: {
           imagesReady: function () {
-            //this.update();
-            this.init();
-            this.update();
+            setTimeout(function () {
+              partSlider.classList.remove('blur');
+            }, 300);
           },
-        },*/
+        },
       });
     }
   }
