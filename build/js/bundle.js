@@ -15857,6 +15857,12 @@ function slidersInit() {
         nextEl: '.f-swiper-button-next',
         prevEl: '.f-swiper-button-prev',
       },
+      on: {
+        imagesReady: function () {
+          this.init();
+          console.log(this)
+        },
+      },
     }));
   }
 
@@ -15875,6 +15881,12 @@ function slidersInit() {
       navigation: {
         nextEl: '.part-swiper-button-next',
         prevEl: '.part-swiper-button-prev',
+      },
+      on: {
+        imagesReady: function () {
+          this.update();
+          console.log(this)
+        },
       },
     });
   }
