@@ -15851,6 +15851,7 @@ function slidersInit() {
       on: {
         imagesReady: function () {
           this.init();
+          this.update();
         },
       },
     }));
@@ -15876,6 +15877,7 @@ function slidersInit() {
         imagesReady: function () {
           //this.update();
           this.init();
+          this.update();
         },
       },
     });
