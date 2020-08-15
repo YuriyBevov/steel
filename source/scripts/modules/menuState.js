@@ -19,14 +19,12 @@ function menuState() {
   const onClickEventHandler = () => {
     navbar.classList.toggle('menu-opened');
     burger.classList.toggle('opened');
-    if(!navbar.classList.contains('menu-opened')) {
-      page.classList.remove('scroll-off');
-      //navbar.style.paddingLeft = 0;
-      document.removeEventListener('keydown', onEscBtnHandler);
-    } else {
-      burger.classList.add('scroll-off');
-      //navbar.style.paddingLeft = scrollWidth() + 'px';
+    if(navbar.classList.contains('menu-opened')) {
+      page.classList.add('scroll-off');
       document.addEventListener('keydown', onEscBtnHandler);
+    } else {
+      page.classList.remove('scroll-off');
+      document.removeEventListener('keydown', onEscBtnHandler);
     }
   }
 
