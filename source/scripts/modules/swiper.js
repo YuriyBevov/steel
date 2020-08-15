@@ -60,52 +60,60 @@ function slidersInit() {
   let fSlider = document.querySelectorAll('.furniture-swiper-container');
 
   if(fSlider) {
-    fSlider.forEach(eachSlider => new Swiper(eachSlider, {
-      spaceBetween: 30,
-      slidesPerView: 'auto',
-      updateOnImagesReady: true,
+    window.onload = function () {
+      fSlider.forEach(eachSlider => new Swiper(eachSlider, {
+        spaceBetween: 30,
+        slidesPerView: 'auto',
+        updateOnImagesReady: true,
 
-      pagination: {
-        el: '.f-swiper-pagination',
-        type: 'progressbar',
-      },
-      navigation: {
-        nextEl: '.f-swiper-button-next',
-        prevEl: '.f-swiper-button-prev',
-      },
-      on: {
-        imagesReady: function () {
-          this.init();
-          this.update();
+        pagination: {
+          el: '.f-swiper-pagination',
+          type: 'progressbar',
         },
-      },
-    }));
+        navigation: {
+          nextEl: '.f-swiper-button-next',
+          prevEl: '.f-swiper-button-prev',
+        },
+        on: {
+
+          imagesReady: function () {
+            this.init();
+            this.update();
+          },
+          init: function () {
+            console.log('init')
+          },
+        },
+      }));
+    }
   }
 
   let partSlider = document.querySelector('.partitions-swiper-container');
 
   if(partSlider) {
-    let partitionsSlider = new Swiper(partSlider, {
-      slidesPerView: 'auto', // записать в пометки , как способ ограничивать контейнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
-      spaceBetween: 30,
-      updateOnImagesReady: true,
+    window.onload = function () {
+      let partitionsSlider = new Swiper(partSlider, {
+        slidesPerView: 'auto', // записать в пометки , как способ ограничивать контейнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
+        spaceBetween: 30,
+        updateOnImagesReady: true,
 
-      pagination: {
-        el: '.part-swiper-pagination',
-        type: 'progressbar',
-      },
-      navigation: {
-        nextEl: '.part-swiper-button-next',
-        prevEl: '.part-swiper-button-prev',
-      },
-      on: {
-        imagesReady: function () {
-          //this.update();
-          this.init();
-          this.update();
+        pagination: {
+          el: '.part-swiper-pagination',
+          type: 'progressbar',
         },
-      },
-    });
+        navigation: {
+          nextEl: '.part-swiper-button-next',
+          prevEl: '.part-swiper-button-prev',
+        },
+        on: {
+          imagesReady: function () {
+            //this.update();
+            this.init();
+            this.update();
+          },
+        },
+      });
+    }
   }
 };
 
