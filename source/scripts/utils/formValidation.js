@@ -1,3 +1,5 @@
+import {formSend} from '../modules/formSend.js';
+
 const formValidation = (form) => {
   const tel = form.querySelector('input[type="tel"]');
 
@@ -36,6 +38,7 @@ const formValidation = (form) => {
 
   if(validPhone) {
     console.log('valid')
+    formSend(form);
     // если поля существуют и оно заполненны, то будет происходить отправка
   } else {
     console.log('invalid')
