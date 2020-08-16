@@ -126,7 +126,7 @@
               <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
             </ul>
           </div>
-          <div class="header__contacts"><a class="header__contacts-phone" href="tel:+79006221818">+7 (900) 622-18-18</a><a class="header__contacts-phone" href="tel:+78122194093">+7 (812) 219-40-93</a></div><a class="header__callback" href="#">заказать звонок</a>
+          <div class="header__contacts"><a class="header__contacts-phone" href="tel:+79006221818">+7 (900) 622-18-18</a><a class="header__contacts-phone" href="tel:+78122194093">+7 (812) 219-40-93</a></div><a class="header__callback modal-link" href="#" data-id="modal-callback">заказать звонок</a>
           <address class="header__address">г. Санкт-Петербург <br> Бехтерева&nbsp;3,корп&nbsp;3а</address>
         </div>
         <!-- burger-->
@@ -249,14 +249,14 @@
         </button>
         <h2 class="modal__title">Заказать звонок</h2>
         <p class="modal__description">Заполните форму и мы свяжемся с Вами в ближайшее время.</p>
-        <form class="callback-modal-form form" action="https://formspree.io/mrgydwnv" method="POST">
+        <form class="callback-modal-form form" action="https://formspree.io/mrgydwnv" method="POST" name="Форма обратной связи">
           <fieldset class="form__group">
             <label class="visually-hidden" for="callback-modal-form-name">Ваше имя</label>
-            <input type="text" id="callback-modal-form-name" placeholder="Ваше имя">
+            <input type="text" id="callback-modal-form-name" name="Имя пользователя" placeholder="Ваше имя">
           </fieldset>
           <fieldset class="form__group form__group--phone">
             <label class="visually-hidden" for="callback-modal-form-phone">Телефон</label>
-            <input type="tel" id="callback-modal-form-phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
+            <input type="tel" id="callback-modal-form-phone" name="Телефон пользователя" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
           </fieldset>
           <button class="form__btn submit-btn m-btn" type="submit">Отправить</button><span class="form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
         </form>

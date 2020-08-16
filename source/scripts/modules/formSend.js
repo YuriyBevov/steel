@@ -1,46 +1,27 @@
+import {modalState} from '../modals/modalState.js';
+
 const formSend = function (currentForm) {
-  console.log(currentForm)
 
-  /*<form id="my-form"
-  action="https://formspree.io/mrgydwnv"
-  method="POST"
->
-  <label>Email:</label>
-  <input type="email" name="email" />
-  <label>Message:</label>
-  <input type="text" name="message" />
-  <button id="my-form-button">Submit</button>
-  <p id="my-form-status"></p>
-</form>*/
+  console.log(modalState)
 
-    // get the form elements defined in your form HTML above
+  const thanksModal = document.querySelector('.modal-success')
+  function success() {
+    currentForm.reset();
+    //currentForm.classList.add('closed');
+    //thanksModal.classList.remove('closed');
+    modalState(thanksModal);
+  }
 
-    //var form = currentForm;
-    //var button = currentForm.querySelector('.form__btn');
-    //var status = document.getElementById("my-form-status");
-
-    // Success and Error functions for after the form is submitted
-
-    function success() {
-      currentForm.reset();
-      //button.style = "display: none ";
-      //status.innerHTML = "Thanks!";
-      console.log('success')
-    }
-
-    function error() {
-      //status.innerHTML = "Oops! There was a problem.";
-      console.log('error')
-    }
+  function error() {
+    //status.innerHTML = "Oops! There was a problem.";
+    console.log('error')
+  }
 
     // handle the form submission event
 
-    /*form.addEventListener("submit", function(evt) {
-      evt.preventDefault();*/
-      console.log('submit')
-      var data = new FormData(currentForm);
-      ajax(currentForm.method, currentForm.action, data, success, error);
-    //});
+  var data = new FormData(currentForm);
+  ajax(currentForm.method, currentForm.action, data, success, error);
+
 
   // helper function for sending an AJAX request
 

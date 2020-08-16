@@ -15329,11 +15329,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
 /* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
 /* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
-/* harmony import */ var _modules_modals_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modals.js */ "./source/scripts/modules/modals.js");
-/* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
-/* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
-/* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
-/* harmony import */ var _modules_submitForms_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/submitForms.js */ "./source/scripts/modules/submitForms.js");
+/* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
+/* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
+/* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
+/* harmony import */ var _modules_submitForms_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/submitForms.js */ "./source/scripts/modules/submitForms.js");
+/* harmony import */ var _modals_modalLinks_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modals/modalLinks.js */ "./source/scripts/modals/modalLinks.js");
 
 
 
@@ -15345,7 +15345,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // инит модалок, готовый скрипт !!!
+//import modalInit from './modules/modals.js'; // инит модалок, готовый скрипт !!!
 
 
 
@@ -15365,6 +15365,108 @@ console.log( 'Высота с учётом прокрутки: ' + scrollHeight 
 const body = document.querySelector('body');
 
 body.style.height = scrollHeight + 'px';*/
+
+
+/***/ }),
+
+/***/ "./source/scripts/modals/modalLinks.js":
+/*!*********************************************!*\
+  !*** ./source/scripts/modals/modalLinks.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modalState_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modalState.js */ "./source/scripts/modals/modalState.js");
+
+
+const openModal = function () {
+  const modalLinks = document.querySelectorAll('.modal-link');
+
+  modalLinks.forEach(link => {
+
+    const onClickHandler = function (evt) {
+      evt.preventDefault()
+
+      const id = this.getAttribute('data-id');
+      const currentModal = document.querySelector('.' + id);
+
+      Object(_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])(currentModal);
+    }
+
+    link.addEventListener('click', onClickHandler);
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (openModal());
+
+
+/***/ }),
+
+/***/ "./source/scripts/modals/modalState.js":
+/*!*********************************************!*\
+  !*** ./source/scripts/modals/modalState.js ***!
+  \*********************************************/
+/*! exports provided: modalState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalState", function() { return modalState; });
+/* harmony import */ var _utils_func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/func.js */ "./source/scripts/utils/func.js");
+/* harmony import */ var _utils_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/formRefresh.js */ "./source/scripts/utils/formRefresh.js");
+
+
+
+const modalState = (modal) => {
+
+  if (modal) {
+    const closeBtn = modal.querySelector('.modal__close');
+    const page = document.querySelector('html');
+    page.classList.add('scroll-off');
+    modal.classList.remove('closed');
+
+
+    const refresh = (currentModal) => {
+      console.log(currentModal)
+      Object(_utils_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__["formRefresh"])(currentModal);
+      page.classList.remove('scroll-off');
+      window.removeEventListener('keydown', onEscBtnHandler);
+      window.removeEventListener('mousedown', onMousedownHandler);
+      closeBtn.removeEventListener('click', onCloseBtnClickHandler);
+    }
+
+    const onCloseBtnClickHandler = () => {
+      Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
+      refresh(modal);
+    }
+
+    const onEscBtnHandler = (evt) => {
+      if (evt.keyCode === 27) {
+        Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
+        refresh(modal);
+      }
+    }
+
+    const onMousedownHandler = (evt) => {
+      const modalContent = modal.querySelector('.modal__wrapper');
+      const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
+      if(!clickArea) {
+        Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal, 'closed');
+        refresh(modal);
+      }
+    }
+
+    setTimeout(function() {
+      window.addEventListener('keydown', onEscBtnHandler);
+      window.addEventListener('mousedown', onMousedownHandler);
+      closeBtn.addEventListener('click', onCloseBtnClickHandler);
+    }, 700);
+  }
+};
+
+
 
 
 /***/ }),
@@ -15433,49 +15535,31 @@ const fillUploadFile = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formSend", function() { return formSend; });
+/* harmony import */ var _modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modals/modalState.js */ "./source/scripts/modals/modalState.js");
+
+
 const formSend = function (currentForm) {
-  console.log(currentForm)
 
-  /*<form id="my-form"
-  action="https://formspree.io/mrgydwnv"
-  method="POST"
->
-  <label>Email:</label>
-  <input type="email" name="email" />
-  <label>Message:</label>
-  <input type="text" name="message" />
-  <button id="my-form-button">Submit</button>
-  <p id="my-form-status"></p>
-</form>*/
+  console.log(_modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])
 
-    // get the form elements defined in your form HTML above
+  const thanksModal = document.querySelector('.modal-success')
+  function success() {
+    currentForm.reset();
+    //currentForm.classList.add('closed');
+    //thanksModal.classList.remove('closed');
+    Object(_modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])(thanksModal);
+  }
 
-    //var form = currentForm;
-    //var button = currentForm.querySelector('.form__btn');
-    //var status = document.getElementById("my-form-status");
-
-    // Success and Error functions for after the form is submitted
-
-    function success() {
-      currentForm.reset();
-      //button.style = "display: none ";
-      //status.innerHTML = "Thanks!";
-      console.log('success')
-    }
-
-    function error() {
-      //status.innerHTML = "Oops! There was a problem.";
-      console.log('error')
-    }
+  function error() {
+    //status.innerHTML = "Oops! There was a problem.";
+    console.log('error')
+  }
 
     // handle the form submission event
 
-    /*form.addEventListener("submit", function(evt) {
-      evt.preventDefault();*/
-      console.log('submit')
-      var data = new FormData(currentForm);
-      ajax(currentForm.method, currentForm.action, data, success, error);
-    //});
+  var data = new FormData(currentForm);
+  ajax(currentForm.method, currentForm.action, data, success, error);
+
 
   // helper function for sending an AJAX request
 
@@ -15649,31 +15733,6 @@ function menuState() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (menuState());
-
-
-/***/ }),
-
-/***/ "./source/scripts/modules/modals.js":
-/*!******************************************!*\
-  !*** ./source/scripts/modules/modals.js ***!
-  \******************************************/
-/*! exports provided: modalInit */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_modal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/modal.js */ "./source/scripts/utils/modal.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "modalInit", function() { return _utils_modal_js__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-Object(_utils_modal_js__WEBPACK_IMPORTED_MODULE_0__["default"])('.header__callback', '.modal-callback');
-Object(_utils_modal_js__WEBPACK_IMPORTED_MODULE_0__["default"])('.intro__action-link--order', '.modal-order');
-Object(_utils_modal_js__WEBPACK_IMPORTED_MODULE_0__["default"])('.order__link', '.modal-discuss');
-Object(_utils_modal_js__WEBPACK_IMPORTED_MODULE_0__["default"])('.intro__action-link--cost', '.modal-cost');
-Object(_utils_modal_js__WEBPACK_IMPORTED_MODULE_0__["default"])('.partitions-order__link', '.modal-project');
-
-
 
 
 /***/ }),
@@ -16479,82 +16538,6 @@ function fileUpload(el, uploadFileNamePlace) {
 }
 
 
-
-
-/***/ }),
-
-/***/ "./source/scripts/utils/modal.js":
-/*!***************************************!*\
-  !*** ./source/scripts/utils/modal.js ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return modal; });
-/* harmony import */ var _func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./func.js */ "./source/scripts/utils/func.js");
-/* harmony import */ var _formRefresh_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./formRefresh.js */ "./source/scripts/utils/formRefresh.js");
-
-
-
-function modal(openButtonClass, modalClass) {
-
-    const btn = document.querySelector(openButtonClass);
-    const modal = document.querySelector(modalClass);
-    const page = document.querySelector('html');
-
-    if (btn && modal) {
-    const closeBtn = modal.querySelector('.modal__close');
-
-    const refresh = () => {
-      Object(_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__["formRefresh"])(modal);
-      page.classList.remove('scroll-off');
-      window.removeEventListener('keydown', onEscBtnHandler);
-      window.removeEventListener('mousedown', onMousedownHandler);
-    }
-
-    const onCloseBtnClickHandler = () => {
-      Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-      refresh();
-      closeBtn.removeEventListener('click', onCloseBtnClickHandler);
-    }
-
-    const onEscBtnHandler = (evt) => {
-      if (evt.keyCode === 27) {
-        Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-        refresh();
-      }
-    }
-
-    const onMousedownHandler = (evt) => {
-      const modalContent = document.querySelector(modalClass + '__wrapper');
-      const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
-      if(!clickArea) {
-        Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-        refresh();
-      }
-    }
-
-
-    const onClickHandler = (evt) => {
-      evt.preventDefault();
-      Object(_func_js__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(modal, 'closed');
-      closeBtn.addEventListener('click', onCloseBtnClickHandler);
-      closeBtn.focus();
-      page.classList.add('scroll-off');
-      btn.removeEventListener('click', onClickHandler);
-
-      setTimeout(function() {
-        window.addEventListener('keydown', onEscBtnHandler);
-        window.addEventListener('mousedown', onMousedownHandler);
-        btn.addEventListener('click', onClickHandler);
-      }, 700);
-    }
-
-    btn.addEventListener('click', onClickHandler);
-  }
-};
 
 
 /***/ }),
