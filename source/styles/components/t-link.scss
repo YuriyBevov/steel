@@ -24,11 +24,18 @@
   }
 }
 
-@media(max-width: $tablet-width) {
-  /*.t-link {
-    width: 145px;
-    min-height: 32px;
-    font-size: 0.9rem;
-    line-height: 1.6rem
-  }*/
+@media(min-width: $tablet-width) {
+  .t-link {
+    &:hover,
+    &:focus {
+      transition: background-color $transition_rules, border-color $transition_rules ;
+      background-color: $color_btn-hover;
+      border-color: $color_beige;
+    }
+
+    &:active {
+      transition: opacity $transition_rules;
+      opacity: 0.7;
+    }
+  }
 }
