@@ -14,20 +14,24 @@ section.partnership
         .swiper-wrapper
           -
             const partners = [
-              {description: 'Au pont rouge', url: 'img/static/rouge',},
-              {description: 'Новая сцена Александринского театра', url: 'img/static/theatre'},
-              {description: 'Kivennapa', url: 'img/static/kivennapa'},
-              {description: 'Циферблат. Свободное пространство', url: 'img/static/clockface'},
-              {description: 'Balcon Lounge bar', url: 'img/static/balcon'},
-              {description: 'Greenpeace', url: 'img/static/greenpeace'},
-              {description: 'Prosto Vino', url: 'img/static/vino'},
-              {description: 'Культурная столица', url: 'img/static/capital'},
+              {description: 'Au pont rouge', url: 'img/static/rouge', lqip: 'img/lqip/static/rouge'},
+              {description: 'Новая сцена Александринского театра', url: 'img/static/theatre', lqip: 'img/lqip/static/theatre'},
+              {description: 'Kivennapa', url: 'img/static/kivennapa', lqip: 'img/lqip/static/kivennapa'},
+              {description: 'Циферблат. Свободное пространство', url: 'img/static/clockface', lqip: 'img/lqip/static/clockface'},
+              {description: 'Balcon Lounge bar', url: 'img/static/balcon', lqip: 'img/lqip/static/balcon'},
+              {description: 'Greenpeace', url: 'img/static/greenpeace', lqip: 'img/lqip/static/greenpeace'},
+              {description: 'Prosto Vino', url: 'img/static/vino', lqip: 'img/lqip/static/vino'},
+              {description: 'Культурная столица', url: 'img/static/capital', lqip: 'img/lqip/static/capital'},
+              {description: 'Kivennapa', url: 'img/static/kivennapa', lqip: 'img/lqip/static/kivennapa'},
+              {description: 'Циферблат. Свободное пространство', url: 'img/static/clockface', lqip: 'img/lqip/static/clockface'},
+              {description: 'Balcon Lounge bar', url: 'img/static/balcon', lqip: 'img/lqip/static/balcon'},
+              {description: 'Greenpeace', url: 'img/static/greenpeace', lqip: 'img/lqip/static/greenpeace'},
             ];
           each partner in partners
             .swiper-slide
               picture
-                source(type="image/webp" data-srcset=partner.url + '@1x.webp 1x,' + partner.url + '@2x.webp 2x')
-                img.lazyload.blur-up(data-src=partner.url + '@1x.png' data-srcset=partner.url + '@2x.png 2x' alt=partner.description)
+                source(type="image/webp" srcset=partner.lqip + '@1x.png' data-srcset=partner.url + '@1x.webp 1x,' + partner.url + '@2x.webp 2x')
+                img.lazyload.blur-up(src=partner.lqip + '@1x.png' data-src=partner.url + '@1x.png' data-srcset=partner.url + '@2x.png 2x' alt=partner.description)
 
         // slider navigation
 

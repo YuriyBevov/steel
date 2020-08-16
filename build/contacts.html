@@ -16,7 +16,7 @@
     <link rel="dns-prefetch" href="//api-maps.yandex.ru/2.1">
     <link rel="stylesheet" href="./css/style.min.css">
     <!-- script document.createElement("picture")-->
-    <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&amp;lang=ru_RU" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&amp;lang=ru_RU"></script>
   </head>
   <body>
     <div class="loader">
@@ -153,11 +153,11 @@
             </div>
           </div>
           <div class="contacts-data__additional">
-            <section class="contacts-map map">
+            <div class="contacts-map map">
               <div class="map__wrapper">
                 <div class="map__content" id="map"></div>
               </div>
-            </section>
+            </div>
             <div class="contacts-form">
               <h2 class="contacts-form__title">Если у вас остались вопросы, задайте их в форме ниже.</h2>
               <form class="question-page-form question-page-form form" action="#" enctype="text/plain" method="POST">
@@ -249,11 +249,11 @@
         <p class="modal__description">Заполните форму и мы свяжемся с Вами в ближайшее время.</p>
         <form class="callback-modal-form form" action="#" method="#">
           <fieldset class="form__group">
-            <label class="visually-hidden" for="callback-modal--formname">Ваше имя</label>
+            <label class="visually-hidden" for="callback-modal-form-name">Ваше имя</label>
             <input type="text" id="callback-modal-form-name" placeholder="Ваше имя">
           </fieldset>
           <fieldset class="form__group form__group--phone">
-            <label class="visually-hidden" for="callback-modal-phone">Телефон</label>
+            <label class="visually-hidden" for="callback-modal-form-phone">Телефон</label>
             <input type="tel" id="callback-modal-form-phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
           </fieldset>
           <button class="form__btn submit-btn m-btn" type="submit">Отправить</button><span class="form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
