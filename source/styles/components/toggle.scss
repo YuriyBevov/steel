@@ -64,21 +64,5 @@
         transform: rotate(-45deg);
       }
     }
-
-    /*&.closed {
-      &::before {
-        transition: top 0.2s linear, width 0.2s linear, margin-left 0.2s linear, transform 0.2s 0.2s ease-in;
-        width: 100%;
-        margin-left: 0;
-        top: calc(50% - 0.1rem);
-        transform: rotate(0);
-      }
-
-      &::after {
-        transition: bottom 0.2s ease-in, transform 0.2s 0.2s ease-in;
-        bottom: calc(50% - 0.1rem);
-        transform: rotate(0);
-      }
-    }*/
   }
 }

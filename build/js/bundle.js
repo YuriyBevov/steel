@@ -15537,6 +15537,7 @@ function menuState() {
   const burger = document.querySelector('.toggle');
   const navbar = document.querySelector('.header__navbar');
   const page = document.querySelector('html');
+  let burgerClicked = false;
 
   const onEscBtnHandler = (evt) => {
     if (evt.keyCode === 27 && navbar.classList.contains('menu-opened')) {
@@ -15549,11 +15550,18 @@ function menuState() {
   }
 
   const onClickEventHandler = () => {
+
     navbar.classList.toggle('menu-opened');
     burger.classList.toggle('opened');
     if(navbar.classList.contains('menu-opened')) {
       page.classList.add('scroll-off');
-      document.addEventListener('keydown', onEscBtnHandler);
+      burger.removeEventListener('click', onClickEventHandler);
+
+      setTimeout(function() {
+        document.addEventListener('keydown', onEscBtnHandler);
+        burger.addEventListener('click', onClickEventHandler);
+      }, 700);
+
     } else {
       page.classList.remove('scroll-off');
       document.removeEventListener('keydown', onEscBtnHandler);
@@ -16454,8 +16462,13 @@ function modal(openButtonClass, modalClass) {
       closeBtn.addEventListener('click', onCloseBtnClickHandler);
       closeBtn.focus();
       page.classList.add('scroll-off');
-      window.addEventListener('keydown', onEscBtnHandler);
-      window.addEventListener('mousedown', onMousedownHandler);
+      btn.removeEventListener('click', onClickHandler);
+
+      setTimeout(function() {
+        window.addEventListener('keydown', onEscBtnHandler);
+        window.addEventListener('mousedown', onMousedownHandler);
+        btn.addEventListener('click', onClickHandler);
+      }, 700);
     }
 
     btn.addEventListener('click', onClickHandler);

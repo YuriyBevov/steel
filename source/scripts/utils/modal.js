@@ -46,8 +46,13 @@ export default function modal(openButtonClass, modalClass) {
       closeBtn.addEventListener('click', onCloseBtnClickHandler);
       closeBtn.focus();
       page.classList.add('scroll-off');
-      window.addEventListener('keydown', onEscBtnHandler);
-      window.addEventListener('mousedown', onMousedownHandler);
+      btn.removeEventListener('click', onClickHandler);
+
+      setTimeout(function() {
+        window.addEventListener('keydown', onEscBtnHandler);
+        window.addEventListener('mousedown', onMousedownHandler);
+        btn.addEventListener('click', onClickHandler);
+      }, 700);
     }
 
     btn.addEventListener('click', onClickHandler);
