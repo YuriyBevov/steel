@@ -15345,26 +15345,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import modalInit from './modules/modals.js'; // инит модалок, готовый скрипт !!!
 
 
 
 
 
-
-//const height = window.innerHeight;
-
-/*var scrollHeight = Math.max(
-  document.body.scrollHeight, document.documentElement.scrollHeight,
-  document.body.offsetHeight, document.documentElement.offsetHeight,
-  document.body.clientHeight, document.documentElement.clientHeight
-);
-
-console.log( 'Высота с учётом прокрутки: ' + scrollHeight );
-
-const body = document.querySelector('body');
-
-body.style.height = scrollHeight + 'px';*/
 
 
 /***/ }),
@@ -15527,10 +15512,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const fillUploadFile = () => {
-  const inputs = document.querySelectorAll('.modal-form__file-upload');
+  const inputs = document.querySelectorAll('.form__file-upload');
   inputs.forEach(input => {
     let label = input.previousElementSibling;
-    let textPlace = label.querySelector('.modal-form__file-text');
+    let textPlace = label.querySelector('.form__file-text');
     Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["fileUpload"])(input, textPlace);
   })
 };
@@ -16462,13 +16447,8 @@ const formValidation = (form) => {
   if(tel) {
     if(tel.value.length === 16) {
       validPhone = true;
-      // если поле телефона существует и оно равно 16 числам(длина номера телефона), тк у меня стоит маска и проверять на пробеллы нет смысла, то будет проходить валидация
     } else {
-      // if tel is empty or wrong
-      console.log('tel is wrong')
       validPhone = false;
-
-      // невалидный эффект
 
       if(errorMsg) {
         errorMsg.style.display = "block";
@@ -16483,17 +16463,11 @@ const formValidation = (form) => {
       }
     }
   } else {
-    // if tel isnt exist
-    console.log('tel isnt exist')
     validPhone = true;
   }
 
   if(validPhone) {
-    console.log('valid')
     Object(_modules_formSend_js__WEBPACK_IMPORTED_MODULE_0__["formSend"])(form);
-    // если поля существуют и оно заполненны, то будет происходить отправка
-  } else {
-    console.log('invalid')
   }
 }
 
@@ -16543,7 +16517,6 @@ const scrollWidth = () => {
 function fileUpload(el, uploadFileNamePlace) {
   el.addEventListener("change", function(event) {
     const input = event.target;
-    console.log(uploadFileNamePlace)
     uploadFileNamePlace.textContent = input.files[0].name;
   });
 }

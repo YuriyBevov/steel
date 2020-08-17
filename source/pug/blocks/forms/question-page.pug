@@ -3,12 +3,12 @@ form.question-page-form(action="#" enctype="text/plain" method="POST").question-
   .question-page-form__wrapper
     fieldset.form__group.form__group--phone
       label(for="question-phone").visually-hidden Ваш номер телефона
-      input(type="tel" id="question-phone" name="phone" placeholder="Телефон")
+      input(type="tel" id="question-phone" name="Телефон для связи" placeholder="Телефон")
       span.invalid-field-msg Введите корректный номер телефона
 
     fieldset.form__group
       label(for="question-text").visually-hidden Ваш вопрос
-      textarea(id="question-text" placeholder="Введите ваш вопрос")
+      textarea(id="question-text" name="Текст сообщения" placeholder="Введите ваш вопрос")
 
   button(type="submit").form__btn.submit-btn.m-btn Отправить вопрос
   span.form__alert Нажимая кнопку, вы даете согласие на обработку своих персональных данных

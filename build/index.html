@@ -646,18 +646,18 @@
         </button>
         <h2 class="modal__title">Рассчитаем стоимость Вашего проекта</h2>
         <p class="modal__description">Заполните форму и мы свяжемся с Вами в ближайшее время.</p>
-        <form class="cost-modal-form form" action="#" method="#">
+        <form class="cost-modal-form form" action="#" method="#" enctype="multipart/form-data">
           <fieldset class="form__group">
             <label class="visually-hidden" for="cost-modal-form-name">Ваше имя</label>
-            <input type="text" id="cost-modal-form-name" placeholder="Ваше имя">
+            <input type="text" id="cost-modal-form-name" name="Имя пользователя" placeholder="Ваше имя">
           </fieldset>
           <fieldset class="form__group form__group--phone">
             <label class="visually-hidden" for="cost-modal-form-phone">Телефон</label>
-            <input type="tel" id="cost-modal-form-phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
+            <input type="tel" id="cost-modal-form-phone" name="Телефон для связи" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
           </fieldset>
           <fieldset class="form__group">
             <label class="form__file" for="cost-modal-form-file"><span class="form__file-text">Прикрепите файл</span></label>
-            <input class="visually-hidden modal-form__file-upload" type="file" id="cost-modal-form-file">
+            <input class="visually-hidden form__file-upload" type="file" id="cost-modal-form-file" name="Прикрепленный файл">
           </fieldset>
           <button class="form__btn submit-btn m-btn" type="submit">Обсудить проект</button><span class="form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
         </form>
@@ -675,15 +675,15 @@
         <form class="discuss-modal-form form" action="#" method="#">
           <fieldset class="form__group">
             <label class="visually-hidden" for="discuss-modal-form-name">Ваше имя</label>
-            <input type="text" id="discuss-modal-form-name" placeholder="Ваше имя">
+            <input type="text" id="discuss-modal-form-name" name="Имя пользователя" placeholder="Ваше имя">
           </fieldset>
           <fieldset class="form__group form__group--phone">
             <label class="visually-hidden" for="discuss-modal-form-phone">Телефон</label>
-            <input type="tel" id="discuss-modal-form-phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
+            <input type="tel" id="discuss-modal-form-phone" name="Телефон для связи" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
           </fieldset>
           <fieldset class="form__group">
             <label class="visually-hidden" for="discuss-modal-form-mail">E-mail</label>
-            <input type="email" id="discuss-modal-form-mail" placeholder="E-mail">
+            <input type="email" id="discuss-modal-form-mail" name="Адрес электронной почты" placeholder="E-mail">
           </fieldset>
           <button class="form__btn submit-btn m-btn" type="submit">Обсудить проект</button><span class="form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных</span>
         </form>

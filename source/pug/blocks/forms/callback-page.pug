@@ -2,11 +2,11 @@ form(action="#" method="#").callback-page-form.form
   .callback-page-form__wrapper
     fieldset.form__group
       label(for="callback-page-form-name").visually-hidden Ваше имя
-      input(type="text" id="callback-page-form-name" placeholder="Ваше имя")
+      input(type="text" id="callback-page-form-name" name="Имя пользователя" placeholder="Ваше имя")
 
     fieldset.form__group.form__group--phone
       label(for="callback-page-form-phone").visually-hidden Телефон
-      input(type="tel" id="callback-page-form-phone" placeholder="Телефон")
+      input(type="tel" id="callback-page-form-phone" name="Телефон для связи" placeholder="Телефон")
       span.invalid-field-msg Введите корректный номер телефона
 
   button(type="submit").form__btn.submit-btn.m-btn Обсудить проект

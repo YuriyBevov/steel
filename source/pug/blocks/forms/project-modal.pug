@@ -1,17 +1,17 @@
-form(action="#" method="#").project-modal-form.form
+form(action="#" method="#" enctype="multipart/form-data").project-modal-form.form
   fieldset.form__group
     label(for="project-modal-form-name").visually-hidden Ваше имя
-    input(type="text" id="project-modal-form-name" placeholder="Ваше имя")
+    input(type="text" id="project-modal-form-name" name="Имя пользователя" placeholder="Ваше имя")
 
   fieldset.form__group.form__group--phone
     label(for="project-modal-form-phone").visually-hidden Телефон
-    input(type="tel" id="project-modal-form-phone" placeholder="Телефон")
+    input(type="tel" id="project-modal-form-phone" name="Телефон для связи" placeholder="Телефон")
     span.invalid-field-msg Введите корректный номер телефона
 
   fieldset.form__group
     label(for="project-modal-form-file").form__file
-      span.modal-form__file-text Прикрепите файл
-    input(type="file" id="project-modal-form-file").visually-hidden.modal-form__file-upload
+      span.form__file-text Прикрепите файл
+    input(type="file" id="project-modal-form-file" name="Прикрепленный файл").visually-hidden.form__file-upload
 
   button(type="submit").form__btn.submit-btn.m-btn Обсудить проект
   span.form__alert Нажимая кнопку, вы даете согласие на обработку своих персональных данных.

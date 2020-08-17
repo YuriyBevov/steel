@@ -1,10 +1,10 @@
 import {fileUpload} from "../utils/func.js"
 
 const fillUploadFile = () => {
-  const inputs = document.querySelectorAll('.modal-form__file-upload');
+  const inputs = document.querySelectorAll('.form__file-upload');
   inputs.forEach(input => {
     let label = input.previousElementSibling;
-    let textPlace = label.querySelector('.modal-form__file-text');
+    let textPlace = label.querySelector('.form__file-text');
     fileUpload(input, textPlace);
   })
 };
