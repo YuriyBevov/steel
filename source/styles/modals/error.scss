@@ -1,0 +1,9 @@
+.modal-error {
+  &__text {
+    font-family: $font_secondary;
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+    margin: auto 0;
+    color: $color_invalid;
+  }
+}

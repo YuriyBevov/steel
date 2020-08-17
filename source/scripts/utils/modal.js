@@ -39,7 +39,6 @@ export default function modal(openButtonClass, modalClass) {
       }
     }
 
-
     const onClickHandler = (evt) => {
       evt.preventDefault();
       removeClass(modal, 'closed');

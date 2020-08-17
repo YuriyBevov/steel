@@ -7,12 +7,9 @@ const modalState = (modal) => {
     const closeBtn = modal.querySelector('.modal__close');
     const page = document.querySelector('html');
     page.classList.add('scroll-off');
-    modal.classList.remove('closed');
 
-
-    const refresh = (currentModal) => {
-      console.log(currentModal)
-      formRefresh(currentModal);
+    const refresh = () => {
+      formRefresh(modal);
       page.classList.remove('scroll-off');
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
@@ -21,13 +18,13 @@ const modalState = (modal) => {
 
     const onCloseBtnClickHandler = () => {
       addClass(modal,'closed');
-      refresh(modal);
+      refresh();
     }
 
     const onEscBtnHandler = (evt) => {
       if (evt.keyCode === 27) {
         addClass(modal,'closed');
-        refresh(modal);
+        refresh();
       }
     }
 
@@ -36,15 +33,31 @@ const modalState = (modal) => {
       const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
       if(!clickArea) {
         addClass(modal, 'closed');
-        refresh(modal);
+        refresh();
       }
     }
 
-    setTimeout(function() {
-      window.addEventListener('keydown', onEscBtnHandler);
-      window.addEventListener('mousedown', onMousedownHandler);
-      closeBtn.addEventListener('click', onCloseBtnClickHandler);
-    }, 700);
+    const openModal = () => {
+      modal.classList.remove('closed');
+
+      setTimeout(function() {
+        window.addEventListener('keydown', onEscBtnHandler);
+        window.addEventListener('mousedown', onMousedownHandler);
+        closeBtn.addEventListener('click', onCloseBtnClickHandler);
+      }, 700);
+    }
+
+    (function checkModals () {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(isOpened => {
+        if(!isOpened.classList.contains('closed')) {
+          isOpened.classList.add('closed')
+          openModal();
+        } else {
+          openModal();
+        }
+      });
+    })();
   }
 };
 
