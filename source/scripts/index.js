@@ -12,5 +12,5 @@ import resize from './modules/textareaResize.js';
 import menuState from './modules/menuState.js';
 import fillUploadFile from './modules/fillUploadFile.js';
 import validatePhone from './plugins/phoneValidation.js';
-import validateForms from './modules/submitForms.js';
-import openModal from './modals/modalLinks.js';
+import submitForms from './modules/forms/submitForms.js';
+import openModal from './modules/modalLinks.js';

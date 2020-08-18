@@ -1,5 +1,5 @@
-import {removeClass, addClass, toggleElem} from '../utils/func.js';
-import {formRefresh} from '../utils/formRefresh.js'
+import {removeClass, addClass, toggleElem} from '../../utils/func.js';
+import {formRefresh} from '../forms/formRefresh.js'
 
 const modalState = (modal) => {
 
@@ -51,11 +51,9 @@ const modalState = (modal) => {
       const modals = document.querySelectorAll('.modal');
       modals.forEach(isOpened => {
         if(!isOpened.classList.contains('closed')) {
-          isOpened.classList.add('closed')
-          openModal();
-        } else {
-          openModal();
+          isOpened.classList.add('closed');
         }
+        openModal();
       });
     })();
   }

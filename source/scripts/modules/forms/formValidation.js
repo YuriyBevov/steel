@@ -1,4 +1,4 @@
-import {formSend} from '../modules/formSend.js';
+import {formSend} from './formSend.js';
 
 const formValidation = (form) => {
   const tel = form.querySelector('input[type="tel"]');

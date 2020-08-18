@@ -1,4 +1,5 @@
-import {modalState} from './modalState.js'
+import {modalState} from './modals/modalState.js'
+//import {modalState} from '../modals/modalState.js'
 
 const openModal = function () {
   const modalLinks = document.querySelectorAll('.modal-link');

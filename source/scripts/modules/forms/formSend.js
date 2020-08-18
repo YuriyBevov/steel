@@ -10,7 +10,6 @@ const formSend = function (currentForm) {
   }
 
   function error() {
-    console.log('error')
     modalState(errorModal);
   }
 

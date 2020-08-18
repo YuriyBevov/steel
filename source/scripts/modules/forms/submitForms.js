@@ -1,6 +1,6 @@
-/*import {formValidation} from './forms/formValidation.js';
+import {formValidation} from './formValidation.js';
 
-function validateForms() {
+function submitForms() {
     const submitBtns = document.querySelectorAll('.submit-btn');
 
   submitBtns.forEach(submitBtn => {
@@ -11,4 +11,4 @@ function validateForms() {
   });
 }
 
-export default validateForms();*/
+export default submitForms();

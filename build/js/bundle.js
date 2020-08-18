@@ -15332,8 +15332,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
 /* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
 /* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
-/* harmony import */ var _modules_submitForms_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/submitForms.js */ "./source/scripts/modules/submitForms.js");
-/* harmony import */ var _modals_modalLinks_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modals/modalLinks.js */ "./source/scripts/modals/modalLinks.js");
+/* harmony import */ var _modules_forms_submitForms_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/forms/submitForms.js */ "./source/scripts/modules/forms/submitForms.js");
+/* harmony import */ var _modules_modalLinks_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/modalLinks.js */ "./source/scripts/modules/modalLinks.js");
 
 
 
@@ -15348,123 +15348,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-/***/ }),
-
-/***/ "./source/scripts/modals/modalLinks.js":
-/*!*********************************************!*\
-  !*** ./source/scripts/modals/modalLinks.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modalState_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modalState.js */ "./source/scripts/modals/modalState.js");
-
-
-const openModal = function () {
-  const modalLinks = document.querySelectorAll('.modal-link');
-
-  const isModalOpened = false;
-
-  modalLinks.forEach(link => {
-
-    const onClickHandler = function (evt) {
-      evt.preventDefault()
-
-      const id = this.getAttribute('data-id');
-      const currentModal = document.querySelector('.' + id);
-
-      Object(_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])(currentModal);
-    }
-
-    link.addEventListener('click', onClickHandler);
-  });
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (openModal());
-
-
-/***/ }),
-
-/***/ "./source/scripts/modals/modalState.js":
-/*!*********************************************!*\
-  !*** ./source/scripts/modals/modalState.js ***!
-  \*********************************************/
-/*! exports provided: modalState */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalState", function() { return modalState; });
-/* harmony import */ var _utils_func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/func.js */ "./source/scripts/utils/func.js");
-/* harmony import */ var _utils_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/formRefresh.js */ "./source/scripts/utils/formRefresh.js");
-
-
-
-const modalState = (modal) => {
-
-  if (modal) {
-    const closeBtn = modal.querySelector('.modal__close');
-    const page = document.querySelector('html');
-    page.classList.add('scroll-off');
-
-    const refresh = () => {
-      Object(_utils_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__["formRefresh"])(modal);
-      page.classList.remove('scroll-off');
-      window.removeEventListener('keydown', onEscBtnHandler);
-      window.removeEventListener('mousedown', onMousedownHandler);
-      closeBtn.removeEventListener('click', onCloseBtnClickHandler);
-    }
-
-    const onCloseBtnClickHandler = () => {
-      Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-      refresh();
-    }
-
-    const onEscBtnHandler = (evt) => {
-      if (evt.keyCode === 27) {
-        Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
-        refresh();
-      }
-    }
-
-    const onMousedownHandler = (evt) => {
-      const modalContent = modal.querySelector('.modal__wrapper');
-      const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
-      if(!clickArea) {
-        Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal, 'closed');
-        refresh();
-      }
-    }
-
-    const openModal = () => {
-      modal.classList.remove('closed');
-
-      setTimeout(function() {
-        window.addEventListener('keydown', onEscBtnHandler);
-        window.addEventListener('mousedown', onMousedownHandler);
-        closeBtn.addEventListener('click', onCloseBtnClickHandler);
-      }, 700);
-    }
-
-    (function checkModals () {
-      const modals = document.querySelectorAll('.modal');
-      modals.forEach(isOpened => {
-        if(!isOpened.classList.contains('closed')) {
-          isOpened.classList.add('closed')
-          openModal();
-        } else {
-          openModal();
-        }
-      });
-    })();
-  }
-};
 
 
 
@@ -15525,17 +15408,64 @@ const fillUploadFile = () => {
 
 /***/ }),
 
-/***/ "./source/scripts/modules/formSend.js":
-/*!********************************************!*\
-  !*** ./source/scripts/modules/formSend.js ***!
-  \********************************************/
+/***/ "./source/scripts/modules/forms/formRefresh.js":
+/*!*****************************************************!*\
+  !*** ./source/scripts/modules/forms/formRefresh.js ***!
+  \*****************************************************/
+/*! exports provided: formRefresh */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formRefresh", function() { return formRefresh; });
+const formRefresh = (modal) => {
+  const invalidFields = modal.querySelectorAll('.invalid-field');
+  const uploadFields = modal.querySelectorAll('input[type=file]');
+  const textFields = modal.querySelectorAll('input');
+  console.log(textFields)
+
+  if(invalidFields.length > 0) {
+    invalidFields.forEach(field => {
+      field.classList.remove('invalid-field');
+      const errorMsg = field.nextSibling;
+      if(errorMsg.classList.contains('invalid-field-msg')) {
+        errorMsg.style.display = 'none';
+      }
+    })
+  }
+
+  if(textFields.length > 0) {
+    textFields.forEach(field => {
+      field.value = null;
+    })
+  }
+
+  if (uploadFields.length > 0) {
+    uploadFields.forEach(field => {
+      field.value = null;
+      let label = field.previousElementSibling;
+      let textPlace = label.querySelector('.form__file-text');
+      textPlace.textContent = "Прикрепите файл";
+    });
+  }
+}
+
+
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/forms/formSend.js":
+/*!**************************************************!*\
+  !*** ./source/scripts/modules/forms/formSend.js ***!
+  \**************************************************/
 /*! exports provided: formSend */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formSend", function() { return formSend; });
-/* harmony import */ var _modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modals/modalState.js */ "./source/scripts/modals/modalState.js");
+/* harmony import */ var _modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modals/modalState.js */ "./source/scripts/modules/modals/modalState.js");
 
 
 const formSend = function (currentForm) {
@@ -15548,7 +15478,6 @@ const formSend = function (currentForm) {
   }
 
   function error() {
-    console.log('error')
     Object(_modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])(errorModal);
   }
 
@@ -15576,6 +15505,86 @@ const formSend = function (currentForm) {
 }
 
 
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/forms/formValidation.js":
+/*!********************************************************!*\
+  !*** ./source/scripts/modules/forms/formValidation.js ***!
+  \********************************************************/
+/*! exports provided: formValidation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formValidation", function() { return formValidation; });
+/* harmony import */ var _formSend_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./formSend.js */ "./source/scripts/modules/forms/formSend.js");
+
+
+const formValidation = (form) => {
+  const tel = form.querySelector('input[type="tel"]');
+
+  const errorMsg = form.querySelector('.invalid-field-msg');
+
+  let validPhone = false;
+
+  if(tel) {
+    if(tel.value.length === 16) {
+      validPhone = true;
+    } else {
+      validPhone = false;
+
+      if(errorMsg) {
+        errorMsg.style.display = "block";
+
+        const onChangeEventHandler = () => {
+          errorMsg.style.display = "none";
+          tel.classList.remove('invalid-field');
+          tel.removeEventListener('focus', onChangeEventHandler)
+        }
+        tel.classList.add('invalid-field');
+        tel.addEventListener('focus', onChangeEventHandler)
+      }
+    }
+  } else {
+    validPhone = true;
+  }
+
+  if(validPhone) {
+    Object(_formSend_js__WEBPACK_IMPORTED_MODULE_0__["formSend"])(form);
+  }
+}
+
+
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/forms/submitForms.js":
+/*!*****************************************************!*\
+  !*** ./source/scripts/modules/forms/submitForms.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _formValidation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./formValidation.js */ "./source/scripts/modules/forms/formValidation.js");
+
+
+function submitForms() {
+    const submitBtns = document.querySelectorAll('.submit-btn');
+
+  submitBtns.forEach(submitBtn => {
+    submitBtn.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      Object(_formValidation_js__WEBPACK_IMPORTED_MODULE_0__["formValidation"])(this.closest('form'));
+    })
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (submitForms());
 
 
 /***/ }),
@@ -15733,6 +15742,122 @@ function menuState() {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/modalLinks.js":
+/*!**********************************************!*\
+  !*** ./source/scripts/modules/modalLinks.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modals/modalState.js */ "./source/scripts/modules/modals/modalState.js");
+
+//import {modalState} from '../modals/modalState.js'
+
+const openModal = function () {
+  const modalLinks = document.querySelectorAll('.modal-link');
+
+  const isModalOpened = false;
+
+  modalLinks.forEach(link => {
+
+    const onClickHandler = function (evt) {
+      evt.preventDefault()
+
+      const id = this.getAttribute('data-id');
+      const currentModal = document.querySelector('.' + id);
+
+      Object(_modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])(currentModal);
+    }
+
+    link.addEventListener('click', onClickHandler);
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (openModal());
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/modals/modalState.js":
+/*!*****************************************************!*\
+  !*** ./source/scripts/modules/modals/modalState.js ***!
+  \*****************************************************/
+/*! exports provided: modalState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalState", function() { return modalState; });
+/* harmony import */ var _utils_func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/func.js */ "./source/scripts/utils/func.js");
+/* harmony import */ var _forms_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../forms/formRefresh.js */ "./source/scripts/modules/forms/formRefresh.js");
+
+
+
+const modalState = (modal) => {
+
+  if (modal) {
+    const closeBtn = modal.querySelector('.modal__close');
+    const page = document.querySelector('html');
+    page.classList.add('scroll-off');
+
+    const refresh = () => {
+      Object(_forms_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__["formRefresh"])(modal);
+      page.classList.remove('scroll-off');
+      window.removeEventListener('keydown', onEscBtnHandler);
+      window.removeEventListener('mousedown', onMousedownHandler);
+      closeBtn.removeEventListener('click', onCloseBtnClickHandler);
+    }
+
+    const onCloseBtnClickHandler = () => {
+      Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
+      refresh();
+    }
+
+    const onEscBtnHandler = (evt) => {
+      if (evt.keyCode === 27) {
+        Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
+        refresh();
+      }
+    }
+
+    const onMousedownHandler = (evt) => {
+      const modalContent = modal.querySelector('.modal__wrapper');
+      const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
+      if(!clickArea) {
+        Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal, 'closed');
+        refresh();
+      }
+    }
+
+    const openModal = () => {
+      modal.classList.remove('closed');
+
+      setTimeout(function() {
+        window.addEventListener('keydown', onEscBtnHandler);
+        window.addEventListener('mousedown', onMousedownHandler);
+        closeBtn.addEventListener('click', onCloseBtnClickHandler);
+      }, 700);
+    }
+
+    (function checkModals () {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(isOpened => {
+        if(!isOpened.classList.contains('closed')) {
+          isOpened.classList.add('closed');
+        }
+        openModal();
+      });
+    })();
+  }
+};
+
+
+
+
+/***/ }),
+
 /***/ "./source/scripts/modules/modernizrWebp.js":
 /*!*************************************************!*\
   !*** ./source/scripts/modules/modernizrWebp.js ***!
@@ -15871,34 +15996,6 @@ const showIntroTitle = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (showIntroTitle);
-
-
-/***/ }),
-
-/***/ "./source/scripts/modules/submitForms.js":
-/*!***********************************************!*\
-  !*** ./source/scripts/modules/submitForms.js ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_formValidation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/formValidation.js */ "./source/scripts/utils/formValidation.js");
-
-
-function validateForms() {
-    const submitBtns = document.querySelectorAll('.submit-btn');
-
-  submitBtns.forEach(submitBtn => {
-    submitBtn.addEventListener('click', function (evt) {
-      evt.preventDefault();
-      Object(_utils_formValidation_js__WEBPACK_IMPORTED_MODULE_0__["formValidation"])(this.closest('form'));
-    })
-  });
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (validateForms());
 
 
 /***/ }),
@@ -16391,87 +16488,6 @@ function validatePhone() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (validatePhone());
-
-
-/***/ }),
-
-/***/ "./source/scripts/utils/formRefresh.js":
-/*!*********************************************!*\
-  !*** ./source/scripts/utils/formRefresh.js ***!
-  \*********************************************/
-/*! exports provided: formRefresh */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formRefresh", function() { return formRefresh; });
-const formRefresh = (modal) => {
-  const invalidFields = modal.querySelectorAll('.invalid-field');
-
-  if(invalidFields.length > 0) {
-    invalidFields.forEach(field => {
-      field.classList.remove('invalid-field');
-      const errorMsg = field.nextSibling;
-      if(errorMsg.classList.contains('invalid-field-msg')) {
-        errorMsg.style.display = 'none';
-      }
-    })
-  }
-}
-
-
-
-
-/***/ }),
-
-/***/ "./source/scripts/utils/formValidation.js":
-/*!************************************************!*\
-  !*** ./source/scripts/utils/formValidation.js ***!
-  \************************************************/
-/*! exports provided: formValidation */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formValidation", function() { return formValidation; });
-/* harmony import */ var _modules_formSend_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/formSend.js */ "./source/scripts/modules/formSend.js");
-
-
-const formValidation = (form) => {
-  const tel = form.querySelector('input[type="tel"]');
-
-  const errorMsg = form.querySelector('.invalid-field-msg');
-
-  let validPhone = false;
-
-  if(tel) {
-    if(tel.value.length === 16) {
-      validPhone = true;
-    } else {
-      validPhone = false;
-
-      if(errorMsg) {
-        errorMsg.style.display = "block";
-
-        const onChangeEventHandler = () => {
-          errorMsg.style.display = "none";
-          tel.classList.remove('invalid-field');
-          tel.removeEventListener('focus', onChangeEventHandler)
-        }
-        tel.classList.add('invalid-field');
-        tel.addEventListener('focus', onChangeEventHandler)
-      }
-    }
-  } else {
-    validPhone = true;
-  }
-
-  if(validPhone) {
-    Object(_modules_formSend_js__WEBPACK_IMPORTED_MODULE_0__["formSend"])(form);
-  }
-}
-
-
 
 
 /***/ }),
