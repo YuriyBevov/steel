@@ -15623,7 +15623,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function submitForms() {
-    const submitBtns = document.querySelectorAll('.submit-btn');
+  const submitBtns = document.querySelectorAll('.submit-btn');
 
   submitBtns.forEach(submitBtn => {
     submitBtn.addEventListener('click', function (evt) {
@@ -15802,7 +15802,6 @@ function menuState() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modals/modalState.js */ "./source/scripts/modules/modals/modalState.js");
 
-//import {modalState} from '../modals/modalState.js'
 
 const openModal = function () {
   const modalLinks = document.querySelectorAll('.modal-link');
