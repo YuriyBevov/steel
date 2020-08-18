@@ -15334,6 +15334,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
 /* harmony import */ var _modules_forms_submitForms_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/forms/submitForms.js */ "./source/scripts/modules/forms/submitForms.js");
 /* harmony import */ var _modules_modalLinks_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/modalLinks.js */ "./source/scripts/modules/modalLinks.js");
+/* harmony import */ var _modules_anchorScroll_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/anchorScroll.js */ "./source/scripts/modules/anchorScroll.js");
 
 
 
@@ -15350,6 +15351,55 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/anchorScroll.js":
+/*!************************************************!*\
+  !*** ./source/scripts/modules/anchorScroll.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const anchorScroll = () => {
+  const linkNav = document.querySelectorAll('.scroll-link');
+
+  const SCROLL_SPEED = 0.5;
+
+  linkNav.forEach(link => {
+    link.addEventListener('click', function (evt) {
+      evt.preventDefault();
+
+      const height = window.pageYOffset;
+      const hash = this.href.replace(/[^#]*(.*)/, '$1');
+      const top = document.querySelector(hash).getBoundingClientRect().top;
+
+      let start = null;
+
+      requestAnimationFrame(step);
+
+      function step(time) {
+        if (start === null) {
+          start = time;
+        }
+        const progress = time - start;
+        const result = (top < 0 ? Math.max(height - progress / SCROLL_SPEED, height + top) : Math.min(height + progress / SCROLL_SPEED, height + top));
+        window.scrollTo(0, result);
+        if (result !== height + top) {
+          requestAnimationFrame(step);
+        } else {
+          location.hash = hash;
+        }
+      }
+    }, false);
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (anchorScroll());
 
 
 /***/ }),
@@ -15422,7 +15472,6 @@ const formRefresh = (modal) => {
   const invalidFields = modal.querySelectorAll('.invalid-field');
   const uploadFields = modal.querySelectorAll('input[type=file]');
   const textFields = modal.querySelectorAll('input');
-  console.log(textFields)
 
   if(invalidFields.length > 0) {
     invalidFields.forEach(field => {

@@ -2,7 +2,6 @@ const formRefresh = (modal) => {
   const invalidFields = modal.querySelectorAll('.invalid-field');
   const uploadFields = modal.querySelectorAll('input[type=file]');
   const textFields = modal.querySelectorAll('input');
-  console.log(textFields)
 
   if(invalidFields.length > 0) {
     invalidFields.forEach(field => {

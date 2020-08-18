@@ -14,3 +14,4 @@ import fillUploadFile from './modules/fillUploadFile.js';
 import validatePhone from './plugins/phoneValidation.js';
 import submitForms from './modules/forms/submitForms.js';
 import openModal from './modules/modalLinks.js';
+import anchorScroll from './modules/anchorScroll.js';
