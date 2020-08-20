@@ -1,6 +1,6 @@
 .modal.modal-error.closed
   .modal__wrapper.modal-error__wrapper
-    button.modal__close
+    button(type="button" aria-label="Кнопка закрытия модального окна").modal__close
       svg(width="36" height="36")
         use(xlink:href="#icon-close")
-    p.modal-error__text К сожалению, что-то пошло не так.. <br/> Попробуйте снова !
+    p(tabindex="0").modal-error__text К сожалению, что-то пошло не так.. <br/> Попробуйте снова !

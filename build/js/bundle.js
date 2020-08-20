@@ -15828,6 +15828,63 @@ const openModal = function () {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/modals/modalFocus.js":
+/*!*****************************************************!*\
+  !*** ./source/scripts/modules/modals/modalFocus.js ***!
+  \*****************************************************/
+/*! exports provided: modalFocus */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalFocus", function() { return modalFocus; });
+const modalFocus = (currentModal) => {
+
+  /*const closeBtn = currentModal.querySelector('.modal__close');
+  const submitBtn = currentModal.querySelector('.form__btn');
+
+  closeBtn.focus();
+
+  const onCloseBtnFocusHandler = () => {
+    const onTabShiftClickHandler = (evt) => {
+        if(evt.shiftKey && evt.key === 'Tab') {
+          console.log('tabshift');
+          evt.preventDefault();
+          window.removeEventListener('keydown', onTabShiftClickHandler);
+          submitBtn.focus();
+        }
+      }
+    window.addEventListener('keydown', onTabShiftClickHandler);
+  };
+
+  closeBtn.addEventListener('focus', onCloseBtnFocusHandler);
+
+  const onFocusHandler = () => {
+    const onTabClickHandler = (evt) => {
+      if(evt.key === 'Tab') {
+        evt.preventDefault();
+        closeBtn.focus();
+        window.removeEventListener('keydown', onTabClickHandler);
+      } else if(evt.shiftKey && evt.key === 'Tab') {
+          console.log('poi')
+          evt.target.previousElementSibling.focus();
+        } /*else if(evt.key !== 'Enter') {
+          evt.preventDefault();
+        }*/
+      //}
+
+
+    /*window.addEventListener('keydown', onTabClickHandler);
+  };
+
+  submitBtn.addEventListener('focus', onFocusHandler);*/
+};
+
+
+
+
+/***/ }),
+
 /***/ "./source/scripts/modules/modals/modalState.js":
 /*!*****************************************************!*\
   !*** ./source/scripts/modules/modals/modalState.js ***!
@@ -15840,6 +15897,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalState", function() { return modalState; });
 /* harmony import */ var _utils_func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/func.js */ "./source/scripts/utils/func.js");
 /* harmony import */ var _forms_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../forms/formRefresh.js */ "./source/scripts/modules/forms/formRefresh.js");
+/* harmony import */ var _modalFocus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modalFocus.js */ "./source/scripts/modules/modals/modalFocus.js");
+
 
 
 
@@ -15872,6 +15931,8 @@ const modalState = (modal) => {
 
     const onMousedownHandler = (evt) => {
       const modalContent = modal.querySelector('.modal__wrapper');
+      // console.log(modalContent.childNodes);
+      // form__btn, modal__close
       const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
       if(!clickArea) {
         Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal, 'closed');
@@ -15881,6 +15942,7 @@ const modalState = (modal) => {
 
     const openModal = () => {
       modal.classList.remove('closed');
+      Object(_modalFocus_js__WEBPACK_IMPORTED_MODULE_2__["modalFocus"])(modal);
 
       setTimeout(function() {
         window.addEventListener('keydown', onEscBtnHandler);
@@ -15895,8 +15957,8 @@ const modalState = (modal) => {
         if(!isOpened.classList.contains('closed')) {
           isOpened.classList.add('closed');
         }
-        openModal();
       });
+      openModal();
     })();
   }
 };

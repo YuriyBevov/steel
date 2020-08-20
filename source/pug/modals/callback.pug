@@ -1,9 +1,9 @@
 .modal.modal-callback.closed
   .modal__wrapper.modal-callback__wrapper
-    button.modal__close
+    button(type="button" aria-label="Кнопка закрытия модального окна").modal__close
       svg(width="36" height="36")
         use(xlink:href="#icon-close")
-    h2.modal__title Заказать звонок
-    p.modal__description Заполните форму и мы свяжемся с Вами в ближайшее время.
+    h2(tabindex="0").modal__title Заказать звонок
+    p(tabindex="0").modal__description Заполните форму и мы свяжемся с Вами в ближайшее время.
 
     include ../blocks/forms/callback-modal

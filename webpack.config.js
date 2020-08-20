@@ -19,11 +19,11 @@ module.exports = {
           }
         }
       },
-      {
+      /*{
         test: /\.vue$/,
         loader: 'vue-loader'
-      },
-      {
+      },*/
+      /*{
         test: /\.(png|jpe?g)$/,
         loaders: [
           {
@@ -36,7 +36,7 @@ module.exports = {
             }
           }
         ]
-      },
+      },*/
     ]
   },
   devServer: {
@@ -44,7 +44,7 @@ module.exports = {
     compress: true,
     port: 9000
   },
-  plugins: [
+  /*plugins: [
     new VueLoaderPlugin(),
-  ]
+  ]*/
 };

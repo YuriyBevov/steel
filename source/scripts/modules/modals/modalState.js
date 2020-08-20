@@ -1,5 +1,6 @@
 import {removeClass, addClass, toggleElem} from '../../utils/func.js';
 import {formRefresh} from '../forms/formRefresh.js'
+import {modalFocus} from './modalFocus.js';
 
 const modalState = (modal) => {
 
@@ -30,6 +31,8 @@ const modalState = (modal) => {
 
     const onMousedownHandler = (evt) => {
       const modalContent = modal.querySelector('.modal__wrapper');
+      // console.log(modalContent.childNodes);
+      // form__btn, modal__close
       const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
       if(!clickArea) {
         addClass(modal, 'closed');
@@ -39,6 +42,7 @@ const modalState = (modal) => {
 
     const openModal = () => {
       modal.classList.remove('closed');
+      modalFocus(modal);
 
       setTimeout(function() {
         window.addEventListener('keydown', onEscBtnHandler);
@@ -53,8 +57,8 @@ const modalState = (modal) => {
         if(!isOpened.classList.contains('closed')) {
           isOpened.classList.add('closed');
         }
-        openModal();
       });
+      openModal();
     })();
   }
 };

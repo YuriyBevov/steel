@@ -1,8 +1,5 @@
 .header {
   background-color: $color_black;
-/*  position: sticky;
-  top: 0;
-  left: 0;*/
   width: 100%;
   z-index: 1000000;
 
@@ -43,7 +40,7 @@
     text-transform: uppercase;
     margin-right: 3.5rem;
 
-    color: #D4B07A;
+    color: $color_easy-beige;
 
     @media(min-width: $tablet-width) {
 

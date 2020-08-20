@@ -1,7 +1,7 @@
 footer.footer
   .footer__wrapper
     .footer__logo
-       a(href="index.html" aria-label="Логотип")
+       a(href="index.html" aria-label="Обновить страницу")
          svg(width="96" height="22")
            use(xlink:href="#icon-footer_logo")
        p.footer__copyrights &#169; Все права защищены.
@@ -9,18 +9,18 @@ footer.footer
     include ./nav
 
     .footer__address
-      p.footer__address-title Мы находимся
+      p(tabindex="0").footer__address-title Мы находимся
 
-      address г. Санкт-Петербург Бехтерева&nbsp;3,корп&nbsp;3а
+      address(tabindex="0") г. Санкт-Петербург Бехтерева&nbsp;3,корп&nbsp;3а
 
     .footer__contacts
       p.footer__contacts-title Связаться с нами
 
-      a(href="tel:+79006221818").footer__contacts-link +7 (900)-622-18-18
+      a(href="tel:+79006221818" aria-label="Мобильный номер телефона для связи: +79006221818").footer__contacts-link +7 (900)-622-18-18
         svg(width="20" height="20")
           use(xlink:href="#icon-phone")
 
-      a(href="tel:+78122194093").footer__contacts-link +7 (812)-219-40-93
+      a(href="tel:+78122194093" aria-label="Городской номер телефона для связи: +78122194093").footer__contacts-link +7 (812)-219-40-93
         svg(width="20" height="20")
           use(xlink:href="#icon-phone")
 
@@ -29,7 +29,7 @@ footer.footer
       include ./social
 
     .footer__info
-      p
+      p(tabindex="0")
         | Вся представленная на сайте информация, касающаяся технических характеристик, наличия на складе,
         | стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой,
         | определяемой положениями Статьи 437(2) Гражданского кодекса РФ.

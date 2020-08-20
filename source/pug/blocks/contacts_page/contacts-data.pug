@@ -2,29 +2,29 @@ section.contacts-data
   include ./components/contacts-path
   .contacts-data__wrapper
 
-    h1.visually-hidden Контакты и расположение компании steel balls
+    h1(tabindex="0").visually-hidden Контакты и расположение компании steel balls
     .contacts-data__content
       .contacts-data__content-part
-        strong Адрес мастерской
-        address г. Санкт- Петербург, ул.Бехтерова 3, корп 3а
-        span Cогласовывайте заранее время приезда.
+        strong(tabindex="0") Адрес мастерской
+        address(tabindex="0") г. Санкт- Петербург, ул.Бехтерова 3, корп 3а
+        span(tabindex="0") Cогласовывайте заранее время приезда.
 
       .contacts-data__content-part
-        strong Время работы
-        p Пн-Пт  с 9:00 до 18:00.
+        strong(tabindex="0") Время работы
+        p(tabindex="0") Пн-Пт  с 9:00 до 18:00.
 
       .contacts-data__content-part
-        strong Телефон
+        strong(tabindex="0") Телефон
 
-        p Многоканальный офисный телефон
-        p.contacts-data__content-phone +7 (812) 219-40-93
+        p(tabindex="0") Многоканальный офисный телефон
+        p(tabindex="0").contacts-data__content-phone +7 (812) 219-40-93
 
-        p Мобильный телефон
-        p.contacts-data__content-phone +7 (900) 622-18-18
+        p(tabindex="0") Мобильный телефон
+        p(tabindex="0").contacts-data__content-phone +7 (900) 622-18-18
 
       .contacts-data__content-part
-        strong E-mail
-        p.contacts-data__content-mail master@stballs.ru
+        strong(tabindex="0") E-mail
+        p(tabindex="0").contacts-data__content-mail master@stballs.ru
 
     .contacts-data__additional
       include ./components/contacts-map
