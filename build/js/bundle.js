@@ -15840,6 +15840,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalFocus", function() { return modalFocus; });
 const modalFocus = (currentModal) => {
 
+  const closeBtn = currentModal.querySelector('.modal__close');
+  closeBtn.focus();
+
+  const submitBtn = currentModal.querySelector('.form__btn');
+
+  console.log(currentModal.childNodes)
+
   /*const closeBtn = currentModal.querySelector('.modal__close');
   const submitBtn = currentModal.querySelector('.form__btn');
 
@@ -15905,6 +15912,7 @@ __webpack_require__.r(__webpack_exports__);
 const modalState = (modal) => {
 
   if (modal) {
+    const lastFocusedElement = document.activeElement;
     const closeBtn = modal.querySelector('.modal__close');
     const page = document.querySelector('html');
     page.classList.add('scroll-off');
@@ -15915,6 +15923,7 @@ const modalState = (modal) => {
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
       closeBtn.removeEventListener('click', onCloseBtnClickHandler);
+      lastFocusedElement.focus();
     }
 
     const onCloseBtnClickHandler = () => {
@@ -15931,8 +15940,6 @@ const modalState = (modal) => {
 
     const onMousedownHandler = (evt) => {
       const modalContent = modal.querySelector('.modal__wrapper');
-      // console.log(modalContent.childNodes);
-      // form__btn, modal__close
       const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
       if(!clickArea) {
         Object(_utils_func_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal, 'closed');
@@ -15943,6 +15950,8 @@ const modalState = (modal) => {
     const openModal = () => {
       modal.classList.remove('closed');
       Object(_modalFocus_js__WEBPACK_IMPORTED_MODULE_2__["modalFocus"])(modal);
+
+      console.log(lastFocusedElement)
 
       setTimeout(function() {
         window.addEventListener('keydown', onEscBtnHandler);

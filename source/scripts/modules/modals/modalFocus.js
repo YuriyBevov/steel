@@ -1,5 +1,12 @@
 const modalFocus = (currentModal) => {
 
+  const closeBtn = currentModal.querySelector('.modal__close');
+  closeBtn.focus();
+
+  const submitBtn = currentModal.querySelector('.form__btn');
+
+  console.log(currentModal.childNodes)
+
   /*const closeBtn = currentModal.querySelector('.modal__close');
   const submitBtn = currentModal.querySelector('.form__btn');
 

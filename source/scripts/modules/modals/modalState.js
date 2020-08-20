@@ -5,6 +5,7 @@ import {modalFocus} from './modalFocus.js';
 const modalState = (modal) => {
 
   if (modal) {
+    const lastFocusedElement = document.activeElement;
     const closeBtn = modal.querySelector('.modal__close');
     const page = document.querySelector('html');
     page.classList.add('scroll-off');
@@ -15,6 +16,7 @@ const modalState = (modal) => {
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
       closeBtn.removeEventListener('click', onCloseBtnClickHandler);
+      lastFocusedElement.focus();
     }
 
     const onCloseBtnClickHandler = () => {
@@ -31,8 +33,6 @@ const modalState = (modal) => {
 
     const onMousedownHandler = (evt) => {
       const modalContent = modal.querySelector('.modal__wrapper');
-      // console.log(modalContent.childNodes);
-      // form__btn, modal__close
       const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
       if(!clickArea) {
         addClass(modal, 'closed');
@@ -43,6 +43,8 @@ const modalState = (modal) => {
     const openModal = () => {
       modal.classList.remove('closed');
       modalFocus(modal);
+
+      console.log(lastFocusedElement)
 
       setTimeout(function() {
         window.addEventListener('keydown', onEscBtnHandler);
