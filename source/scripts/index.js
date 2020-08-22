@@ -8,6 +8,7 @@ import modernizrWebp from "./modules/modernizrWebp.js";
 import numberAnimation from "./modules/numberAnimation.js";
 import slidersInit from "./modules/swiper.js";
 import mapInit from './modules/map.js';
+import fileInputSimulateClick from './modules/forms/fileInputSimulateClick';
 import resize from './modules/textareaResize.js';
 import menuState from './modules/menuState.js';
 import fillUploadFile from './modules/fillUploadFile.js';

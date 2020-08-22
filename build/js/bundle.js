@@ -15328,13 +15328,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_numberAnimation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/numberAnimation.js */ "./source/scripts/modules/numberAnimation.js");
 /* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
 /* harmony import */ var _modules_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/map.js */ "./source/scripts/modules/map.js");
-/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
-/* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
-/* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
-/* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
-/* harmony import */ var _modules_forms_submitForms_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/forms/submitForms.js */ "./source/scripts/modules/forms/submitForms.js");
-/* harmony import */ var _modules_modalLinks_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/modalLinks.js */ "./source/scripts/modules/modalLinks.js");
-/* harmony import */ var _modules_anchorScroll_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/anchorScroll.js */ "./source/scripts/modules/anchorScroll.js");
+/* harmony import */ var _modules_forms_fileInputSimulateClick__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/forms/fileInputSimulateClick */ "./source/scripts/modules/forms/fileInputSimulateClick.js");
+/* harmony import */ var _modules_textareaResize_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/textareaResize.js */ "./source/scripts/modules/textareaResize.js");
+/* harmony import */ var _modules_menuState_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/menuState.js */ "./source/scripts/modules/menuState.js");
+/* harmony import */ var _modules_fillUploadFile_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/fillUploadFile.js */ "./source/scripts/modules/fillUploadFile.js");
+/* harmony import */ var _plugins_phoneValidation_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./plugins/phoneValidation.js */ "./source/scripts/plugins/phoneValidation.js");
+/* harmony import */ var _modules_forms_submitForms_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/forms/submitForms.js */ "./source/scripts/modules/forms/submitForms.js");
+/* harmony import */ var _modules_modalLinks_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/modalLinks.js */ "./source/scripts/modules/modalLinks.js");
+/* harmony import */ var _modules_anchorScroll_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/anchorScroll.js */ "./source/scripts/modules/anchorScroll.js");
 
 
 
@@ -15342,6 +15343,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //import setFixedHeader from './modules/setFixedHeader.js';
+
 
 
 
@@ -15454,6 +15456,40 @@ const fillUploadFile = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (fillUploadFile());
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/forms/fileInputSimulateClick.js":
+/*!****************************************************************!*\
+  !*** ./source/scripts/modules/forms/fileInputSimulateClick.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const fileInputSimulateClick = () => {
+  const file = document.querySelector('.form__file');
+
+  const onClickHandler = (evt) => {
+    evt.preventDefault();
+    file.nextElementSibling.click();
+  }
+
+  const onKeydownHandler = (evt) => {
+    if(evt.keyCode === 13) {
+      file.nextElementSibling.click();
+    }
+  }
+
+  if(file) {
+    file.addEventListener('click', onClickHandler);
+    file.addEventListener('keydown', onKeydownHandler);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (fileInputSimulateClick());
 
 
 /***/ }),
@@ -15828,70 +15864,6 @@ const openModal = function () {
 
 /***/ }),
 
-/***/ "./source/scripts/modules/modals/modalFocus.js":
-/*!*****************************************************!*\
-  !*** ./source/scripts/modules/modals/modalFocus.js ***!
-  \*****************************************************/
-/*! exports provided: modalFocus */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalFocus", function() { return modalFocus; });
-const modalFocus = (currentModal) => {
-
-  const closeBtn = currentModal.querySelector('.modal__close');
-  closeBtn.focus();
-
-  const submitBtn = currentModal.querySelector('.form__btn');
-
-  console.log(currentModal.childNodes)
-
-  /*const closeBtn = currentModal.querySelector('.modal__close');
-  const submitBtn = currentModal.querySelector('.form__btn');
-
-  closeBtn.focus();
-
-  const onCloseBtnFocusHandler = () => {
-    const onTabShiftClickHandler = (evt) => {
-        if(evt.shiftKey && evt.key === 'Tab') {
-          console.log('tabshift');
-          evt.preventDefault();
-          window.removeEventListener('keydown', onTabShiftClickHandler);
-          submitBtn.focus();
-        }
-      }
-    window.addEventListener('keydown', onTabShiftClickHandler);
-  };
-
-  closeBtn.addEventListener('focus', onCloseBtnFocusHandler);
-
-  const onFocusHandler = () => {
-    const onTabClickHandler = (evt) => {
-      if(evt.key === 'Tab') {
-        evt.preventDefault();
-        closeBtn.focus();
-        window.removeEventListener('keydown', onTabClickHandler);
-      } else if(evt.shiftKey && evt.key === 'Tab') {
-          console.log('poi')
-          evt.target.previousElementSibling.focus();
-        } /*else if(evt.key !== 'Enter') {
-          evt.preventDefault();
-        }*/
-      //}
-
-
-    /*window.addEventListener('keydown', onTabClickHandler);
-  };
-
-  submitBtn.addEventListener('focus', onFocusHandler);*/
-};
-
-
-
-
-/***/ }),
-
 /***/ "./source/scripts/modules/modals/modalState.js":
 /*!*****************************************************!*\
   !*** ./source/scripts/modules/modals/modalState.js ***!
@@ -15904,8 +15876,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalState", function() { return modalState; });
 /* harmony import */ var _utils_func_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/func.js */ "./source/scripts/utils/func.js");
 /* harmony import */ var _forms_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../forms/formRefresh.js */ "./source/scripts/modules/forms/formRefresh.js");
-/* harmony import */ var _modalFocus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modalFocus.js */ "./source/scripts/modules/modals/modalFocus.js");
-
 
 
 
@@ -15915,7 +15885,13 @@ const modalState = (modal) => {
     const lastFocusedElement = document.activeElement;
     const closeBtn = modal.querySelector('.modal__close');
     const page = document.querySelector('html');
+
     page.classList.add('scroll-off');
+
+    const focusableElementsString = 'a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
+    const focusableElements = modal.querySelectorAll(focusableElementsString);
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
 
     const refresh = () => {
       Object(_forms_formRefresh_js__WEBPACK_IMPORTED_MODULE_1__["formRefresh"])(modal);
@@ -15923,6 +15899,7 @@ const modalState = (modal) => {
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
       closeBtn.removeEventListener('click', onCloseBtnClickHandler);
+      modal.removeEventListener('keydown', modalFocusTrap);
       lastFocusedElement.focus();
     }
 
@@ -15938,6 +15915,22 @@ const modalState = (modal) => {
       }
     }
 
+    const modalFocusTrap = (evt) => {
+
+      if(evt.keyCode === 9) {
+        if(evt.shiftKey) {
+          if(document.activeElement === firstFocusableElement) {
+            evt.preventDefault();
+            lastFocusableElement.focus();
+          }
+        }
+        else if (document.activeElement === lastFocusableElement) {
+          evt.preventDefault();
+          firstFocusableElement.focus();
+        }
+      }
+    }
+
     const onMousedownHandler = (evt) => {
       const modalContent = modal.querySelector('.modal__wrapper');
       const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
@@ -15949,9 +15942,8 @@ const modalState = (modal) => {
 
     const openModal = () => {
       modal.classList.remove('closed');
-      Object(_modalFocus_js__WEBPACK_IMPORTED_MODULE_2__["modalFocus"])(modal);
-
-      console.log(lastFocusedElement)
+      firstFocusableElement.focus();
+      modal.addEventListener('keydown', modalFocusTrap);
 
       setTimeout(function() {
         window.addEventListener('keydown', onEscBtnHandler);

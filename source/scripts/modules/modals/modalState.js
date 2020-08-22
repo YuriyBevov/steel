@@ -1,6 +1,5 @@
 import {removeClass, addClass, toggleElem} from '../../utils/func.js';
 import {formRefresh} from '../forms/formRefresh.js'
-import {modalFocus} from './modalFocus.js';
 
 const modalState = (modal) => {
 
@@ -8,7 +7,13 @@ const modalState = (modal) => {
     const lastFocusedElement = document.activeElement;
     const closeBtn = modal.querySelector('.modal__close');
     const page = document.querySelector('html');
+
     page.classList.add('scroll-off');
+
+    const focusableElementsString = 'a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
+    const focusableElements = modal.querySelectorAll(focusableElementsString);
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
 
     const refresh = () => {
       formRefresh(modal);
@@ -16,6 +21,7 @@ const modalState = (modal) => {
       window.removeEventListener('keydown', onEscBtnHandler);
       window.removeEventListener('mousedown', onMousedownHandler);
       closeBtn.removeEventListener('click', onCloseBtnClickHandler);
+      modal.removeEventListener('keydown', modalFocusTrap);
       lastFocusedElement.focus();
     }
 
@@ -31,6 +37,22 @@ const modalState = (modal) => {
       }
     }
 
+    const modalFocusTrap = (evt) => {
+
+      if(evt.keyCode === 9) {
+        if(evt.shiftKey) {
+          if(document.activeElement === firstFocusableElement) {
+            evt.preventDefault();
+            lastFocusableElement.focus();
+          }
+        }
+        else if (document.activeElement === lastFocusableElement) {
+          evt.preventDefault();
+          firstFocusableElement.focus();
+        }
+      }
+    }
+
     const onMousedownHandler = (evt) => {
       const modalContent = modal.querySelector('.modal__wrapper');
       const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
@@ -42,9 +64,8 @@ const modalState = (modal) => {
 
     const openModal = () => {
       modal.classList.remove('closed');
-      modalFocus(modal);
-
-      console.log(lastFocusedElement)
+      firstFocusableElement.focus();
+      modal.addEventListener('keydown', modalFocusTrap);
 
       setTimeout(function() {
         window.addEventListener('keydown', onEscBtnHandler);
