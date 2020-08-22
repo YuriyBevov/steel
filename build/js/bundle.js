@@ -15614,6 +15614,26 @@ const formSend = function (currentForm) {
     form.addEventListener("submit", submitHandler)
   );*/
 
+  console.log(currentForm)
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      console.log("readyState=", currentForm.readyState, "status=", currentForm.status);
+      if (currentForm.readyState === XMLHttpRequest.DONE && currentForm.status === 200) {
+          // success, show this.responseText here
+          console.log("SUCCESS", currentForm);
+      }
+    }
+
+    request.open(currentForm.method, currentForm.action, true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    var data = new FormData(currentForm);
+    for (var key of data.keys())
+      console.log(key, data.get(key));
+
+    request.send(data);
+
 }
 
 
@@ -15664,27 +15684,7 @@ const formValidation = (form) => {
   }
 
   if(validPhone) {
-    //formSend(form);
-    console.log(form)
-
-      var request = new XMLHttpRequest();
-      request.onreadystatechange = function() {
-        console.log("readyState=", form.readyState, "status=", form.status);
-        if (form.readyState === XMLHttpRequest.DONE && form.status === 200) {
-            // success, show this.responseText here
-            console.log("SUCCESS", this);
-        }
-      }
-
-      request.open(form.method, form.action, true);
-      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-      var data = new FormData(undefined);
-      for (var key of data.keys())
-        console.log(key, data.get(key));
-
-      request.send(data);
-
+    Object(_formSend_js__WEBPACK_IMPORTED_MODULE_0__["formSend"])(form);
   }
 }
 

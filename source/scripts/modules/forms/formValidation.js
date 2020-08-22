@@ -30,27 +30,7 @@ const formValidation = (form) => {
   }
 
   if(validPhone) {
-    //formSend(form);
-    console.log(form)
-
-      var request = new XMLHttpRequest();
-      request.onreadystatechange = function() {
-        console.log("readyState=", form.readyState, "status=", form.status);
-        if (form.readyState === XMLHttpRequest.DONE && form.status === 200) {
-            // success, show this.responseText here
-            console.log("SUCCESS", this);
-        }
-      }
-
-      request.open(form.method, form.action, true);
-      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-      var data = new FormData(this);
-      for (var key of data.keys())
-        console.log(key, data.get(key));
-
-      request.send(data);
-
+    formSend(form);
   }
 }
 
