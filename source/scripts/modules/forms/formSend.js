@@ -1,7 +1,7 @@
 import {modalState} from '../modals/modalState.js';
 
 const formSend = function (currentForm) {
-  /*const thanksModal = document.querySelector('.modal-success')
+  const thanksModal = document.querySelector('.modal-success')
   const errorModal = document.querySelector('.modal-error')
 
   function success() {
@@ -33,7 +33,7 @@ const formSend = function (currentForm) {
       }
     };
     xhr.send(data);
-  }*/
+  };
 
   /*function submitHandler(e) {
     e.preventDefault();*/
@@ -61,7 +61,7 @@ const formSend = function (currentForm) {
     form.addEventListener("submit", submitHandler)
   );*/
 
-  console.log(currentForm)
+  /*console.log(currentForm)
 
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
@@ -79,7 +79,7 @@ const formSend = function (currentForm) {
     for (var key of data.keys())
       console.log(key, data.get(key));
 
-    request.send(data);
+    request.send(data);*/
 
 }
 
