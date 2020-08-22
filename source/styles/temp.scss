@@ -135,3 +135,23 @@
 
         ::-webkit-resizer { /* 7 - изменение размеров */
         }
+
+
+
+        <?php
+          $name = $_POST['name'];
+          $phone = $_POST['phone'];
+          $mail = $_POST['mail'];
+
+          if(!$name || !$name.length) {
+            $name = 'данные отсутствуют.';
+          }
+
+          if(!$name || !$name.length) {
+            $mail = 'данные отсутствуют.';
+          }
+          //$upload = $_POST['file'];
+          $message = "Имя отправителя: $name\nТелефон отправителя: $phone\nE-mail: $mail";
+          $message = wordwrap($message, 70);
+          var_dump(mail('jury19y@mail.ru', 'Заявка с сайта Steel Balls!', $message));
+        ?>
