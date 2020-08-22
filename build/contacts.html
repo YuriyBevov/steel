@@ -252,14 +252,14 @@
         </button>
         <h2 class="modal__title" tabindex="0">Заказать звонок</h2>
         <p class="modal__description" tabindex="0">Заполните форму и мы свяжемся с Вами в ближайшее время.</p>
-        <form class="callback-modal-form form" action="https://formspree.io/mrgydwnv" method="POST" name="Форма обратной связи">
+        <form class="callback-modal-form form" action="./php/mail.php" method="POST">
           <fieldset class="form__group">
             <label class="visually-hidden" for="callback-modal-form-name">Ваше имя</label>
-            <input type="text" id="callback-modal-form-name" name="Имя пользователя" placeholder="Ваше имя">
+            <input type="text" id="callback-modal-form-name" name="name" placeholder="Ваше имя">
           </fieldset>
           <fieldset class="form__group form__group--phone">
             <label class="visually-hidden" for="callback-modal-form-phone">Телефон</label>
-            <input type="tel" id="callback-modal-form-phone" name="Телефон пользователя" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
+            <input type="tel" id="callback-modal-form-phone" name="phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
           </fieldset>
           <button class="form__btn submit-btn m-btn" type="submit">Отправить</button><span class="form__alert" tabindex="0">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
         </form>

@@ -15554,16 +15554,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const formSend = function (currentForm) {
-  const thanksModal = document.querySelector('.modal-success')
+  /*const thanksModal = document.querySelector('.modal-success')
   const errorModal = document.querySelector('.modal-error')
 
   function success() {
     currentForm.reset();
-    Object(_modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])(thanksModal);
+    modalState(thanksModal);
   }
 
   function error() {
-    Object(_modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])(errorModal);
+    modalState(errorModal);
   }
 
   // handle the form submission event
@@ -15586,7 +15586,34 @@ const formSend = function (currentForm) {
       }
     };
     xhr.send(data);
-  }
+  }*/
+
+  /*function submitHandler(e) {
+    e.preventDefault();*/
+
+    /*var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      console.log("readyState=", this.readyState, "status=", this.status);
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+          // success, show this.responseText here
+          console.log("SUCCESS", this);
+      }
+    }
+
+    request.open(this.method, this.action, true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    var data = new FormData(this);
+    for (var key of data.keys())
+      console.log(key, data.get(key));
+
+    request.send(data);
+  }*/
+
+  /*document.querySelectorAll("form").forEach(form =>
+    form.addEventListener("submit", submitHandler)
+  );*/
+
 }
 
 
@@ -15637,7 +15664,27 @@ const formValidation = (form) => {
   }
 
   if(validPhone) {
-    Object(_formSend_js__WEBPACK_IMPORTED_MODULE_0__["formSend"])(form);
+    //formSend(form);
+    console.log(form)
+
+      var request = new XMLHttpRequest();
+      request.onreadystatechange = function() {
+        console.log("readyState=", form.readyState, "status=", form.status);
+        if (form.readyState === XMLHttpRequest.DONE && form.status === 200) {
+            // success, show this.responseText here
+            console.log("SUCCESS", this);
+        }
+      }
+
+      request.open(form.method, form.action, true);
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+      var data = new FormData(undefined);
+      for (var key of data.keys())
+        console.log(key, data.get(key));
+
+      request.send(data);
+
   }
 }
 
