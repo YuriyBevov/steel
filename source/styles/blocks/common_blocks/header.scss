@@ -106,78 +106,19 @@
     &__callback {
       font-size: 1.4rem;
       line-height: 1.7rem;
+
     }
   }
 }
 
 @media(max-width: $tablet-width) {
   .header {
-    /*&__content.menu-opened {
-      padding-right: 2.2rem;
-
-      .header__contacts,
-      .header__callback,
-      .header__address,
-      .nav {
-        width: 255px;
-      }
-
-      .header__contacts {
-        position: relative;
-        display: flex;
-        font-size: 1.2rem;
-        line-height: 1.5rem;
-        margin-bottom: 4rem;
-        order: 4;
-        animation: translateY 0.5s ease-in;
-
-        &::before {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 14px;
-          height: 14px;
-          content: '';
-          background-image: url('../img/icons/icon-phone.svg');
-          background-size: 14px 14px;
-        }
-      }
-
-      .header__callback {
-        display: flex;
-        margin-right: 0;
-        font-size: 1.2rem;
-        line-height: 1.5rem;
-        margin-bottom: 2rem;
-        order: 3;
-        animation: translateY 0.6s ease-in;
-      }
-
-      .header__address {
-        display: flex;
-        order: 4;
-        font-style: normal;
-        font-family: $font-text;
-        font-size: 1.2rem;
-        line-height: 1.5rem;
-        padding-right: 10rem;
-        color: $color_white;
-        animation: translateY 0.5s ease-in;
-      }
-
-      .nav {
-        flex-grow: 0;
-
-        &__link {
-          font-size: 2.2rem;
-          line-height: 3.4rem;
-        }
-        margin-bottom: 7.5rem;
-      }
-    }*/
-
     &__contacts {
       display: none;
+
+      &-phone {
+        max-width: 20rem;
+      }
     }
 
     &__city {
@@ -187,6 +128,7 @@
 
     &__callback {
       display: none;
+      max-width: 20rem;
     }
   }
 }

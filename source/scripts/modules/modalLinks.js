@@ -2,7 +2,6 @@ import {modalState} from './modals/modalState.js'
 
 const openModal = function () {
   const modalLinks = document.querySelectorAll('.modal-link');
-
   const isModalOpened = false;
 
   modalLinks.forEach(link => {
