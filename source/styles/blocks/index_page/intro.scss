@@ -97,22 +97,6 @@
       }
     }
   }
-
-  /*.webp .intro {
-    background-image: url("../img/static/header-background_tablet@1x.webp");
-
-    @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-      background-image: url("../img/static/header-background_tablet@2x.webp");
-    }
-  }
-
-  .no-webp .intro {
-    background-image: url("../img/static/header-background_tablet@1x.jpg");
-
-    @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-      background-image: url("../img/static/header-background_tablet@2x.jpg");
-    }
-  }*/
 }
 
 @media(max-width: $tablet-width) {
@@ -137,19 +121,4 @@
       }
     }
   }
-  /*.webp .intro {
-    background-image: url("../img/static/header-background_mobile@1x.webp");
-
-    @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-      background-image: url("../img/static/header-background_mobile@2x.webp");
-    }
-  }
-
-  .no-webp .intro {
-    background-image: url("../img/static/header-background_mobile@1x.jpg");
-
-    @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-      background-image: url("../img/static/header-background_mobile@2x.jpg");
-    }
-  }*/
 }

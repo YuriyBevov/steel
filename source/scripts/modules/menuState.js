@@ -1,48 +1,55 @@
-import {scrollWidth} from "../utils/func.js"
-
 function menuState() {
   const burger = document.querySelector('.toggle');
-  const navbar = document.querySelector('.header__navbar');
+  const mobile_menu = document.querySelector('.nav');
   const page = document.querySelector('html');
-  let burgerClicked = false;
 
-  /*let windowSize = window.innerWidth;
-  console.log(windowSize);
+  const focusableElementsString = 'a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
+  const menuElements = mobile_menu.querySelectorAll(focusableElementsString);
 
-  const onWindowResizeHandler = () => {
-    windowSize = window.innerWidth;
-    console.log(windowSize);
-  }
+  const navbar = document.querySelector('.header__navbar');
+  const navbarElems = navbar.querySelectorAll(focusableElementsString);
 
-  window.addEventListener('resize', onWindowResizeHandler);
+  const refresh = () => {
+    burger.focus();
+    page.classList.remove('scroll-off');
 
-  const focusTrap = (evt) => {
+    document.querySelectorAll('.focusable').forEach(el => {
+      el.classList.remove('focusable');
+    });
 
-    burger.classList.add('focusable');
-
-    const focusableElementsString = 'a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
-
-    //const menuElements = navbar.querySelectorAll(focusableElementsString);
-
-    if (windowSize < 768) {
-      console.log('ok')
-      const menuElements = navbar.querySelectorAll(focusableElementsString);
-      menuElements.forEach(item => {
-        item.classList.add('focusable');
-      });
-    } else {
-      const tabletMenu = document.querySelector('.nav');
-      const menuElements = tabletMenu.querySelectorAll(focusableElementsString);
-      menuElements.forEach(item => {
-        item.classList.add('focusable');
-      });
+    if (mobile_menu.classList.contains('opened')) {
+      mobile_menu.classList.remove('opened');
+    }
+    if (burger.classList.contains('opened')) {
+      burger.classList.remove('opened');
     }
 
+    document.removeEventListener('keydown', menuFocusTrap);
+    document.removeEventListener('keydown', onEscBtnHandler);
 
+    navbarElems.forEach(item => {
+      if(!item.classList.contains('focusable')) {
+        item.setAttribute('tabindex', '0');
+      }
+    });
+
+    menuElements.forEach(elem => {
+      elem.classList.remove('focusable');
+    });
+  }
+
+  const menuFocusTrap = (evt) => {
+    burger.classList.add('focusable');
 
     const focusableElements = document.querySelectorAll('.focusable');
     const firstFocusableElement = focusableElements[0];
     const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+    navbarElems.forEach(item => {
+      if(!item.classList.contains('focusable')) {
+        item.setAttribute('tabindex', '-1');
+      }
+    });
 
     if(evt.keyCode === 9) {
       if(evt.shiftKey) {
@@ -56,41 +63,44 @@ function menuState() {
         firstFocusableElement.focus();
       }
     }
-  }*/
-
-  const onEscBtnHandler = (evt) => {
-    if (evt.keyCode === 27 && navbar.classList.contains('menu-opened')) {
-      page.classList.remove('scroll-off');
-      navbar.classList.remove('menu-opened');
-      burger.classList.remove('opened');
-      burger.focus();
-      document.removeEventListener('keydown', onEscBtnHandler);
-      //document.removeEventListener('keydown', focusTrap);
-    }
   }
 
-  const onClickEventHandler = () => {
-    navbar.classList.toggle('menu-opened');
-    burger.classList.toggle('opened');
-    burger.focus();
+  const onEscBtnHandler = (evt) => {
+    const modals = document.querySelectorAll('.modal');
+    let isModalOpened = false;
 
-    if(navbar.classList.contains('menu-opened')) {
+    modals.forEach(modal => {
+      if(!modal.classList.contains('closed')) {
+        isModalOpened = true;
+      }
+    });
+
+    if (evt.keyCode === 27 && mobile_menu.classList.contains('opened') && !isModalOpened) {
+      refresh();
+    }
+  };
+
+  const onClickEventHandler = () => {
+    mobile_menu.classList.toggle('opened');
+    burger.classList.toggle('opened');
+    menuElements.forEach(elem => {
+      elem.classList.add('focusable');
+    });
+
+    if (mobile_menu.classList.contains('opened')) {
       page.classList.add('scroll-off');
       burger.removeEventListener('click', onClickEventHandler);
-      //document.addEventListener('keydown', focusTrap);
+
+      document.addEventListener('keydown', menuFocusTrap);
 
       setTimeout(function() {
         document.addEventListener('keydown', onEscBtnHandler);
         burger.addEventListener('click', onClickEventHandler);
       }, 700);
-
     } else {
-      page.classList.remove('scroll-off');
-      burger.focus();
-      document.removeEventListener('keydown', onEscBtnHandler);
-      //document.removeEventListener('keydown', focusTrap);
+      refresh();
     }
-  }
+  };
 
   burger.addEventListener('click', onClickEventHandler);
 };

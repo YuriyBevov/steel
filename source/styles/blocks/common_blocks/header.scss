@@ -102,11 +102,9 @@
       flex-grow: 0;
     }
 
-
     &__callback {
       font-size: 1.4rem;
       line-height: 1.7rem;
-
     }
   }
 }
@@ -115,10 +113,6 @@
   .header {
     &__contacts {
       display: none;
-
-      &-phone {
-        max-width: 20rem;
-      }
     }
 
     &__city {
@@ -128,28 +122,6 @@
 
     &__callback {
       display: none;
-      max-width: 20rem;
     }
-  }
-}
-
-@keyframes menu {
-  0% {
-    transform: translateY(-30rem);
-    padding-top: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    padding-top: 25%;
-  }
-}
-
-@keyframes translateY {
-  0% {
-    transform: translateY(-50rem);
-  }
-  100% {
-    transform: translateY(0);
   }
 }

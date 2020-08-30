@@ -91,7 +91,7 @@ function slidersInit() {
 
     window.onload = function () {
       let partitionsSlider = new Swiper(partSlider, {
-        slidesPerView: 'auto', // записать в пометки , как способ ограничивать контейнер при свободном режиме при разной ширине слайдов, сэкономит кучу времени !!!!!!!!!!!!
+        slidesPerView: 'auto',
         spaceBetween: 30,
         updateOnImagesReady: true,
 
