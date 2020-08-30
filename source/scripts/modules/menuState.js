@@ -77,6 +77,8 @@ function menuState() {
 
     if (evt.keyCode === 27 && mobile_menu.classList.contains('opened') && !isModalOpened) {
       refresh();
+    } else {
+      page.classList.add('scroll-off');
     }
   };
 
