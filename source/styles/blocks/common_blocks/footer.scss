@@ -195,8 +195,15 @@
     }
 
     & .nav {
+      &__list {
+        justify-content: flex-start;
+      }
       &__item {
         margin-bottom: 0.9rem;
+
+        &--mobile {
+          display: none;
+        }
       }
 
       &__link {
