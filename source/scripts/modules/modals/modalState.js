@@ -18,7 +18,7 @@ const modalState = (modal) => {
     const refresh = () => {
       formRefresh(modal);
       const mobile_menu = document.querySelector('.nav');
-      if(!nav.classList.contains('opened')) {
+      if(!mobile_menu.classList.contains('opened')) {
         page.classList.remove('scroll-off');
       }
       window.removeEventListener('keydown', onEscBtnHandler);
