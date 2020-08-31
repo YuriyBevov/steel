@@ -1,0 +1,38 @@
+section.portfolio
+  .portfolio__wrapper
+    h1(tabindex="0").portfolio__title Наши работы
+
+    ul.portfolio__gallery
+      -
+        const items = [
+          { url: 'img/pr_1', lqip: 'img/lqip/pr_1', alt:'Барная стойка и стулья в кофейню'},
+          { url: 'img/pr_2', lqip: 'img/lqip/pr_2', alt:'Стол и стулья из дуба и я, Иван Копосов.'},
+          { url: 'img/pr_4', lqip: 'img/lqip/pr_4', alt:'Декоративная лофт перегородка'},
+          { url: 'img/pr_6', lqip: 'img/lqip/pr_6', alt:'Барная стойка и стулья из дуба'},
+          { url: 'img/pr_9', lqip: 'img/lqip/pr_9', alt:'Стеллажи с полками из сосны 40мм.'},
+          { url: 'img/pr_3', lqip: 'img/lqip/pr_3', alt:'Стеллаж с нишей под холодильники'},
+          { url: 'img/pr_6', lqip: 'img/lqip/pr_6', alt:'Барная стойка и стулья из дуба'},
+          { url: 'img/pr_9', lqip: 'img/lqip/pr_9', alt:'Стеллажи с полками из сосны 40мм.'},
+          { url: 'img/pr_6', lqip: 'img/lqip/pr_6', alt:'проект_6'},
+          { url: 'img/pr_8', lqip: 'img/lqip/pr_8', alt:'Шкаф-стеллаж'},
+
+          { url: 'img/pr_1', lqip: 'img/lqip/pr_1', alt:'Барная стойка и стулья в кофейню'},
+          { url: 'img/pr_9', lqip: 'img/lqip/pr_9', alt:'Стеллажи с полками из сосны 40мм.'},
+          { url: 'img/pr_3', lqip: 'img/lqip/pr_3', alt:'Стеллаж с нишей под холодильники'},
+          { url: 'img/pr_6', lqip: 'img/lqip/pr_6', alt:'проект_6'},
+          { url: 'img/pr_8', lqip: 'img/lqip/pr_8', alt:'Шкаф-стеллаж'},
+          { url: 'img/pr_2', lqip: 'img/lqip/pr_2', alt:'Стол и стулья из дуба и я, Иван Копосов.'},
+          { url: 'img/pr_4', lqip: 'img/lqip/pr_4', alt:'Декоративная лофт перегородка'},
+          { url: 'img/pr_6', lqip: 'img/lqip/pr_6', alt:'Барная стойка и стулья из дуба'},
+          { url: 'img/pr_9', lqip: 'img/lqip/pr_9', alt:'Стеллажи с полками из сосны 40мм.'},
+          { url: 'img/pr_3', lqip: 'img/lqip/pr_3', alt:'Стеллаж с нишей под холодильники'},
+          { url: 'img/pr_6', lqip: 'img/lqip/pr_6', alt:'проект_6'},
+          { url: 'img/pr_8', lqip: 'img/lqip/pr_8', alt:'Шкаф-стеллаж'},
+        ];
+      each item in items
+        li.portfolio__item(class=item.class)
+          picture
+            source(type="image/webp" srcset=item.lqip + '@1x.jpg' data-srcset=item.url + '@1x.webp 1x,' + item.url + '@2x.webp 2x')
+            img.portfolio__img.lazyload.blur-up(src=item.lqip + '@1x.jpg' data-src=item.url + '@1x.jpg' data-srcset=item.url + '@2x.jpg 2x' alt=item.alt)
+
+    button.m-btn.portfolio__btn Показать еще

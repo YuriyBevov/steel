@@ -15,3 +15,33 @@ import validatePhone from './plugins/phoneValidation.js';
 import submitForms from './modules/forms/submitForms.js';
 import openModal from './modules/modalLinks.js';
 import anchorScroll from './modules/anchorScroll.js';
+
+const btn = document.querySelector('.portfolio__btn');
+
+const photos = document.querySelectorAll('.portfolio__item');
+const step = 8;
+let firstPhoto = 0;
+let lastPhoto = step;
+const photosLength = photos.length;
+//console.log(photosLength)
+
+for (let i = lastPhoto; i < photos.length; i++) {
+  photos[i].style.display = 'none';
+}
+
+const onBtnClickHandler = () => {
+  for (let i = firstPhoto; i < lastPhoto; i++) {
+    photos[i].style.display = 'none';
+  }
+  firstPhoto += step;
+  lastPhoto += step;
+  if (lastPhoto >= photosLength) {
+    lastPhoto = photosLength;
+    btn.setAttribute('disabled', true);
+  }
+  for (let i = firstPhoto; i < lastPhoto; i++) {
+    photos[i].style.display = 'block';
+  }
+};
+
+btn.addEventListener('click', onBtnClickHandler);
