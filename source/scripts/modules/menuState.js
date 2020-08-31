@@ -26,6 +26,7 @@ function menuState() {
 
     document.removeEventListener('keydown', menuFocusTrap);
     document.removeEventListener('keydown', onEscBtnHandler);
+    window.removeEventListener('resize', onResizeEventListener);
 
     navbarElems.forEach(item => {
       if(!item.classList.contains('focusable')) {
@@ -82,6 +83,16 @@ function menuState() {
     }
   };
 
+  let windowSize = window.innerWidth;
+
+  const onResizeEventListener = () => {
+    windowSize = window.innerWidth;
+
+    if (windowSize > 1199) {
+      refresh();
+    }
+  }
+
   const onClickEventHandler = () => {
     mobile_menu.classList.toggle('opened');
     burger.classList.toggle('opened');
@@ -94,6 +105,7 @@ function menuState() {
       burger.removeEventListener('click', onClickEventHandler);
 
       document.addEventListener('keydown', menuFocusTrap);
+      window.addEventListener('resize', onResizeEventListener);
 
       setTimeout(function() {
         document.addEventListener('keydown', onEscBtnHandler);

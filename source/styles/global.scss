@@ -4,6 +4,9 @@
 *::after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 :root {
@@ -40,11 +43,11 @@ body {
   display: flex;
   flex-direction: column;
   font-family: $font_primary, sans-serif;
-  -webkit-text-size-adjust: none; //temp
+  -webkit-text-size-adjust: none;
   -webkit-appearance: none;
 }
 
-input[type=text], textarea { // temp
+input[type=text], textarea {
 	-webkit-appearance: none;
 }
 
