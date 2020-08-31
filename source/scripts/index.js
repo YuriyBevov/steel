@@ -23,7 +23,6 @@ const step = 8;
 let firstPhoto = 0;
 let lastPhoto = step;
 const photosLength = photos.length;
-//console.log(photosLength)
 
 for (let i = lastPhoto; i < photos.length; i++) {
   photos[i].style.display = 'none';
@@ -44,4 +43,6 @@ const onBtnClickHandler = () => {
   }
 };
 
-btn.addEventListener('click', onBtnClickHandler);
+if(btn) {
+  btn.addEventListener('click', onBtnClickHandler);
+}
