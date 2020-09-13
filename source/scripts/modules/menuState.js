@@ -98,9 +98,17 @@ function menuState() {
       document.addEventListener('keydown', menuFocusTrap);
       window.addEventListener('resize', onResizeEventListener);
 
+      const focusOnBurgerWhileMenuOpening = evt => {
+        evt.preventDefault();
+        burger.focus();
+      };
+
+      document.addEventListener('keydown', focusOnBurgerWhileMenuOpening);
+
       setTimeout(function() {
         document.addEventListener('keydown', onEscBtnHandler);
         burger.addEventListener('click', onClickEventHandler);
+        document.removeEventListener('keydown', focusOnBurgerWhileMenuOpening);
       }, 700);
     } else {
       refresh();
