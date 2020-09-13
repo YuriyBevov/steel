@@ -7,6 +7,23 @@
   padding-top: 2.5rem;
   margin-bottom: 4rem;
   color: $color_path;
+
+  a {
+    color: $color_path;
+
+    @media(min-width: $tablet-width) {
+      &:hover,
+      &:focus {
+        transition: color $transition_rules;
+        color: $color_beige;
+      }
+
+      &:active {
+        transition: opacity $transition_rules;
+        opacity: 0.7;
+      }
+    }
+  }
 }
 
 @media(max-width: $desktop-width) {

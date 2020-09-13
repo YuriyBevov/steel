@@ -124,11 +124,12 @@
     }
 
     &__list {
-      order: 3;
-      margin-bottom: 0;
+      display: none;
+      /*order: 3;
+      margin-bottom: 0;*/
     }
 
-    &__item {
+    /*&__item {
       min-height: 140px;
 
       picture {
@@ -139,7 +140,7 @@
         font-size: 1.4rem;
         line-height: 1.5rem;
       }
-    }
+    }*/
 
     &__advantages-item {
       font-size: 1.4rem;

@@ -17,4 +17,19 @@ function fileUpload(el, uploadFileNamePlace) {
   });
 }
 
-export {toggleElem, removeClass, addClass, fileUpload};
+function focusTrap(evt, firstFocusableElement, lastFocusableElement) {
+  if(evt.keyCode === 9) {
+    if(evt.shiftKey) {
+      if(document.activeElement === firstFocusableElement) {
+        evt.preventDefault();
+        lastFocusableElement.focus();
+      }
+    }
+    else if (document.activeElement === lastFocusableElement) {
+      evt.preventDefault();
+      firstFocusableElement.focus();
+    }
+  }
+}
+
+export {toggleElem, removeClass, addClass, fileUpload, focusTrap};

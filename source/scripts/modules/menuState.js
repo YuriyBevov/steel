@@ -1,13 +1,15 @@
+import {focusTrap} from '../utils/func.js';
+
 function menuState() {
   const burger = document.querySelector('.toggle');
   const mobile_menu = document.querySelector('.nav');
   const page = document.querySelector('html');
 
   const focusableElementsString = 'a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
-  const menuElements = mobile_menu.querySelectorAll(focusableElementsString);
+  const focusableMenuElems = mobile_menu.querySelectorAll(focusableElementsString);
 
   const navbar = document.querySelector('.header__navbar');
-  const navbarElems = navbar.querySelectorAll(focusableElementsString);
+  const focusableNavbarElems = navbar.querySelectorAll(focusableElementsString);
 
   const refresh = () => {
     burger.focus();
@@ -28,13 +30,13 @@ function menuState() {
     document.removeEventListener('keydown', onEscBtnHandler);
     window.removeEventListener('resize', onResizeEventListener);
 
-    navbarElems.forEach(item => {
+    focusableNavbarElems.forEach(item => {
       if(!item.classList.contains('focusable')) {
         item.setAttribute('tabindex', '0');
       }
     });
 
-    menuElements.forEach(elem => {
+    focusableMenuElems.forEach(elem => {
       elem.classList.remove('focusable');
     });
   }
@@ -46,24 +48,13 @@ function menuState() {
     const firstFocusableElement = focusableElements[0];
     const lastFocusableElement = focusableElements[focusableElements.length - 1];
 
-    navbarElems.forEach(item => {
+    focusableNavbarElems.forEach(item => {
       if(!item.classList.contains('focusable')) {
         item.setAttribute('tabindex', '-1');
       }
     });
 
-    if(evt.keyCode === 9) {
-      if(evt.shiftKey) {
-        if(document.activeElement === firstFocusableElement) {
-          evt.preventDefault();
-          lastFocusableElement.focus();
-        }
-      }
-      else if (document.activeElement === lastFocusableElement) {
-        evt.preventDefault();
-        firstFocusableElement.focus();
-      }
-    }
+    focusTrap(evt, firstFocusableElement, lastFocusableElement);
   }
 
   const onEscBtnHandler = (evt) => {
@@ -96,7 +87,7 @@ function menuState() {
   const onClickEventHandler = () => {
     mobile_menu.classList.toggle('opened');
     burger.classList.toggle('opened');
-    menuElements.forEach(elem => {
+    focusableMenuElems.forEach(elem => {
       elem.classList.add('focusable');
     });
 

@@ -1,4 +1,4 @@
-import {removeClass, addClass, toggleElem} from '../../utils/func.js';
+import {removeClass, addClass, toggleElem, focusTrap} from '../../utils/func.js';
 import {formRefresh} from '../forms/formRefresh.js'
 
 const modalState = (modal) => {
@@ -41,19 +41,7 @@ const modalState = (modal) => {
     }
 
     const modalFocusTrap = (evt) => {
-
-      if(evt.keyCode === 9) {
-        if(evt.shiftKey) {
-          if(document.activeElement === firstFocusableElement) {
-            evt.preventDefault();
-            lastFocusableElement.focus();
-          }
-        }
-        else if (document.activeElement === lastFocusableElement) {
-          evt.preventDefault();
-          firstFocusableElement.focus();
-        }
-      }
+      focusTrap(evt, firstFocusableElement, lastFocusableElement);
     }
 
     const onMousedownHandler = (evt) => {
