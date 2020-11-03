@@ -1,0 +1,29 @@
+include ./head
+
+doctype html
+
+block variables
+  -
+    const title = ""
+    const desc = ""
+
+html(lang="ru")
+  +head(title, desc)
+
+  body
+    include ../components/loader.pug
+
+    div(style="display:none")
+      include ../../img/sprite_auto.svg
+
+    include ../blocks/common_blocks/header
+
+    main
+      block content
+
+    include ../blocks/common_blocks/footer
+
+    block modals
+
+    block scripts
+      script(src="./js/bundle.js")

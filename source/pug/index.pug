@@ -1,4 +1,9 @@
-extends layouts/main.pug
+extends layouts/main_layout.pug
+
+block variables
+  -
+    const title = "index title"
+    const desc = "index desc"
 
 block content
   include ./blocks/index_page/intro

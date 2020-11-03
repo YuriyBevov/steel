@@ -6,7 +6,6 @@ const formSend = function (currentForm) {
 
   function success() {
     currentForm.reset();
-    console.log(currentForm.reset)
     modalState(thanksModal);
   }
 

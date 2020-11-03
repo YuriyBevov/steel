@@ -1,4 +1,10 @@
-extends layouts/main.pug
+extends layouts/main_layout.pug
+
+block variables
+  -
+    const title = "furniture title"
+    const desc = "furniture desc"
+
 
 block content
   include ./blocks/furniture_page/components/furniture-path
