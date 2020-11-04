@@ -184,6 +184,13 @@ const sprite = () => {
 
 exports.sprite = sprite;
 
+const favicon = () => {
+  return gulp.src("source/img/favicon.{png, jpg, svg}")
+    .pipe(gulp.dest("build"));
+}
+
+exports.favicon = favicon;
+
 // gulp start
 
 exports.start = gulp.series(
@@ -193,7 +200,8 @@ exports.start = gulp.series(
       styles,
       js,
       copy,
-      lqip
+      lqip,
+      favicon
   ),
   gulp.parallel(
       watch,
@@ -210,5 +218,6 @@ exports.build = gulp.series(
       styles,
       js,
       copy,
+      favicon
   )
 );

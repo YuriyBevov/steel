@@ -6,9 +6,10 @@ block variables
   -
     const title = ""
     const desc = ""
+    const keywords = ""
 
 html(lang="ru")
-  +head(title, desc)
+  +head(title, desc, keywords)
   link(rel="preconnect" href="//api-maps.yandex.ru/2.1")
   link(rel="dns-prefetch" href="//api-maps.yandex.ru/2.1")
 
@@ -28,6 +29,8 @@ html(lang="ru")
     include ../blocks/common_blocks/footer
 
     block modals
+
+    include ./schema
 
     block scripts
       script(src="./js/bundle.js")

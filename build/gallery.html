@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Изготовление мебели, перегородки в стиле лофт для ресторанов. Стеллажи, барная мебель, столы лофт в офис.">
     <meta name="keywords" content="Сварка металлоконструкций, сварка, мебель на заказ, мебель в бар, мебель лофт, мебель ручной работы, металлическая мебель, лофт стеллаж, стол лофт, барный стул, стол из массива, перегородки лофт, подстолье купить, подстолье лофт, стальное подстолье, подстолье на заказ, столешница лофт, кухня лофт, зеркало лофт, мебель в кафе, мебель в ресторан, мебель в офис, офисная мебель лофт, офисная мебель">
-    <title>Сварочная мастерская Steel Balls. Контакты</title>
+    <title>Галерея работ сварочная мастерской Steel Balls.</title>
     <link rel="preload" href="./fonts/InterReg.woff" as="font" type="font/woff" crossorigin="crossorigin">
     <link rel="preload" href="./fonts/MontserratMed.woff" as="font" type="font/woff" crossorigin="crossorigin">
     <link rel="preload" href="./fonts/MontserratMed.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
@@ -153,50 +153,10 @@
         <button class="toggle" type="button" aria-label="Кнопка открытия меню"></button>
       </div>
     </header>
-    <main id="content">
-      <section class="contacts-data"><span class="path"><a href="index.html">Главная</a>/Мебель лофт</span>
-        <div class="contacts-data__wrapper">
-          <h1 class="visually-hidden">Контакты сварочной мастерской Steel Balls.</h1>
-          <div class="contacts-data__content">
-            <div class="contacts-data__content-part"><strong>Адрес мастерской</strong>
-              <address>г. Санкт- Петербург, ул.Бехтерова 3, корп 3а</address><span>Cогласовывайте заранее время приезда.</span>
-            </div>
-            <div class="contacts-data__content-part"><strong>Время работы</strong>
-              <p>Пн-Пт  с 9:00 до 18:00.</p>
-            </div>
-            <div class="contacts-data__content-part"><strong>Телефон</strong>
-              <p>Многоканальный офисный телефон</p>
-              <p class="contacts-data__content-phone">+7 (812) 219-40-93</p>
-              <p>Мобильный телефон</p>
-              <p class="contacts-data__content-phone">+7 (900) 622-18-18</p>
-            </div>
-            <div class="contacts-data__content-part"><strong>E-mail</strong>
-              <p class="contacts-data__content-mail">master@stballs.ru</p>
-            </div>
-          </div>
-          <div class="contacts-data__additional">
-            <div class="contacts-map map">
-              <div class="map__wrapper">
-                <div class="map__content" id="map"></div>
-              </div>
-            </div>
-            <div class="contacts-form">
-              <h2 class="contacts-form__title">Если у вас остались вопросы, задайте их в форме ниже.</h2>
-              <form class="question-page-form question-page-form form" action="php/mail.php" method="POST" enctype="text/plain">
-                <div class="question-page-form__wrapper">
-                  <fieldset class="form__group form__group--phone">
-                    <label class="visually-hidden" for="question-phone">Ваш номер телефона</label>
-                    <input type="tel" id="question-phone" name="user_phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
-                  </fieldset>
-                  <fieldset class="form__group">
-                    <label class="visually-hidden" for="question-text">Ваш вопрос</label>
-                    <textarea id="question-text" name="user_message" placeholder="Введите ваш вопрос"></textarea>
-                  </fieldset>
-                </div>
-                <button class="form__btn submit-btn m-btn" type="submit">Отправить вопрос</button><span class="form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных</span>
-              </form>
-            </div>
-          </div>
+    <main id="content"><span class="path"><a href="index.html">Главная</a>/Портфолио</span>
+      <section class="portfolio">
+        <div class="portfolio__wrapper">
+          <p>К сожалению, данный раздел находится в разработке</p>
         </div>
       </section>
     </main>
@@ -269,60 +229,6 @@
         </div>
       </div>
     </footer>
-    <div class="modal modal-callback closed">
-      <div class="modal__wrapper modal-callback__wrapper">
-        <button class="modal__close" type="button" aria-label="Кнопка закрытия модального окна">
-          <svg width="36" height="36">
-            <use xlink:href="#icon-close"></use>
-          </svg>
-        </button>
-        <h2 class="modal__title">Заказать звонок</h2>
-        <p class="modal__description">Заполните форму и мы свяжемся с Вами в ближайшее время.</p>
-        <form class="callback-modal-form form" action="php/mail.php" method="POST">
-          <fieldset class="form__group">
-            <label class="visually-hidden" for="callback-modal-form-name">Ваше имя</label>
-            <input type="text" id="callback-modal-form-name" name="user_name" placeholder="Ваше имя">
-          </fieldset>
-          <fieldset class="form__group form__group--phone">
-            <label class="visually-hidden" for="callback-modal-form-phone">Телефон</label>
-            <input type="tel" id="callback-modal-form-phone" name="user_phone" placeholder="Телефон"><span class="invalid-field-msg">Введите корректный номер телефона</span>
-          </fieldset>
-          <button class="form__btn submit-btn m-btn" type="submit">Отправить</button><span class="form__alert">Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</span>
-        </form>
-      </div>
-    </div>
-    <div class="modal modal-success closed">
-      <div class="modal__wrapper modal-success__wrapper">
-        <button class="modal__close" type="button" aria-label="Кнопка закрытия модального окна">
-          <svg width="36" height="36">
-            <use xlink:href="#icon-close"></use>
-          </svg>
-        </button>
-        <p class="modal-success__text">Спасибо за вашу заявку!</p>
-        <p class="modal-success__text">Мы вам перезвоним в ближайшее время!</p>
-        <p class="modal-success__additional">Подписывайтесь на наши соц. сети:</p>
-        <div class="social">
-          <ul class="social__list">
-            <li class="social__item"><a rel="noreferrer" href="https://vk.com/stballs" target="_blank" aria-label="Вконтакте">
-                <svg width="30" height="30">
-                  <use xlink:href="#icon-vk"></use>
-                </svg></a></li>
-            <li class="social__item"><a rel="noreferrer" href="https://telegram.im/@stballs" target="_blank" aria-label="Telegramm">
-                <svg width="30" height="30">
-                  <use xlink:href="#icon-tg"></use>
-                </svg></a></li>
-            <li class="social__item"><a rel="noreferrer" href="https://www.instagram.com/stballs.ru/" target="_blank" aria-label="Instagram">
-                <svg width="30" height="30">
-                  <use xlink:href="#icon-insta"></use>
-                </svg></a></li>
-            <li class="social__item"><a rel="noreferrer" href="https://wa.me/+79006221818" target="_blank" aria-label="Whatsapp">
-                <svg width="30" height="30">
-                  <use xlink:href="#icon-whatsapp"></use>
-                </svg></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <!-- Микроразметка для поисковых роботов-->
     <div class="visually-hidden" itemscope="" itemtype="http://schema.org/Organization" aria-hidden="true"><b itemprop="name">Сварочная мастерская Steel Balls</b>
       <p itemprop="description">Производство лофт мебели и перегородок</p><img src="./img/icons/icon-logo.svg"><a href="tel: +78122194093" itemprop="telephone">+7 (812) 2194093</a><a href="tel: +79006221818" itemprop="telephone">+7 (900) 6221818</a>

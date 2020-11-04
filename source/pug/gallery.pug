@@ -2,13 +2,12 @@ extends layouts/contacts_layout.pug
 
 block variables
   -
-    const title = "Сварочная мастерская Steel Balls. Контакты"
+    const title = "Галерея работ сварочная мастерской Steel Balls."
     const desc = "Изготовление мебели, перегородки в стиле лофт для ресторанов. Стеллажи, барная мебель, столы лофт в офис."
     const keywords = "Сварка металлоконструкций, сварка, мебель на заказ, мебель в бар, мебель лофт, мебель ручной работы, металлическая мебель, лофт стеллаж, стол лофт, барный стул, стол из массива, перегородки лофт, подстолье купить, подстолье лофт, стальное подстолье, подстолье на заказ, столешница лофт, кухня лофт, зеркало лофт, мебель в кафе, мебель в ресторан, мебель в офис, офисная мебель лофт, офисная мебель"
 
 block content
-  include ./blocks/contacts_page/contacts-data
+  include ./blocks/gallery_page/components/portfolio-path
+  include ./blocks/gallery_page/portfolio
 
 block modals
-  include ./modals/callback
-  include ./modals/success

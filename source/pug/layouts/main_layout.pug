@@ -6,9 +6,10 @@ block variables
   -
     const title = ""
     const desc = ""
+    const keywords = ""
 
 html(lang="ru")
-  +head(title, desc)
+  +head(title, desc, keywords)
 
   body
     include ../components/loader.pug
@@ -24,6 +25,8 @@ html(lang="ru")
     include ../blocks/common_blocks/footer
 
     block modals
+
+    include ./schema
 
     block scripts
       script(src="./js/bundle.js")
