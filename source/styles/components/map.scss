@@ -31,11 +31,11 @@
       font-size: 1.4rem;
       line-height: 1.7rem;
       color: $color_white;
+      @include transition(color);
 
       @media(min-width: $tablet-width) {
         &:hover,
         &:focus {
-          @include transition(color);
           color: $color_beige;
         }
 

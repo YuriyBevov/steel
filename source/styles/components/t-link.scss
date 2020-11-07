@@ -26,9 +26,9 @@
 
 @media(min-width: $tablet-width) {
   .t-link {
+    transition: background-color $transition_rules, border-color $transition_rules;
     &:hover,
     &:focus {
-      transition: background-color $transition_rules, border-color $transition_rules ;
       background-color: $color_btn-hover;
       border-color: $color_beige;
     }

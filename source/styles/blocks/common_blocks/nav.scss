@@ -26,6 +26,7 @@
     line-height: 2rem;
     font-family: $font_secondary;
     color: $color_white;
+    @include transition($css_rule: color);
 
     &::before {
       position: absolute;
@@ -35,16 +36,15 @@
       height: 0.2rem;
       content: '';
       background-color: $color_beige;
+      @include transition($css_rule: width);
     }
 
     @media(min-width: $tablet-width) {
       &:hover,
       &:focus {
-        @include transition($css_rule: color);
         color: $color_beige;
 
         &::before {
-          @include transition($css_rule: width);
           width: 100%;
         }
       }

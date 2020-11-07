@@ -21,12 +21,12 @@
     &__item {
       svg {
         fill: #646464;
+        transition: fill $transition_rules;
       }
 
       &:hover,
       &:focus {
         svg {
-          transition: fill $transition_rules;
           fill: $color_beige;
         }
       }

@@ -67,6 +67,7 @@
       color: $color_white;
       padding-left: 3rem;
       margin-bottom: 1rem;
+      @include transition(color);
 
       svg {
         position: absolute;
@@ -76,6 +77,7 @@
         stroke: $color_white;
         fill: transparent;
         transform: translateY(-50%);
+        @include transition(stroke);
 
         path {
           stroke: $color_white;
@@ -85,11 +87,9 @@
       @media(min-width: $tablet-width) {
         &:hover,
         &:focus {
-          @include transition(color);
           color: $color_beige;
 
           svg {
-            @include transition(stroke);
             stroke: $color_beige;
           }
         }

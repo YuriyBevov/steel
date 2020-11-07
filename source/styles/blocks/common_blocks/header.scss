@@ -41,12 +41,12 @@
     margin-right: 3.5rem;
 
     color: $color_easy-beige;
+    @include transition(color);
 
     @media(min-width: $tablet-width) {
 
       &:hover,
       &:focus {
-        @include transition(color);
         color: $color_white;
       }
 
@@ -71,6 +71,7 @@
       line-height: 1.7rem;
       margin-right: 3.5rem;
       margin-bottom: 0.5rem;
+      @include transition(color);
 
       &:last-child {
         margin-bottom: 0;
@@ -80,7 +81,6 @@
 
         &:hover,
         &:focus {
-          @include transition(color);
           color: $color_beige;
         }
 

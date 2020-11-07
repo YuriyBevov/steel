@@ -19,10 +19,11 @@
 
     color: $color_easy-beige;
 
+    @include transition(color);
+
     @media(min-width: $tablet-width) {
       &:hover ,
       &:focus {
-        @include transition(color);
         color: $color_white;
       }
 

@@ -10,6 +10,8 @@
   color: $color_white;
   background-color: $color_beige;
 
+  transition: background-color $transition_rules, border-color $transition_rules ;
+
   @media(max-width: $desktop-width) {
     width: 15rem;
     min-height: 3.2rem;
@@ -25,7 +27,6 @@
   .m-btn {
     &:hover,
     &:focus {
-      transition: background-color $transition_rules, border-color $transition_rules ;
       background-color: $color_btn-hover;
       border-color: $color_beige;
     }

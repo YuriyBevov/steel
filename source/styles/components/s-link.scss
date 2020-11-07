@@ -27,9 +27,9 @@
 
 @media(min-width: $tablet-width) {
   .s-link {
+    transition: background-color $transition_rules, border-color $transition_rules;
     &:hover,
-    &:focus {
-      transition: background-color $transition_rules, border-color $transition_rules ;
+    &:focus {  
       background-color: $color_btn-hover;
       border-color: $color_beige;
     }
