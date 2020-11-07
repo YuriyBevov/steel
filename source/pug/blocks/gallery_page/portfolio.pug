@@ -2,15 +2,16 @@ section.portfolio
   .portfolio__wrapper
     ul.portfolio__list
       -
-        const home_items = [
-          {description: 'Описание', url: 'img/furn_home1', lqip: 'img/lqip/furn_home1', width: 236, height: 315},
+        const gallery_items = [
+          {description: 'Описание', url: 'img/pr_8', lqip: 'img/lqip/furn_home1', width: 236, height: 315},
           {description: 'Описание', url: 'img/furn_home2', lqip: 'img/lqip/furn_home2', width: 272, height: 315},
           {description: 'Описание', url: 'img/furn_home3', lqip: 'img/lqip/furn_home3', width: 237, height: 315},
           {description: 'Описание', url: 'img/furn_home4', lqip: 'img/lqip/furn_home4', width: 422, height: 315},
           {description: 'Описание', url: 'img/furn_home5', lqip: 'img/lqip/furn_home5', width: 389, height: 315},
+          {description: 'Описание', url: 'img/furn_home5', lqip: 'img/lqip/furn_home5', width: 389, height: 315},
         ];
-      each home_item in home_items
+      each g_item in gallery_items
         li.portfolio__item
           picture
-            source(type="image/webp" srcset=home_item.lqip + '@1x.jpg' data-srcset=home_item.url + '@1x.webp 1x,' + home_item.url + '@2x.webp 2x')
-            img.lazyload.blur-up(src=home_item.lqip + '@1x.jpg' data-src=home_item.url + '@1x.jpg' data-srcset=home_item.url + '@2x.jpg 2x' width=home_item.width height=home_item.height alt=home_item.description)
+            source(type="image/webp" srcset=g_item.lqip + '@1x.jpg' data-srcset=g_item.url + '@1x.webp 1x,' + g_item.url + '@2x.webp 2x')
+            img.lazyload.blur-up(src=g_item.lqip + '@1x.jpg' data-src=g_item.url + '@1x.jpg' data-srcset=g_item.url + '@2x.jpg 2x' width=g_item.width height=g_item.height alt=g_item.description)

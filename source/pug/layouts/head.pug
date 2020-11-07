@@ -7,12 +7,20 @@ mixin head(title, desc, keywords)
     meta(name="keywords" content=`${keywords}`)
     title!= title
 
+    meta(property="og:locale" content="ru_RU")
+    meta(property="og:title" content="Сварочная мастерская Steel Balls")
+    meta(property="og:description" content="Сварочная мастерская Steel Balls. Лофт перегородки и мебель ручной работы в Санкт-Петербурге.")
+    meta(property="og:url" content="https://steelballs-spb.ru/")
+    meta(property="og:image" content="img/adv_3@1x.jpg")
+    meta(property="og:site_name" content="Сварочная мастерская Steel Balls")
+    meta(property="og:type" content="website")
+
     link(rel="preload" href="./fonts/InterReg.woff" as="font" type="font/woff" crossorigin)
     link(rel="preload" href="./fonts/MontserratMed.woff" as="font" type="font/woff" crossorigin)
     link(rel="preload" href="./fonts/MontserratMed.woff2" as="font" type="font/woff2" crossorigin)
     link(rel="preload" href="./fonts/MontserratReg.woff" as="font" type="font/woff" crossorigin)
     link(rel="preload" href="./fonts/MontserratReg.woff2" as="font" type="font/woff2" crossorigin)
-    link(rel="icon" href="favicon.svg" type="image/png")
+    link(rel="icon" href="favicon.svg" type="image/svg")
     link(rel="stylesheet" href="./css/style.min.css")
 
     script.
