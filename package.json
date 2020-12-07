@@ -44,8 +44,10 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "gsap": "^3.5.1",
     "imask": "^6.0.5",
     "lazysizes": "^5.2.2",
+    "pixi.js": "^5.3.3",
     "swiper": "^5.4.2"
   }
 }

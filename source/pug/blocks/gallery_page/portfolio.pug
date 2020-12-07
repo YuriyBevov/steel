@@ -1,17 +1,72 @@
-section.portfolio
+section.portfolio#portfolio
   .portfolio__wrapper
-    ul.portfolio__list
-      -
-        const gallery_items = [
-          {description: 'Описание', url: 'img/pr_8', lqip: 'img/lqip/furn_home1', width: 236, height: 315},
-          {description: 'Описание', url: 'img/furn_home2', lqip: 'img/lqip/furn_home2', width: 272, height: 315},
-          {description: 'Описание', url: 'img/furn_home3', lqip: 'img/lqip/furn_home3', width: 237, height: 315},
-          {description: 'Описание', url: 'img/furn_home4', lqip: 'img/lqip/furn_home4', width: 422, height: 315},
-          {description: 'Описание', url: 'img/furn_home5', lqip: 'img/lqip/furn_home5', width: 389, height: 315},
-          {description: 'Описание', url: 'img/furn_home5', lqip: 'img/lqip/furn_home5', width: 389, height: 315},
-        ];
-      each g_item in gallery_items
-        li.portfolio__item
-          picture
-            source(type="image/webp" srcset=g_item.lqip + '@1x.jpg' data-srcset=g_item.url + '@1x.webp 1x,' + g_item.url + '@2x.webp 2x')
-            img.lazyload.blur-up(src=g_item.lqip + '@1x.jpg' data-src=g_item.url + '@1x.jpg' data-srcset=g_item.url + '@2x.jpg 2x' width=g_item.width height=g_item.height alt=g_item.description)
+    h1.visually-hidden Наши работы
+    -
+      const gallery_1 = [
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_1', lqip: 'img/lqip/gallery_page/gallery_1'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_2', lqip: 'img/lqip/gallery_page/gallery_2'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_3', lqip: 'img/lqip/gallery_page/gallery_3'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_4', lqip: 'img/lqip/gallery_page/gallery_4'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_5', lqip: 'img/lqip/gallery_page/gallery_5'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_6', lqip: 'img/lqip/gallery_page/gallery_6'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_7', lqip: 'img/lqip/gallery_page/gallery_7'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_8', lqip: 'img/lqip/gallery_page/gallery_8'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_9', lqip: 'img/lqip/gallery_page/gallery_9'},
+      ];
+
+      const gallery_2 = [
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_11', lqip: 'img/lqip/gallery_page/gallery_11'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_12', lqip: 'img/lqip/gallery_page/gallery_12'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_13', lqip: 'img/lqip/gallery_page/gallery_13'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_14', lqip: 'img/lqip/gallery_page/gallery_14'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_15', lqip: 'img/lqip/gallery_page/gallery_15'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_16', lqip: 'img/lqip/gallery_page/gallery_16'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_17', lqip: 'img/lqip/gallery_page/gallery_17'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_18', lqip: 'img/lqip/gallery_page/gallery_18'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_19', lqip: 'img/lqip/gallery_page/gallery_19'},
+      ];
+
+      const gallery_3 = [
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_21', lqip: 'img/lqip/gallery_page/gallery_21'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_22', lqip: 'img/lqip/gallery_page/gallery_23'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_23', lqip: 'img/lqip/gallery_page/gallery_23'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_24', lqip: 'img/lqip/gallery_page/gallery_24'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_25', lqip: 'img/lqip/gallery_page/gallery_25'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_26', lqip: 'img/lqip/gallery_page/gallery_26'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_27', lqip: 'img/lqip/gallery_page/gallery_27'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_28', lqip: 'img/lqip/gallery_page/gallery_28'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_29', lqip: 'img/lqip/gallery_page/gallery_29'},
+      ];
+
+      const gallery_4 = [
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_31', lqip: 'img/lqip/gallery_page/gallery_31'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_32', lqip: 'img/lqip/gallery_page/gallery_33'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_33', lqip: 'img/lqip/gallery_page/gallery_33'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_34', lqip: 'img/lqip/gallery_page/gallery_34'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_35', lqip: 'img/lqip/gallery_page/gallery_35'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_36', lqip: 'img/lqip/gallery_page/gallery_36'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_37', lqip: 'img/lqip/gallery_page/gallery_37'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_38', lqip: 'img/lqip/gallery_page/gallery_38'},
+        {description: 'Описание', url: 'img/static/gallery_page/gallery_39', lqip: 'img/lqip/gallery_page/gallery_39'},
+      ];
+
+    mixin gallery_list(id, gallery, isActive)
+      ul(data-id=`${id}` class!= isActive ? 'portfolio__gallery--active' : null).portfolio__gallery
+        each item, index in gallery
+          li(class=`portfolio__gallery-item portfolio__gallery-item--${index + 1}`)
+            source(type="image/webp" srcset=item.lqip + '@1x.jpg' data-srcset=item.url + '@1x.webp 1x,' + item.url + '@2x.webp 2x')
+            img.lazyload.blur-up(src=item.lqip + '@1x.jpg' data-src=item.url + '@1x.jpg' data-srcset=item.url + '@2x.jpg 2x' width=item.width height=item.height alt=item.description)
+
+    +gallery_list(1, gallery_1, true)
+    +gallery_list(2, gallery_2)
+    +gallery_list(3, gallery_3)
+    +gallery_list(4, gallery_4)
+
+    .portfolio__btn-box
+      button(disabled).portfolio__btn.portfolio__btn--prev
+        svg(width="88" height="8")
+          use(xlink:href="#icon-gallery-arrow")
+      button.portfolio__btn.portfolio__btn--next
+        svg(width="88" height="8")
+          use(xlink:href="#icon-gallery-arrow")
+      a.portfolio__link(rel="nofollow noopener noreferrer" href="https://www.instagram.com/stballs.ru/" target="_blank") Еще больше проектов в Instagram!

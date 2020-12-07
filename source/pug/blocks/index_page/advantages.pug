@@ -1,49 +1,22 @@
 section.advantages
-  .advantages__wrapper
-    h2.advantages__title О СВАРОЧНОЙ МАСТЕРСКОЙ STEEL BALLS
-    .advantages__content
-      ul.advantages__list
+  .advantages__container
+    .advantages__wrapper
+      h2.advantages__title О СВАРОЧНОЙ МАСТЕРСКОЙ STEEL BALLS
+      .advantages__content
+        ul.advantages__list
 
-        li.advantages__item
-          span.advantages__item-icon#year &nbsp;
-          p.advantages__description лет на рынке
+          li.advantages__item
+            span.advantages__item-icon#year &nbsp;
+            p.advantages__description лет на рынке
 
-        li.advantages__item
-          .advantages__item-projects
-            span.advantages__item-projects-icon.advantages__item-projects-icon--count#projects 38
-            span.advantages__item-projects-icon.advantages__item-projects-icon--plus(data-aos="fade-in-out" data-aos-delay="300" data-aos-duration="1500") +
-          p.advantages__description проектов
+          li.advantages__item
+            .advantages__item-projects
+              span.advantages__item-projects-icon.advantages__item-projects-icon--count#projects 38
+              span.advantages__item-projects-icon.advantages__item-projects-icon--plus(data-aos="fade-in-out" data-aos-delay="300" data-aos-duration="1500") +
+            p.advantages__description проектов
 
-      blockquote.advantages__blockquote
-        p.advantages__blockquote-text(data-aos="flip-left" data-aos-delay="150" data-aos-duration="1500") &#8221; Мы делаем мебель, которая будет актуальна всегда. Простая форма и натуральные материалы вне времени и трендов. &#8221;
-        footer.advantages__blockquote-footer(data-aos="zoom-in-up" data-aos-delay="250" data-aos-duration="1500")
-          p.advantages__blockquote-author Иван Копосов
-          p.advantages__blockquote-author-description &ndash; основатель мастерской STEEL BALLS
-
-  .advantages__slider
-    .advantages__swiper-container
-      .swiper-wrapper
-        -
-          const advantages = [
-            {description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
-            {description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
-            {description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
-            {description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
-            {description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
-            {description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
-            {description: 'Фото мастерской', url: 'img/adv_1', lqip: 'img/lqip/adv_1'},
-            {description: 'Фото мастерской', url: 'img/adv_2', lqip: 'img/lqip/adv_2'},
-            {description: 'Фото мастерской', url: 'img/adv_3', lqip: 'img/lqip/adv_3'},
-          ];
-        each advantage in advantages
-          .swiper-slide
-            picture
-              source(type="image/webp" srcset=advantage.lqip + '@1x.jpg' data-srcset=advantage.url + '@1x.webp 1x,' + advantage.url + '@2x.webp 2x')
-              img.lazyload.blur-up(src=advantage.lqip + '@1x.jpg' data-src=advantage.url + '@1x.jpg' data-srcset=advantage.url + '@2x.jpg 2x' alt=advantage.description)
-
-      // slider pagination
-      .a-swiper-pagination
-      // slider navigation
-
-      .a-swiper-button-next
-      .a-swiper-button-prev
+        blockquote.advantages__blockquote
+          p.advantages__blockquote-text(data-aos="flip-left" data-aos-delay="150" data-aos-duration="1500") &#8221; Мы делаем мебель, которая будет актуальна всегда. Простая форма и натуральные материалы вне времени и трендов. &#8221;
+          footer.advantages__blockquote-footer(data-aos="zoom-in-up" data-aos-delay="250" data-aos-duration="1500")
+            p.advantages__blockquote-author Иван Копосов
+            p.advantages__blockquote-author-description &ndash; основатель мастерской STEEL BALLS

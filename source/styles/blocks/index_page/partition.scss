@@ -1,6 +1,7 @@
 .partition {
   padding-top: 10rem;
   padding-bottom: 3rem;
+  background-color: $color_grey;
 
   &__wrapper {
     @include container();
@@ -87,7 +88,7 @@
       min-height: 274px;
 
       picture {
-        max-height: 274px;
+        //max-height: 274px;
       }
 
       &-description {

@@ -8,7 +8,7 @@ function slidersInit() {
   if(pSlider) {
     let partnershipSwiper = new Swiper('.partnership__swiper-container', {
       slidesPerView: 3,
-      slidesPerColumn: 3,
+      slidesPerColumn: 2,
       autoplay: {
         delay: sliderDelay,
       },
@@ -19,7 +19,9 @@ function slidersInit() {
     });
   }
 
-  let aSlider = document.querySelector('.advantages__swiper-container');
+
+  // если оставляю параллакс -- убрать
+  /*let aSlider = document.querySelector('.advantages__swiper-container');
 
   if(aSlider) {
     let advantagesSwiper = new Swiper('.advantages__swiper-container', {
@@ -55,7 +57,7 @@ function slidersInit() {
         }
       }
     });
-  }
+  }*/
 
   let fSlider = document.querySelectorAll('.furniture-swiper-container');
 

@@ -7,14 +7,14 @@ export const mapInit = function () {
 
       // Создание карты.
       let myMap = new ymaps.Map("map", {
-          center: [59.90279995, 30.40527791], // координаты Бехтерева 3к3
-          zoom: 16
+          center: [59.883173, 30.244596], // координаты Бехтерева 3к3
+          zoom: 17
       });
 
-      var myPlacemark = new ymaps.Placemark([59.90233115, 30.40756371],
+      var myPlacemark = new ymaps.Placemark([59.883173, 30.244596],
         {
           hintContent: '<span class="map__placemark-hint">Сварочная мастерская Steel Balls</span>',
-          balloonContentBody: '<p class="map__placemark-description">Санкт-Петербург, ул. Бехтерева 3,корп 3а</p>',
+          balloonContentBody: '<p class="map__placemark-description">Санкт-Петербург, пр. Стачек 47, лит.БД</p>',
         },
         {
         iconLayout: 'default#image',

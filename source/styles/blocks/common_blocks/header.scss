@@ -1,7 +1,16 @@
 .header {
+  position: fixed;
   background-color: $color_black;
   width: 100%;
   z-index: 1000000;
+  padding: 1rem 0;
+  opacity: 1;
+  transition: padding $transition_rules, opacity $transition_rules;
+
+  &-sticky {
+    padding: 0;
+    opacity: 0.9;
+  }
 
   &__logo {
     margin-right: auto;

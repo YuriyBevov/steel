@@ -10,9 +10,7 @@
 
   &__content {
     min-height: 325px;
-    background-image: url("../img/static/map@1x.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: $color-grey;
   }
 
   &__footer {

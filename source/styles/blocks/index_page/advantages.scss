@@ -1,9 +1,16 @@
 .advantages {
-  padding-top: 10rem;
-  padding-bottom: 8rem;
+  background-color: transparent;
+  padding-top: 54rem;
+  padding-bottom: 0;
+
+  &__container {
+    background-color: $color_white;
+  }
 
   &__wrapper {
     @include container();
+    padding-top: 7rem;
+    padding-bottom: 5rem;
   }
 
   &__title {
@@ -14,7 +21,6 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 6rem;
   }
 
   &__list {
@@ -29,7 +35,7 @@
       color: $color_beige;
     }
 
-    width: 18rem;
+    width: 19rem;
 
     &-projects {
       display: flex;
@@ -39,7 +45,7 @@
         display: block;
 
         &--count {
-          width: 12rem;
+          width: 15rem;
         }
 
         &--plus {
@@ -93,8 +99,12 @@
 
 @media(max-width: $desktop-width) {
   .advantages {
-    padding-top: 7rem;
-    padding-bottom: 2rem;
+    padding-top: 37rem;
+
+    &__wrapper {
+      padding-top: 5rem;
+      padding-bottom: 3rem;
+    }
 
     &__title {
       max-width: 45rem;
@@ -107,7 +117,7 @@
       &-projects {
         &-icon {
           &--count {
-            width: 9rem;
+            width: 11rem;
           }
         }
       }
@@ -141,7 +151,12 @@
 
 @media(max-width: $tablet-width) {
   .advantages {
-    padding-top: 5rem;
+    padding-top: 25rem;
+
+    &__wrapper {
+      padding-top: 4rem;
+      padding-bottom: 3rem;
+    }
 
     &__title {
       max-width: 28rem;
@@ -170,7 +185,7 @@
       &-projects {
         &-icon {
           &--count {
-            width: 7rem;
+            width: 8rem;
           }
 
           &--plus {

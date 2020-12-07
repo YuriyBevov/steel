@@ -119,7 +119,7 @@ const watch = () => {
   gulp.watch("source/img/icons/icon-*.svg", gulp.series("sprite", "html", "refresh"));
   gulp.watch("source/pug/**/**/**/*.pug", gulp.series("html", "refresh"));
   gulp.watch("source/scripts/**/**/*.js", gulp.series("js", "refresh"));
-  gulp.watch("source/scripts/**/**/*.vue", gulp.series("js", "refresh"));
+  //gulp.watch("source/scripts/**/**/*.vue", gulp.series("js", "refresh"));
 };
 
 exports.watch = watch;
@@ -148,13 +148,13 @@ const imgOpt = () => {
             ]
         })
     ]))
-    .pipe(gulp.dest("source/img"));
+    .pipe(gulp.dest("build/img"));
 }
 
 exports.imgOpt = imgOpt;
 
 const lqip = () => {
-  return gulp.src("source/img/**/*.{png,jpg}")
+  return gulp.src("source/img/static/**/*.{png,jpg}")
   .pipe(imagemin([
       imagemin.mozjpeg({quality: 6, progressive: true}),
   ]))
@@ -168,7 +168,7 @@ exports.lqip = lqip;
 const toWebp = () => {
   return gulp.src("source/img/**/*.{png,jpg}")
     .pipe(webp({quality: 90}))
-    .pipe(gulp.dest("source/img"));
+    .pipe(gulp.dest("build/img"));
 }
 
 exports.toWebp = toWebp;
@@ -199,7 +199,12 @@ exports.start = gulp.series(
       html,
       styles,
       js,
+      sprite,
+
       copy,
+
+      toWebp,
+      imgOpt,
       lqip,
       favicon
   ),
@@ -214,10 +219,16 @@ exports.start = gulp.series(
 exports.build = gulp.series(
   clean,
   gulp.parallel(
-      html,
-      styles,
-      js,
-      copy,
-      favicon
+    html,
+    styles,
+    js,
+    sprite,
+
+    copy,
+
+    toWebp,
+    imgOpt,
+    lqip,
+    favicon
   )
 );

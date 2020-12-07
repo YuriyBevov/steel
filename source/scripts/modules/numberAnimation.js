@@ -3,8 +3,8 @@ import {minAnimationWidth} from '../utils/vars.js';
 export const numberAnimation = function () {
   const time  = 1500; // ms
   const step = 1;
-  const startProjectsNum = 38;
-  const finProjectsNum = 200;
+  const startProjectsNum = 1238;
+  const finProjectsNum = 1500;
   const startYearsNum = 0;
   const finYearsNum = 5;
 

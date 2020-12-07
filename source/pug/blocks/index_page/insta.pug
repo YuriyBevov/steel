@@ -1,0 +1,29 @@
+section.insta
+  .insta__wrapper
+    .insta__header
+      h2.insta__title Мы в ИНСТАГРАМ
+      p.insta__description еще больше мебели и рабочих моментов
+
+    ul.insta__list(itemscope itemtype="https://schema.org/Offer")
+      -
+        const photos = [
+          {description: 'Натуральный ясень под прозрачным мебельным маслом с воском.', url: 'img/static/insta_1', lqip: 'img/lqip/insta_1'},
+          {description: 'Теплый дубовый стол под маслом.', url: 'img/static/insta_2', lqip: 'img/lqip/insta_2'},
+          {description: 'Журнальный столик. Сосна, масло, сталь.', url: 'img/static/insta_3', lqip: 'img/lqip/insta_3'},
+          {description: 'Рабочий стол с выкатной полкой под миди клавиатуру.', url: 'img/static/insta_4', lqip: 'img/lqip/insta_4'},
+          {description: 'Много метров стального квадрата и красивый ясень под прозрачным маслом.', url: 'img/static/insta_5', lqip: 'img/lqip/insta_5'},
+          {description: 'Барный табурет #25', url: 'img/static/insta_6', lqip: 'img/lqip/insta_6'},
+          {description: 'Столешница, сиденье и спинки из массива ясеня, покрытым бесцветным маслом.', url: 'img/static/insta_7', lqip: 'img/lqip/insta_7'},
+          {description: 'Много железа и ещё больше дерева. Сталь, сосна, масло.Ручная работа.', url: 'img/static/insta_8', lqip: 'img/lqip/insta_8'},
+        ];
+      each photo in photos
+        li.insta__item(tabindex="0")
+          picture
+            source(type="image/webp" srcset=photo.lqip + '@1x.jpg' data-srcset=photo.url + '@1x.webp 1x,' + photo.url + '@2x.webp 2x')
+            img.insta__img.lazyload.blur-up(src=photo.lqip + '@1x.jpg' data-src=photo.url + '@1x.jpg' data-srcset=photo.url + '@2x.jpg 2x' alt=photo.description)
+          .insta__item-description(itemprop="description")
+            p= photo.description
+
+    a(rel="noreferrer" href="https://www.instagram.com/stballs.ru/" target="_blank" aria-label="Перейти в инстаграмм").insta__link.m-link посмотреть
+      svg(width="50" height="6")
+        use(xlink:href="#icon-arr")
