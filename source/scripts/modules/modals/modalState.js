@@ -25,6 +25,7 @@ const modalState = (modal) => {
       window.removeEventListener('mousedown', onMousedownHandler);
       closeBtn.removeEventListener('click', onCloseBtnClickHandler);
       modal.removeEventListener('keydown', modalFocusTrap);
+
       lastFocusedElement.focus();
     }
 

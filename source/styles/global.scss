@@ -14,18 +14,18 @@
 }
 
 ::-webkit-scrollbar { /* 1 - скроллбар */
-    width: 12px;
-    min-height: 8px;
-    background-color: $color_scroll-bg;
-  }
+  width: 12px;
+  min-height: 8px;
+  background-color: $color_scroll-bg;
+}
 
-  ::-webkit-scrollbar-thumb { /* 5 - ползунок */
-    background-color: $color_black;
-  }
+::-webkit-scrollbar-thumb { /* 5 - ползунок */
+  background-color: $color_black;
+}
 
-  ::-webkit-scrollbar-corner { /* 6 - уголок */
-    border-radius: 1rem;
-  }
+::-webkit-scrollbar-corner { /* 6 - уголок */
+  border-radius: 1rem;
+}
 
 html {
   margin-right: calc(-1 * (100vw - 100%)); // чтобы страница не прыгала при/без скролла
@@ -45,6 +45,13 @@ body {
   font-family: $font_primary, sans-serif;
   -webkit-text-size-adjust: none;
   -webkit-appearance: none;
+
+  //-- fxlightbox.js при открытии галереи, задает margin-right body, из-за чего прыгает страница
+  margin-right: 0 !important;
+}
+
+.schema {
+  display: none;
 }
 
 section {

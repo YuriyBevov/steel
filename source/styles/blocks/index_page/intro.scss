@@ -1,25 +1,20 @@
 .intro {
+  display: flex;
+  align-items: center;
   position: relative;
   padding-top: 19rem;
-  min-height: 825px;
+  min-height: 100vh;
+  padding-bottom: 8rem;
   background-color: transparent;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 
-  //-- параллакс --//
-
-  &::before {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: '';
-    z-index: -1;
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  @media(max-width: $desktop-width) {
+    background-attachment: scroll;
   }
 
-  .webp &::before {
+  .webp & {
     background-image: url("../img/static/header-background@1x.webp");
 
     @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
@@ -27,33 +22,13 @@
     }
   }
 
-  .no-webp &::before {
+  .no-webp & {
     background-image: url("../img/static/header-background@1x.jpg");
 
     @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
       background-image: url("../img/static/header-background@2x.jpg");
     }
   }
-
-  &.page-scrolled {
-    .webp &::before {
-      background-image: url("../img/static/parallax@1x.webp");
-
-      @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-        background-image: url("../img/static/parallax@2x.webp");
-      }
-    }
-
-    .no-webp &::before {
-      background-image: url("../img/static/parallax@1x.jpg");
-
-      @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-        background-image: url("../img/static/parallax@2x.jpg");
-      }
-    }
-  }
-
-  //-- параллакс --//
 
   &__wrapper {
     @include container();
@@ -108,25 +83,11 @@
   }
 }
 
-/*.webp .intro {
-  background-image: url("../img/static/header-background@1x.webp");
-
-  @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-    background-image: url("../img/static/header-background@2x.webp");
-  }
-}
-
-.no-webp .intro {
-  background-image: url("../img/static/header-background@1x.jpg");
-
-  @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
-    background-image: url("../img/static/header-background@2x.jpg");
-  }
-}*/
-
 @media(max-width: $desktop-width) {
   .intro {
     padding-top: 16rem;
+    padding-bottom: 5rem;
+
     &__title {
       font-size: 1.6rem;
       line-height: 2rem
@@ -152,6 +113,7 @@
 @media(max-width: $tablet-width) {
   .intro {
     padding-top: 14rem;
+    padding-bottom: 3rem;
 
     &__description {
       max-width: 290px;

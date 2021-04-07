@@ -9,8 +9,8 @@ section.projects#projects-gallery
             {effect: 'fade-down', class: 'projects__item-sm', title: 'Барная стойка и стулья в кофейню', description: 'Под стойкой рабочий стол для бариста, полки для хранения и открытые части под холодильники.', url: 'img/static/pr_1', lqip: 'img/lqip/pr_1', imgAlt:'проект_1'},
             {effect: 'fade-down', class: 'projects__item-sm', title: 'Стол и стулья из дуба и я, Иван Копосов.', description: 'Случайное фото во время фотосессии кофейни.', url: 'img/static/pr_2', lqip: 'img/lqip/pr_2', imgAlt:'проект_3'},
             {effect: 'fade-down', class: 'projects__item-lg', title: 'Декоративная лофт перегородка', description: 'Две распашные двери. Каленое стекло 5мм.', url: 'img/static/pr_4', lqip: 'img/lqip/pr_4', imgAlt:'проект_4'},
-            {effect: 'fade-down', class: 'projects__item-sm', title: 'Барная стойка и стулья из дуба', description: 'Столешница 40мм  на стальном основании. Барные стулья с дубовой спинкой и сиденьем на стальном основании.', url: 'img/static/pr_6', lqip: 'img/lqip/pr_6', imgAlt:'проект_6'},
-            {effect: 'fade-down', class: 'projects__item-sm', title: 'Стеллажи с полками из сосны 40мм.', description: 'Для товаров в вином бутике.', url: 'img/static/pr_9', lqip: 'img/lqip/pr_9', imgAlt:'проект_9'},
+            {effect: 'fade-down', class: 'projects__item-sm', title: 'Декоративная перегородка', description: 'Стальной профиль и полосы свернутые в круги. Рама в белом цвете.', url: 'img/static/pr_7', lqip: 'img/lqip/pr_7', imgAlt:'проект_7'},
+            {effect: 'fade-down', class: 'projects__item-sm', title: 'Стеллажи с полками из сосны 40мм', description: 'Для товаров в винном бутике.', url: 'img/static/pr_9', lqip: 'img/lqip/pr_9', imgAlt:'проект_9'},
           ];
         each item in items
           .projects__item(class=item.class)
@@ -24,7 +24,7 @@ section.projects#projects-gallery
       .projects__gallery-container.projects__gallery-container--column-right
         -
           const rights = [
-            {effect: 'fade-down', class: 'projects__item-lg', title: 'Стеллаж с нишей под холодильники', description: 'Полки из дуба. Для товаров в вином бутике.', url:'img/static/pr_3', lqip: 'img/lqip/pr_3', imgAlt:'проект_2'},
+            {effect: 'fade-down', class: 'projects__item-lg', title: 'Стеллаж с нишей под холодильники', description: 'Полки из дуба. Для товаров в винном бутике.', url:'img/static/pr_3', lqip: 'img/lqip/pr_3', imgAlt:'проект_2'},
             {effect: 'fade-down', class: 'projects__item-sm', title: 'Стол в ресторан', description: 'Стальное подстолье и каменная столешница.', url: 'img/static/pr_5', lqip: 'img/lqip/pr_5', imgAlt:'проект_5'},
             {effect: 'fade-down', class: 'projects__item-sm', title: 'Барная стойка и стулья из дуба', description: 'Столешница 40мм  на стальном основании. Барные стулья с дубовой спинкой и сиденьем на стальном основании.', url: 'img/static/pr_6', lqip: 'img/lqip/pr_6', imgAlt:'проект_6'},
             {effect: 'fade-down', class: 'projects__item-lg', title: 'Шкаф-стеллаж', description: 'Для магазина Питер Смок.', url: 'img/static/pr_8', lqip: 'img/lqip/pr_8', imgAlt:'проект_8'},
@@ -38,6 +38,6 @@ section.projects#projects-gallery
               h3.projects__item-title=right.title
               p.projects__item-description=right.description
 
-    a(href="gallery.html").projects__link.m-link Перейти в каталог
+    a(href="gallery.html").projects__link.m-link Перейти в галерею
       svg(width="50" height="6")
         use(xlink:href="#icon-arr")

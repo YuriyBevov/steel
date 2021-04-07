@@ -6,7 +6,7 @@ export const stickyHeader = function () {
   const headerInitialHeight = getElCurHeight(header);
   const pageTop = document.querySelector('.header + main');
 
-  pageTop.style.marginTop = headerInitialHeight + 'px';
+  //pageTop.style.marginTop = headerInitialHeight + 'px';
 
   const onScrollHandler = () => {
     if(window.pageYOffset > headerInitialHeight) {

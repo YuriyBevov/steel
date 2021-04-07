@@ -1,0 +1,9 @@
+.modal.modal-image.closed
+  .modal__wrapper.modal__wrapper--gallery
+    button(type="button" aria-label="Кнопка закрытия модального окна").modal__close
+      svg(width="36" height="36")
+        use(xlink:href="#icon-close")
+
+    picture
+      source(type="image/webp" srcset='')
+      img.lazyload.blur-up(src="" srcset='' alt="Изображение")

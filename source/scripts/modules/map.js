@@ -7,7 +7,7 @@ export const mapInit = function () {
 
       // Создание карты.
       let myMap = new ymaps.Map("map", {
-          center: [59.883173, 30.244596], // координаты Бехтерева 3к3
+          center: [59.883173, 30.244596],
           zoom: 17
       });
 

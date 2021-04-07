@@ -19,7 +19,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.26.14",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "gsap": "^3.5.1",
+    "fslightbox": "^3.2.2",
     "imask": "^6.0.5",
     "lazysizes": "^5.2.2",
     "pixi.js": "^5.3.3",

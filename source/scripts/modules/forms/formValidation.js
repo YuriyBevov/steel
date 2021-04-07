@@ -30,7 +30,17 @@ const formValidation = (form) => {
   }
 
   if(validPhone) {
-    formSend(form);
+     function onClick() {
+       grecaptcha.ready(function() {
+         grecaptcha.execute('6LebQW0aAAAAADcIZ-jF3ou6YR0-txPl0Z5VdrAu', {action: 'submit'}).then(function(token) {
+             if(token.length > 0) {
+               formSend(form);
+             } else {
+               errorMsg.style.display = "block";
+             }
+         });
+       });
+     }();
   }
 }
 
