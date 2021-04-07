@@ -40,7 +40,8 @@ const formValidation = (form) => {
              }
          });
        });
-     }();
+     };
+     onClick();
   }
 }
 
