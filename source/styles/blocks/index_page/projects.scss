@@ -48,7 +48,11 @@
   }
 
   &__item {
+    // временно , пока нет описаний
+    margin-bottom: 4rem;
+    // 
     &-title {
+      display: none; // временно , пока нет описаний
       font-family: $font_secondary;
       font-size: 1.8rem;
       line-height: 2.2rem;
@@ -57,6 +61,7 @@
     }
 
     &-description {
+      display: none; // временно , пока нет описаний
       font-family: $font_text;
       font-size: 1.6rem;
       line-height: 2rem;
@@ -81,6 +86,9 @@
     }
 
     &__item {
+      // временно , пока нет описаний
+        margin-bottom: 3rem;
+      //
       &-title {
         font-size: 1.8rem;
         line-height: 2rem;
